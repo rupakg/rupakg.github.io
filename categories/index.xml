@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Rupak Ganguly</title>
+    <link>http://rupakganguly.com/categories/</link>
+    <description>Recent content in Categories on Rupak Ganguly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://rupakganguly.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Personal</title>
+      <link>http://rupakganguly.com/categories/personal/</link>
+      <pubDate>Fri, 01 Jan 2016 17:29:17 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/categories/personal/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://rupakganguly.com/posts/welcome/</loc>
+    <lastmod>2016-01-01T17:29:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/personal/</loc>
+    <lastmod>2016-01-01T17:29:17-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/personal/</loc>
+    <lastmod>2016-01-01T17:29:17-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/posts/</loc>
+    <lastmod>2016-01-01T17:29:17-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/</loc>
+    <lastmod>2016-01-01T17:29:17-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/</loc>
+    <lastmod>2016-01-01T17:29:17-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
