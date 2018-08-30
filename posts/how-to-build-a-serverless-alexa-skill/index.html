@@ -228,7 +228,7 @@
 
 <p>To start off, let&rsquo;s create a serverless project using the <code>aws-nodejs</code> template:</p>
 
-<pre><code>$ sls create -t aws-nodejs --name sls-meetup-alexa-skill -p sls-meetup-alexa-skill
+<pre><code class="language-sh">$ sls create -t aws-nodejs --name sls-meetup-alexa-skill -p sls-meetup-alexa-skill
 
 Serverless: Generating boilerplate...
 Serverless: Generating boilerplate in &quot;/Users/wixmac/Projects/webapps/iot-project/sls-meetup-alexa-skill&quot;
@@ -270,7 +270,7 @@ Serverless: Successfully generated boilerplate for template: &quot;aws-nodejs&qu
 
 <p>Write down your <code>Client ID</code>, <code>Client Secret</code> and the <code>Vendor ID</code> for the new security profile. You can <a href="https://developer.amazon.com/mycid.html">find</a> your <code>Vendor ID</code> as well. You can then set environment variables for each one of these secrets and then reference them in the <code>serverless.yml</code> file as shown below:</p>
 
-<pre><code>custom:
+<pre><code class="language-yaml">custom:
   alexa:
     vendorId: ${env:AMAZON_VENDOR_ID}
     clientId: ${env:AMAZON_CLIENT_ID}
