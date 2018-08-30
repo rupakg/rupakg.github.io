@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/posts/</link>
-    <description>Recent content in Posts on Rupak Ganguly</description>
+    <title>Alexa Skill on Rupak Ganguly</title>
+    <link>http://rupakganguly.com/categories/alexa-skill/</link>
+    <description>Recent content in Alexa Skill on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Aug 2018 17:29:03 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rupakganguly.com/categories/alexa-skill/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>http://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</guid>
       <description>When I was a kid, I was intrigued by the Starship Enterprise&amp;rsquo;s onboard computer featured in the science fiction series Star Trek. Although cheeky at times in it&amp;rsquo;s portrayal of technologies beyond our imagination, the voice-controlled computer always made me wonder. And, here we are in the same lifetime, realiziing similar technolgies - inside our homes, on a small device&amp;hellip; Amazing, I think! 🖖
 Let&amp;rsquo;s build ourselves a custom skill for Alexa.</description>
-    </item>
-    
-    <item>
-      <title>Personal Brand</title>
-      <link>http://rupakganguly.com/posts/personal-brand/</link>
-      <pubDate>Tue, 01 May 2018 17:29:17 -0400</pubDate>
-      
-      <guid>http://rupakganguly.com/posts/personal-brand/</guid>
-      <description>Over the years, I have built lot of applications and written about software and its practices. Most of the applications were internal facing and hence could not be shared in public. Many articles I wrote were hosted on internal knowledge bases or those sites have evolved over time. Many of those applications and writings were never made public.
-Building a personal brand is crucial.
-So I have decided to post all my writings here, and publish all my applications on Github.</description>
     </item>
     
   </channel>
