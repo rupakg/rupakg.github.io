@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swagger on Rupak Ganguly</title>
+    <link>http://rupakganguly.com/tags/swagger/</link>
+    <description>Recent content in Swagger on Rupak Ganguly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 31 Aug 2018 12:59:38 -0400</lastBuildDate>
+    
+	<atom:link href="http://rupakganguly.com/tags/swagger/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Roundup of API Platforms and Specifications</title>
+      <link>http://rupakganguly.com/posts/roundup-of-api-platforms-and-specifications/</link>
+      <pubDate>Fri, 31 Aug 2018 12:59:38 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/posts/roundup-of-api-platforms-and-specifications/</guid>
+      <description>&lt;p&gt;While researching for full, end-to-end, lifecycle API management tools, I discovered many that fit the bill. In this post, I compare some popular API platforms and specification formats.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.47.1" />
+
+    
+    
+    
+
+<title>Roundup of API Platforms and Specifications • Rupak Ganguly</title>
+<meta name="description" content="Rupak Ganguly&#39;s blog :: personal opinions, experiences and writings...">
+<meta name="keywords" content="blog,serverless,docker,api,microservices,architecture,aws,lambda,azure,gcp,nodejs,node,alexa,python,java,golang,javascript,thoughts,macos,apple">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Roundup of API Platforms and Specifications"/>
+<meta name="twitter:description" content="Comparing some popular API platforms and specification formats."/>
+
+<meta property="og:title" content="Roundup of API Platforms and Specifications" />
+<meta property="og:description" content="Comparing some popular API platforms and specification formats." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rupakganguly.com/posts/roundup-of-api-platforms-and-specifications/" /><meta property="article:published_time" content="2018-08-31T12:59:38-04:00"/>
+<meta property="article:modified_time" content="2018-08-31T12:59:38-04:00"/>
+
+    
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://rupakganguly.com/">Rupak Ganguly</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="http://rupakganguly.com/img/rg10-square.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         personal opinions, experiences and writings... 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/rupakg"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:rupakg&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Rupak Ganguly
+      <br/>All Rights Reserved.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Roundup of API Platforms and Specifications</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Aug 31, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/api">API</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/api">api</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/openapi">openapi</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/swagger">swagger</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>While researching for full, end-to-end, lifecycle API management tools, I discovered many that fit the bill. In this post, I compare some popular API platforms and specification formats.
+</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44551953-a8dcac00-a6f6-11e8-8150-646e1c86a083.png" alt="image" /></p>
+
+<p><em>Image Credit: Apigee</em></p>
+
+<h2 id="api-platforms">API Platforms</h2>
+
+<p>The market is full of API platforms. Without going into details, here is a feature comparison for some of the popular platforms. I have created a matrix of feature sets that are crucial in deciding an API platform that will meet the needs.</p>
+
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Design</th>
+<th>Code Gen.</th>
+<th>Documentation</th>
+<th>Testing/Portal</th>
+<th>Management</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="https://www.3scale.net/">3Scale</a></td>
+<td>Supports Swagger</td>
+<td>None</td>
+<td>ActiveDocs (Swagger compliant)</td>
+<td>Developer Portal</td>
+<td>Security, Analytics, Monetization, Dashboard, Traffic Mgmt.</td>
+</tr>
+
+<tr>
+<td><a href="https://www.roguewave.com/products-services/akana">Akana</a></td>
+<td>Graphical Designer. Supports Swagger, RAML, WADL, WSDL</td>
+<td>Build Code</td>
+<td>Document</td>
+<td>Developer Portal</td>
+<td>API Gateway, Security, Analytics, Orchestration, Transformation, Traffic Mgmt.</td>
+</tr>
+
+<tr>
+<td><a href="https://apigee.com/">Apigee</a></td>
+<td>Edge UI. Supports OpenAPI Specs</td>
+<td>None</td>
+<td><a href="https://apigee.com/api-management/#/product/developer-portal">Developer Portal</a></td>
+<td><a href="https://apigee.com/api-management/#/product/developer-portal">Developer Portal</a></td>
+<td>API Gateway, Security, Analytics, Monetization, Orchestration, Transformation, Traffic Mgmt., API Proxy Editor</td>
+</tr>
+
+<tr>
+<td><a href="https://boomi.com/">Boomi</a></td>
+<td><a href="https://boomi.com/platform/mediate/">Mediate</a></td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td><a href="https://boomi.com/platform/flow/">Workflow</a>, <a href="https://boomi.com/platform/exchange/">B2B/EDI Data Exchange</a>, <a href="https://boomi.com/platform/hub/">Data Hub</a>, <a href="https://boomi.com/platform/integrate/">Data Integration</a>, Traffic Mgmt., Usage Dashboard</td>
+</tr>
+
+<tr>
+<td><a href="https://konghq.com/">Kong</a></td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td><a href="https://konghq.com/api-gateway/">API Gateway</a></td>
+</tr>
+
+<tr>
+<td><a href="https://www.mashery.com/">Mashery</a></td>
+<td>Visual API Modeling. Supports OpenAPI Specs</td>
+<td>Build Code</td>
+<td><a href="https://www.mashery.com/api/portal">API Developer Portal</a></td>
+<td>Mocking and Testing</td>
+<td><a href="https://www.mashery.com/api/gateway">API Gateway</a>, <a href="https://www.mashery.com/api/analytics">Analytics</a>, Traffic Mgmt., Security, Monetization,</td>
+</tr>
+
+<tr>
+<td><a href="https://www.mulesoft.com/">MuleSoft</a></td>
+<td><a href="https://www.mulesoft.com/platform/anypoint-design-center">Anypoint Design Center</a></td>
+<td><a href="https://www.mulesoft.com/platform/studio">Anypoint Studio</a>, <a href="https://www.mulesoft.com/platform/devkit">Anypoint Connector DevKit</a></td>
+<td><a href="https://www.mulesoft.com/platform/anypoint-design-center">Anypoint Design Center</a></td>
+<td><a href="https://www.mulesoft.com/platform/munit-integration-testing">MUnit</a></td>
+<td><a href="https://www.mulesoft.com/platform/anypoint-management-center">Anypoint Management Center</a>, <a href="https://www.mulesoft.com/platform/saas/cloudhub-ipaas-cloud-based-integration">CloudHub</a></td>
+</tr>
+
+<tr>
+<td><a href="http://swagger.io">Swagger</a></td>
+<td><a href="https://swagger.io/tools/swagger-editor/">Swagger Editor</a>, <a href="https://swagger.io/tools/swaggerhub/">SwaggerHub</a></td>
+<td><a href="https://swagger.io/tools/swagger-codegen/">Swagger Codegen</a></td>
+<td><a href="https://swagger.io/tools/swagger-ui/">Swagger UI</a>, <a href="https://swagger.io/tools/swaggerhub/">SwaggerHub</a>, <a href="https://swagger.io/tools/swagger-inspector/">Swagger Inspector</a></td>
+<td><a href="https://swagger.io/tools/swagger-inspector/">Swagger Inspector</a></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="api-specification-formats">API Specification Formats</h2>
+
+<p>I thought I will mention the popular API Specification formats as well. The OpenAPI Specifications (previously Swagger API Specs) and RAML being the most popular.</p>
+
+<ul>
+<li><a href="https://swagger.io/specification/">OpenAPI or Swagger</a></li>
+<li><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/">RAML</a></li>
+<li><a href="https://apiblueprint.org/documentation/specification.html">API Blueprint</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Web_Application_Description_Language">WADL</a></li>
+</ul>
+
+<p>Hope you liked the comparison of the API platforms and various specification formats.</p>
+
+<p>I am working on an article that will cover building an API from scratch using the Swagger toolchain. So stay tuned!</p>
+
+<p>If you have any feedback, please let me know in the comments below.</p>
+  </div>
+  
+
+<div class="post--navigation post--navigation-single">
+    
+    <a href="/posts/how-to-build-a-serverless-alexa-skill/" class="post--navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">How to build a Serverless Alexa Skill</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-125025619-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

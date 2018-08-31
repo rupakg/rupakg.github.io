@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://rupakganguly.com/posts/roundup-of-api-platforms-and-specifications/</loc>
+    <lastmod>2018-08-31T12:59:38-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</loc>
     <lastmod>2018-08-29T17:29:03-04:00</lastmod>
   </url>
@@ -36,8 +41,26 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/tags/api/</loc>
+    <lastmod>2018-08-31T12:59:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/api/</loc>
+    <lastmod>2018-08-31T12:59:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/categories/</loc>
     <lastmod>2018-08-29T17:29:03-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/openapi/</loc>
+    <lastmod>2018-08-31T12:59:38-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -55,13 +78,13 @@
   
   <url>
     <loc>http://rupakganguly.com/posts/</loc>
-    <lastmod>2018-08-29T17:29:03-04:00</lastmod>
+    <lastmod>2018-08-31T12:59:38-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/</loc>
-    <lastmod>2018-08-29T17:29:03-04:00</lastmod>
+    <lastmod>2018-08-31T12:59:38-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -74,6 +97,12 @@
   <url>
     <loc>http://rupakganguly.com/categories/serverless/</loc>
     <lastmod>2018-08-29T17:29:03-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/swagger/</loc>
+    <lastmod>2018-08-31T12:59:38-04:00</lastmod>
     <priority>0</priority>
   </url>
   
