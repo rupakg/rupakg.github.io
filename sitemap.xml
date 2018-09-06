@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</loc>
+    <lastmod>2015-05-26T13:26:19-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/posts/managing-application-code-in-linux-containers/</loc>
     <lastmod>2014-10-10T13:31:40-04:00</lastmod>
   </url>
@@ -65,31 +70,31 @@
   
   <url>
     <loc>http://rupakganguly.com/tags/containers/</loc>
-    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <lastmod>2015-05-26T13:26:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/categories/containers/</loc>
-    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <lastmod>2015-05-26T13:26:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/tags/development/</loc>
-    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <lastmod>2015-05-26T13:26:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/tags/docker/</loc>
-    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <lastmod>2015-05-26T13:26:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/categories/docker/</loc>
-    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <lastmod>2015-05-26T13:26:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   

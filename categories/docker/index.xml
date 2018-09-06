@@ -6,10 +6,20 @@
     <description>Recent content in Docker on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Oct 2014 13:31:40 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2015 13:26:19 -0400</lastBuildDate>
     
 	<atom:link href="http://rupakganguly.com/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lorry.io: Pathway to Docker Composable Apps</title>
+      <link>http://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</link>
+      <pubDate>Tue, 26 May 2015 13:26:19 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</guid>
+      <description>Recently, Docker released the Compose tool for defining and running complex applications with Docker. The basic component of that tool is the file, docker-compose.yml. We at CenturyLink were big fans of Fig, the basis for Compose and the docker-compose.yml, but always envisioned a utility that could facilitate creating the docker-compose.yml files easily and intuitively.
+ From that idea, we are happy to announce our latest project, Lorry.io, a docker-compose.yml validator, editor and composer.</description>
+    </item>
     
     <item>
       <title>Managing Application Code in Linux Containers</title>
