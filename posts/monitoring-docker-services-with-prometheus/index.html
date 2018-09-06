@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.47.1" />
+
+    
+    
+    
+    <meta name="description" content="With the advent of the microservices architecture and the evolving trend for using Docker, monolithic applications are being broken up into smaller and independent services. There is a need to monitor these services around the clock. We look at Prometheus, and demonstrate its capabilities by using it to monitor containerized services.">
+    
+        
+        <meta name="keywords" content="docker, containers, prometheus, development, monitoring, microservices, devops">
+    
+    
+
+<title>Monitoring Docker Services With Prometheus • Rupak Ganguly</title>
+
+    <link rel="canonical" href="https://www.ctl.io/developers/blog/post/monitoring-docker-services-with-prometheus">
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Monitoring Docker Services With Prometheus"/>
+<meta name="twitter:description" content="With the advent of the microservices architecture and the evolving trend for using Docker, monolithic applications are being broken up into smaller and independent services. There is a need to monitor these services around the clock. We look at Prometheus, and demonstrate its capabilities by using it to monitor containerized services."/>
+
+<meta property="og:title" content="Monitoring Docker Services With Prometheus" />
+<meta property="og:description" content="With the advent of the microservices architecture and the evolving trend for using Docker, monolithic applications are being broken up into smaller and independent services. There is a need to monitor these services around the clock. We look at Prometheus, and demonstrate its capabilities by using it to monitor containerized services." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/" /><meta property="article:published_time" content="2015-07-21T14:08:43-04:00"/>
+<meta property="article:modified_time" content="2015-07-21T14:08:43-04:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://rupakganguly.com/">Rupak Ganguly</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="http://rupakganguly.com/img/rg10-square.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         personal opinions, experiences and writings... 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/rupakg"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:rupakg&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Rupak Ganguly
+      <br/>All Rights Reserved.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Monitoring Docker Services With Prometheus</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 21, 2015
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/containers">CONTAINERS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/devops">DEVOPS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/docker">DOCKER</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/microservices">MICROSERVICES</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/monitoring">MONITORING</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/docker">docker</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/containers">containers</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/prometheus">prometheus</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/development">development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/monitoring">monitoring</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/microservices">microservices</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/devops">devops</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 12 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<p><img src="https://user-images.githubusercontent.com/8188/45176479-1b14bc80-b1de-11e8-8b8d-c9890e21fabb.png" alt="Prometheus and Docker" /></p>
+
+<p>With the advent of the &lsquo;micro-services&rsquo; architecture and the evolving trend for using Docker, monolithic applications are being broken up into smaller and independent services. The idea is to keep the services small so that small groups of developers can work on them, upgrade or patch them quickly, and build &amp; release them continuously. Although that vision is promising, it introduces complexity as the number of services grow. With that also grows the need to monitor these services around the clock, to maintain the healthy functioning of the application.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Here we look at <a href="http://prometheus.io">Prometheus</a>, and demonstrate its capabilities by using it to monitor <a href="http://panamax.io">Panamax</a> and its containerized services. Written in Go, Prometheus, is a open-source monitoring service and alerting toolkit build at SoundCloud. It boasts of a variety of <a href="http://prometheus.io/docs/introduction/overview/">features and components</a> that made it really interesting for me to evaluate it internally at CenturyLink Labs.</p>
+
+<h2 id="architecture">Architecture</h2>
+
+<p>Prometheus was written from the ground up, based on real use cases and experiences at SoundCloud, designed to tackle real problems faced in real production systems.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44811108-c059e000-aba1-11e8-8c58-304125ebea14.png" alt="Prometheus Architecture" /></p>
+
+<p><em>Prometheus Architecture (Pic Courtesy: prometheus.io)</em></p>
+
+<p>In the heart of the system is the <strong>Prometheus server</strong>, backed up by a local database server. Prometheus is based on a &lsquo;pull&rsquo; mechanism, that scrapes metrics from the configured targets. However, for short-lived jobs, it provides an intermediary <strong>push gateway</strong> for scraping metrics. It also provides <strong>PromDash</strong>, a visualization dashboard for the collected data, an <strong>Expression browser</strong> with a <strong>query language</strong> to ease filtering of data, and an <strong>AlertManager</strong> to send notifications based on triggered alerts based on an alert rules engine. You can find more resources on their <a href="http://prometheus.io/docs/introduction/media/">media</a> page.</p>
+
+<h2 id="monitoring-panamax">Monitoring Panamax</h2>
+
+<p>So to give Prometheus a whirl, I decided to monitor Panamax and its services. The goals were:</p>
+
+<ul>
+<li>Setup Prometheus</li>
+<li>Configure it to monitor Panamax services
+
+<ul>
+<li>use the existing cAdvisor endpoint exposed by Panamax</li>
+<li>use the &lsquo;container-exporter&rsquo; provided by Prometheus</li>
+</ul></li>
+<li>Run all components as Dockerized services</li>
+<li>Manage alerts and notifications
+
+<ul>
+<li>configure alert rules</li>
+<li>setup AlertManager to send notifications to Hipchat</li>
+</ul></li>
+<li>Visualize and query metrics on Prometheus GUI</li>
+<li>Receive notifications on Hipchat So without further ado, let&rsquo;s get on with it.</li>
+</ul>
+
+<p><strong>Note</strong>: I am assuming that you have a working <a href="https://docs.docker.com/installation/">Docker installation</a> and a working <a href="http://panamax.io/get-panamax/">installation of Panamax</a> on your machine, if you want to follow along.</p>
+
+<h2 id="setup-configuration">Setup &amp; Configuration</h2>
+
+<p>The goal was to run Prometheus as a Docker service although it can be installed as a binary from the available <a href="https://github.com/prometheus/prometheus/releases">releases</a>, or built from <a href="https://github.com/prometheus/prometheus/blob/master/README.md#use-make">source</a>. Luckily, all the <a href="https://registry.hub.docker.com/repos/prom/">Prometheus services</a> are available as Docker images.</p>
+
+<h3 id="configure-prometheus">Configure Prometheus</h3>
+
+<p>In preparation to run Prometheus, we have to create a configuration file named <code>prometheus.yml</code> that allows setting up of jobs and targets for scraping. Create a folder named <code>prometheus</code> and create a new yaml file named <code>prometheus.yml</code> with the contents shown below.</p>
+
+<p><code>$ mkdir prometheus &amp;&amp; cd prometheus &amp;&amp; touch prometheus.yml</code></p>
+
+<pre><code>## prometheus.yml ##
+
+global:
+  scrape_interval: 15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+  # scrape_timeout is set to the global default (10s).
+
+  # Attach these extra labels to all time-series collected by this Prometheus instance.
+  labels:
+    monitor: 'panamax-monitor'
+
+rule_files:
+  - '/etc/prometheus/alert.rules'
+
+# A scrape configuration containing exactly one endpoint to scrape:
+scrape_configs:
+# The job name is added as a label `job=&amp;lt;job_name&amp;gt;` to any timeseries scraped from this config.
+
+  # Panamax
+  - job_name: 'panamax'
+    scrape_interval: 5s
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+    scrape_timeout: 10s
+
+    target_groups:
+      - targets: ['10.0.0.200:3002']
+        labels:
+          group: 'development'
+</code></pre>
+
+<p>The <code>global</code> section describes and overrides some defaults. The <code>labels</code> section, attaches a specific label to this instance of the Prometheus server. The <code>rule_files</code> section lists all rule files (<a href="http://prometheus.io/docs/querying/rules/">recording or alert rules</a>) that Prometheus needs to load and process. We will look at the rule file described here at a later time. The <code>scrape_configs</code> section, describes the job(s) that Prometheus needs to process. In our case, we have a job named <code>panamax</code>, with some config items, including the <code>target_groups</code> sub-section. We add a target that points to the cAdvisor address running as part of the Panamax application.</p>
+
+<p><strong>Note</strong>: The IP address <code>10.0.0.200</code> is my Panamax address also aliased as <code>panamax.local</code>.</p>
+
+<h3 id="configure-cadvisor-for-prometheus">Configure cAdvisor for Prometheus</h3>
+
+<p>If you are already using <a href="https://github.com/google/cadvisor">cAdvisor</a>, version 0.11.0 and above has <a href="https://github.com/google/cadvisor/blob/master/docs/prometheus.md">Prometheus integration</a>. Prometheus can leverage the host and container level metrics exposed by cAdvisor. To see the metrics exposed by cAdvisor, go to:</p>
+
+<pre><code># cAdvisor metrics endpoint
+10.0.0.200:3002/metrics
+</code></pre>
+
+<p>Since in the <code>prometheus.yml</code> configuration we specified the target as the cAdvisor address, Prometheus will automatically look for the <code>/metrics</code> endpoint, to expose the metrics.</p>
+
+<h3 id="run-container-exporter-as-a-service">Run container-exporter as a service</h3>
+
+<p>If you looking to capture host and container level metrics, Prometheus also provides a <a href="https://registry.hub.docker.com/u/prom/container-exporter/">container-exporter</a>, that can be run side by side to your other docker services. Many other <a href="http://prometheus.io/docs/instrumenting/exporters/">exporters and third-party integrations</a> are also provided by Prometheus.</p>
+
+<pre><code>docker run -d **name PROM_CON_EXP \
+              -p 9104:9104 \
+              -v /sys/fs/cgroup:/cgroup \
+              -v /var/run/docker.sock:/var/run/docker.sock \
+              prom/container-exporter
+</code></pre>
+
+<p>In this case, the <code>target_groups</code> section of the <code>prometheus.yml</code> file will have a target that points to the address of the &lsquo;container-exporter&rsquo; like so:</p>
+
+<pre><code>...
+     target_groups:
+       - targets: ['10.0.0.200:9104']
+         labels:
+           group: 'development'
+...
+</code></pre>
+
+<p>This tells Prometheus to leverage the host and container level metrics exposed by the &lsquo;container-exporter&rsquo; service. To see the metrics exposed by the &lsquo;container-exporter&rsquo; service, go to:</p>
+
+<pre><code># 'container-exporter' service metrics endpoint #
+10.0.0.200:9104/metrics
+</code></pre>
+
+<p><strong>Note</strong>: You only need one target that exposes metrics for your application. In our case, we are using cAdvisor for collecting host and container level metrics for Panamax.</p>
+
+<h2 id="setup-alerts-and-notifications">Setup Alerts and Notifications</h2>
+
+<p>Various alert rules can be configured within Prometheus, to detect events that happen based on metric counters that Prometheus tracks. To send notifications based on these alerts, the <strong>AlertManager</strong> component is used. An AlertManager instance can be configured via the <code>alertmanager.url</code> flag while starting Prometheus, thus enabling notifications to be sent when alerts are triggered.</p>
+
+<p>To start off, I wanted to set up a simple alert that detects if Panamax application is down, and notifies me on my Hipchat room.</p>
+
+<h3 id="add-alert-rules-to-prometheus">Add alert rules to Prometheus</h3>
+
+<p>To configure an alert in Prometheus, we need to create an alert rules file. Create a new text file named <code>alert.rules</code> with the contents shown below.</p>
+
+<p><code>$ cd prometheus &amp;&amp; touch alert.rules</code></p>
+
+<pre><code>## alert.rules ##
+
+# Alert for any instance that is unreachable for &amp;gt;5 minutes.
+ALERT pmx_down
+  IF up == 0
+  FOR 5m
+  WITH {
+    severity=&quot;page&quot;
+  }
+  SUMMARY &quot;Instance {{$labels.instance}} down&quot;
+  DESCRIPTION &quot;{{$labels.instance}} of job {{$labels.job}} has been down for more than 5 minutes.&quot;
+</code></pre>
+
+<p>Here we are setting up a alert named <code>pmx_down</code>, which specifies a condition <code>up == 0</code> using the <code>IF</code> clause, and the <code>FOR</code> clause specifying that the alert will be triggered after 5m that the condition remains true. In other words, if Panamax is down for 5m, this alert will be triggered. The <code>WITH</code> clause attaches an additional label of <code>severity=&quot;page&quot;</code> to the alert. The <code>SUMMARY</code> and the <code>DESCRIPTION</code> clauses are self-explanatory, but we will soon see that the text in the <code>SUMMARY</code> clause is what gets written as the notification text on Hipchat.</p>
+
+<h3 id="configure-alertmanager">Configure AlertManager</h3>
+
+<p>Adding an alert as we did above, sets up Prometheus to trigger an alert when conditions are met, but to send notifications, Prometheus relies on the <strong>AlertManager</strong> component. So, lets set that up so we can send notifications to Hipchat, when our alert is triggered. To do so, we need to create a configuration file. Create a new text file named <code>alertmanager.conf</code> with the contents shown below.</p>
+
+<p><code>$ cd prometheus &amp;&amp; touch alertmanager.conf</code></p>
+
+<pre><code>## alertmanager.conf ##
+
+notification_config {
+  name: &quot;alertmanager_hipchat&quot;
+  hipchat_config {
+    auth_token: &quot;&amp;lt;hipchat_token_here&amp;gt;&quot;
+    room_id: 123456
+    send_resolved: true
+  }
+}
+
+aggregation_rule {
+  repeat_rate_seconds: 3600
+  notification_config_name: &quot;alertmanager_hipchat&quot;
+}
+</code></pre>
+
+<p>We are setting up a <code>notification_config</code> for Hipchat, with some specific keys required by Hipchat. The <code>send_resolved</code> setting is used to trigger an additional notification when the alert condition is &lsquo;resolved&rsquo;. in our case, it would be when the Panamax application is back up. The <code>aggregation_rule</code> sets up an attribute <code>repeat_rate_seconds</code> which configures the notifications to be repeated for the specified duration in seconds. In our case, we want the notifications to be repeated every 2 hours while the Panamax application is down. The notifications are stopped when the alert condition is no longer met or the alert is manually silenced from the Prometheus UI.</p>
+
+<h3 id="run-alertmanager-as-a-service">Run AlertManager as a service</h3>
+
+<p>Now that we have a configuration for the AlertManager, we can run it is as a container service, passing in the <code>alertmanager.conf</code> via the <code>config.file</code> flag.</p>
+
+<pre><code>docker run -d -p 9093:9093
+              -v $PWD/alertmanager.conf:/alertmanager.conf \
+              prom/alertmanager \
+              -config.file=/alertmanager.conf
+</code></pre>
+
+<p>And, we can see our container running:</p>
+
+<pre><code>CONTAINER ID IMAGE             CREATED         PORTS
+bd947de3d58c prom/alertmanager 22 hours ago    0.0.0.0:9093-&amp;gt;9093/tcp
+</code></pre>
+
+<p><strong>Note</strong>: We will record the port where the AlertManager is running as we need it in the next section.</p>
+
+<h3 id="run-prometheus-as-a-service">Run Prometheus as a service</h3>
+
+<p>With the <code>prometheus.yml</code> setup, the metrics endpoint setup, the alert rules setup and the AlertManager configuration setup, we can finally run the Prometheus server as a container service. As soon as the service starts, it will start scraping the metrics, and make it available on the Prometheus UI.</p>
+
+<pre><code>docker run -d -p 9090:9090 \
+              -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml \
+              -v $PWD/alert.rules:/etc/prometheus/alert.rules \
+              prom/prometheus \
+              -config.file=/etc/prometheus/prometheus.yml \
+              -alertmanager.url=http://192.168.59.103:9093
+</code></pre>
+
+<p>We expose the Prometheus UI at port 9090, and volume mount the local <code>prometheus.yml</code> file &amp; <code>alert.rules</code> file to <code>/etc/prometheus/prometheus.yml</code>, where it is picked up by Prometheus. We also pass the configuration file path via the <code>config.file</code> flag and pass the alert manager url via the <code>alertmanager.url</code> flag.</p>
+
+<p><strong>Note</strong>: The IP address <code>http://192.168.59.103</code> is my Docker Host address. And, we can see our container running:</p>
+
+<pre><code>CONTAINER ID IMAGE           CREATED          PORTS
+34af30279267 prom/prometheus 22 hours ago     0.0.0.0:9090-&amp;gt;9090/tcp
+</code></pre>
+
+<p>This completes our setup and configuration, resulting in running Prometheus server and the AlertManager, both as container services.</p>
+
+<h3 id="prometheus-ui-and-querying">Prometheus UI and Querying</h3>
+
+<p>Now, that we are running Prometheus and scraping metrics off Panamax application, we can head over to the Prometheus UI, to visualize the metrics and query them.</p>
+
+<p><strong>Note</strong>: There is a separate component <a href="http://prometheus.io/docs/visualization/promdash/">PromDash</a>, which is more elaborate Prometheus dashboard, that I talk about at the end of the article.</p>
+
+<h3 id="prometheus-ui">Prometheus UI</h3>
+
+<p>The Prometheus UI is available at your Docker Host address on port 9090. Click on the &lsquo;Graph&rsquo; menu item to open the Expression Browser.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44811644-1da26100-aba3-11e8-8be7-897e41230620.png" alt="PromDash UI" /></p>
+
+<p><em>PromDash UI</em></p>
+
+<p>The above screenshot shows you the metric counters that were picked up by Prometheus exposed by cAdvisor.</p>
+
+<h3 id="querying">Querying</h3>
+
+<p>In the query field, paste the following query, and hit &lsquo;Execute&rsquo;. Then click on the &lsquo;Graph&rsquo; tab, to see the visualization of metrics for <code>memory_usage_bytes</code> counter for the PMX_UI container.</p>
+
+<pre><code>container_memory_usage_bytes{instance=&quot;10.0.0.200:3002&quot;,job=&quot;panamax&quot;, name=&quot;PMX_UI&quot;}
+</code></pre>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44811710-56423a80-aba3-11e8-8876-576749590216.png" alt="Graph for Panamax UI container usage by bytes" /></p>
+
+<p><em>Graph for Panamax UI container usage by bytes</em></p>
+
+<p>Next, click on the &lsquo;Add Graph&rsquo; button, and paste the following query, and hit &lsquo;Execute&rsquo;. Then click on the &lsquo;Graph&rsquo; tab, to see the visualization of metrics for <code>memory_usage_bytes</code> counter for the PMX_API container.</p>
+
+<pre><code>container_memory_usage_bytes{instance=&quot;10.0.0.200:3002&quot;,job=&quot;panamax&quot;, name=&quot;PMX_API&quot;}
+</code></pre>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44811898-cb157480-aba3-11e8-982b-61a75d0aee4c.png" alt="Graph for Panamax API container usage by bytes" /></p>
+
+<p><em>Graph for Panamax API container usage by bytes</em></p>
+
+<p>Next, click on the &lsquo;Add Graph&rsquo; button, and paste the following query, and hit &lsquo;Execute&rsquo;. Then click on the &lsquo;Graph&rsquo; tab, to see the visualization of metrics for <code>memory_usage_bytes</code> counter for the WP container. The WP container was actually started by Panamax. Here you can see 5 instances of the WP container starting/stopping at different points in time.</p>
+
+<pre><code>container_memory_usage_bytes{instance=&quot;10.0.0.200:3002&quot;,job=&quot;panamax&quot;,name=&quot;WP&quot;}
+</code></pre>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44811960-fbf5a980-aba3-11e8-95e1-c65a9238989b.png" alt="Graph for WP container instances usage by bytes" /></p>
+
+<p><em>Graph for WP container instances usage by bytes</em></p>
+
+<p><strong>Note</strong>: You can toggle the &lsquo;duration&rsquo; parameter to zoom in/out on the data points across time.</p>
+
+<h3 id="status">Status</h3>
+
+<p>Click on the &lsquo;Status&rsquo; menu item to see the runtime/build information, configuration, rules, targets and startup flags that are active for the Prometheus server.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44812044-395a3700-aba4-11e8-931f-05e26c27adab.png" alt="Status" /></p>
+
+<p><em>Prometheus Status</em></p>
+
+<h3 id="alerts-and-notifications">Alerts and Notifications</h3>
+
+<p>We had setup an alert in Prometheus and configured notifications to be sent to Hipchat if Panamax was down. Let&rsquo;s test it out.</p>
+
+<h3 id="triggering-alerts">Triggering Alerts</h3>
+
+<p>On the Prometheus UI, go to the &lsquo;Alerts&rsquo; menu, and you will see the <code>pmx_down</code> alert inactive and green in color. If you click on it, you can see the actual alert condition that we had setup earlier.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44812182-91913900-aba4-11e8-8de2-c6c22e762307.png" alt="Prometheus Alerts" /></p>
+
+<p><em>Prometheus Alerts</em></p>
+
+<p>To trigger this alert we need to shutdown Panamax. So, lets do that now by doing <code>panamax pause</code>. If you click on the &lsquo;Alerts&rsquo; menu, you will see that the alert has now become active, is red in color and the <code>State</code> shows as <code>firing</code>.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44812231-ad94da80-aba4-11e8-9466-7a4ff61c68c2.png" alt="Prometheus Alerts firing" /></p>
+
+<p><em>Prometheus Alerts firing</em></p>
+
+<p>You can also open up the AlertManager at <code>http://192.168.59.103:9093</code>, to see the alerts that have been triggered.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44812330-f77dc080-aba4-11e8-890e-aedbdf0571a5.png" alt="Alert Manager" /></p>
+
+<p><em>Alert Manager</em></p>
+
+<p>And, view the API endpoint for the AlertManager at <code>http://192.168.59.103:9093/api/alerts</code>.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44812609-b508b380-aba5-11e8-875d-13d899e1b771.png" alt="AlertManager API call" /></p>
+
+<p><em>AlertManager API call</em></p>
+
+<p><strong>Note</strong>: The IP address <code>http://192.168.59.103</code> is my Docker Host address.</p>
+
+<h3 id="getting-notifications">Getting Notifications</h3>
+
+<p>The expectation is to receive a notification on Hipchat and we do so immediately as shown below. The notifications are repeated every 2 hours till Panamax comes back up.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44812651-cfdb2800-aba5-11e8-8043-80295b1f3403.png" alt="Alert notifications on Hipchat" /></p>
+
+<p><em>Alert notifications on Hipchat</em></p>
+
+<p>When Panamax is back up, the alert is deemed resolved and a new notification to that effect is sent to Hipchat. The alert status is inactive and green in color again.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44812697-f6995e80-aba5-11e8-849e-95e6ffbab41d.png" alt="Alert notifications on Hipchat" /></p>
+
+<p><em>Alert notifications on Hipchat</em></p>
+
+<p><strong>Update</strong>:
+Based on a few requests, I have created a <a href="https://lorry.io:443/#/?gist=https%3A%2F%2Fgist.githubusercontent.com%2Fanonymous%2Fa317f62c99a626124df0%2Fraw%2F61e789c639fa1a599ab374aa31775b43e7647759%2Fdocker-compose.yml">docker-compose.yml</a> file in <a href="http://Lorry.io">Lorry.io</a> for the deployment of the above setup. Note, that the PromDash setup is not included as it needs some manual setup steps.</p>
+
+<h2 id="prometheus-dashboard">Prometheus Dashboard</h2>
+
+<p>Prometheus also comes with a graphical dashboard named PromDash. Let&rsquo;s setup PromDash as a container service.</p>
+
+<h3 id="creating-a-local-sqlite3-database">Creating a local Sqlite3 database</h3>
+
+<p>PromDash needs a database to store its data, so let&rsquo;s create a local file based Sqlite3 database for simplicity.</p>
+
+<pre><code>$ cd prometheus
+$ sqlite3
+SQLite version 3.8.5 2014-08-15 22:37:57
+Enter &quot;.help&quot; for usage hints.
+Connected to a transient in-memory database.
+Use &quot;.open FILENAME&quot; to reopen on a persistent database.
+sqlite&amp;gt; .open promdash.sqlite3
+sqlite&amp;gt; .databases
+seq name file
+**- **************- **********************************************************
+0 main /my/path/prometheus/promdash.sqlite
+sqlite&amp;gt; .exit
+</code></pre>
+
+<p>Now, that we have our database created, we need to configure the database with the schema. Since PromDash is a Rails application, we will just run the db migrations.</p>
+
+<pre><code>docker run -v $PWD:/tmp/prom \
+           -e DATABASE_URL=sqlite3:/tmp/prom/promdash.sqlite3 \
+           prom/promdash \
+           ./bin/rake db:migrate
+</code></pre>
+
+<p>And, now that the database is all setup, let&rsquo;s run PromDash UI as a container, on port 4000.</p>
+
+<pre><code>docker run -d -p 3000:4000 \
+              -v $PWD:/tmp/prom \
+              -e DATABASE_URL=sqlite3:/tmp/prom/promdash.sqlite3 \
+              prom/promdash
+</code></pre>
+
+<p>And, we can see our container running:</p>
+
+<pre><code>CONTAINER ID IMAGE             CREATED         PORTS
+ee6275f1b625 prom/promdash     22 hours ago    3000/tcp, 0.0.0.0:3000-&amp;gt;4000/tcp
+</code></pre>
+
+<p>We can now head over to <code>http://192.168.59.103:4000/</code> to use the PromDash UI.</p>
+
+<p><strong>Note</strong>: The IP address <code>http://192.168.59.103</code> is my Docker Host address. Without getting into details, here is what my PromDash UI looks like:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44812817-3eb88100-aba6-11e8-8068-4c4e0737f80c.png" alt="PromDash Dahboard" /></p>
+
+<p><em>PromDash Dahboard</em></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>In summary, we looked at running a Prometheus server, configured a metric scraping target, created alerts, enabled notifications to Hipchat, and ran an AlertManager. We then looked at the Prometheus UI and PromDash, to visualize the collected data and performed query operations on them. We triggered alerts and got notifications on Hipchat, by shutting down our monitored application. Prometheus is an excellent monitoring service and alerting toolkit, that could help you better monitor your applications and its containerized services. We have just scratched the surface in this article, but you should find Prometheus able to handle most monitoring scenarios.</p>
+
+    
+<hr>
+<p><i>Originally published at <a href="https://www.ctl.io/developers/blog/post/monitoring-docker-services-with-prometheus" rel="nofollow noopener" target="_blank">CenturyLink Developer Center Blog</a> on Jul 21, 2015</i></p>
+
+  </div>
+  
+
+<div class="post--navigation post--navigation-single">
+    
+    <a href="/posts/centurylink-labs-goes-to-dockercon-2015/" class="post--navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">CenturyLink Labs Goes to DockerCon 2015</span>
+    </a>
+    
+    
+    <a href="/posts/personal-brand/" class="post--navigation-next">
+      <span class="navigation-tittle">Personal Brand</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/lorry-io-pathway-to-docker-composable-apps/">Lorry.io: Pathway to Docker Composable Apps</a>
+      
+      <time class="pull-right hidden-tablet">May 26 &#39;15</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/managing-application-code-in-linux-containers/">Managing Application Code in Linux Containers</a>
+      
+      <time class="pull-right hidden-tablet">Oct 10 &#39;14</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/centurylink-labs-goes-to-dockercon-2015/">CenturyLink Labs Goes to DockerCon 2015</a>
+      
+      <time class="pull-right hidden-tablet">Jul 15 &#39;15</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-125025619-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

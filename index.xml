@@ -53,6 +53,15 @@ So I have decided to post all my writings here, and publish all my applications 
     </item>
     
     <item>
+      <title>Monitoring Docker Services With Prometheus</title>
+      <link>http://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</link>
+      <pubDate>Tue, 21 Jul 2015 14:08:43 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</guid>
+      <description>With the advent of the &amp;lsquo;micro-services&amp;rsquo; architecture and the evolving trend for using Docker, monolithic applications are being broken up into smaller and independent services. The idea is to keep the services small so that small groups of developers can work on them, upgrade or patch them quickly, and build &amp;amp; release them continuously. Although that vision is promising, it introduces complexity as the number of services grow. With that also grows the need to monitor these services around the clock, to maintain the healthy functioning of the application.</description>
+    </item>
+    
+    <item>
       <title>CenturyLink Labs Goes to DockerCon 2015</title>
       <link>http://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</link>
       <pubDate>Wed, 15 Jul 2015 13:49:28 -0400</pubDate>
