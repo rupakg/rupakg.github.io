@@ -23,13 +23,12 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/tags/alexa/</loc>
-    <lastmod>2018-08-29T17:29:03-04:00</lastmod>
-    <priority>0</priority>
+    <loc>http://rupakganguly.com/posts/managing-application-code-in-linux-containers/</loc>
+    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/alexa-skill/</loc>
+    <loc>http://rupakganguly.com/tags/alexa/</loc>
     <lastmod>2018-08-29T17:29:03-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -41,13 +40,19 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/api/</loc>
-    <lastmod>2018-08-31T12:59:38-04:00</lastmod>
+    <loc>http://rupakganguly.com/categories/alexa-skill/</loc>
+    <lastmod>2018-08-29T17:29:03-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/tags/api/</loc>
+    <lastmod>2018-08-31T12:59:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/api/</loc>
     <lastmod>2018-08-31T12:59:38-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -59,19 +64,49 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/tags/containers/</loc>
+    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/containers/</loc>
+    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/development/</loc>
+    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/docker/</loc>
+    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/docker/</loc>
+    <lastmod>2014-10-10T13:31:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/tags/openapi/</loc>
     <lastmod>2018-08-31T12:59:38-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/personal/</loc>
+    <loc>http://rupakganguly.com/tags/personal/</loc>
     <lastmod>2018-05-01T17:50:17-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/tags/personal/</loc>
+    <loc>http://rupakganguly.com/categories/personal/</loc>
     <lastmod>2018-05-01T17:50:17-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -89,13 +124,13 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/serverless/</loc>
+    <loc>http://rupakganguly.com/tags/serverless/</loc>
     <lastmod>2018-08-29T17:29:03-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/tags/serverless/</loc>
+    <loc>http://rupakganguly.com/categories/serverless/</loc>
     <lastmod>2018-08-29T17:29:03-04:00</lastmod>
     <priority>0</priority>
   </url>

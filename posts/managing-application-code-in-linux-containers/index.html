@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.47.1" />
+
+    
+    
+    
+    <meta name="description" content="Many developers have heard of Linux containers and Docker. But how do you deploy your code to an application running in Linux containers?">
+    
+        
+        <meta name="keywords" content="docker, containers, wordpress, development">
+    
+    
+
+<title>Managing Application Code in Linux Containers • Rupak Ganguly</title>
+
+    <link rel="canonical" href="https://www.ctl.io/developers/blog/post/managing-application-code-in-linux-containers">
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Managing Application Code in Linux Containers"/>
+<meta name="twitter:description" content="Many developers have heard of Linux containers and Docker. But how do you deploy your code to an application running in Linux containers?"/>
+
+<meta property="og:title" content="Managing Application Code in Linux Containers" />
+<meta property="og:description" content="Many developers have heard of Linux containers and Docker. But how do you deploy your code to an application running in Linux containers?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rupakganguly.com/posts/managing-application-code-in-linux-containers/" /><meta property="article:published_time" content="2014-10-10T13:31:40-04:00"/>
+<meta property="article:modified_time" content="2014-10-10T13:31:40-04:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://rupakganguly.com/">Rupak Ganguly</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="http://rupakganguly.com/img/rg10-square.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         personal opinions, experiences and writings... 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/rupakg"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:rupakg&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Rupak Ganguly
+      <br/>All Rights Reserved.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Managing Application Code in Linux Containers</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 10, 2014
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/containers">CONTAINERS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/docker">DOCKER</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/docker">docker</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/containers">containers</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/development">development</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 7 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<p>Many developers have heard of Linux containers and Docker. But how do you deploy your code to an application running in Linux containers?</p>
+
+<p>Let&rsquo;s go over that in this article, using a very simple yet effective workflow. We&rsquo;ll focus on WordPress, but these principles can be used with Ruby, Python, or even Go applications.</p>
+
+<p>I think most of the time, users need to manage Wordpress for adding/updating plugins, themes etc. Although, the same can be achieved via the WordPress UI, we will use it as a simple use case to demonstrate propogating code changes to the WordPress application.</p>
+
+<h2 id="get-panamax">Get Panamax</h2>
+
+<p>If you&rsquo;re on a Mac, installing <a href="http://panamax.io">Panamax</a> couldn&rsquo;t be easier:</p>
+
+<pre><code>$ brew install http://download.panamax.io/installer/brew/panamax.rb 
+$ panamax init
+</code></pre>
+
+<p>If you are on Linux, it is easy too. Just follow the <a href="https://github.com/CenturyLinkLabs/panamax-ui/wiki/Installing-Panamax">instructions</a></a> on the wiki. It might also be helpful to peruse the <a href="http://panamax.io/documentation/">documentation</a></a> for Panamax.</p>
+
+<h2 id="the-workflow">The Workflow</h2>
+
+<p>We will create an application via Panamax, that will have two containers: one for MySQL, and the other for WordPress. WordPress will be linked to the MySQL container. All that part is done for you if you use the <a href="https://github.com/CenturyLinkLabs/panamax-public-templates/blob/master/wordpress.pmx">Wordpress template</a> we have.</p>
+
+<p>We will start with an example of how we can update themes and plugins, from our machine without using the WordPress web UI or without getting into the WordPress container.</p>
+
+<h3 id="creating-the-wordpress-application">Creating the Wordpress application</h3>
+
+<p>Assuming that you have Panamax installed and you can see the Panamax UI on your browser, we will get going and create our first application.</p>
+
+<p>We will use a WordPress application created in Panamax to demonstrate our solution. The reason I picked WordPress is due to the nature of simplicity of the solution, familiarity of WordPress across the community and how the code is laid out. But, the concept can be applied to any Panamax application.</p>
+
+<p>From the Dashboard page, click on &lsquo;Create a New Application&rsquo; button to go to the search page. Search for &lsquo;WordPress&rsquo;, and pick the official template for WordPress that appears in the search results.</p>
+
+<p>Click on the &lsquo;Run Template&rsquo; button, and Panamax should start the application. It is important to note that the images for WordPress and MySql can take a little while to get downloaded and spun up. Once you see the spinners go away, you should have your application running.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44743412-6c32fb00-aad0-11e8-8593-808c21bffa78.png" alt="Application details screen in Panamax showing WordPress app" /></p>
+
+<p><strong>Fig 1</strong>: <em>Application details screen in Panamax showing WordPress app</em></p>
+
+<p>To be able to view our applications running inside the host VM, we need to forward the port(s) for our application. You can view instructions on <a href="https://github.com/CenturyLinkLabs/panamax-ui/wiki/How-To%3A-Port-Forwarding-on-VirtualBox#port-forwarding-via-the-terminal-window">port forwarding</a> on our wiki.</p>
+
+<p>Let&rsquo;s make sure the application is running and we can browse to the WordPress admin screen at <code>http://localhost:8997</code> (assumption being you forwarded port 8080 to 8997).</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44743664-1b6fd200-aad1-11e8-8cc4-fdb1993c1227.png" alt="WordPress admin screen setup Here we can configure the required fields and get WordPress installed. We have a few themes and plugins installed by default, but we would like to add our own" /></p>
+
+<p><strong>Fig 2</strong>: <em>WordPress admin screen setup Here we can configure the required fields and get WordPress installed. We have a few themes and plugins installed by default, but we would like to add our own</em></p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44743728-4c500700-aad1-11e8-8c28-c2d91598b9e2.png" alt="WordPress admin screen showing themes" />
+<img src="https://user-images.githubusercontent.com/8188/44743757-5ffb6d80-aad1-11e8-8404-953de66847ec.png" alt="WordPress admin screen showing plugins" /></p>
+
+<p><strong>Fig 3</strong>: <em>WordPress admin screen showing themes and plugins</em></p>
+
+<h3 id="the-lay-of-the-land">The lay of the land</h3>
+
+<p>To understand the different realms of our application and code, we need to understand how they are mapped across different layers.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44743853-9c2ece00-aad1-11e8-93b0-86e85712e79e.png" alt="Mapping of folders in Mac/host VM/containers" /></p>
+
+<p><strong>Fig 4</strong>: <em>Mapping of folders in Mac/host VM/containers</em></p>
+
+<p>As shown in the above illustration, the code folder from the physical machine (Mac) is mapped and synced to the host VM (CoreOS) by Vagrant (See Vagrantfile later). Then the code folder from the host VM (CoreOS) is mapped to the folder inside the WP container by the volume mount (See &lsquo;Configuring the Application&rsquo; later).</p>
+
+<p><strong>The Mac (physical machine)</strong> Code Path: <code>/my/local/path/wp-content</code></p>
+
+<p><strong>The Host VM (the CoreOS VM)</strong> Code Path: <code>/Users/username/src/wordpress/app/wp-content</code></p>
+
+<p><strong>The Container (WP)</strong> Code Path: <code>/app/wp-content</code></p>
+
+<h3 id="accessing-the-code">Accessing the code</h3>
+
+<p>Just accessing the code from within the host VM or within the container, is not sufficient. We want to use our own machine, our own tools, our favorite editor, and manage our code. We need the code on our machine. Let&rsquo;s do that.</p>
+
+<p>We can modify the Vagrantfile that Panamax uses to build the host VM, to further share the <code>wp-content</code> folder from inside the host VM to the working folder outside on the physical machine i.e. the Mac in my case.</p>
+
+<p>Add the following lines into the Vagrantfile under <code>~/.panamax</code>, to create a NFS share mount:</p>
+
+<pre><code>Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;x.x.x.x&amp;quot;
+  config.vm.synced_folder &amp;quot;/my/local/path/wp-content&amp;quot;,
+    &amp;quot;/Users/username/src/wordpress/app/wp-content&amp;quot;,
+    id: &amp;quot;core&amp;quot;, nfs: true, mount_options: ['nolock,vers=3,udp']
+end
+</code></pre>
+
+<p>For the change in the Vagrantfile to have effect, we need to restart Panamax by running <code>panamax restart</code>.</p>
+
+<p>Now, we can edit code in the working folder (<code>/my/local/path/wp-content</code> as configured in the Vagrantfile above) on the Mac, to propogate the changes to the shared folder (<code>/Users/username/src/wordpress/app/wp-content</code>) on the host VM.</p>
+
+<h3 id="injecting-code-into-the-container">Injecting code into the container</h3>
+
+<p>Before, we can mount a volume to map the host VM path to a container path, we need to make sure we have content in it.</p>
+
+<p>Create a code folder in the Panamax VM host, and put the relevant Wordpress code i.e. the contents of the <code>wp-content</code> folder in there. Get into the Panamax host VM by <code>panamax ssh</code>, and then execute the command at the terminal:</p>
+
+<pre><code>$ mkdir -p /home/core/src/wordpress/app
+$ cd /home/core/src/wordpress/app
+$ curl -O http://wordpress.org/wordpress-3.9.1.tar.gz
+$ tar -xzvf wordpress-3.9.1.tar.gz wordpress/wp-content -C --strip-components=1
+$ rm wordpress-3.9.1.tar.gz
+</code></pre>
+
+<p>After that, we can <code>exit</code> out of the Panamax shell.</p>
+
+<p>That will get the contents of the <code>wp-content</code> folder into the <code>/home/core/src/wordpress/app/wp-content</code> folder, and we will later volume mount that folder into the Wordpress container.</p>
+
+<p>Note, that the default Wordpress container has all the code that is necessary to run WordPress, but we are selectively replacing the contents of the <code>wp-content</code> folder from our working folder, so that we can change the code, without getting inside the container.</p>
+
+<h3 id="configuring-the-application">Configuring the application</h3>
+
+<p>Let&rsquo;s get back in Panamax and create a volume mount from our working folder at <code>/home/core/src/wordpress/app/wp-content</code> to the <code>/app/wp-content</code> folder inside the Wordpress container. See the screenshot below to see how to do that in Panamax.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44744135-663e1980-aad2-11e8-9e4c-acfc2930a18c.png" alt="WordPress container details page with volume mount" /></p>
+
+<p><strong>Fig 5</strong>: <em>WordPress container details page with volume mount</em></p>
+
+<p>Click on &lsquo;Save all changes&rsquo; to commit the change. You will notice that Panamax automatically detects the change and restarts the application. Wait until both of the containers are started.</p>
+
+<p><strong>Note</strong>: Since volume mounting a path on a container will override the contents from the mapped folders, if you do not have the corresponding folders mapped properly, your WordPress application will either not work or the themes/plugins will not show up properly.</p>
+
+<p>Since, we have not really injected the code at the folder <code>/home/core/src/wordpress/app/wp-content</code> on the host, the application is broken as of now.</p>
+
+<p>I promise it will work soon.</p>
+
+<h2 id="making-code-updates">Making code updates</h2>
+
+<p>For making code changes, the easiest examples would be to add a new theme and a new plugin on the working folder and see the changes being reflected all the way on the WordPress site running inside the container.</p>
+
+<p>Let&rsquo;s get a theme and a plugin and copy them to the <code>wp-content/themes</code> and <code>wp-content/plugins</code> folder respectively.</p>
+
+<h3 id="installing-a-theme">Installing a theme</h3>
+
+<p>I picked one of the responsive themes from the WP Featured gallery named <a href="https://wordpress.org/themes/vantage">Vantage</a>.</p>
+
+<p>Let&rsquo;s download and copy the theme over to the <code>wp-content/themes</code> folder by:</p>
+
+<pre><code>$ cd /home/core/src/wordpress/app/wp-content/themes
+$ curl -O https://wordpress.org/themes/download/vantage.1.2.zip
+$ unzip vantage.1.2.zip
+$ rm vantage.1.2.zip
+</code></pre>
+
+<p>Also, we wanted to cleanup the other two themes we don&rsquo;t need, so we will delete the <code>twentytwelve</code> and the <code>twentythirteen</code> themes by:</p>
+
+<pre><code>$ cd /home/core/src/wordpress/app/wp-content/themes
+$ rm -rf twentytwelve
+$ rm -rf twentythirteen
+</code></pre>
+
+<p>Now, let&rsquo;s look at our Wordpress admin screens:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44744282-caf97400-aad2-11e8-9ff3-395125613355.png" alt="Theme showing up on WordPress app as you can see we have our new theme installed" /></p>
+
+<p><strong>Fig 6</strong>: <em>Theme showing up on WordPress app as you can see we have our new theme installed</em></p>
+
+<h3 id="installing-a-plugin">Installing a plugin</h3>
+
+<p>I picked the <a href="http://wordpress.org/plugins/wp-mobile-detector/">WP Mobile Detector Mobile</a> plugin to be installed. Let&rsquo;s download and copy the theme over to the <code>wp-content/plugins</code> folder by:</p>
+
+<pre><code>$ cd /home/core/src/wordpress/app/wp-content/plugins
+$ curl -O http://downloads.wordpress.org/plugin/wp-mobile-detector.1.8.zip
+$ unzip wp-mobile-detector.1.8.zip
+$ rm wp-mobile-detector.1.8.zip
+</code></pre>
+
+<p>Also, we wanted to cleanup the other plugin we don&rsquo;t need, so we will delete the <code>Hello Dolly</code> themes by:</p>
+
+<pre><code>$ cd /home/core/src/wordpress/app/wp-content/plugins
+$ rm -rf hello.php
+</code></pre>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44744365-fed49980-aad2-11e8-944d-dbed1cc34f6e.png" alt="Plugin showing up on Wordpress app Viola! We have our theme and plugin i.e. our custom code deployed to the containerized WordPress application running under Panamax" /></p>
+
+<p><strong>Fig 7</strong>: <em>Plugin showing up on Wordpress app</em></p>
+
+<p>Viola! We have our theme and plugin i.e. our custom code deployed to the containerized WordPress application running under Panamax.</p>
+
+<h2 id="word-of-caution">Word of caution</h2>
+
+<p>Although, this article talks about mounting a folder from the host into the container, I need to caution you that this makes the container not so portable. If you move your container to a different host system, and if the folder structure on your host that you mounted changes, then your container will not work anymore.</p>
+
+<p>This article tries to demonstrate, the ways to make it easy to develop code for your application using the convenience and comforts of your host system or your physical system. My recommendation is to inject the code permanently inside the container while creating the image for your application.</p>
+
+<p>Let me know in the comments below how creative you have been with containers and managing your development workflow.</p>
+
+    
+<hr>
+<p><i>Originally published at <a href="https://www.ctl.io/developers/blog/post/managing-application-code-in-linux-containers" rel="nofollow noopener" target="_blank">CenturyLink Developer Center Blog</a> on Oct 10, 2014</i></p>
+
+  </div>
+  
+
+<div class="post--navigation post--navigation-single">
+    
+    
+    <a href="/posts/personal-brand/" class="post--navigation-next">
+      <span class="navigation-tittle">Personal Brand</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-125025619-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

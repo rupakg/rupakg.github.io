@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Containers on Rupak Ganguly</title>
+    <link>http://rupakganguly.com/tags/containers/</link>
+    <description>Recent content in Containers on Rupak Ganguly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Oct 2014 13:31:40 -0400</lastBuildDate>
+    
+	<atom:link href="http://rupakganguly.com/tags/containers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Managing Application Code in Linux Containers</title>
+      <link>http://rupakganguly.com/posts/managing-application-code-in-linux-containers/</link>
+      <pubDate>Fri, 10 Oct 2014 13:31:40 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/posts/managing-application-code-in-linux-containers/</guid>
+      <description>Many developers have heard of Linux containers and Docker. But how do you deploy your code to an application running in Linux containers?
+Let&amp;rsquo;s go over that in this article, using a very simple yet effective workflow. We&amp;rsquo;ll focus on WordPress, but these principles can be used with Ruby, Python, or even Go applications.
+I think most of the time, users need to manage Wordpress for adding/updating plugins, themes etc.</description>
+    </item>
+    
+  </channel>
+</rss>
