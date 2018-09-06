@@ -39,9 +39,18 @@
     </item>
     
     <item>
+      <title>Conference</title>
+      <link>http://rupakganguly.com/tags/conference/</link>
+      <pubDate>Wed, 15 Jul 2015 13:49:28 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/tags/conference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Containers</title>
       <link>http://rupakganguly.com/tags/containers/</link>
-      <pubDate>Tue, 26 May 2015 13:26:19 -0400</pubDate>
+      <pubDate>Wed, 15 Jul 2015 13:49:28 -0400</pubDate>
       
       <guid>http://rupakganguly.com/tags/containers/</guid>
       <description></description>
@@ -59,9 +68,18 @@
     <item>
       <title>Docker</title>
       <link>http://rupakganguly.com/tags/docker/</link>
-      <pubDate>Tue, 26 May 2015 13:26:19 -0400</pubDate>
+      <pubDate>Wed, 15 Jul 2015 13:49:28 -0400</pubDate>
       
       <guid>http://rupakganguly.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dockercon</title>
+      <link>http://rupakganguly.com/tags/dockercon/</link>
+      <pubDate>Wed, 15 Jul 2015 13:49:28 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/tags/dockercon/</guid>
       <description></description>
     </item>
     
