@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Aug 2018 12:59:38 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 21 Sep 2018 14:52:28 -0400</lastBuildDate>
     
 	<atom:link href="http://rupakganguly.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building Serverless Apps Using Stackery</title>
+      <link>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
+      <pubDate>Fri, 21 Sep 2018 14:52:28 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
+      <description>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least priviledges, and using a boilerplate template to build and deploy a serverless application to AWS.</description>
+    </item>
     
     <item>
       <title>Roundup of API Platforms and Specifications</title>

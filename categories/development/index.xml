@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Serverless on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/tags/serverless/</link>
-    <description>Recent content in Serverless on Rupak Ganguly</description>
+    <title>Development on Rupak Ganguly</title>
+    <link>http://rupakganguly.com/categories/development/</link>
+    <description>Recent content in Development on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 21 Sep 2018 14:52:28 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rupakganguly.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
       <description>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least priviledges, and using a boilerplate template to build and deploy a serverless application to AWS.</description>
-    </item>
-    
-    <item>
-      <title>How to build a Serverless Alexa Skill</title>
-      <link>http://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</link>
-      <pubDate>Wed, 29 Aug 2018 17:29:03 -0400</pubDate>
-      
-      <guid>http://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</guid>
-      <description>&lt;p&gt;When I was a kid, I was intrigued by the Starship Enterprise&amp;rsquo;s onboard computer featured in the science fiction series Star Trek. Although cheeky at times in it&amp;rsquo;s portrayal of technologies beyond our imagination, the voice-controlled computer always made me wonder. And, here we are in the same lifetime, realiziing similar technolgies - inside our homes, on a small device&amp;hellip; Amazing, I think! 🖖
-&lt;/p&gt;</description>
     </item>
     
   </channel>
