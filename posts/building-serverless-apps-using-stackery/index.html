@@ -232,13 +232,13 @@
   <div class="post">
     
 
-<p>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least priviledges, and using a boilerplate template to build and deploy a serverless application to AWS.</p>
+<p>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least privileges, and using a boilerplate template to build and deploy a serverless application to AWS.</p>
 
 <p>In the second part of the series, I will walk you through and show you <a href="https://medium.com/@rupakg/how-to-use-aws-fargate-and-lambda-for-long-running-processes-in-a-serverless-app-c3712e158bb">how to build a serverless application to extract a frame from a video file using AWS Fargate</a>, but built using Stackery.</p>
 
 <h2 id="why-stackery">Why Stackery?</h2>
 
-<p>Stackery is a complete serverless toolkit and platform for building production-ready serverless applications. It combines the ease and intuitiveness of visually composing an applicaton (Stackery Console) to using the command line  (Stackery CLI) to get things done quickly. The platform keeps all the operations in sync at all times so you can choose to switch at any time. It comes with seamless Github integration and allows linking to multiple AWS accounts for easy one-click deployments across environments, stages and regions. Stackery&rsquo;s automated build process includes environment management, automatic error handling, and auto-provisioning DNS and SSL certificates without needing to open AWS. Stackery supports Python, Node.js, Java, and .Net/C# giving you a wide variety of choices. Stackery is built on cloud-native standards and builds on <a href="https://www.stackery.io/product/aws-sam/">AWS Serverless Application Model</a>.</p>
+<p>Stackery is a complete serverless toolkit and platform for building production-ready serverless applications. It combines the ease and intuitiveness of visually composing an application (Stackery Console) to using the command line  (Stackery CLI) to get things done quickly. The platform keeps all the operations in sync at all times so you can choose to switch at any time. It comes with seamless Github integration and allows linking to multiple AWS accounts for easy one-click deployments across environments, stages and regions. Stackery&rsquo;s automated build process includes environment management, automatic error handling, and auto-provisioning DNS and SSL certificates without needing to open AWS. Stackery supports Python, Node.js, Java, and .Net/C# giving you a wide variety of choices. Stackery is built on cloud-native standards and builds on <a href="https://www.stackery.io/product/aws-sam/">AWS Serverless Application Model</a>.</p>
 
 <p>You can read more about the <a href="https://www.stackery.io/product/">product features</a> on the Stackery website.</p>
 
@@ -248,17 +248,17 @@
 
 <h3 id="setting-up-the-cli">Setting up the CLI</h3>
 
-<p>The install <a href="https://app.stackery.io/">instructions</a> were very clear and precise. You can also take a look at the <a href="https://docs.stackery.io/docs/tutorials/quickstart/">quickstart</a> documentation. It was a very quick onboarding process. The setup process also automatically created an API key as well as soon you login to the Stackery using the Stackery CLI. This API key will be stored in a <code>.stackery.toml</code> file in your home folder and used for all further Stackery access from the command line.</p>
+<p>The install <a href="https://app.stackery.io/">instructions</a> were very clear and precise. You can also take a look at the <a href="https://docs.stackery.io/docs/tutorials/quickstart/">quickstart</a> documentation. It was a very quick onboarding process. The setup process also automatically created an API key as well as soon you log in to the Stackery using the Stackery CLI. This API key will be stored in a <code>.stackery.toml</code> file in your home folder and used for all further Stackery access from the command line.</p>
 
 <p><img src="https://user-images.githubusercontent.com/8188/45839693-158d9b00-bce3-11e8-9958-dad464fec161.png" alt="image" /></p>
 
 <h3 id="linking-an-aws-account">Linking an AWS Account</h3>
 
-<p>Before we get to linking our AWS Account, it is important to assess what we are getting into. The Stackery docs mentions this important notice:</p>
+<p>Before we get to linking our AWS Account, it is important to assess what we are getting into. The Stackery docs mention this important notice:</p>
 
 <p><img src="https://user-images.githubusercontent.com/8188/45841997-6d2f0500-bce9-11e8-9eff-5dae5e306580.png" alt="image" /></p>
 
-<p>This is a very important point that differenciates it from what other serverless frameworks require.</p>
+<p>This is a very important point that differentiates it from what other serverless frameworks require.</p>
 
 <h3 id="setting-up-a-user">Setting up a user</h3>
 
@@ -272,7 +272,7 @@
 
 <p><img src="https://user-images.githubusercontent.com/8188/45848287-d9b2ff80-bcfb-11e8-8c1b-fdf59429a068.png" alt="image" /></p>
 
-<p>And, here is how my <code>stackery-setup</code> custom IAM policy looks like. Although, it is a huge list of permissions that is needed but it is much safer and secure than giving <strong>AdminstratorAccess</strong> permission.</p>
+<p>And, here is how my <code>stackery-setup</code> custom IAM policy looks like. Although, it is a huge list of permissions that are needed but it is much safer and secure than giving <strong>AdminstratorAccess</strong> permission.</p>
 
 <p><img src="https://user-images.githubusercontent.com/8188/45848098-3b269e80-bcfb-11e8-9653-57f31d22e425.png" alt="image" /></p>
 
@@ -303,7 +303,7 @@ Setting up Stackery Agent....................... Success
 Stackery Agent setup was successful.
 </code></pre>
 
-<p>Stackery CLI will look for existing AWS credentials in environment variables, <code>~/.aws/config</code>, and <code>~/.aws/credentials</code>. If it does not find any AWS credentials, then it will prompt you to enter the credentails. Since this is a new user, enter the credentials at the prompt. You can use multiple AWS profiles as needed. You can pick your AWS profile while setting up Stackery as well.</p>
+<p>Stackery CLI will look for existing AWS credentials in environment variables, <code>~/.aws/config</code>, and <code>~/.aws/credentials</code>. If it does not find any AWS credentials, then it will prompt you to enter the credentials. Since this is a new user, enter the credentials at the prompt. You can use multiple AWS profiles as needed. You can pick your AWS profile while setting up Stackery as well.</p>
 
 <p>That should take care of setting up Stackery, and we are on our way to building serverless applications.</p>
 
@@ -315,7 +315,7 @@ Stackery Agent setup was successful.
 
 <p><img src="https://user-images.githubusercontent.com/8188/45850501-68c41580-bd04-11e8-892c-181d0773b7d5.png" alt="image" /></p>
 
-<p>Select &lsquo;GitHub&rsquo; in the above screen. Then, fill in the details in the following screen as shows:</p>
+<p>Select &lsquo;GitHub&rsquo; in the above screen. Then, fill in the details in the following screen as shown:</p>
 
 <p><img src="https://user-images.githubusercontent.com/8188/45850576-a5900c80-bd04-11e8-8b5a-c5594e1af069.png" alt="image" /></p>
 
@@ -329,9 +329,9 @@ Stackery Agent setup was successful.
 
 <h2 id="visual-representation">Visual Representation</h2>
 
-<p>First of all, we see that the canvas has been populated with what looks like an architecture diagram. Cool! Really impressive. And, on the left hand side, we see a link to a commit SHA titled <strong>Current Stack</strong>. If you click on it, you will be taken to the Github project for the application that was automatically built, and commited to Github. Is that awesome or what? We will get back to other things like the Environment, Account Details and Deployment a bit later.</p>
+<p>First of all, we see that the canvas has been populated with what looks like an architecture diagram. Cool! Really impressive. And, on the left-hand side, we see a link to a commit SHA titled <strong>Current Stack</strong>. If you click on it, you will be taken to the Github project for the application that was automatically built and committed to Github. Is that awesome or what? We will get back to other things like the Environment, Account Details and Deployment a bit later.</p>
 
-<p>Let&rsquo;s shift our focus back to the right hand side and dig in.</p>
+<p>Let&rsquo;s shift our focus back to the right-hand side and dig in.</p>
 
 <p>The UI is intuitive enough to tell me that we have the following components stitched together to compose our application:</p>
 
@@ -350,23 +350,23 @@ Stackery Agent setup was successful.
 
 <h2 id="proposing-changes">Proposing Changes</h2>
 
-<p>On the left hand side panel, we see that the <strong>Environment</strong> is set to <code>development</code>. This is the AWS Lambda stage that the application will be deployed. Let&rsquo;s click the <strong>Prepare Deployment</strong> to see what happens next.</p>
+<p>On the left-hand side panel, we see that the <strong>Environment</strong> is set to <code>development</code>. This is the AWS Lambda stage that the application will be deployed. Let&rsquo;s click the <strong>Prepare Deployment</strong> to see what happens next.</p>
 
 <p><img src="https://user-images.githubusercontent.com/8188/45851769-7e3c3e00-bd0a-11e8-86b4-31eb14af6f2b.png" alt="image" /> <img src="https://user-images.githubusercontent.com/8188/45851799-ac218280-bd0a-11e8-8b7e-a9adf88d8439.png" alt="image" /></p>
 
-<p>The <strong>Prepared Deployment</strong> section shows that a deployment is being prepared, and then in a few seconds the <strong>Deploy</strong> button is highlighted telling me that it is ready to deploy the application. Exciting!</p>
+<p>The <strong>Prepared Deployment</strong> section shows that a deployment is being prepared, and then in a few seconds, the <strong>Deploy</strong> button is highlighted telling me that it is ready to deploy the application. Exciting!</p>
 
 <p>Let&rsquo;s hit the <strong>Deploy</strong> button to deploy the application to AWS.</p>
 
 <h2 id="separation-of-concerns">Separation of Concerns</h2>
 
-<p>The beauty of the Stackery platform, is that it separates the function of developing an application from the function of deploying the application. It is a very important aspect that allows organizations to keep these two functions seperated out and managed by different teams. While the Development team develops and builds the application, they can only have the ability to <strong>propose a change</strong> to the application. The proposed change can then be reviewed by the DevOps team members and they can <strong>execute the proposed changes</strong>, completing the deployment process. This separation of roles greatly helps in securing the AWS environment.</p>
+<p>The beauty of the Stackery platform is that it separates the function of developing an application from the function of deploying the application. It is a very important aspect that allows organizations to keep these two functions separated out and managed by different teams. While the Development team develops and builds the application, they can only have the ability to <strong>propose a change</strong> to the application. The proposed change can then be reviewed by the DevOps team members and they can <strong>execute the proposed changes</strong>, completing the deployment process. This separation of roles greatly helps in securing the AWS environment.</p>
 
 <p>By Stackery handing over the baton for the actual deployment of the application to the customer, it keeps things under the control of the customer.</p>
 
 <h2 id="deployment">Deployment</h2>
 
-<p>Put your customer or DevOps hat on! Clicking on the <strong>Deploy</strong> button, actually takes us to the CloudFormation console with the changeset. Let&rsquo;s review what changes are proposed in the changeset.</p>
+<p>Put your customer or DevOps hat on! Clicking on the <strong>Deploy</strong> button actually takes us to the CloudFormation console with the changeset. Let&rsquo;s review what changes are proposed in the changeset.</p>
 
 <p><img src="https://user-images.githubusercontent.com/8188/45851865-f86cc280-bd0a-11e8-9b2d-d9d3179886dc.png" alt="image" /></p>
 
@@ -374,15 +374,15 @@ Stackery Agent setup was successful.
 
 <p><img src="https://user-images.githubusercontent.com/8188/45851947-51d4f180-bd0b-11e8-8c1a-ce804bf4c65f.png" alt="image" /></p>
 
-<p>Clicking into the change set above, and digging into the <strong>Change set input section</strong> we see the same values we saw under Stackery&rsquo;s Environment section.</p>
+<p>Clicking into the changeset above, and digging into the <strong>Change set input section</strong> we see the same values we saw under Stackery&rsquo;s Environment section.</p>
 
 <p><img src="https://user-images.githubusercontent.com/8188/45901548-489e6000-bdb1-11e8-9f01-e8053bb7a81b.png" alt="image" /></p>
 
-<p>Digging further into <strong>Changes</strong> section, we see a list of proposed changes that exist in the change set, ready to be executed.</p>
+<p>Digging further into <strong>Changes</strong> section, we see a list of proposed changes that exist in the changeset, ready to be executed.</p>
 
 <p><img src="https://user-images.githubusercontent.com/8188/45901597-75527780-bdb1-11e8-8a57-125dc873c892.png" alt="image" /></p>
 
-<p>We can clearly see that an AWS:ApiGetway:RestAPI, a couple of AWS:Lambda:Function, a couple of AWS:IAM:Role, a couple of AWS:Lambda:Permission, a AWS:ApiGetway:Stage and AWS:ApiGetway:Deployment are proposed to be created. You can look at other things like the Details of the changes, and the CF template used to create the changeset.</p>
+<p>We can clearly see that an AWS:ApiGetway:RestAPI, a couple of AWS:Lambda:Function, a couple of AWS:IAM:Role, a couple of AWS:Lambda:Permission, an AWS:ApiGetway:Stage and AWS:ApiGetway:Deployment are proposed to be created. You can look at other things like the Details of the changes, and the CF template used to create the changeset.</p>
 
 <p>Moment of truth - let&rsquo;s <strong>Execute</strong> the proposed changeset from the CloudFormation Console. After a confirmation popup, the changeset is executed.</p>
 
@@ -392,7 +392,7 @@ Stackery Agent setup was successful.
 
 <h2 id="running-the-application">Running the Application</h2>
 
-<p>Back on the Stackery site, we see a new tab on the left hand side appear named <strong>Deployments</strong>. And, on the right hand side, the application diagram has been updated with familiar AWS Lambda metrics.</p>
+<p>Back on the Stackery site, we see a new tab on the left-hand side appear named <strong>Deployments</strong>. And, on the right-hand side, the application diagram has been updated with familiar AWS Lambda metrics.</p>
 
 <p><img src="https://user-images.githubusercontent.com/8188/45852423-c315a400-bd0d-11e8-8d79-8cf2aaadebfa.png" alt="image" /></p>
 
@@ -400,7 +400,7 @@ Stackery Agent setup was successful.
 
 <p><img src="https://user-images.githubusercontent.com/8188/45852607-a5950a00-bd0e-11e8-93cc-3b56cdd02404.png" alt="image" /></p>
 
-<p>The display also features the ARN, and links to Metrics &amp; Logs.</p>
+<p>The display also features the ARN and links to Metrics &amp; Logs.</p>
 
 <p>Clicking on the url takes us to our deployed application.</p>
 
@@ -414,9 +414,9 @@ Stackery Agent setup was successful.
 
 <h2 id="summary">Summary</h2>
 
-<p>We started with setting up Stackery, by creating a new user with least priviledges needed by Stackery, and linking an AWS account. We then created a new serverless application using a boilerplate template and explored the various aspects of the application on the canvas. We then prepared the application to be deployed, reviewed the proposed changeset, and finally deployed the application on AWS. We accessed the application url to view our deployed application. In the process of deploying our applcaition, we also learnt about how the Stackery platform separates the function of developing an application from the function of deploying an application on AWS.</p>
+<p>We started with setting up Stackery, by creating a new user with least privileges needed by Stackery, and linking an AWS account. We then created a new serverless application using a boilerplate template and explored the various aspects of the application on the canvas. We then prepared the application to be deployed, reviewed the proposed changeset, and finally deployed the application on AWS. We accessed the application url to view our deployed application. In the process of deploying our application, we also learned about how the Stackery platform separates the function of developing an application from the function of deploying an application on AWS.</p>
 
-<p>This blog post was focused at introducing you to buidling and deploying applications visually using the Stackery platform. In the second part of the series (coming soon!), I will walk you through and show you <a href="https://medium.com/@rupakg/how-to-use-aws-fargate-and-lambda-for-long-running-processes-in-a-serverless-app-c3712e158bb">how to build a serverless application to extract a frame from a video file using AWS Fargate</a>, but built visually using Stackery.</p>
+<p>This blog post was focused on introducing you to building and deploying applications visually using the Stackery platform. In the second part of the series (coming soon!), I will walk you through and show you <a href="https://medium.com/@rupakg/how-to-use-aws-fargate-and-lambda-for-long-running-processes-in-a-serverless-app-c3712e158bb">how to build a serverless application to extract a frame from a video file using AWS Fargate</a>, but built visually using Stackery.</p>
 
 <p>If you have any feedback or questions, feel free to let me know in the comments below.</p>
 
