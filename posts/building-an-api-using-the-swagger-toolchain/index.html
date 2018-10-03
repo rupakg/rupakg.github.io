@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Exploring the life-cycle and workflow of building an API from scratch using the Swagger toolchain.">
+    
+        
+        <meta name="keywords" content="API, OpenAPI, Swagger">
+    
+    
+
+<title>Building an API using the Swagger toolchain • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Building an API using the Swagger toolchain"/>
+<meta name="twitter:description" content="Exploring the life-cycle and workflow of building an API from scratch using the Swagger toolchain."/>
+
+<meta property="og:title" content="Building an API using the Swagger toolchain" />
+<meta property="og:description" content="Exploring the life-cycle and workflow of building an API from scratch using the Swagger toolchain." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/" /><meta property="article:published_time" content="2018-10-03T00:29:37-04:00"/>
+<meta property="article:modified_time" content="2018-10-03T00:29:37-04:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://rupakganguly.com/">Rupak Ganguly</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="http://rupakganguly.com//img/rg10-square.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         personal opinions, experiences and writings... 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:rupakg&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <p class="copyright">
+      &copy; 2018 Rupak Ganguly.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Building an API using the Swagger toolchain</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 3, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/api">API</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/api">api</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/openapi">openapi</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/swagger">swagger</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/development">development</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 9 min read
+</div>
+
+
+    Like the article? Please share with others...<div class="sharethis-inline-share-buttons"></div><br/>
+  </header>
+  <div class="post">
+    <p>We have been building APIs for ages, with varying standards and design styles - <a href="https://en.wikipedia.org/wiki/SOAP">SOAP</a> web services, <a href="https://en.wikipedia.org/wiki/GRPC">gRPC</a>, <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>, and until recently <a href="https://en.wikipedia.org/wiki/GraphQL">GraphQL</a>. Instead of declaring a winning design style, I believe that each one of these design styles stands their ground, and it depends on the use case <a href="https://nordicapis.com/when-to-use-what-rest-graphql-webhooks-grpc/">when to use which style</a>.
+</p>
+
+<p>In this post, we will look at the end-to-end lifecycle of a REST API. We will explore using the <a href="https://swagger.io/">Swagger</a> toolchain to <strong>design</strong>, <strong>build</strong>, <strong>document</strong>, <strong>test</strong> the API and enable <strong>standardization</strong> of the API across teams in the organization.</p>
+
+<blockquote>
+<p>Check out my previous post comparing various <a href="https://rupakganguly.com/posts/roundup-of-api-platforms-and-specifications/">API Platforms and Specification formats</a>.</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/8188/44542748-b9cbf400-a6db-11e8-859e-d9c84cc9d38b.png" alt="image" />
+Credit: swagger.io</p>
+
+<h2 id="life-cycle-of-creating-an-api">Life-cycle of creating an API</h2>
+
+<p>In the interest of time, we will be using the <a href="https://petstore.swagger.io/">PetStore API</a> as our sample API. The focus of the article will be to go through the lifecycle of API development.</p>
+
+<p><strong>Note</strong>: If you are interested in creating your own API spec from scratch, please use the <a href="https://swagger.io/tools/swagger-editor/">Swagger Editor</a>.</p>
+
+<h3 id="pre-requisites">Pre-requisites</h3>
+
+<p>Since we will be using Swagger tools, please go ahead and create an account on <a href="https://swagger.io/">Swagger.io</a>. Then choose SwaggerHub as your product.</p>
+
+<h3 id="designing-the-api-specs">Designing the API Specs</h3>
+
+<p>For the design phase of the life-cycle, we have two options in the Swagger toolchain. You could use the <a href="https://swagger.io/">Swagger Editor</a> if you prefer a local machine development experience. The Swagger Editor is a <a href="https://swagger.io/tools/swagger-editor/download/">downloadable</a> tool.</p>
+
+<p>But the <a href="https://app.swaggerhub.com/">SwaggerHub</a> brings the Swagger Editor, UI, and Codegen tools to the cloud in an integrated API design and documentation, built for API teams working with the Swagger (OpenAPI) specification.</p>
+
+<p>Since we will be using the Editor, UI and the Codegen tools, I will be using SwaggerHub for this post. Let&rsquo;s get started.</p>
+
+<h4 id="create-or-import-an-api">Create or Import an API</h4>
+
+<p>Although you can design your API in SwaggerHub from scratch, we will be creating our sample API using the <a href="https://petstore.swagger.io/">Petstore API</a> template to save some cycles.</p>
+
+<p>Let&rsquo;s create a new API by clicking on <strong>Create New</strong> -&gt; <strong>Create New API</strong> menu item, as shown below:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46311198-66c54680-c58f-11e8-9dba-c36d46a2a776.png" alt="image" /></p>
+
+<p><strong>Note</strong>: You can also import an existing API by specifying the path or URL to your API JSON or YAML spec, or browse to select a local file. Use the <strong>Import and Document API</strong> menu item.</p>
+
+<p>Next, pick the <code>Petstore</code> template, give a name <code>Demo-Petstore</code> and leave everything else as default. Click the <strong>Create API</strong> button.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46311460-421d9e80-c590-11e8-982a-9a17db4adbe5.png" alt="image" /></p>
+
+<p><strong>Note</strong>: API Auto Mocking integration creates and maintains a mock of your API using the static responses defined in your spec. You can read about the <a href="https://app.swaggerhub.com/help/integrations/api-auto-mocking">Auto-Mocking feature</a> in detail.</p>
+
+<p>The next page is the <strong>Design View</strong> and it is a bit busy. But it is a gold mine. Let&rsquo;s review what we got.</p>
+
+<h4 id="the-api-design-view">The API Design View</h4>
+
+<p>The API Design View shows information about your API.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46380453-4caf6500-c670-11e8-9502-5682290fafde.png" alt="image" /></p>
+
+<p>The left-hand side column shows a searchable list of API methods, that you can click on to see the specs in the middle column. The API methods are grouped by categories - Pet, Store, and User in our case. This view also lists the object models that our API spec defines. If you click on a model, you can see the model definition in the middle column.</p>
+
+<p>The middle column shows the full API specs that include the basic info., the method paths, the security definitions, and the model definitions.</p>
+
+<p>The right-hand side column is the API Docs for the Petstore API we just created. You can view it in full screen by clicking on <strong>Preview Docs</strong> menu as shown below:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46312196-5e223f80-c592-11e8-9fb4-87255c4883f5.png" alt="image" /></p>
+
+<p>The Swagger API Docs are not only verbose documentation of the API but they are also an interactive playground to test your APIs. We will learn about that in the testing section later.</p>
+
+<h4 id="standardization">Standardization</h4>
+
+<p>To have a consistent and standard for all APIs within an organization, it is important to have an org-wide style guide of conventions while creating API specs.</p>
+
+<p>SwaggerHub provides a <a href="https://app.swaggerhub.com/help/integrations/style-validator">Style Validator</a>, that can check if the API matches the guidelines set forth by the company. The style validator lets you define the validation rules, automates all those checks and notifies you of any failed validations or mismatches. The style validator can be added as an Integration and can validate aspects of the basic API info., operations, naming strategies, and object models.</p>
+
+<h3 id="building-the-api-from-specs">Building the API from Specs</h3>
+
+<p>After designing the API, SwaggerHub allows for server and client code generation, and interactive documentation.</p>
+
+<h4 id="code-generation">Code Generation</h4>
+
+<p>To test our API locally, SwaggerHub can generate server stub code in many languages. In our case, let&rsquo;s generate a server stub for NodeJS, as shown below:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46375646-f9361a80-c661-11e8-8777-bb838c06f5aa.png" alt="image" /></p>
+
+<p>A file named <code>nodejs-server-server-generated.zip</code> will be downloaded to your local machine. Let&rsquo;s unzip the zip file and review the contents. Here are all the files that came with it:</p>
+
+<pre><code>├── nodejs-server-server-generated
+│   ├── README.md
+│   ├── api
+│   │   └── swagger.yaml
+│   ├── controllers
+│   │   ├── Pet.js
+│   │   ├── Store.js
+│   │   └── User.js
+│   ├── index.js
+│   ├── package.json
+│   ├── service
+│   │   ├── PetService.js
+│   │   ├── StoreService.js
+│   │   └── UserService.js
+│   └── utils
+│       └── writer.js
+</code></pre>
+
+<p>Based on the README file, let&rsquo;s try the following:</p>
+
+<p>To run the server, run:</p>
+
+<pre><code>npm start
+</code></pre>
+
+<p>To view the Swagger UI interface:</p>
+
+<pre><code>open http://localhost:8080/docs
+</code></pre>
+
+<p>​
+​<img src="https://user-images.githubusercontent.com/8188/46378276-17534900-c669-11e8-9bba-0dc3226d191e.png" alt="image" />
+​
+​​And, we have a local API server running with full interactive API documentation. The server exposes a very similar interface as SwaggerHub. But, the local server code can be updated with custom implementation for further testing.
+​​
+​​You can also use the <a href="https://swagger.io/tools/swagger-ui/">Swagger UI</a> interface to visualize and interact with your API just by having an API spec in place.
+​​
+​​​​​​Although you can tweak the <a href="https://app.swaggerhub.com/help/apis/generating-code/options">code generation options</a> in SwaggerHub, if you want a lot of flexibility with code generation you should use the <a href="https://swagger.io/tools/swagger-codegen/">Swagger Codegen</a> tool. It is an open-source tool with <a href="https://github.com/swagger-api/swagger-codegen#public-docker-image">lot more flexibility</a> for generating code.</p>
+
+<h3 id="team-collaboration-sharing">Team Collaboration &amp; Sharing</h3>
+
+<p>SwaggerHub has built-in capabilities to share and collaborate the API specs with the whole team.</p>
+
+<p>Team members can be made <a href="https://app.swaggerhub.com/help/collaboration/collaborators">collaborators</a> and <a href="https://app.swaggerhub.com/help/collaboration/sharing-api">share the API</a> specs with other members. The users can be assigned Editor, Viewer or Commentator roles based on their needs. All collaborators can receive <a href="https://app.swaggerhub.com/help/email-notifications">email notifications</a> as and when changes are done to the API specs.</p>
+
+<p>Users can edit the API specs concurrently and SwaggerHub provides an elegant way to <a href="https://app.swaggerhub.com/help/apis/compare-and-merge">compare and merge</a> such changes.</p>
+
+<h4 id="orgs-teams-and-projects">Orgs, Teams and Projects</h4>
+
+<p>SwaggerHub also provides further flexibility in managing control over the API specs by allowing the creation of <a href="https://app.swaggerhub.com/help/organizations/index">Organizations, Teams, and Projects</a>. This simplifies and structures the different APIs across the organization. Access controls specified at the Org, team or project levels govern permissions allowed for collaborators.</p>
+
+<p><strong>Note</strong>: Organizations need a paid-plan based on the number of user and features.</p>
+
+<h4 id="reviewing-the-api">Reviewing the API</h4>
+
+<p>​SwaggerHub allows adding <a href="https://app.swaggerhub.com/help/collaboration/comments">comments</a> to any part of the API specs. It allows for team collaboration and discussion regarding the API specs. Once the comments have been discussed they can be resolved. It provides an easy workflow for the team to evolve the API in a very interactive way.</p>
+
+<h4 id="api-versioning">API Versioning</h4>
+
+<p>​In the real world, while developing an API spec, it is imperative that there is a lot of back and forth that happens which leads to many versions of the API. SwaggerHub recognizes that and allows for <a href="https://app.swaggerhub.com/help/apis/versioning">versioning</a> of APIs along the way. Team members can edit the API and specify a new version that can later be <a href="https://app.swaggerhub.com/help/apis/compare-and-merge">compared and merged</a>.</p>
+
+<p>Multiple versions of an API can live side-by-side and the design view on SwaggerHub allows users to easily switch between the different versions.</p>
+
+<p>When a particular version is ready to be released, it can be <a href="https://app.swaggerhub.com/help/apis/publishing-api">published</a>. Publishing an API makes the API spec read-only and it is not allowed to be modified after that.</p>
+
+<p><strong>Note</strong>: An API spec can be unpublished and changes made to it, but that should happen only sparingly and with a lot of caution.</p>
+
+<h3 id="testing-the-api">Testing the API</h3>
+
+<p>After designing an API and before the developers actually implement it in code, some initial testing provides a lot of value. This kind of testing involves testing the API methods, requests, response, object models and security aspects. It allows the design team to fine tune and solidifies the API design before the API is implemented in code. It jump starts the process of developers to start writing client code and testing against the stub generated from the API spec.</p>
+
+<h4 id="mock-implementations">Mock Implementations</h4>
+
+<p>SwaggerHub provides a cool feature of <a href="https://app.swaggerhub.com/help/integrations/api-auto-mocking">Auto Mocking</a> as part of its integrations. To make use of auto-mocking, the API spec can specify examples for requests and response schemas for its methods.</p>
+
+<p>The API spec can define formats for the data types, reference object models in responses and specify request/response headers.</p>
+
+<p>Authorization on API calls can be mocked by allowing users to send in arbitrary API token along with the requests.</p>
+
+<p>It also supports CORS requests and can automatically add CORS headers to all responses.</p>
+
+<p>Rate-limiting can be configured and appropriate error codes can be returned based on API call volume.</p>
+
+<h3 id="publishing-the-api">Publishing the API</h3>
+
+<p>Once you are ready to release an API, you can choose a particular version and <a href="https://app.swaggerhub.com/help/apis/publishing-api">publish</a> it. Published APIs are read-only and they are not allowed to be modified. Unpublished APIs can be held as working drafts in SwaggerHub and modified at will. Published versions can be kept private or made public based on readiness. Swagger allows usage of API tokens to access private APIs.</p>
+
+<h2 id="leveraging-swagger-for-existing-apis">Leveraging Swagger for existing APIs</h2>
+
+<p>Swagger toolchain provides a <a href="https://inspector.swagger.io">Swagger Inspector</a>, a web-based, Postman-style testing of APIs. It allows making requests on your API methods and validates API request/responses. All tests are saved so you can replay them and view the responses later. The Swagger Inspector can test any kind of API including REST, SOAP or GraphQL based APIs.</p>
+
+<p>The best use case for the Inspector is if you have any existing API and you want to create an API definition for it. You can make calls to your API methods and can easily <a href="https://swagger.io/docs/swagger-inspector/how-to-create-an-openapi-definition-using-swagger/">generate OpenAPI defnitions</a> from the request and responses. You can auto-generate documentation for your API endpoints from the previously saved tests.</p>
+
+<p>Another interesting open-source project useful for Java developers is the <a href="https://github.com/swagger-api/swagger-inflector">Swagger Inflector</a> that can be used to <a href="https://swagger.io/blog/api-development/writing-apis-with-the-swagger-inflector/">parse and generate OpenAPI definitions</a> during runtime.</p>
+
+<p>Once you have the API spec generated and saved into SwaggerHub, you can take advantage of the full Swagger toolchain from there on.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>In this post, we looked at the workflow of building an API using the various tools available in the Swagger toolchain. We looked at designing an API using a template on SwaggerHub. We explored how SwaggerHub allows for standardization of APIs via styling guidelines and validation rules via the Style Validator. Swagger Codegen allows generation of server and client code stubs for easy testing. We looked at the team collaboration and sharing features of SwaggerHub, and explored ways to manage access controls using orgs., teams and projects. Then we looked at versioning and testing the APIs using mock implementations.</p>
+
+<p>As you can see, the Swagger toolchain has all the tools to help you through the life-cycle of designing, testing and publishing an API from scratch.</p>
+
+<p>If you have any feedback or questions, feel free to let me know in the comments below.</p>
+    
+    Like the article? Please share with others...<div class="sharethis-inline-share-buttons"></div><br/>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/building-serverless-apps-using-stackery/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Building Serverless Apps Using Stackery</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/roundup-of-api-platforms-and-specifications/">Roundup of API Platforms and Specifications</a>
+      
+      <time class="pull-right hidden-tablet">Aug 31 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/building-serverless-apps-using-stackery/">Building Serverless Apps Using Stackery</a>
+      
+      <time class="pull-right hidden-tablet">Sep 21 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/monitoring-docker-services-with-prometheus/">Monitoring Docker Services With Prometheus</a>
+      
+      <time class="pull-right hidden-tablet">Jul 21 &#39;15</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/lorry-io-pathway-to-docker-composable-apps/">Lorry.io: Pathway to Docker Composable Apps</a>
+      
+      <time class="pull-right hidden-tablet">May 26 &#39;15</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/managing-application-code-in-linux-containers/">Managing Application Code in Linux Containers</a>
+      
+      <time class="pull-right hidden-tablet">Oct 10 &#39;14</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-125025619-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>
