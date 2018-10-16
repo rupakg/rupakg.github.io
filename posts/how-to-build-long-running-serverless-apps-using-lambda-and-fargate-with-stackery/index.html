@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="A step-by-step walkthrough of building a serverless application to run a long-running process with AWS Fargate and Lambda. The app will take a video file and generate a thumbnail for a user-defined frame position.">
+    
+        
+        <meta name="keywords" content="serverless, AWS, Fargate, AWS Fargate, Lambda, long-running, Stackery, S3, Docker, ECS">
+    
+    
+
+<title>How to build long-running serverless apps using Lambda and AWS Fargate with Stackery • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to build long-running serverless apps using Lambda and AWS Fargate with Stackery"/>
+<meta name="twitter:description" content="A step-by-step walkthrough of building a serverless application to run a long-running process with AWS Fargate and Lambda. The app will take a video file and generate a thumbnail for a user-defined frame position."/>
+
+<meta property="og:title" content="How to build long-running serverless apps using Lambda and AWS Fargate with Stackery" />
+<meta property="og:description" content="A step-by-step walkthrough of building a serverless application to run a long-running process with AWS Fargate and Lambda. The app will take a video file and generate a thumbnail for a user-defined frame position." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/" /><meta property="article:published_time" content="2018-10-16T16:09:02-04:00"/>
+<meta property="article:modified_time" content="2018-10-16T16:09:02-04:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://rupakganguly.com/">Rupak Ganguly</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="http://rupakganguly.com//img/rg10-square.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         personal opinions, experiences and writings... 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:rupakg&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <p class="copyright">
+      &copy; 2018 Rupak Ganguly.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>How to build long-running serverless apps using Lambda and AWS Fargate with Stackery</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 16, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/docker">DOCKER</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/platforms">PLATFORMS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/serverless">SERVERLESS</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/serverless">serverless</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/fargate">fargate</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/long-running">long-running</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/stackery">stackery</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/video-processing">video processing</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/thumbnail-generation">thumbnail generation</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 24 min read
+</div>
+
+
+    Like the article? Please share with others...<div class="sharethis-inline-share-buttons"></div><br/>
+  </header>
+  <div class="post">
+    <p>This is a multi-part blog series that explores building serverless applications with Stackery. In the <a href="https://rupakganguly.com/posts/building-serverless-apps-using-stackery/">first part</a>, we discussed why Stackery is a great platform for visually building and deploying serverless applications on AWS.</p>
+
+<p>The application we will build is a video processing application that will take a video file dropped into a S3 bucket, along with some user-defined parameters and extract a thumbnail of the specified frame, and store it into another S3 bucket. Since the video processing bit is a long-running process, we will use AWS Fargate to process the video.
+</p>
+
+<p>The events of dropping a video file into the S3 bucket and uploading the resulting thumbnail image into another S3 bucket will be captured by our serverless application for raising notifications to us. I have <a href="https://medium.com/@rupakg/how-to-use-aws-fargate-and-lambda-for-long-running-processes-in-a-serverless-app-c3712e158bb">written about this in a post</a>, where I walk through developing the application using AWS Fargate and the Serverless Framework.</p>
+
+<blockquote>
+<p><em>AWS Fargate is a technology that allows you to use containers as a fundamental compute primitive without having to manage the underlying compute instances.</em></p>
+</blockquote>
+
+<p>In this post, the second part in the series, we will create the same application, but we will build it <strong>visually using Stackery</strong>. I will walk you through the process of creating the application and show you how easy it is to build it using Stackery.</p>
+
+<blockquote>
+<p><strong>Most importantly:</strong> I have built the application in such a way that it&rsquo;s generic enough to be used as a reference template for <em>any</em> long-running processes using Stackery. I will share the Github repo with the Stackery template so you can use it as a boilerplate to start your own project involving AWS Fargate.</p>
+</blockquote>
+
+<p><strong>What we&rsquo;ll cover:</strong></p>
+
+<ul>
+<li>Application Flow</li>
+<li>Designing the application
+
+<ul>
+<li>Creating the project</li>
+<li>Configuring the AWS Fargate Task</li>
+<li>Triggering a Lambda function to run the ECS Fargate Task</li>
+<li>Triggering a Lambda function when thumbnail is generated</li>
+</ul></li>
+<li>Deploying the application</li>
+<li>Running the application</li>
+<li>Error Handling, Health &amp; Operations</li>
+</ul>
+
+<h2 id="application-flow">Application Flow</h2>
+
+<p>Let&rsquo;s review the application design. The diagram below and the steps that follow, describe the overall workflow of the the application we&rsquo;re building.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/34815433-4b277d74-f67f-11e7-83a0-9ac65d630eab.png" alt="Architecture Diagram for processing video to generate thumbnail in AWS ECS using Fargate" /></p>
+
+<ol>
+<li>Upload video to S3</li>
+<li>S3 triggers a Lambda function when the video is uploaded</li>
+<li>The Lambda function runs the ECS Fargate Task with appropriate parameters</li>
+<li>The ECS Fargate Task executes the Docker container:
+
+<ul>
+<li>that processes the video file to extract the thumbnail,</li>
+<li>and uploads the thumbnail image to S3</li>
+</ul></li>
+<li>S3 triggers another Lambda function when the thumbnail is uploaded</li>
+<li>The Lambda function writes the url of the thumbnail to the log</li>
+</ol>
+
+<p>Let&rsquo;s get started!</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>To start developing our application, we will need a blank template to use with the Stackery Dashboard. Stackery can use a link to a code repository that can be used as a stack template. So I created a <a href="https://github.com/rupakg/stackery-empty-stack-template">blank stack template</a>, that we will use here to create our application. So let&rsquo;s get going!</p>
+
+<p><strong>Feature Request</strong>: It would be really useful if Stackery Dashboard would include an option of creating a stack using a &ldquo;Blank Stack Template&rdquo;.</p>
+
+<h3 id="create-a-new-stack">Create a new stack</h3>
+
+<p>Log into Stackery, and click on the <strong>Create New Stack</strong> button. Then using the blank stack template url, create a new stack named <code>sls-video-processing-with-fargate</code>, as shown below:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46175123-ee9e0e80-c278-11e8-8f6a-b704c66ceaa0.png" alt="image" /></p>
+
+<p>You should have a stack with an empty design surface, and a new Github repo named <code>sls-video-processing-with-fargate</code>. After Stackery creates the stack, it creates the repo with an initial commit.</p>
+
+<h3 id="design">Design</h3>
+
+<p>We will need some components (AWS resources) that will make up our application and they are as follows:</p>
+
+<ul>
+<li>AWS S3 bucket for input video files</li>
+<li>AWS S3 bucket for output thumbnail files</li>
+<li>AWS Fargate ECSTask definition</li>
+<li>AWS Lambda function that is triggered on upload of a video file that will in turn call the Fargate task</li>
+<li>AWS Lambda function that is triggered upon thumbnail creation that will in turn log a message</li>
+</ul>
+
+<p><strong>Let&rsquo;s visually design the application</strong> using the Stackery Dashboard. Yes, that is the coolest part!</p>
+
+<p>We drag the appropriate components from the Stackery Resource palette to the Stackery Dashboard, so it looks like the following:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46177635-9cadb680-c281-11e8-9acf-d0c5a4ae7a4d.png" alt="image" /></p>
+
+<p>The stack has two <strong>Object Storage</strong> components (S3 Buckets), named <code>rg-stackery-video-files</code> and <code>rg-stackery-thumbnails</code> respectively. Note Stackery does not allow you to configure specific folders under a bucket so we will use two separate buckets for input and output files.</p>
+
+<h4 id="upload-docker-image-to-aws-ecr">Upload Docker Image to AWS ECR</h4>
+
+<p><strong>This step is optional and can be skipped if you want to use my docker image from DockerHub</strong>. You need this step ONLY if you want the docker image to be uploaded to AWS ECR Registry and use it in your Docker ECS Task.</p>
+
+<p>I have the docker image <a href="https://github.com/rupakg/docker-ffmpeg-thumb">rupakg/docker-ffmpeg-thumb</a> on DockerHub, and you can upload it to AWS ECR as follows:</p>
+
+<ul>
+<li>Login to the AWS Console and go to AWS ECS page and click on Amazon ECR -&gt; Repositories</li>
+<li>Create a new repository named <code>docker-ffmpeg-thumb</code></li>
+<li>Click on the new repository that was just created. This screen will list the <strong>Repository URI</strong> which you can use in the following command or you can click on the <strong>View Push Commands</strong> button to view the instrcutions to push the image to ECR.</li>
+</ul>
+
+<pre><code>$(aws ecr get-login --no-include-email --region us-east-1)
+docker pull rupakg/docker-ffmpeg-thumb
+docker tag rupakg/docker-ffmpeg-thumb:latest &lt;repository-uri&gt;
+docker push &lt;repository-uri&gt;/docker-ffmpeg-thumb:latest
+</code></pre>
+
+<p>Now, you should have the docker image uploaded to AWS ECR.</p>
+
+<h4 id="configure-the-aws-fargate-task">Configure the AWS Fargate Task</h4>
+
+<p>I have the docker image <a href="https://github.com/rupakg/docker-ffmpeg-thumb">rupakg/docker-ffmpeg-thumb</a> on DockerHub and we will be using it in the DockerTask. The stack has a DockerTask component (ECS Fargate Task), named <code>stackery-video-to-thumb-task-def</code> and is configured as follows:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46176805-9b2ebf00-c27e-11e8-9100-f2e9335ca3d1.png" alt="image" /></p>
+
+<p><strong>Note</strong>: Based on your processing requirements, the values for <strong>CPU Units</strong> and <strong>Memory</strong> will need to be adjusted, or your task will fail.</p>
+
+<p>And, then we also add some <strong>Environment Variables</strong>, that will be used to customize the ECS Task definition. The use of environment variables enables us to keep the ECS Task definition pretty generic and customizable.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46176820-a97cdb00-c27e-11e8-89a3-1c29b3647345.png" alt="image" /></p>
+
+<p>The environment variables we added with their initial values are as follows:</p>
+
+<pre><code>AWS_REGION - us-east-1
+INPUT_VIDEO_FILE_URL - https://s3.amazonaws.com/your-s3-bucket-name/test.mp4
+OUTPUT_S3_PATH - your-s3-bucket-name/your-thumbnail-folder-name
+OUTPUT_THUMBS_FILE_NAME  - test.png
+POSITION_TIME_DURATION - 00:01
+</code></pre>
+
+<p>These environment variables are used in the docker image to keep the functionality very customizable.</p>
+
+<p>Now let&rsquo;s add two Function components (Lambda Function) named <code>triggerOnUploadVideoStackery</code> with a <strong>Source Path</strong> of <code>src/triggerOnUploadVideoStackery</code> and <code>triggerOnThumbnailCreationStackery</code> with a <strong>Source Path</strong> of <code>triggerOnThumbnailCreationStackery</code> respectively. Set the <strong>Memory</strong> to <code>512</code> and leave the <strong>Timeout</strong> to its default value of <code>30</code>.</p>
+
+<p>Before we do anything else, let&rsquo;s <strong>commit</strong> the design to our underlying Github repo. Keep the default commit message or add your own.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46177738-062dc500-c282-11e8-913f-d9fe1e8aa825.png" alt="image" /></p>
+
+<p><strong>Feature Request</strong>: I wish Stackery did not rearrange my layout of components after the commit. I would love an option where I can turn it off. 🙏</p>
+
+<p>Let&rsquo;s review what Stackery did for us here. Going back to the repo, you will see a commit <a href="https://github.com/rupakg/sls-video-processing-with-fargate/commit/305743031d5bc54b1d133020417c4447d56b5f2e">3057430</a> that shows you a diff of the changes. The commit consists of:</p>
+
+<ul>
+<li><code>src/triggerOnThumbnailCreationStackery/README.md</code></li>
+<li><code>src/triggerOnThumbnailCreationStackery/index.js</code></li>
+<li><code>src/triggerOnThumbnailCreationStackery/package.json</code></li>
+<li><code>src/triggerOnUploadVideoStackery/README.md</code></li>
+<li><code>src/triggerOnUploadVideoStackery/index.js</code></li>
+<li><code>src/triggerOnUploadVideoStackery/package.json</code></li>
+<li><code>template.yaml</code></li>
+</ul>
+
+<p>Each function is in its own folder and self-sufficient with it&rsquo;s own dependencies. We will explore other ways to structure code in a later post. But, for now it is important to know that you have the flexibility.</p>
+
+<p>The most important file that is the crux of the application is the <code>template.yaml</code> file. Note that <strong>Stackery uses AWS SAM under the hood</strong> to create serverless applications. The <code>template.yaml</code> file has a wealth of information that describes the components that we added: configuration, required IAM policies and execution roles.</p>
+
+<p><strong>Just stop and think for a minute here</strong>. Think what we provided as input while designing and what we got for free as part of the application model. The two S3 ObjectStore definitions and the two Lambda function definitions has been created automatically. Look at the ECS Task definition portion, and you will see that a <em>LogGroup, an ExecutionRole with appropriate Policies and a TaskRole has been created automatically</em>. This was the biggest one for me as I had to manually configure the ECSTask when I built the v1 of this application.</p>
+
+<p>Here is the <a href="https://gist.github.com/rupakg/52f98fb95e3a8fe8e495dbff9c2fd14d">template.yaml</a> that was generated for us.</p>
+
+<script src="https://gist.github.com/rupakg/52f98fb95e3a8fe8e495dbff9c2fd14d.js"></script>
+
+<h4 id="subscribing-to-s3-events">Subscribing to S3 events</h4>
+
+<p>We will now connect the S3 components to the Lambda function components which will tell Stackery that we want to trigger the functions using S3 events. It&rsquo;s as easy as just connecting the &lsquo;connection points&rsquo; at the edges of the components as shown below:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46178834-750d1d00-c286-11e8-8cb7-69ae9b694966.png" alt="image" /></p>
+
+<p>Let&rsquo;s commit the changes and look at the diff to see what magic Stackery did!</p>
+
+<p>You will see a new commit <a href="https://github.com/rupakg/sls-video-processing-with-fargate/commit/f231d92f82fa3814abf4ef6f11d148945530bc2e">f231d92</a> with the changes that were made. You will notice that just by connecting the S3 objects to thier respective functions, an <strong>Events</strong> section was added to the function in the <code>template.yaml</code> file that hooked up the <code>s3:ObjectCreated:*</code> and <code>s3:ObjectRemoved:*</code> events for the corresponding S3 buckets.</p>
+
+<p>Note that you can commit your design changes anytime to keep a nice commit log of changes and compare the diffs done to the <code>template.yaml</code> file. <strong>Infrastructure as code FTW!!!</strong></p>
+
+<h4 id="updating-the-code-directly">Updating the code directly</h4>
+
+<p>Stackery allows you the freedom to update any code directly and have it synced on the Dashboard. For example, on line 28 of the <code>template.yaml</code> file, the auto-generated configuration for the DockerTask has the ContainerDefinition Name as &lsquo;0&rsquo;. It is not a descriptive name so let&rsquo;s change that to <code>Name: video-to-thumb-container</code>. We will reference and use this name when we run the ECS Task later.</p>
+
+<p>Commit and push your changes. Since we updated the <code>template.yaml</code>file, let&rsquo;s go back to the Stackery Dashboard and you will notice that it recognizes that the code has changed. You will see this message:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46769321-6b89a900-ccb9-11e8-8e7f-d92d6740ddc2.png" alt="image" /></p>
+
+<p>Click <strong>refresh</strong> to sync with the latest commit. Note that Stackery allows you to work on feature branches as part of your development team workflow, all from within the Dashboard.</p>
+
+<h4 id="iam-policies-and-service-discovery">IAM Policies and Service Discovery</h4>
+
+<p>We want to secure our AWS resources so that we can let the different components talk to each other, but are secured from public access. Here are the permissions that we need:</p>
+
+<ol>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function needs access and permissions to run the Docker ECSTask</li>
+<li>The Docker ECSTask needs read/write access to the output S3 bucket <code>rg-stackery-thumbnails</code>, so only the ECSTask can write to the bucket</li>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function needs access and permissions to write to the output S3 bucket <code>rg-stackery-thumbnails</code></li>
+<li>The output S3 bucket also needs public read access for its objects, so anyone can view the thumbnails</li>
+<li>Both S3 buckets need public read access</li>
+</ol>
+
+<p>The other thing that we need to make the solution work is service discovery that enables the various resources to discover each other&rsquo;s resource properties. Here are the properties that we need:</p>
+
+<ol>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function also needs to know the details of the Docker ECSTask to run it</li>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function, which will generate the thumbnails needs to know the details of the output S3 bucket</li>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function, which will process the video file needs to know the details of the input S3 bucket</li>
+</ol>
+
+<p>I will implement the above list of things one by one and you can follow along commit by commit.</p>
+
+<h3 id="connecting-the-lambda-function-to-the-fargate-task">Connecting the Lambda function to the Fargate Task</h3>
+
+<p>One of the toughtest thing to do, is figuring out the set of permissions for access control. Stackery solves it in a very elegant way. Stackery has a concept of connections: <strong>solid wire</strong> and <strong>dotted wire</strong>. We saw an example of solid wire connections earlier, when we connected the S3 buckets with the Lambda functions.</p>
+
+<p>Another cool feature of Stackery&rsquo;s integration with git, is that we can take advantage of the usual development workflow of making changes in a feature branch and doing a pull request. Let&rsquo;s see it action.</p>
+
+<p>Before making any changes, click on the dropdown under <strong>Branch</strong> and select <strong>Create Branch&hellip;</strong> and give the branch a name <code>c1</code>. Now, let&rsquo;s connect the Lambda function <code>triggerOnUploadVideoStackery</code> to the Docker ECSTask. On the Dashboard, let&rsquo;s drag the connection point from the right-hand side of the function to the left-hand side connection point of the Docker ECSTask. You will notice that the connection is a dotted wire. Commit the changes.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46834955-d5b65280-cd7a-11e8-9e73-6f77377a45e6.png" alt="image" /></p>
+
+<p>Head over to the github project, and create a new Pull Request from the commit. And you can see the changes that Stackery made to the <code>template.yaml</code>file. You can create the PR, and follow your company&rsquo;s code review and merge workflow.</p>
+
+<p>On review, we see three <a href="https://github.com/rupakg/sls-video-processing-with-fargate/pull/1/commits/0212df39fb566fcab4af304d593421d63352c42e">distinct changes</a> made to the <code>template.yaml</code> file. The first change is the addition of two policy statements were added that gives the Lambda function permissions to run the Docker ECSTask. The second change is addition of some environment variables that exposes the details of the Docker ECSTask to the Lambda function. The third change is the addition of a reference to the <code>DefaultVPCSubnets</code> that is used by the Docker ECSTask. The latter two changes are necessary data that is required to run the Docker ECSTask from within the Lambda function. We will see how these are used later in the post.</p>
+
+<p><strong>Note</strong>: Apart from seeing the changes in code, you can click on the Lambda function node on the Dashboard and see the changes there as well.</p>
+
+<p>By doing the above connection, we have achieved the following from the list above:</p>
+
+<ul>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function needs access and permissions to run the Docker ECSTask</li>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function also needs to know the details of the Docker ECSTask to run it</li>
+</ul>
+
+<p>Before we move on, make sure to merge your PR, and then on the Dashboard switch back to the <code>master</code> branch to be in sync with the lastest code. I love the simplicity of the workflow and the ease of codifying the feature.</p>
+
+<h4 id="connecting-the-fargate-task-to-the-output-s3-bucket">Connecting the Fargate Task to the output S3 bucket</h4>
+
+<p>We will do all our changes in a new branch <code>c2</code>. Once you connect the right-hand side of the Docker ECSTask to the left-hand side of the <code>rg-stackery-thumbnails</code> S3 bucket, we will have a dotted wire connection.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46836148-5034a180-cd7e-11e8-956a-9203d29192da.png" alt="image" /></p>
+
+<p>On review, we can see two <a href="https://github.com/rupakg/sls-video-processing-with-fargate/pull/2/commits/f5a704028c9ddf4fcbb01f733004f6f583397540">distinct changes</a> made to the <code>template.yaml</code> file. Two new environment variables for the S3 bucket is added to the Docker ECSTask. And, a new IAM policy is added to the Docker ECSTask IAM role to allow read/write access to the S3 bucket.</p>
+
+<p>By doing the above connection, we have achieved the following from the list above:</p>
+
+<ul>
+<li>The Docker ECSTask needs read/write access to the output S3 bucket (<code>rg-stackery-thumbnails</code>), so only the ECSTask can write to the bucket</li>
+</ul>
+
+<h4 id="connecting-the-lambda-function-to-output-s3-bucket">Connecting the Lambda function to output S3 bucket</h4>
+
+<p>We will do all our changes in a new branch <code>c3</code>. Once you connect the right-hand side of the <code>triggerOnUploadVideoStackery</code> Lambda function to the left-hand side of the <code>rg-stackery-thumbnails</code> output S3 bucket, we will have a new dotted wire connection.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46837487-7d378300-cd83-11e8-9b9e-242368056a09.png" alt="image" /></p>
+
+<p>On review, we can see two <a href="https://github.com/rupakg/sls-video-processing-with-fargate/pull/3/commits/72b2e9569305affdb71f49f46e07a9cc80021f8e">distinct changes</a> made to the <code>template.yaml</code> file. Under the Lambda function&rsquo;s Policies section, a new policy named <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/using-aws-sam.html">S3CrudPolicy</a> referencing the S3 output bucket is added, that gives the Lambda function read/write access to the bucket.</p>
+
+<p>By doing the above connection, we have achieved the following from the list above:</p>
+
+<ul>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function needs access and permissions to write to the output S3 bucket <code>rg-stackery-thumbnails</code></li>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function which will generate the thumbnails needs to know the details of the output S3 bucket</li>
+</ul>
+
+<h4 id="connecting-the-lambda-function-to-input-s3-bucket">Connecting the Lambda function to input S3 bucket</h4>
+
+<p>We will do all our changes in a new branch <code>c4</code>. Once you connect the right-hand side of the <code>triggerOnUploadVideoStackery</code> Lambda function to the left-hand side of the <code>rg-stackery-video-files</code> input S3  bucket, we will have a new dotted wire connection.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46838459-63983a80-cd87-11e8-9cb9-eb371586388a.png" alt="image" /></p>
+
+<p>On review, we can see two <a href="https://github.com/rupakg/sls-video-processing-with-fargate/pull/4/commits/3dfb25f4a449a11c4022434ee697567274e7136b">distinct changes</a> made to the <code>template.yaml</code> file. Under the Lambda function&rsquo;s Policies section, a new policy named <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/using-aws-sam.html">S3CrudPolicy</a> referencing the S3 input bucket is added, that gives the Lambda function read/write access to the bucket. And, two new environment variables for the input S3 bucket is added to the function.</p>
+
+<p>By doing the above connection, we have achieved the following from the list above:</p>
+
+<ul>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function needs access and permissions to read from the input S3 bucket <code>rg-stackery-video-files</code></li>
+<li>The <code>triggerOnUploadVideoStackery</code> Lambda function which will process the video file, needs to know the details of the input S3 bucket <code>rg-stackery-video-files</code></li>
+</ul>
+
+<h2 id="the-deployment-process">The Deployment Process</h2>
+
+<p>Stackery involves a two-step deployment process. The solution is first prepared for deployment. Stackery will do a few things for us in this step:</p>
+
+<ul>
+<li>Install dependencies: If you have a <code>package.json</code> for a NodeJS app or a <code>requirements.txt</code> for a Python app</li>
+<li>Build code: compile code for Java and .NET apps</li>
+<li>Inject Instrumentation: For handling errors centrally through the Stackery Errors resource</li>
+</ul>
+
+<p>If this first-step passes, then the next step is to Deploy. Stackery handles the actual deploy a little differently than other frameworks. The vision is of seperation of concerns. Stackery leads the way till you have the CF template and builds working. It stops at creating a  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">CloudFormation Stack Change Set</a> for all the changes that are made and ready to be executed against an AWS account.</p>
+
+<p>As far as physically executing the changes into AWS, it takes a step back and allows the user to review the changes, choose the proper account and then execute the change set directly via the CloudFormation console. When you hit the Deploy button, Stackery will open the AWS CloudFormation console for you to take over. <strong>That is I feel a great balance in automating building apps but giving the user the final control.</strong></p>
+
+<p>In the process of executing the change set, AWS CloudFormation will validate the template for errors, runtime issues etc. and rollback the changeset if there are any issues. If everything goes fine, you will see a new Deployment on the Stackery Dashboard.</p>
+
+<h4 id="prepare-the-app-for-deployment">Prepare the app for Deployment</h4>
+
+<p>We have been iterating over the design of our app and I think it is about time we should try deploying the solution. Although, we have not provided any custom logic to our Lambda functions yet, we would still benefit from trying to deploy the solution at its current form.</p>
+
+<p>To prepare our app for deployment, first switch to the <code>master</code> branch, then select an <strong>Environment</strong> (`<code>development</code> in our case), and then hit the <strong>Prepare Deployment</strong> button on the Stackery Dashboard. Note that you can create and manage your own environments. Here is the current state of the application:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46882886-2fbc2400-ce1e-11e8-8c99-c218343a0771.png" alt="image" /></p>
+
+<p>Let&rsquo;s prepare for deployment. So far so good, and our prepared deployment was successful.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46882995-89245300-ce1e-11e8-8a39-0a0cf54ca4a5.png" alt="image" /></p>
+
+<p>Time to deploy! Hit the <strong>Deploy</strong> button. This will take you to the AWS CloudFormation console and you have to login with the account that you want the application deployed to.</p>
+
+<p>But, alas - <strong>Houston we have a problem!</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46885423-ee2f7700-ce25-11e8-9890-ea92c9e2e980.png" alt="image" /></p>
+
+<p>The validation for the change set failed. Let&rsquo;s dig in and find out why.</p>
+
+<h4 id="circular-dependency-issue">Circular Dependency Issue</h4>
+
+<p>If you go down the page into the <strong>Template</strong> section and select the <strong>View processed template</strong> radio button, you will see the fully resolved CF template yaml file. Reviewing the file here are the circular dependencies that is the problem:</p>
+
+<p>On <a href="https://gist.github.com/rupakg/e2f32995a7648db76391ab647c4fc7e7#file-aws-cf-circular-dependency-issue-yml-L21">line 21</a>, the resource <code>functionF9A32476objectStore3B0DC7B6Permission</code> is being described. Then on <a href="https://gist.github.com/rupakg/e2f32995a7648db76391ab647c4fc7e7#file-aws-cf-circular-dependency-issue-yml-L141">line 141</a> the <code>rg-stackery-video-files S3 bucket</code> with Resource Id <code>objectStore6A12D98C</code> is being referenced as <code>{ bucketName: { Ref: objectStore6A12D98C } }</code>. Same on <a href="https://gist.github.com/rupakg/e2f32995a7648db76391ab647c4fc7e7#file-aws-cf-circular-dependency-issue-yml-L148">line 148</a>.</p>
+
+<p>Now, on <a href="https://gist.github.com/rupakg/e2f32995a7648db76391ab647c4fc7e7#file-aws-cf-circular-dependency-issue-yml-L201">line 201</a>, the bucket resource for the same bucket with Resource Id <code>objectStore6A12D98C</code>is being described. And, on <a href="https://gist.github.com/rupakg/e2f32995a7648db76391ab647c4fc7e7#file-aws-cf-circular-dependency-issue-yml-L221">line 221</a>, the <code>functionF9A32476objectStore3B0DC7B6Permission</code> resource is under a DependsOn clause.</p>
+
+<p>The bucket needs the permission to build and the permission references the buclet that it is providing permissions for. This is a classic circular dependency case. AWS has a documented the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/unable-validate-circular-dependency-cloudformation/">issue regarding circular dependency involving Lambda, S3 buckets and CloudFormation</a>, that explain the above issue in further detail.</p>
+
+<h4 id="issue-resolution">Issue Resolution</h4>
+
+<p>The problem areas described above correlates to the following block of SAM template code:</p>
+
+<pre><code class="language-yaml">  function17279F64:
+    Type: AWS::Serverless::Function
+    ...
+        - S3CrudPolicy:
+        BucketName: !Ref objectStore6A12D98C
+    ...
+</code></pre>
+
+<pre><code class="language-yaml">  Environment:
+    Variables:
+        ...
+        BUCKET_NAME: !Ref objectStore3B0DC7B6
+        BUCKET_ARN: !GetAtt objectStore3B0DC7B6.Arn		  
+        BUCKET_NAME_2: !Ref objectStore6A12D98C
+        BUCKET_ARN_2: !GetAtt objectStore6A12D98C.Arn
+</code></pre>
+
+<p>Based on the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/unable-validate-circular-dependency-cloudformation/">AWS workaround to the problem</a>, the solution is to replace the S3 bucket reference from <code>!Ref objectStore6A12D98C</code> to <code>!Sub ${AWS::StackName}-objectstore6a12d98c</code>. <strong>Big note of caution is that the <code>objectstore6a12d98c</code> part of the text needs to be all lowercase</strong>. Also, since we don&rsquo;t really need the Bucket ARN values, we can remove them as well.</p>
+
+<p>Before we make a change let&rsquo;s start a new branch <code>c5</code>. We can make the fix in either of the following two ways:</p>
+
+<ul>
+<li>On the Dashboard, select the <code>triggerOnUploadVideoStackery</code> Lambda function node. A dialog box will appear. Scroll down to the <strong>Permissions</strong> section. Update the <strong>S3CrudPolicy</strong> -&gt; <strong>BucketName</strong> values with <code>!Sub ${AWS::StackName}-objectstore3b0dc7b6</code> and <code>!Sub ${AWS::StackName}-objectstore6a12d98c</code> respectively. And, in the <strong>Environment Variables</strong> section, we make the same changes to the <code>BUCKET_NAME</code> and <code>BUCKET_NAME_2</code> variables as well. We can also delete the <code>BUCKET_ARN</code> and <code>BUCKET_ARN_2</code> key/value pairs. Click <strong>Save</strong> to save the changes.</li>
+<li>Directly edit the <code>template.yaml</code> file and edit the lines <a href="https://github.com/rupakg/sls-video-processing-with-fargate/blob/master/template.yaml#L147">147</a> and <a href="https://github.com/rupakg/sls-video-processing-with-fargate/blob/master/template.yaml#L149">149</a>. Then delete lines <a href="https://github.com/rupakg/sls-video-processing-with-fargate/blob/master/template.yaml#L165">165</a> and <a href="https://github.com/rupakg/sls-video-processing-with-fargate/blob/master/template.yaml#L167">167</a>.</li>
+</ul>
+
+<p>After <a href="https://github.com/rupakg/sls-video-processing-with-fargate/pull/5">committing and merging</a> the changes, switch back to the master branch on the Dashboard.</p>
+
+<p><em>Moment of truth</em> - let&rsquo;s try to deploy again&hellip;</p>
+
+<p>Click <strong>Prepare Deployment</strong> and then <strong>Deploy</strong>. And this time we look good. The AWS CloudFormation console shows us that the change set was created successfully. You can choose to review the changes under the <strong>Changes</strong> section.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/46891303-694d5900-ce37-11e8-8992-60078301c7ec.png" alt="image" /></p>
+
+<p>Once you are happy with the review, go can hit the <strong>Execute</strong> button to deploy the application.</p>
+
+<p>But, we are not done with our application yet so we will wait. I justed wanted to show you how the deployment process, the validation, and resolution works. Let&rsquo;s get to the meat of the application and implement the custom logic code for the Lambda functions.</p>
+
+<h2 id="implementing-logic-for-the-lambda-functions">Implementing logic for the Lambda functions</h2>
+
+<p>Now that we have the design down and validated, let&rsquo;s update the handler functions to add our custom logic of extracting the thumbnail from the incoming video file. In this part of the development process, we will work with the code directly in the editor and commit changes from the terminal.</p>
+
+<p>Reviewing the <a href="https://github.com/rupakg/sls-video-processing-with-fargate">source code repo</a> for the project, we see that we have a <code>src</code>folder with two sub-folders for each of our Lambda functions. Keeping the functions in separate folders not only keeps the code isolated but also let&rsquo;s us include any dependencies.</p>
+
+<h3 id="processing-video-files-and-extracting-thumbnails">Processing video files and extracting thumbnails</h3>
+
+<p>Checkout a new branch <code>c6</code> and create <code>src/triggerOnUploadVideoStackery/index.js</code> file. The following is an excerpt of the code but you find the <a href="https://github.com/rupakg/sls-video-processing-with-fargate/blob/master/src/triggerOnUploadVideoStackery/index.js">full code here</a>.</p>
+
+<pre><code class="language-js">// src/triggerOnUploadVideoStackery/index.js
+...
+const DOCKER_TASK_ARN = process.env.DOCKER_TASK_ARN;
+const DOCKER_TASK_SUBNETS = process.env.DOCKER_TASK_SUBNETS;
+const INPUT_BUCKET_NAME = process.env.BUCKET_NAME_2;
+const OUTPUT_BUCKET_NAME = process.env.BUCKET_NAME;
+...
+const temp = DOCKER_TASK_ARN.split(':');
+const ECS_TASK_DEFINITION = `${temp[5].split('/')[1]}:${temp[6]}`;
+...
+
+module.exports.handler = function handler (event, context, callback) {
+  
+  const bucket = event.Records[0].s3.bucket.name;
+  const key = event.Records[0].s3.object.key;
+  ...
+  const s3_video_url = `https://s3.amazonaws.com/${bucket}/${key}`;
+  const thumbnail_file = key.substring(0, key.indexOf('_')) + '.png';
+  const frame_pos = key.substring(key.indexOf('_')+1, key.indexOf('.')).replace('-',':');
+  ...
+  runThumbnailGenerateTask(s3_video_url, thumbnail_file, frame_pos);
+  callback(null, {});
+}
+
+var runThumbnailGenerateTask = (s3_video_url, thumbnail_file, frame_pos) =&gt; {
+
+  const docker_subnet_items = DOCKER_TASK_SUBNETS.split(',');
+
+  // run an ECS Fargate task
+  var params = {
+    cluster: `${ECS_CLUSTER_NAME}`,
+    launchType: 'FARGATE',
+    taskDefinition: `${ECS_TASK_DEFINITION}`,
+    count: 1,
+    platformVersion:'LATEST',
+    networkConfiguration: {
+      awsvpcConfiguration: {
+          subnets: [],
+          assignPublicIp: 'ENABLED'
+      }
+    },
+    overrides: {
+      containerOverrides: [
+        {
+          name: '0',
+          environment: [
+            {
+              name: 'INPUT_VIDEO_FILE_URL',
+              value: `${s3_video_url}`
+            },
+			...
+  };
+  // assign the subnets
+  params.networkConfiguration.awsvpcConfiguration.subnets = docker_subnet_items;
+
+  // run the ecs task passing in the configuration
+  ecsApi.runECSTask(params);
+}
+</code></pre>
+
+<p>Line 8-9: Takes the Docker Task ARN and extracts the ECS Task Definition name from it. It will be used to run the ECS Task later.</p>
+
+<p>Line 17-19: Builds up the necessary parameters required by the Docker ECS Task to generate a thumbnail. It parses the video file name to extract the <code>frame_pos</code> of the frame that needs to be extracted as a thumbnail. Then, calls the helper method <code>runThumbnailGenerateTask</code> with the appropriate parameters.</p>
+
+<p>Line 25-58: Creates the <code>params</code> object that is expected by the <code>runECSTask</code> method. On line 27 and line 54, we use the <code>DOCKER_TASK_SUBNETS</code> values to assign the AWS VPC subnets required by the ECS Task. Finally on line 99, we call the <code>runECSTask</code> defined in the <code>ecs.js</code> helper file.</p>
+
+<p>Now let&rsquo;s add the code for handling the S3 event when a thumbnail is created and dropped into the output S3 bucket.</p>
+
+<h3 id="notification-on-thumbnail-creation">Notification on thumbnail creation</h3>
+
+<p>The Lambda function <code>triggerOnUploadVideoStackery</code> is triggered when a &lsquo;.png&rsquo; file is uploaded to S3. It prints out the name of the thumbnail file into the logs.</p>
+
+<p>Create <code>src/triggerOnThumbnailCreationStackery/index.js</code> file and copy the <a href="https://github.com/rupakg/sls-video-processing-with-fargate/blob/master/src/triggerOnThumbnailCreationStackery/index.js">full code from here</a>.</p>
+
+<h3 id="additional-permissions-to-s3-buckets">Additional permissions to S3 buckets</h3>
+
+<p>We need these additional permissions:</p>
+
+<ul>
+<li>The output S3 bucket also needs public read access for its objects, so anyone can view the thumbnails</li>
+<li>Both S3 buckets need public read access</li>
+</ul>
+
+<p>Let&rsquo;s update the <code>template.yaml</code> with these following sections:</p>
+
+<pre><code class="language-yaml">  ...
+  thumbOutputBucketPolicy: 
+    Type: AWS::S3::BucketPolicy
+    Properties: 
+      Bucket: !Ref objectStore16B4761A
+      PolicyDocument: 
+        Statement: 
+          - 
+            Action: 
+              - &quot;s3:GetObject&quot;
+            Effect: &quot;Allow&quot;
+            Resource: 
+              Fn::Join: 
+                - &quot;&quot;
+                - 
+                  - &quot;arn:aws:s3:::&quot;
+                  - 
+                    Ref: &quot;objectStore16B4761A&quot;
+                  - &quot;/*&quot;
+            Principal: &quot;*&quot;      
+  ...
+</code></pre>
+
+<p>Add <code>AccessControl: PublicRead</code> to both the S3 objects as follows:</p>
+
+<pre><code class="language-yaml">...
+  objectStore6A12D98C:
+	...
+      BucketName: !Sub ${AWS::StackName}-objectstore6a12d98c
+      AccessControl: PublicRead
+  objectStore3B0DC7B6:
+    ...
+      BucketName: !Sub ${AWS::StackName}-objectstore3b0dc7b6
+      AccessControl: PublicRead
+...
+</code></pre>
+
+<p>Last but not least, let&rsquo;s remove the event <code>s3:ObjectRemoved:*</code> from both Lambda functions, so that we don&rsquo;t get our fucntions called when we remove items from the S3 buckets.</p>
+
+<p>Raise and merge the <a href="https://github.com/rupakg/sls-video-processing-with-fargate/pull/6">PR</a> for branch <code>c6</code>. Time to deploy and run our application.</p>
+
+<h2 id="running-the-application">Running the Application</h2>
+
+<p>The lastest version of the application looks like the following:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/47038537-ba1ec380-d14f-11e8-97b3-eaa8b4238d02.png" alt="image" /></p>
+
+<p><strong>Note</strong>: The <strong>Custom</strong> resource is the bucket policy we added in the end to the output S3 bucket/objects.</p>
+
+<p>Refresh the branch on the Dashboard to <code>master</code>, and click the <strong>Prepare Deployment</strong> button. When it succeeds, click on the <strong>Deploy</strong> button. You will be taken to the AWS CloudFormation console, and you can review the change set and then click on <strong>Execute</strong> button to execute the changes.</p>
+
+<p>Once we have the <strong>Status</strong> showing as <code>CREATE_COMPLETE</code>, you can go to the Stackery Dashboard and flip over to the <strong>Deployments</strong> tab and see the latest deployment displayed.</p>
+
+<p>Let&rsquo;s test our application.</p>
+
+<p>Head over to the AWS S3 console and locate the input S3 bucket with suffix <code>objectstore6a12d98c</code> and upload a <code>.mp4</code> video file with a format <code>file_xx-xx.mp4</code>, where xx-xx is the frame position for the frame that you want to extract as a thumbnail. Grant public read access to this object.</p>
+
+<p>Then head over to the AWS ECS console and click on <strong>Task Definition</strong> and locate the task definition with <code>dockerTask4259BAF6</code> string in it. You can clickk through the task revision and review the task we created via our custom logic.</p>
+
+<p>To see the task running, go to the <strong>Cluster</strong> menu, and click on the <code>default</code> cluster. You will see our ECS Task running.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/47040371-1552b500-d154-11e8-8b4f-24c046257451.png" alt="image" /></p>
+
+<p>Click on the <strong>Task Id</strong>, and then flip to the <strong>Logs</strong> tab. Here you can see the logs generated by the ECS Task, and you can see the thumbnail being generated by the container. Click the refresh button to see updates.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/47040516-6b275d00-d154-11e8-9f72-2dd3cb3b0876.png" alt="image" /></p>
+
+<p>Head over to the AWS S3 console and look for the output S3 bucket with a suffix <code>objectstore3b0dc7b6</code>. And you will see the thumbnail created as per our expectations. Click on the file and then click on the Link at the bottom of the page. You should be able to view the thumbnail on your browser.</p>
+
+<p>If you are interested in the Lambda logs head over to the AWS Lambda console and locate your two functions. And you can see the logs generated as per our code.</p>
+
+<p>The logs for the <code>triggerOnUploadVideoStackery</code> function:</p>
+
+<pre><code>...
+2018-10-16T18:58:47.329Z	828abf9a-d175-11e8-8f31-a3496c7e476b	A new video file 'bunny_00-03.mp4' was uploaded to 'stackery-249834123825422-objectstore6a12d98c' for processing.
+2018-10-16T18:58:47.329Z	828abf9a-d175-11e8-8f31-a3496c7e476b	Processing file 'https://s3.amazonaws.com/stackery-249834123825422-objectstore6a12d98c/bunny_00-03.mp4' to extract frame from position '00:03' to generate thumbnail 'bunny.png'.
+...
+END RequestId: 828abf9a-d175-11e8-8f31-a3496c7e476b
+REPORT RequestId: 828abf9a-d175-11e8-8f31-a3496c7e476b	Duration: 1439.70 ms	Billed Duration: 1500 ms Memory Size: 512 MB	Max Memory Used: 49 MB	
+</code></pre>
+
+<p>The logs for the <code>triggerOnThumbnailCreationStackery</code> function:</p>
+
+<pre><code>...
+2018-10-16T18:59:52.206Z	a931c549-d175-11e8-8383-8731cad6c9dd	A new thumbnail file was generated at 'https://s3.amazonaws.com/stackery-249834123825422-objectstore3b0dc7b6/bunny.png'.
+END RequestId: a931c549-d175-11e8-8383-8731cad6c9dd
+REPORT RequestId: a931c549-d175-11e8-8383-8731cad6c9dd	Duration: 5.69 ms	Billed Duration: 100 ms Memory Size: 512 MB	Max Memory Used: 39 MB	
+</code></pre>
+
+<p>You can also view the traces in AWS X-Ray for the <code>triggerOnUploadVideoStackery</code> and <code>triggerOnThumbnailCreationStackery</code> functions respectively:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/47041225-3b795480-d156-11e8-8401-93dc980cabbb.png" alt="image" /></p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/47041287-69f72f80-d156-11e8-887c-2b3c143027c5.png" alt="image" /></p>
+
+<h2 id="error-handling">Error Handling</h2>
+
+<p>Stackery also provides an Errors resource that emits messages whenever an error occurs in a function in the stack. You can connect it to another Lambda function that can then process those errors. Stackery will capture uncaught exceptions and timeout errors as well. It can be used to send all the errors to an aggregating service of your choice.</p>
+
+<h2 id="health-operations">Health &amp; Operations</h2>
+
+<p>The Stack Observer view, i.e. the <strong>Deployments</strong> tab on the Stackery Dashboard will show the metrics from AWS for each resource in your application. Here is how the application metrics look like after a few runs:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/47042284-dd01a580-d158-11e8-9004-6b68119b6580.png" alt="image" /></p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/47042301-e985fe00-d158-11e8-94b8-9cbc198f25eb.png" alt="image" /></p>
+
+<p>I had to spilt up the screen in the above screenshots.</p>
+
+<p><strong>Feature Request</strong>: I should be able to rearrange the boxes for a neater view.</p>
+
+<p>So there you have a serverless application using a long-running process via the AWS Fargate triggered by Lambda functions to process a video file and extract thumbnails from user specified frame position.</p>
+
+<p>You can use the <a href="https://github.com/rupakg/sls-video-processing-with-fargate">code for the project</a> as your starting template to build your next Stackery application involving long-running processes using AWS Fargate.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>This is a multi-part blog series that explores building serverless applications with Stackery. In the <a href="https://rupakganguly.com/posts/building-serverless-apps-using-stackery/">first part</a> of the series, we discussed why Stackery is a great platform for visually building and deploying serverless applications on AWS.</p>
+
+<p>We looked at the ease of using the Stackery Dashboard to design, configure, build and deploy serverless applications. But, Stackery also has a feature-rich CLI, that can be used interchangeably to develop serverless applications. You can use the CLI extend the development workflow into a full CI/CD solution.</p>
+
+<p>This blog post was focused at walking you through and show you how to build a serverless application to extract a thumbnail from a video file using AWS Fargate, but built visually using Stackery. I had written a <a href="https://medium.com/@rupakg/how-to-use-aws-fargate-and-lambda-for-long-running-processes-in-a-serverless-app-c3712e158bb">blog post</a> for the same application using the Serverless Framework, but the ECSTask configuration was all done manually using the ECS Console. This version of the application written with Stackery automates that part as well. All of the code for the application is versioned controlled and nothing is left for manual configuration.</p>
+
+<p>If you have any feedback or questions, feel free to let me know in the comments below.</p>
+    
+    Like the article? Please share with others...<div class="sharethis-inline-share-buttons"></div><br/>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/building-an-api-using-the-swagger-toolchain/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Building an API using the Swagger toolchain</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/building-serverless-apps-using-stackery/">Building Serverless Apps Using Stackery</a>
+      
+      <time class="pull-right hidden-tablet">Sep 21 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/how-to-build-a-serverless-alexa-skill/">How to build a Serverless Alexa Skill</a>
+      
+      <time class="pull-right hidden-tablet">Aug 29 &#39;18</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-125025619-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

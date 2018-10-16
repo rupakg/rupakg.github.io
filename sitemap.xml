@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</loc>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</loc>
     <lastmod>2018-10-03T00:29:37-04:00</lastmod>
   </url>
@@ -59,25 +64,25 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/alexa-skill/</loc>
-    <lastmod>2018-08-29T17:29:03-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://rupakganguly.com/tags/alexa-skill/</loc>
     <lastmod>2018-08-29T17:29:03-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/api/</loc>
-    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
+    <loc>http://rupakganguly.com/categories/alexa-skill/</loc>
+    <lastmod>2018-08-29T17:29:03-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/tags/api/</loc>
+    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/api/</loc>
     <lastmod>2018-10-03T00:29:37-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -95,20 +100,14 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/conference/</loc>
-    <lastmod>2015-07-15T13:49:28-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://rupakganguly.com/tags/conference/</loc>
     <lastmod>2015-07-15T13:49:28-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/containers/</loc>
-    <lastmod>2015-07-21T14:08:43-04:00</lastmod>
+    <loc>http://rupakganguly.com/categories/conference/</loc>
+    <lastmod>2015-07-15T13:49:28-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -119,8 +118,8 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/development/</loc>
-    <lastmod>2018-09-21T14:52:28-04:00</lastmod>
+    <loc>http://rupakganguly.com/categories/containers/</loc>
+    <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -131,8 +130,8 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/devops/</loc>
-    <lastmod>2015-07-21T14:08:43-04:00</lastmod>
+    <loc>http://rupakganguly.com/categories/development/</loc>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -143,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/docker/</loc>
+    <loc>http://rupakganguly.com/categories/devops/</loc>
     <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -155,14 +154,26 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/categories/docker/</loc>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/tags/dockercon/</loc>
     <lastmod>2015-07-15T13:49:28-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/microservices/</loc>
-    <lastmod>2015-07-21T14:08:43-04:00</lastmod>
+    <loc>http://rupakganguly.com/tags/fargate/</loc>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/long-running/</loc>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -173,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/monitoring/</loc>
+    <loc>http://rupakganguly.com/categories/microservices/</loc>
     <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -185,14 +196,14 @@
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/tags/openapi/</loc>
-    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
+    <loc>http://rupakganguly.com/categories/monitoring/</loc>
+    <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://rupakganguly.com/categories/personal/</loc>
-    <lastmod>2018-05-01T17:50:17-04:00</lastmod>
+    <loc>http://rupakganguly.com/tags/openapi/</loc>
+    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -203,14 +214,20 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/categories/personal/</loc>
+    <lastmod>2018-05-01T17:50:17-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/categories/platforms/</loc>
-    <lastmod>2018-09-21T14:52:28-04:00</lastmod>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/posts/</loc>
-    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -222,25 +239,25 @@
   
   <url>
     <loc>http://rupakganguly.com/</loc>
-    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://rupakganguly.com/categories/serverless/</loc>
-    <lastmod>2018-09-21T14:52:28-04:00</lastmod>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/tags/serverless/</loc>
-    <lastmod>2018-09-21T14:52:28-04:00</lastmod>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/serverless/</loc>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/tags/stackery/</loc>
-    <lastmod>2018-09-21T14:52:28-04:00</lastmod>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -253,6 +270,18 @@
   <url>
     <loc>http://rupakganguly.com/tags/</loc>
     <lastmod>2018-08-29T17:29:03-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/thumbnail-generation/</loc>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/video-processing/</loc>
+    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   

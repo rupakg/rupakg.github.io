@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Development on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/categories/development/</link>
-    <description>Recent content in Development on Rupak Ganguly</description>
+    <title>Fargate on Rupak Ganguly</title>
+    <link>http://rupakganguly.com/tags/fargate/</link>
+    <description>Recent content in Fargate on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 Oct 2018 16:09:02 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rupakganguly.com/tags/fargate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,15 +21,6 @@
 
 &lt;p&gt;The application we will build is a video processing application that will take a video file dropped into a S3 bucket, along with some user-defined parameters and extract a thumbnail of the specified frame, and store it into another S3 bucket. Since the video processing bit is a long-running process, we will use AWS Fargate to process the video.
 &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Building Serverless Apps Using Stackery</title>
-      <link>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
-      <pubDate>Fri, 21 Sep 2018 14:52:28 -0400</pubDate>
-      
-      <guid>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
-      <description>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least privileges, and using a boilerplate template to build and deploy a serverless application to AWS.</description>
     </item>
     
   </channel>
