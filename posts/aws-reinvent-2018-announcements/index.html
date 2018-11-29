@@ -19,7 +19,7 @@
     
     
         
-        <meta name="keywords" content="announcements, AWS, reinvent">
+        <meta name="keywords" content="announcements, AWS, reinvent, serverless">
     
     
 
@@ -34,12 +34,14 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS reInvent 2018 Announcements"/>
-<meta name="twitter:description" content="As usual, AWS announced a slew of new services and updates to it&rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced.
-Storage Services AWS S3 Glacier Deep Archive: a new Amazon S3 storage class that provides secure, durable object storage for long-term data retention and offers the lowest price."/>
+<meta name="twitter:description" content="As usual, AWS announced a slew of new services and updates to it&rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced. Werner Vogels is on stage right now announcing new Serverless services and updates.
+
+"/>
 
 <meta property="og:title" content="AWS reInvent 2018 Announcements" />
-<meta property="og:description" content="As usual, AWS announced a slew of new services and updates to it&rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced.
-Storage Services AWS S3 Glacier Deep Archive: a new Amazon S3 storage class that provides secure, durable object storage for long-term data retention and offers the lowest price." />
+<meta property="og:description" content="As usual, AWS announced a slew of new services and updates to it&rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced. Werner Vogels is on stage right now announcing new Serverless services and updates.
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://rupakganguly.com/posts/aws-reinvent-2018-announcements/" /><meta property="article:published_time" content="2018-11-29T11:31:26-05:00"/>
 <meta property="article:modified_time" content="2018-11-29T11:31:26-05:00"/>
@@ -196,7 +198,13 @@ Storage Services AWS S3 Glacier Deep Archive: a new Amazon S3 storage class that
               <a class="badge badge-category" href="/categories/aws">AWS</a>
               •
           
+              <a class="badge badge-category" href="/categories/announcements">ANNOUNCEMENTS</a>
+              •
+          
               <a class="badge badge-category" href="/categories/reinvent">REINVENT</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/serverless">SERVERLESS</a>
               
           
       
@@ -215,21 +223,46 @@ Storage Services AWS S3 Glacier Deep Archive: a new Amazon S3 storage class that
            
       
           <a class="badge badge-tag" href="/tags/reinvent">reinvent</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/serverless">serverless</a>
           
       
     
     
     <br/>
-    <i class="fas fa-clock"></i> 3 min read
+    <i class="fas fa-clock"></i> 4 min read
 </div>
 
 
     Like the article? Please share with others...<div class="sharethis-inline-share-buttons"></div><br/>
   </header>
   <div class="post">
-    
+    <p>As usual, AWS announced a slew of new services and updates to it&rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced. Werner Vogels is on stage right now announcing new Serverless services and updates.</p>
 
-<p>As usual, AWS announced a slew of new services and updates to it&rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced.</p>
+<p></p>
+
+<h2 id="serverless-updates">Serverless Updates</h2>
+
+<p><strong>New Language support</strong>: Ruby (yes!!!), Cobol, C++, Rust</p>
+
+<p><strong>3rd-party IDE Integrations</strong>: PyCharm, IntelliJ, VSCode - full serverless integration, integrated debugging and more&hellip;</p>
+
+<p><strong>Custom Runtimes</strong>: Bring you own execution environment.</p>
+
+<p><strong>Lambda Layers</strong>: reusabiliy of code across serverless functions. no duplicated code anymore. versioning code out of box. Includes security.</p>
+
+<p><strong>Nested applications support</strong> for apps in Serverless Application Repository. Package common functionality into modules that can be referenced from other SAM apps.</p>
+
+<p><strong>Step-Functions can now orchestrate with 8 new services</strong>: AWS Batch, Fargate, Amazon ECS, Amazon SNS, Amazon SQS, AWS Glue, and Amazon SageMaker.</p>
+
+<p><strong>Websockets support for API Gateway</strong> - build real-time two-way communication applications</p>
+
+<p><strong>ALB Support for AWS Lambda</strong></p>
+
+<p><strong>Managed Stream for Kafka</strong>: fully managed and higly available Apache Kafka service</p>
+
+<p><strong>AWS Well-Architected Framework</strong></p>
 
 <h2 id="storage-services">Storage Services</h2>
 
@@ -309,8 +342,9 @@ Storage Services AWS S3 Glacier Deep Archive: a new Amazon S3 storage class that
 <li><a href="https://aws.amazon.com/blogs/aws/amazon-personalize-real-time-personalization-and-recommendation-for-everyone/">Amazon Personalize – Real-Time Personalization and Recommendation for Everyone</a></li>
 <li><a href="https://aws.amazon.com/blogs/aws/amazon-forecast-time-series-forecasting-made-easy/">Amazon Forecast – Time Series Forecasting Made Easy</a></li>
 <li><a href="https://aws.amazon.com/blogs/aws/amazon-dynamodb-on-demand-no-capacity-planning-and-pay-per-request-pricing/">Amazon DynamoDB On-Demand – No Capacity Planning and Pay-Per-Request Pricing</a></li>
+<li><a href="https://aws.amazon.com/blogs/aws/new-for-aws-lambda-use-any-programming-language-and-share-common-components/">New for AWS Lambda – Use Any Programming Language and Share Common Components</a></li>
+<li><a href="https://aws.amazon.com/blogs/aws/new-compute-database-messaging-analytics-and-machine-learning-integration-for-aws-step-functions/">New – Compute, Database, Messaging, Analytics, and Machine Learning Integration for AWS Step Functions</a></li>
 </ul>
-
     
     Like the article? Please share with others...<div class="sharethis-inline-share-buttons"></div><br/>
   </div>
@@ -349,6 +383,15 @@ Storage Services AWS S3 Glacier Deep Archive: a new Amazon S3 storage class that
     <a href="/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/">How to build long-running serverless apps using Lambda and AWS Fargate with Stackery</a>
       
       <time class="pull-right hidden-tablet">Oct 16 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/how-to-build-a-serverless-alexa-skill/">How to build a Serverless Alexa Skill</a>
+      
+      <time class="pull-right hidden-tablet">Aug 29 &#39;18</time>
       
   </span>
 </li>
