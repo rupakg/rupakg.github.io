@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aws on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/tags/aws/</link>
+    <link>http://rupakganguly.com/categories/aws/</link>
     <description>Recent content in Aws on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 29 Nov 2018 11:31:26 -0500</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rupakganguly.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</guid>
       <description>As usual, AWS announced a slew of new services and updates to it&amp;rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced.
 Storage Services AWS S3 Glacier Deep Archive: a new Amazon S3 storage class that provides secure, durable object storage for long-term data retention and offers the lowest price.</description>
-    </item>
-    
-    <item>
-      <title>Building Serverless Apps Using Stackery</title>
-      <link>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
-      <pubDate>Fri, 21 Sep 2018 14:52:28 -0400</pubDate>
-      
-      <guid>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
-      <description>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least privileges, and using a boilerplate template to build and deploy a serverless application to AWS.</description>
     </item>
     
   </channel>

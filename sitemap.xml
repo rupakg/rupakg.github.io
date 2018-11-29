@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</loc>
+    <lastmod>2018-11-29T11:31:26-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</loc>
     <lastmod>2018-10-16T16:09:02-04:00</lastmod>
   </url>
@@ -76,6 +81,12 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/tags/announcements/</loc>
+    <lastmod>2018-11-29T11:31:26-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/tags/api/</loc>
     <lastmod>2018-10-03T00:29:37-04:00</lastmod>
     <priority>0</priority>
@@ -89,7 +100,13 @@
   
   <url>
     <loc>http://rupakganguly.com/tags/aws/</loc>
-    <lastmod>2018-09-21T14:52:28-04:00</lastmod>
+    <lastmod>2018-11-29T11:31:26-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/aws/</loc>
+    <lastmod>2018-11-29T11:31:26-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -227,7 +244,7 @@
   
   <url>
     <loc>http://rupakganguly.com/posts/</loc>
-    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
+    <lastmod>2018-11-29T11:31:26-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -238,8 +255,20 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/tags/reinvent/</loc>
+    <lastmod>2018-11-29T11:31:26-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/categories/reinvent/</loc>
+    <lastmod>2018-11-29T11:31:26-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/</loc>
-    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
+    <lastmod>2018-11-29T11:31:26-05:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Oct 2018 16:09:02 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 29 Nov 2018 11:31:26 -0500</lastBuildDate>
     
 	<atom:link href="http://rupakganguly.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWS reInvent 2018 Announcements</title>
+      <link>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</link>
+      <pubDate>Thu, 29 Nov 2018 11:31:26 -0500</pubDate>
+      
+      <guid>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</guid>
+      <description>As usual, AWS announced a slew of new services and updates to it&amp;rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced.
+Storage Services AWS S3 Glacier Deep Archive: a new Amazon S3 storage class that provides secure, durable object storage for long-term data retention and offers the lowest price.</description>
+    </item>
     
     <item>
       <title>How to build long-running serverless apps using Lambda and AWS Fargate with Stackery</title>
