@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</loc>
     <lastmod>2018-12-21T12:25:26-05:00</lastmod>
   </url>
@@ -106,13 +111,19 @@
   
   <url>
     <loc>http://rupakganguly.com/tags/aws/</loc>
-    <lastmod>2018-12-21T12:25:26-05:00</lastmod>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/categories/aws/</loc>
     <lastmod>2018-12-21T12:25:26-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/case-studies/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -154,7 +165,7 @@
   
   <url>
     <loc>http://rupakganguly.com/categories/development/</loc>
-    <lastmod>2018-10-16T16:09:02-04:00</lastmod>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -185,6 +196,12 @@
   <url>
     <loc>http://rupakganguly.com/tags/dockercon/</loc>
     <lastmod>2015-07-15T13:49:28-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/enterprises/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -225,6 +242,12 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/tags/newsletters/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/tags/openapi/</loc>
     <lastmod>2018-10-03T00:29:37-04:00</lastmod>
     <priority>0</priority>
@@ -250,13 +273,19 @@
   
   <url>
     <loc>http://rupakganguly.com/posts/</loc>
-    <lastmod>2018-12-21T12:25:26-05:00</lastmod>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/tags/prometheus/</loc>
     <lastmod>2015-07-21T14:08:43-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/publications/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -273,20 +302,26 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/categories/resources/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/</loc>
-    <lastmod>2018-12-21T12:25:26-05:00</lastmod>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/tags/serverless/</loc>
-    <lastmod>2018-12-21T12:25:26-05:00</lastmod>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/categories/serverless/</loc>
-    <lastmod>2018-12-21T12:25:26-05:00</lastmod>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -319,6 +354,12 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/tags/tutorials/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/tags/video-processing/</loc>
     <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
@@ -332,6 +373,12 @@
   
   <url>
     <loc>http://rupakganguly.com/webinars/</loc>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/workshops/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
