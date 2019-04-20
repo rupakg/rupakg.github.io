@@ -6,10 +6,22 @@
     <description>Recent content in Containers on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jul 2015 14:08:43 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 05 Mar 2019 15:58:24 -0400</lastBuildDate>
     
 	<atom:link href="http://rupakganguly.com/tags/containers/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Excited to Join Docker</title>
+      <link>http://rupakganguly.com/posts/excited-to-join-docker/</link>
+      <pubDate>Tue, 05 Mar 2019 15:58:24 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/posts/excited-to-join-docker/</guid>
+      <description>&lt;p&gt;Due to a personal loss in my life, I took a few months of sabbatical to get through it. I got through the holidays with support from my family and friends. It was hard but as the year turned around, I had to move on with my life.&lt;/p&gt;
+
+&lt;p&gt;I had a very interesting tenure at Serverless.com and I was looking for a more close interaction with customers at large enterprises. I wanted to remain hands-on technically, but not become a code monkey. I wanted to work on a variety of enterprise use cases yet did not want to become an &amp;ldquo;on-the-road-Mon-to-Fri&amp;rdquo; consultant. I wanted to ideally work remotely and travel occasionally.&lt;br /&gt;
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Monitoring Docker Services With Prometheus</title>
