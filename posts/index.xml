@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Mar 2019 15:58:24 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 06 May 2019 23:00:20 -0400</lastBuildDate>
     
 	<atom:link href="http://rupakganguly.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DockerCon 2019: Opensource Summit Serverless</title>
+      <link>http://rupakganguly.com/posts/dockercon-2019-oss-serverless/</link>
+      <pubDate>Mon, 06 May 2019 23:00:20 -0400</pubDate>
+      
+      <guid>http://rupakganguly.com/posts/dockercon-2019-oss-serverless/</guid>
+      <description>&lt;p&gt;I had the opportunity to present and host the Opensource Summit Serverless session along with panelists Burton Rheutan &amp;amp; Pav Jimanov representing OpenFaaS and Yaron Haviv representing Nuclio, at DockerCon 2019. Humbled to be part of the show.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Excited to Join Docker</title>
