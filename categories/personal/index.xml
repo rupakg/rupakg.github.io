@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Personal on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/categories/personal/</link>
+    <link>https://rupakganguly.com/categories/personal/</link>
     <description>Recent content in Personal on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 May 2020 21:18:19 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/categories/personal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to Better Yourself During This Covid-19 Lockdown</title>
-      <link>http://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</link>
+      <link>https://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</link>
       <pubDate>Sat, 02 May 2020 21:18:19 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</guid>
+      <guid>https://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</guid>
       <description>&lt;p&gt;We are in a terrible crisis, and it has been very stressful for everyone. Some of us are in the frontlines, some of us losing their jobs, some of us in small businesses affected by the shutdown, and some of us forced to work from home. Kids missing school and adapting to online learning, missing out on proms and graduations, missing going out and playing with their friends. Some of us juggling work from home while taking care of our children. And to top it all, fear of catching the virus and be in a precarious health situation. Chaos - to simply put it. But we as humans have survived adversities in the past and we will get over this as well. There is light at the end of the tunnel.&lt;/p&gt;
 
 &lt;p&gt;So what can we do with the situation we are in? How can we turn this adversity in our favor and make it a positive thing? How can we utilize the time we got and turn it into something productive and prepare for the future?
@@ -25,10 +25,10 @@
     
     <item>
       <title>Excited to Join Docker</title>
-      <link>http://rupakganguly.com/posts/excited-to-join-docker/</link>
+      <link>https://rupakganguly.com/posts/excited-to-join-docker/</link>
       <pubDate>Tue, 05 Mar 2019 15:58:24 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/excited-to-join-docker/</guid>
+      <guid>https://rupakganguly.com/posts/excited-to-join-docker/</guid>
       <description>&lt;p&gt;Due to a personal loss in my life, I took a few months of sabbatical to get through it. I got through the holidays with support from my family and friends. It was hard but as the year turned around, I had to move on with my life.&lt;/p&gt;
 
 &lt;p&gt;I had a very interesting tenure at Serverless.com and I was looking for a more close interaction with customers at large enterprises. I wanted to remain hands-on technically, but not become a code monkey. I wanted to work on a variety of enterprise use cases yet did not want to become an &amp;ldquo;on-the-road-Mon-to-Fri&amp;rdquo; consultant. I wanted to ideally work remotely and travel occasionally.&lt;br /&gt;
@@ -37,20 +37,20 @@
     
     <item>
       <title>About Me</title>
-      <link>http://rupakganguly.com/about/</link>
+      <link>https://rupakganguly.com/about/</link>
       <pubDate>Tue, 01 May 2018 17:50:17 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/about/</guid>
+      <guid>https://rupakganguly.com/about/</guid>
       <description>Rupak Ganguly (rupakg) is a thought leader, business savvy, technology advocate, enterprise architect, and a problem solver.
 Over 25+ years of industry experience in architecture, design, development, and delivery of web and windows applications on various platforms. Passionate about serverless architectures, cloud technologies, micro-services architectures, and open source; works collaboratively with team members to achieve goals; persistent &amp;amp; creative problem solver, and familiar with leading edge development paradigms. Communicates effectively with both technical &amp;amp; business counterparts, understands business needs and creates tools to manage them.</description>
     </item>
     
     <item>
       <title>Personal Brand</title>
-      <link>http://rupakganguly.com/posts/personal-brand/</link>
+      <link>https://rupakganguly.com/posts/personal-brand/</link>
       <pubDate>Tue, 01 May 2018 17:29:17 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/personal-brand/</guid>
+      <guid>https://rupakganguly.com/posts/personal-brand/</guid>
       <description>Over the years, I have built lot of applications and written about software and its practices. Most of the applications were internal facing and hence could not be shared in public. Many articles I wrote were hosted on internal knowledge bases or those sites have evolved over time. Many of those applications and writings were never made public.
 Building a personal brand is crucial.
 So I have decided to post all my writings here, and publish all my applications on Github.</description>

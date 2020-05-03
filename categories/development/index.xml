@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/categories/development/</link>
+    <link>https://rupakganguly.com/categories/development/</link>
     <description>Recent content in Development on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Dec 2018 12:46:08 -0500</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Curated list of serverless resources</title>
-      <link>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</link>
+      <link>https://rupakganguly.com/posts/curated-list-of-serverless-resources/</link>
       <pubDate>Tue, 25 Dec 2018 12:46:08 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</guid>
+      <guid>https://rupakganguly.com/posts/curated-list-of-serverless-resources/</guid>
       <description>&lt;p&gt;A curated list of &lt;strong&gt;serverless&lt;/strong&gt; resources, applications, workshops, tutorials, newsletters, blogs, and enterprise case studies. I started this list for my own use but I thought it might be useful for others as well. This is a live document ad I will be updating the page often, so bookmark it and come back to check it for newer content. Enjoy!
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to build long-running serverless apps using Lambda and AWS Fargate with Stackery</title>
-      <link>http://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</link>
+      <link>https://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</link>
       <pubDate>Tue, 16 Oct 2018 16:09:02 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</guid>
+      <guid>https://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</guid>
       <description>&lt;p&gt;This is a multi-part blog series that explores building serverless applications with Stackery. In the &lt;a href=&#34;https://rupakganguly.com/posts/building-serverless-apps-using-stackery/&#34;&gt;first part&lt;/a&gt;, we discussed why Stackery is a great platform for visually building and deploying serverless applications on AWS.&lt;/p&gt;
 
 &lt;p&gt;The application we will build is a video processing application that will take a video file dropped into a S3 bucket, along with some user-defined parameters and extract a thumbnail of the specified frame, and store it into another S3 bucket. Since the video processing bit is a long-running process, we will use AWS Fargate to process the video.
@@ -35,10 +35,10 @@
     
     <item>
       <title>Building Serverless Apps Using Stackery</title>
-      <link>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
+      <link>https://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
       <pubDate>Fri, 21 Sep 2018 14:52:28 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
+      <guid>https://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
       <description>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least privileges, and using a boilerplate template to build and deploy a serverless application to AWS.</description>
     </item>
     

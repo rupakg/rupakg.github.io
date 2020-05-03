@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dockercon on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/tags/dockercon/</link>
+    <link>https://rupakganguly.com/tags/dockercon/</link>
     <description>Recent content in Dockercon on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 May 2019 23:00:20 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/tags/dockercon/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/tags/dockercon/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DockerCon 2019: Opensource Summit Serverless</title>
-      <link>http://rupakganguly.com/posts/dockercon-2019-oss-serverless/</link>
+      <link>https://rupakganguly.com/posts/dockercon-2019-oss-serverless/</link>
       <pubDate>Mon, 06 May 2019 23:00:20 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/dockercon-2019-oss-serverless/</guid>
+      <guid>https://rupakganguly.com/posts/dockercon-2019-oss-serverless/</guid>
       <description>&lt;p&gt;I had the opportunity to present and host the Opensource Summit Serverless session along with panelists Burton Rheutan &amp;amp; Pav Jimanov representing OpenFaaS and Yaron Haviv representing Nuclio, at DockerCon 2019. Humbled to be part of the show.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CenturyLink Labs Goes to DockerCon 2015</title>
-      <link>http://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</link>
+      <link>https://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</link>
       <pubDate>Wed, 15 Jul 2015 13:49:28 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</guid>
+      <guid>https://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</guid>
       <description>It was an exciting time for us again to be attending DockerCon 2015 this year. It was the 2nd DockerCon, and was way bigger than the first one. Our whole CenturyLink Labs team was there, excited to hear the new announcements from Docker and the rest of the community.
 The opening keynote by Ben Golub, CEO of Docker, was followed by Docker&amp;rsquo;s Founder &amp;amp; CTO, Solomon Hykes. The keynote session was followed by a variety of breakout tracks taking place throughout the day.</description>
     </item>

@@ -2,165 +2,165 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/categories/</link>
+    <link>https://rupakganguly.com/categories/</link>
     <description>Recent content in Categories on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Aug 2018 17:29:03 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Alexa Skill</title>
-      <link>http://rupakganguly.com/categories/alexa-skill/</link>
+      <link>https://rupakganguly.com/categories/alexa-skill/</link>
       <pubDate>Wed, 29 Aug 2018 17:29:03 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/alexa-skill/</guid>
+      <guid>https://rupakganguly.com/categories/alexa-skill/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Announcements</title>
-      <link>http://rupakganguly.com/categories/announcements/</link>
+      <link>https://rupakganguly.com/categories/announcements/</link>
       <pubDate>Thu, 29 Nov 2018 11:31:26 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/categories/announcements/</guid>
+      <guid>https://rupakganguly.com/categories/announcements/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Api</title>
-      <link>http://rupakganguly.com/categories/api/</link>
+      <link>https://rupakganguly.com/categories/api/</link>
       <pubDate>Wed, 03 Oct 2018 00:29:37 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/api/</guid>
+      <guid>https://rupakganguly.com/categories/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Aws</title>
-      <link>http://rupakganguly.com/categories/aws/</link>
+      <link>https://rupakganguly.com/categories/aws/</link>
       <pubDate>Thu, 29 Nov 2018 11:31:26 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/categories/aws/</guid>
+      <guid>https://rupakganguly.com/categories/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Conference</title>
-      <link>http://rupakganguly.com/categories/conference/</link>
+      <link>https://rupakganguly.com/categories/conference/</link>
       <pubDate>Wed, 15 Jul 2015 13:49:28 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/conference/</guid>
+      <guid>https://rupakganguly.com/categories/conference/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Containers</title>
-      <link>http://rupakganguly.com/categories/containers/</link>
+      <link>https://rupakganguly.com/categories/containers/</link>
       <pubDate>Tue, 21 Jul 2015 14:08:43 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/containers/</guid>
+      <guid>https://rupakganguly.com/categories/containers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Development</title>
-      <link>http://rupakganguly.com/categories/development/</link>
+      <link>https://rupakganguly.com/categories/development/</link>
       <pubDate>Tue, 25 Dec 2018 12:46:08 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/categories/development/</guid>
+      <guid>https://rupakganguly.com/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Devops</title>
-      <link>http://rupakganguly.com/categories/devops/</link>
+      <link>https://rupakganguly.com/categories/devops/</link>
       <pubDate>Tue, 21 Jul 2015 14:08:43 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/devops/</guid>
+      <guid>https://rupakganguly.com/categories/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>http://rupakganguly.com/categories/docker/</link>
+      <link>https://rupakganguly.com/categories/docker/</link>
       <pubDate>Tue, 16 Oct 2018 16:09:02 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/docker/</guid>
+      <guid>https://rupakganguly.com/categories/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microservices</title>
-      <link>http://rupakganguly.com/categories/microservices/</link>
+      <link>https://rupakganguly.com/categories/microservices/</link>
       <pubDate>Tue, 21 Jul 2015 14:08:43 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/microservices/</guid>
+      <guid>https://rupakganguly.com/categories/microservices/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Monitoring</title>
-      <link>http://rupakganguly.com/categories/monitoring/</link>
+      <link>https://rupakganguly.com/categories/monitoring/</link>
       <pubDate>Tue, 21 Jul 2015 14:08:43 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/monitoring/</guid>
+      <guid>https://rupakganguly.com/categories/monitoring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Personal</title>
-      <link>http://rupakganguly.com/categories/personal/</link>
+      <link>https://rupakganguly.com/categories/personal/</link>
       <pubDate>Sat, 02 May 2020 21:18:19 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/personal/</guid>
+      <guid>https://rupakganguly.com/categories/personal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Platforms</title>
-      <link>http://rupakganguly.com/categories/platforms/</link>
+      <link>https://rupakganguly.com/categories/platforms/</link>
       <pubDate>Tue, 16 Oct 2018 16:09:02 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/platforms/</guid>
+      <guid>https://rupakganguly.com/categories/platforms/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reinvent</title>
-      <link>http://rupakganguly.com/categories/reinvent/</link>
+      <link>https://rupakganguly.com/categories/reinvent/</link>
       <pubDate>Thu, 29 Nov 2018 11:31:26 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/categories/reinvent/</guid>
+      <guid>https://rupakganguly.com/categories/reinvent/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Resources</title>
-      <link>http://rupakganguly.com/categories/resources/</link>
+      <link>https://rupakganguly.com/categories/resources/</link>
       <pubDate>Sat, 02 May 2020 21:18:19 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/resources/</guid>
+      <guid>https://rupakganguly.com/categories/resources/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Serverless</title>
-      <link>http://rupakganguly.com/categories/serverless/</link>
+      <link>https://rupakganguly.com/categories/serverless/</link>
       <pubDate>Tue, 25 Dec 2018 12:46:08 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/categories/serverless/</guid>
+      <guid>https://rupakganguly.com/categories/serverless/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Talks</title>
-      <link>http://rupakganguly.com/categories/talks/</link>
+      <link>https://rupakganguly.com/categories/talks/</link>
       <pubDate>Mon, 06 May 2019 23:00:20 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/categories/talks/</guid>
+      <guid>https://rupakganguly.com/categories/talks/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Announcements on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/categories/announcements/</link>
+    <link>https://rupakganguly.com/categories/announcements/</link>
     <description>Recent content in Announcements on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 29 Nov 2018 11:31:26 -0500</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/categories/announcements/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/categories/announcements/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AWS reInvent 2018 Announcements</title>
-      <link>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</link>
+      <link>https://rupakganguly.com/posts/aws-reinvent-2018-announcements/</link>
       <pubDate>Thu, 29 Nov 2018 11:31:26 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</guid>
+      <guid>https://rupakganguly.com/posts/aws-reinvent-2018-announcements/</guid>
       <description>&lt;p&gt;As usual, AWS announced a slew of new services and updates to it&amp;rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced. Werner Vogels is on stage right now announcing new Serverless services and updates.
 &lt;/p&gt;</description>
     </item>

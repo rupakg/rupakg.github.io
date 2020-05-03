@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Workshops on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/tags/workshops/</link>
+    <link>https://rupakganguly.com/tags/workshops/</link>
     <description>Recent content in Workshops on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Dec 2018 12:46:08 -0500</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/tags/workshops/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/tags/workshops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Curated list of serverless resources</title>
-      <link>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</link>
+      <link>https://rupakganguly.com/posts/curated-list-of-serverless-resources/</link>
       <pubDate>Tue, 25 Dec 2018 12:46:08 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</guid>
+      <guid>https://rupakganguly.com/posts/curated-list-of-serverless-resources/</guid>
       <description>&lt;p&gt;A curated list of &lt;strong&gt;serverless&lt;/strong&gt; resources, applications, workshops, tutorials, newsletters, blogs, and enterprise case studies. I started this list for my own use but I thought it might be useful for others as well. This is a live document ad I will be updating the page often, so bookmark it and come back to check it for newer content. Enjoy!
 &lt;/p&gt;</description>
     </item>

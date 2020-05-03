@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/posts/</link>
+    <link>https://rupakganguly.com/posts/</link>
     <description>Recent content in Posts on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 May 2020 21:18:19 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to Better Yourself During This Covid-19 Lockdown</title>
-      <link>http://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</link>
+      <link>https://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</link>
       <pubDate>Sat, 02 May 2020 21:18:19 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</guid>
+      <guid>https://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</guid>
       <description>&lt;p&gt;We are in a terrible crisis, and it has been very stressful for everyone. Some of us are in the frontlines, some of us losing their jobs, some of us in small businesses affected by the shutdown, and some of us forced to work from home. Kids missing school and adapting to online learning, missing out on proms and graduations, missing going out and playing with their friends. Some of us juggling work from home while taking care of our children. And to top it all, fear of catching the virus and be in a precarious health situation. Chaos - to simply put it. But we as humans have survived adversities in the past and we will get over this as well. There is light at the end of the tunnel.&lt;/p&gt;
 
 &lt;p&gt;So what can we do with the situation we are in? How can we turn this adversity in our favor and make it a positive thing? How can we utilize the time we got and turn it into something productive and prepare for the future?
@@ -25,20 +25,20 @@
     
     <item>
       <title>DockerCon 2019: Opensource Summit Serverless</title>
-      <link>http://rupakganguly.com/posts/dockercon-2019-oss-serverless/</link>
+      <link>https://rupakganguly.com/posts/dockercon-2019-oss-serverless/</link>
       <pubDate>Mon, 06 May 2019 23:00:20 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/dockercon-2019-oss-serverless/</guid>
+      <guid>https://rupakganguly.com/posts/dockercon-2019-oss-serverless/</guid>
       <description>&lt;p&gt;I had the opportunity to present and host the Opensource Summit Serverless session along with panelists Burton Rheutan &amp;amp; Pav Jimanov representing OpenFaaS and Yaron Haviv representing Nuclio, at DockerCon 2019. Humbled to be part of the show.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Excited to Join Docker</title>
-      <link>http://rupakganguly.com/posts/excited-to-join-docker/</link>
+      <link>https://rupakganguly.com/posts/excited-to-join-docker/</link>
       <pubDate>Tue, 05 Mar 2019 15:58:24 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/excited-to-join-docker/</guid>
+      <guid>https://rupakganguly.com/posts/excited-to-join-docker/</guid>
       <description>&lt;p&gt;Due to a personal loss in my life, I took a few months of sabbatical to get through it. I got through the holidays with support from my family and friends. It was hard but as the year turned around, I had to move on with my life.&lt;/p&gt;
 
 &lt;p&gt;I had a very interesting tenure at Serverless.com and I was looking for a more close interaction with customers at large enterprises. I wanted to remain hands-on technically, but not become a code monkey. I wanted to work on a variety of enterprise use cases yet did not want to become an &amp;ldquo;on-the-road-Mon-to-Fri&amp;rdquo; consultant. I wanted to ideally work remotely and travel occasionally.&lt;br /&gt;
@@ -47,30 +47,30 @@
     
     <item>
       <title>Curated list of serverless resources</title>
-      <link>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</link>
+      <link>https://rupakganguly.com/posts/curated-list-of-serverless-resources/</link>
       <pubDate>Tue, 25 Dec 2018 12:46:08 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</guid>
+      <guid>https://rupakganguly.com/posts/curated-list-of-serverless-resources/</guid>
       <description>&lt;p&gt;A curated list of &lt;strong&gt;serverless&lt;/strong&gt; resources, applications, workshops, tutorials, newsletters, blogs, and enterprise case studies. I started this list for my own use but I thought it might be useful for others as well. This is a live document ad I will be updating the page often, so bookmark it and come back to check it for newer content. Enjoy!
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>AWS reInvent 2018 Announcements</title>
-      <link>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</link>
+      <link>https://rupakganguly.com/posts/aws-reinvent-2018-announcements/</link>
       <pubDate>Thu, 29 Nov 2018 11:31:26 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</guid>
+      <guid>https://rupakganguly.com/posts/aws-reinvent-2018-announcements/</guid>
       <description>&lt;p&gt;As usual, AWS announced a slew of new services and updates to it&amp;rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced. Werner Vogels is on stage right now announcing new Serverless services and updates.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to build long-running serverless apps using Lambda and AWS Fargate with Stackery</title>
-      <link>http://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</link>
+      <link>https://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</link>
       <pubDate>Tue, 16 Oct 2018 16:09:02 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</guid>
+      <guid>https://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</guid>
       <description>&lt;p&gt;This is a multi-part blog series that explores building serverless applications with Stackery. In the &lt;a href=&#34;https://rupakganguly.com/posts/building-serverless-apps-using-stackery/&#34;&gt;first part&lt;/a&gt;, we discussed why Stackery is a great platform for visually building and deploying serverless applications on AWS.&lt;/p&gt;
 
 &lt;p&gt;The application we will build is a video processing application that will take a video file dropped into a S3 bucket, along with some user-defined parameters and extract a thumbnail of the specified frame, and store it into another S3 bucket. Since the video processing bit is a long-running process, we will use AWS Fargate to process the video.
@@ -79,49 +79,49 @@
     
     <item>
       <title>Building an API using the Swagger toolchain</title>
-      <link>http://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</link>
+      <link>https://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</link>
       <pubDate>Wed, 03 Oct 2018 00:29:37 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</guid>
+      <guid>https://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</guid>
       <description>&lt;p&gt;We have been building APIs for ages, with varying standards and design styles - &lt;a href=&#34;https://en.wikipedia.org/wiki/SOAP&#34;&gt;SOAP&lt;/a&gt; web services, &lt;a href=&#34;https://en.wikipedia.org/wiki/GRPC&#34;&gt;gRPC&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST&lt;/a&gt;, and until recently &lt;a href=&#34;https://en.wikipedia.org/wiki/GraphQL&#34;&gt;GraphQL&lt;/a&gt;. Instead of declaring a winning design style, I believe that each one of these design styles stands their ground, and it depends on the use case &lt;a href=&#34;https://nordicapis.com/when-to-use-what-rest-graphql-webhooks-grpc/&#34;&gt;when to use which style&lt;/a&gt;.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Building Serverless Apps Using Stackery</title>
-      <link>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
+      <link>https://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
       <pubDate>Fri, 21 Sep 2018 14:52:28 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
+      <guid>https://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
       <description>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least privileges, and using a boilerplate template to build and deploy a serverless application to AWS.</description>
     </item>
     
     <item>
       <title>Roundup of API Platforms and Specifications</title>
-      <link>http://rupakganguly.com/posts/roundup-of-api-platforms-and-specifications/</link>
+      <link>https://rupakganguly.com/posts/roundup-of-api-platforms-and-specifications/</link>
       <pubDate>Fri, 31 Aug 2018 12:59:38 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/roundup-of-api-platforms-and-specifications/</guid>
+      <guid>https://rupakganguly.com/posts/roundup-of-api-platforms-and-specifications/</guid>
       <description>&lt;p&gt;While researching for full, end-to-end, lifecycle API management tools, I discovered many that fit the bill. In this post, I compare some popular API platforms and specification formats.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to build a Serverless Alexa Skill</title>
-      <link>http://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</link>
+      <link>https://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</link>
       <pubDate>Wed, 29 Aug 2018 17:29:03 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</guid>
+      <guid>https://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</guid>
       <description>&lt;p&gt;When I was a kid, I was intrigued by the Starship Enterprise&amp;rsquo;s onboard computer featured in the science fiction series Star Trek. Although cheeky at times in it&amp;rsquo;s portrayal of technologies beyond our imagination, the voice-controlled computer always made me wonder. And, here we are in the same lifetime, realiziing similar technolgies - inside our homes, on a small device&amp;hellip; Amazing, I think! 🖖
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Personal Brand</title>
-      <link>http://rupakganguly.com/posts/personal-brand/</link>
+      <link>https://rupakganguly.com/posts/personal-brand/</link>
       <pubDate>Tue, 01 May 2018 17:29:17 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/personal-brand/</guid>
+      <guid>https://rupakganguly.com/posts/personal-brand/</guid>
       <description>Over the years, I have built lot of applications and written about software and its practices. Most of the applications were internal facing and hence could not be shared in public. Many articles I wrote were hosted on internal knowledge bases or those sites have evolved over time. Many of those applications and writings were never made public.
 Building a personal brand is crucial.
 So I have decided to post all my writings here, and publish all my applications on Github.</description>
@@ -129,39 +129,39 @@ So I have decided to post all my writings here, and publish all my applications 
     
     <item>
       <title>Monitoring Docker Services With Prometheus</title>
-      <link>http://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</link>
+      <link>https://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</link>
       <pubDate>Tue, 21 Jul 2015 14:08:43 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</guid>
+      <guid>https://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</guid>
       <description>With the advent of the &amp;lsquo;micro-services&amp;rsquo; architecture and the evolving trend for using Docker, monolithic applications are being broken up into smaller and independent services. The idea is to keep the services small so that small groups of developers can work on them, upgrade or patch them quickly, and build &amp;amp; release them continuously. Although that vision is promising, it introduces complexity as the number of services grow. With that also grows the need to monitor these services around the clock, to maintain the healthy functioning of the application.</description>
     </item>
     
     <item>
       <title>CenturyLink Labs Goes to DockerCon 2015</title>
-      <link>http://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</link>
+      <link>https://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</link>
       <pubDate>Wed, 15 Jul 2015 13:49:28 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</guid>
+      <guid>https://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</guid>
       <description>It was an exciting time for us again to be attending DockerCon 2015 this year. It was the 2nd DockerCon, and was way bigger than the first one. Our whole CenturyLink Labs team was there, excited to hear the new announcements from Docker and the rest of the community.
 The opening keynote by Ben Golub, CEO of Docker, was followed by Docker&amp;rsquo;s Founder &amp;amp; CTO, Solomon Hykes. The keynote session was followed by a variety of breakout tracks taking place throughout the day.</description>
     </item>
     
     <item>
       <title>Lorry.io: Pathway to Docker Composable Apps</title>
-      <link>http://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</link>
+      <link>https://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</link>
       <pubDate>Tue, 26 May 2015 13:26:19 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</guid>
+      <guid>https://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</guid>
       <description>Recently, Docker released the Compose tool for defining and running complex applications with Docker. The basic component of that tool is the file, docker-compose.yml. We at CenturyLink were big fans of Fig, the basis for Compose and the docker-compose.yml, but always envisioned a utility that could facilitate creating the docker-compose.yml files easily and intuitively.
  From that idea, we are happy to announce our latest project, Lorry.io, a docker-compose.yml validator, editor and composer.</description>
     </item>
     
     <item>
       <title>Managing Application Code in Linux Containers</title>
-      <link>http://rupakganguly.com/posts/managing-application-code-in-linux-containers/</link>
+      <link>https://rupakganguly.com/posts/managing-application-code-in-linux-containers/</link>
       <pubDate>Fri, 10 Oct 2014 13:31:40 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/managing-application-code-in-linux-containers/</guid>
+      <guid>https://rupakganguly.com/posts/managing-application-code-in-linux-containers/</guid>
       <description>Many developers have heard of Linux containers and Docker. But how do you deploy your code to an application running in Linux containers?
 Let&amp;rsquo;s go over that in this article, using a very simple yet effective workflow. We&amp;rsquo;ll focus on WordPress, but these principles can be used with Ruby, Python, or even Go applications.
 I think most of the time, users need to manage Wordpress for adding/updating plugins, themes etc.</description>

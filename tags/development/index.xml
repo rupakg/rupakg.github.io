@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/tags/development/</link>
+    <link>https://rupakganguly.com/tags/development/</link>
     <description>Recent content in Development on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 03 Oct 2018 00:29:37 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/tags/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Building an API using the Swagger toolchain</title>
-      <link>http://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</link>
+      <link>https://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</link>
       <pubDate>Wed, 03 Oct 2018 00:29:37 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</guid>
+      <guid>https://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</guid>
       <description>&lt;p&gt;We have been building APIs for ages, with varying standards and design styles - &lt;a href=&#34;https://en.wikipedia.org/wiki/SOAP&#34;&gt;SOAP&lt;/a&gt; web services, &lt;a href=&#34;https://en.wikipedia.org/wiki/GRPC&#34;&gt;gRPC&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST&lt;/a&gt;, and until recently &lt;a href=&#34;https://en.wikipedia.org/wiki/GraphQL&#34;&gt;GraphQL&lt;/a&gt;. Instead of declaring a winning design style, I believe that each one of these design styles stands their ground, and it depends on the use case &lt;a href=&#34;https://nordicapis.com/when-to-use-what-rest-graphql-webhooks-grpc/&#34;&gt;when to use which style&lt;/a&gt;.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Building Serverless Apps Using Stackery</title>
-      <link>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
+      <link>https://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
       <pubDate>Fri, 21 Sep 2018 14:52:28 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
+      <guid>https://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
       <description>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least privileges, and using a boilerplate template to build and deploy a serverless application to AWS.</description>
     </item>
     
     <item>
       <title>Monitoring Docker Services With Prometheus</title>
-      <link>http://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</link>
+      <link>https://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</link>
       <pubDate>Tue, 21 Jul 2015 14:08:43 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</guid>
+      <guid>https://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</guid>
       <description>With the advent of the &amp;lsquo;micro-services&amp;rsquo; architecture and the evolving trend for using Docker, monolithic applications are being broken up into smaller and independent services. The idea is to keep the services small so that small groups of developers can work on them, upgrade or patch them quickly, and build &amp;amp; release them continuously. Although that vision is promising, it introduces complexity as the number of services grow. With that also grows the need to monitor these services around the clock, to maintain the healthy functioning of the application.</description>
     </item>
     
     <item>
       <title>Lorry.io: Pathway to Docker Composable Apps</title>
-      <link>http://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</link>
+      <link>https://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</link>
       <pubDate>Tue, 26 May 2015 13:26:19 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</guid>
+      <guid>https://rupakganguly.com/posts/lorry-io-pathway-to-docker-composable-apps/</guid>
       <description>Recently, Docker released the Compose tool for defining and running complex applications with Docker. The basic component of that tool is the file, docker-compose.yml. We at CenturyLink were big fans of Fig, the basis for Compose and the docker-compose.yml, but always envisioned a utility that could facilitate creating the docker-compose.yml files easily and intuitively.
  From that idea, we are happy to announce our latest project, Lorry.io, a docker-compose.yml validator, editor and composer.</description>
     </item>
     
     <item>
       <title>Managing Application Code in Linux Containers</title>
-      <link>http://rupakganguly.com/posts/managing-application-code-in-linux-containers/</link>
+      <link>https://rupakganguly.com/posts/managing-application-code-in-linux-containers/</link>
       <pubDate>Fri, 10 Oct 2014 13:31:40 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/managing-application-code-in-linux-containers/</guid>
+      <guid>https://rupakganguly.com/posts/managing-application-code-in-linux-containers/</guid>
       <description>Many developers have heard of Linux containers and Docker. But how do you deploy your code to an application running in Linux containers?
 Let&amp;rsquo;s go over that in this article, using a very simple yet effective workflow. We&amp;rsquo;ll focus on WordPress, but these principles can be used with Ruby, Python, or even Go applications.
 I think most of the time, users need to manage Wordpress for adding/updating plugins, themes etc.</description>

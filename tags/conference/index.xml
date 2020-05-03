@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Conference on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/tags/conference/</link>
+    <link>https://rupakganguly.com/tags/conference/</link>
     <description>Recent content in Conference on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jul 2015 13:49:28 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/tags/conference/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/tags/conference/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CenturyLink Labs Goes to DockerCon 2015</title>
-      <link>http://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</link>
+      <link>https://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</link>
       <pubDate>Wed, 15 Jul 2015 13:49:28 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</guid>
+      <guid>https://rupakganguly.com/posts/centurylink-labs-goes-to-dockercon-2015/</guid>
       <description>It was an exciting time for us again to be attending DockerCon 2015 this year. It was the 2nd DockerCon, and was way bigger than the first one. Our whole CenturyLink Labs team was there, excited to hear the new announcements from Docker and the rest of the community.
 The opening keynote by Ben Golub, CEO of Docker, was followed by Docker&amp;rsquo;s Founder &amp;amp; CTO, Solomon Hykes. The keynote session was followed by a variety of breakout tracks taking place throughout the day.</description>
     </item>

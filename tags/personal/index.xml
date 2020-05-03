@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Personal on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/tags/personal/</link>
+    <link>https://rupakganguly.com/tags/personal/</link>
     <description>Recent content in Personal on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 May 2018 17:50:17 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/tags/personal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About Me</title>
-      <link>http://rupakganguly.com/about/</link>
+      <link>https://rupakganguly.com/about/</link>
       <pubDate>Tue, 01 May 2018 17:50:17 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/about/</guid>
+      <guid>https://rupakganguly.com/about/</guid>
       <description>Rupak Ganguly (rupakg) is a thought leader, business savvy, technology advocate, enterprise architect, and a problem solver.
 Over 25+ years of industry experience in architecture, design, development, and delivery of web and windows applications on various platforms. Passionate about serverless architectures, cloud technologies, micro-services architectures, and open source; works collaboratively with team members to achieve goals; persistent &amp;amp; creative problem solver, and familiar with leading edge development paradigms. Communicates effectively with both technical &amp;amp; business counterparts, understands business needs and creates tools to manage them.</description>
     </item>
     
     <item>
       <title>Personal Brand</title>
-      <link>http://rupakganguly.com/posts/personal-brand/</link>
+      <link>https://rupakganguly.com/posts/personal-brand/</link>
       <pubDate>Tue, 01 May 2018 17:29:17 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/personal-brand/</guid>
+      <guid>https://rupakganguly.com/posts/personal-brand/</guid>
       <description>Over the years, I have built lot of applications and written about software and its practices. Most of the applications were internal facing and hence could not be shared in public. Many articles I wrote were hosted on internal knowledge bases or those sites have evolved over time. Many of those applications and writings were never made public.
 Building a personal brand is crucial.
 So I have decided to post all my writings here, and publish all my applications on Github.</description>

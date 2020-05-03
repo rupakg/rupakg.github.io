@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Serverless on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/tags/serverless/</link>
+    <link>https://rupakganguly.com/tags/serverless/</link>
     <description>Recent content in Serverless on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 May 2019 23:00:20 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DockerCon 2019: Opensource Summit Serverless</title>
-      <link>http://rupakganguly.com/posts/dockercon-2019-oss-serverless/</link>
+      <link>https://rupakganguly.com/posts/dockercon-2019-oss-serverless/</link>
       <pubDate>Mon, 06 May 2019 23:00:20 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/dockercon-2019-oss-serverless/</guid>
+      <guid>https://rupakganguly.com/posts/dockercon-2019-oss-serverless/</guid>
       <description>&lt;p&gt;I had the opportunity to present and host the Opensource Summit Serverless session along with panelists Burton Rheutan &amp;amp; Pav Jimanov representing OpenFaaS and Yaron Haviv representing Nuclio, at DockerCon 2019. Humbled to be part of the show.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Curated list of serverless resources</title>
-      <link>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</link>
+      <link>https://rupakganguly.com/posts/curated-list-of-serverless-resources/</link>
       <pubDate>Tue, 25 Dec 2018 12:46:08 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</guid>
+      <guid>https://rupakganguly.com/posts/curated-list-of-serverless-resources/</guid>
       <description>&lt;p&gt;A curated list of &lt;strong&gt;serverless&lt;/strong&gt; resources, applications, workshops, tutorials, newsletters, blogs, and enterprise case studies. I started this list for my own use but I thought it might be useful for others as well. This is a live document ad I will be updating the page often, so bookmark it and come back to check it for newer content. Enjoy!
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>AWS reInvent 2018 Announcements</title>
-      <link>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</link>
+      <link>https://rupakganguly.com/posts/aws-reinvent-2018-announcements/</link>
       <pubDate>Thu, 29 Nov 2018 11:31:26 -0500</pubDate>
       
-      <guid>http://rupakganguly.com/posts/aws-reinvent-2018-announcements/</guid>
+      <guid>https://rupakganguly.com/posts/aws-reinvent-2018-announcements/</guid>
       <description>&lt;p&gt;As usual, AWS announced a slew of new services and updates to it&amp;rsquo;s existing services at reInvent 2018. Here are the most significant ones that I am maintaining a list of. I will be updating the list as more services get announced. Werner Vogels is on stage right now announcing new Serverless services and updates.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to build long-running serverless apps using Lambda and AWS Fargate with Stackery</title>
-      <link>http://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</link>
+      <link>https://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</link>
       <pubDate>Tue, 16 Oct 2018 16:09:02 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</guid>
+      <guid>https://rupakganguly.com/posts/how-to-build-long-running-serverless-apps-using-lambda-and-fargate-with-stackery/</guid>
       <description>&lt;p&gt;This is a multi-part blog series that explores building serverless applications with Stackery. In the &lt;a href=&#34;https://rupakganguly.com/posts/building-serverless-apps-using-stackery/&#34;&gt;first part&lt;/a&gt;, we discussed why Stackery is a great platform for visually building and deploying serverless applications on AWS.&lt;/p&gt;
 
 &lt;p&gt;The application we will build is a video processing application that will take a video file dropped into a S3 bucket, along with some user-defined parameters and extract a thumbnail of the specified frame, and store it into another S3 bucket. Since the video processing bit is a long-running process, we will use AWS Fargate to process the video.
@@ -55,19 +55,19 @@
     
     <item>
       <title>Building Serverless Apps Using Stackery</title>
-      <link>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
+      <link>https://rupakganguly.com/posts/building-serverless-apps-using-stackery/</link>
       <pubDate>Fri, 21 Sep 2018 14:52:28 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
+      <guid>https://rupakganguly.com/posts/building-serverless-apps-using-stackery/</guid>
       <description>This is a multi-part blog series that will explore building serverless application with Stackery. In this post, the first part in the series, we discuss why Stackery is a great platform for visually building and deploying serverless applications on AWS. We will also look at setting up Stackery, linking an AWS account securely with least privileges, and using a boilerplate template to build and deploy a serverless application to AWS.</description>
     </item>
     
     <item>
       <title>How to build a Serverless Alexa Skill</title>
-      <link>http://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</link>
+      <link>https://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</link>
       <pubDate>Wed, 29 Aug 2018 17:29:03 -0400</pubDate>
       
-      <guid>http://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</guid>
+      <guid>https://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/</guid>
       <description>&lt;p&gt;When I was a kid, I was intrigued by the Starship Enterprise&amp;rsquo;s onboard computer featured in the science fiction series Star Trek. Although cheeky at times in it&amp;rsquo;s portrayal of technologies beyond our imagination, the voice-controlled computer always made me wonder. And, here we are in the same lifetime, realiziing similar technolgies - inside our homes, on a small device&amp;hellip; Amazing, I think! 🖖
 &lt;/p&gt;</description>
     </item>
