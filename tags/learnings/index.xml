@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Resources on Rupak Ganguly</title>
-    <link>http://rupakganguly.com/categories/resources/</link>
-    <description>Recent content in Resources on Rupak Ganguly</description>
+    <title>Learnings on Rupak Ganguly</title>
+    <link>http://rupakganguly.com/tags/learnings/</link>
+    <description>Recent content in Learnings on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 May 2020 21:18:19 -0400</lastBuildDate>
     
-	<atom:link href="http://rupakganguly.com/categories/resources/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rupakganguly.com/tags/learnings/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <description>&lt;p&gt;We are in a terrible crisis, and it has been very stressful for everyone. Some of us are in the frontlines, some of us losing their jobs, some of us in small businesses affected by the shutdown, and some of us forced to work from home. Kids missing school and adapting to online learning, missing out on proms and graduations, missing going out and playing with their friends. Some of us juggling work from home while taking care of our children. And to top it all, fear of catching the virus and be in a precarious health situation. Chaos - to simply put it. But we as humans have survived adversities in the past and we will get over this as well. There is light at the end of the tunnel.&lt;/p&gt;
 
 &lt;p&gt;So what can we do with the situation we are in? How can we turn this adversity in our favor and make it a positive thing? How can we utilize the time we got and turn it into something productive and prepare for the future?
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Curated list of serverless resources</title>
-      <link>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</link>
-      <pubDate>Tue, 25 Dec 2018 12:46:08 -0500</pubDate>
-      
-      <guid>http://rupakganguly.com/posts/curated-list-of-serverless-resources/</guid>
-      <description>&lt;p&gt;A curated list of &lt;strong&gt;serverless&lt;/strong&gt; resources, applications, workshops, tutorials, newsletters, blogs, and enterprise case studies. I started this list for my own use but I thought it might be useful for others as well. This is a live document ad I will be updating the page often, so bookmark it and come back to check it for newer content. Enjoy!
 &lt;/p&gt;</description>
     </item>
     

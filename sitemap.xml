@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</loc>
+    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/posts/dockercon-2019-oss-serverless/</loc>
     <lastmod>2019-05-06T23:00:20-04:00</lastmod>
   </url>
@@ -132,6 +137,12 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/tags/career/</loc>
+    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/tags/case-studies/</loc>
     <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
@@ -222,6 +233,18 @@
   </url>
   
   <url>
+    <loc>http://rupakganguly.com/tags/jobs/</loc>
+    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://rupakganguly.com/tags/learnings/</loc>
+    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://rupakganguly.com/tags/long-running/</loc>
     <lastmod>2018-10-16T16:09:02-04:00</lastmod>
     <priority>0</priority>
@@ -277,7 +300,7 @@
   
   <url>
     <loc>http://rupakganguly.com/categories/personal/</loc>
-    <lastmod>2019-03-05T15:58:24-04:00</lastmod>
+    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -289,7 +312,7 @@
   
   <url>
     <loc>http://rupakganguly.com/posts/</loc>
-    <lastmod>2019-05-06T23:00:20-04:00</lastmod>
+    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -319,13 +342,13 @@
   
   <url>
     <loc>http://rupakganguly.com/categories/resources/</loc>
-    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://rupakganguly.com/</loc>
-    <lastmod>2019-05-06T23:00:20-04:00</lastmod>
+    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
