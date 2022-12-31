@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rupakganguly.com/posts/how-to-read-24-or-more-books-in-a-year/</loc>
+    <lastmod>2022-12-31T11:55:38-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/posts/how-to-better-yourself-during-this-covid-19-lockdown/</loc>
     <lastmod>2020-05-02T21:18:19-04:00</lastmod>
   </url>
@@ -133,6 +138,18 @@
   <url>
     <loc>https://rupakganguly.com/categories/aws/</loc>
     <lastmod>2018-12-21T12:25:26-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/books/</loc>
+    <lastmod>2022-12-31T11:55:38-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/categories/books/</loc>
+    <lastmod>2022-12-31T11:55:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -312,7 +329,7 @@
   
   <url>
     <loc>https://rupakganguly.com/posts/</loc>
-    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
+    <lastmod>2022-12-31T11:55:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -325,6 +342,12 @@
   <url>
     <loc>https://rupakganguly.com/tags/publications/</loc>
     <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/reading/</loc>
+    <lastmod>2022-12-31T11:55:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -348,7 +371,7 @@
   
   <url>
     <loc>https://rupakganguly.com/</loc>
-    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
+    <lastmod>2022-12-31T11:55:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
