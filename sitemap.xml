@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rupakganguly.com/glossary/what-is-swagger-and-why-it-is-used/</loc>
+    <lastmod>2023-01-17T18:10:49-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/posts/how-to-read-24-or-more-books-in-a-year/</loc>
     <lastmod>2022-12-31T11:55:38-05:00</lastmod>
   </url>
@@ -119,13 +124,13 @@
   
   <url>
     <loc>https://rupakganguly.com/tags/api/</loc>
-    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
+    <lastmod>2023-01-17T18:10:49-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/categories/api/</loc>
-    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
+    <lastmod>2023-01-17T18:10:49-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -246,6 +251,12 @@
   <url>
     <loc>https://rupakganguly.com/tags/fargate/</loc>
     <lastmod>2018-10-16T16:09:02-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/glossary/</loc>
+    <lastmod>2023-01-17T18:10:49-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -371,7 +382,7 @@
   
   <url>
     <loc>https://rupakganguly.com/</loc>
-    <lastmod>2022-12-31T11:55:38-05:00</lastmod>
+    <lastmod>2023-01-17T18:10:49-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -395,7 +406,7 @@
   
   <url>
     <loc>https://rupakganguly.com/tags/swagger/</loc>
-    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
+    <lastmod>2023-01-17T18:10:49-05:00</lastmod>
     <priority>0</priority>
   </url>
   

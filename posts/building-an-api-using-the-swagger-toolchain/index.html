@@ -232,7 +232,7 @@
 
   </header>
   <div class="post">
-    <p>We have been building APIs for ages, with varying standards and design styles - <a href="https://en.wikipedia.org/wiki/SOAP">SOAP</a> web services, <a href="https://en.wikipedia.org/wiki/GRPC">gRPC</a>, <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>, and until recently <a href="https://en.wikipedia.org/wiki/GraphQL">GraphQL</a>. Instead of declaring a winning design style, I believe that each one of these design styles stands their ground, and it depends on the use case <a href="https://nordicapis.com/when-to-use-what-rest-graphql-webhooks-grpc/">when to use which style</a>.
+    <p>We have been building APIs for ages, with varying standards and design styles - <a href="https://en.wikipedia.org/wiki/SOAP">SOAP</a> web services, <a href="https://en.wikipedia.org/wiki/GRPC">gRPC</a>, <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>, and until recently <a href="https://en.wikipedia.org/wiki/GraphQL">GraphQL</a>. Instead of declaring a winning design style, I believe that each one of these design styles stands its ground, and it depends on the use case <a href="https://nordicapis.com/when-to-use-what-rest-graphql-webhooks-grpc/">when to use which style</a>.
 </p>
 
 <p>In this post, we will look at the end-to-end lifecycle of a REST API. We will explore using the <a href="https://swagger.io/">Swagger</a> toolchain to <strong>design</strong>, <strong>build</strong>, <strong>document</strong>, <strong>test</strong> the API and enable <strong>standardization</strong> of the API across teams in the organization.</p>
@@ -243,6 +243,10 @@
 
 <p><img src="https://user-images.githubusercontent.com/8188/44542748-b9cbf400-a6db-11e8-859e-d9c84cc9d38b.png" alt="image" />
 Credit: swagger.io</p>
+
+<blockquote>
+<p>See my post about <a href="/glossary/what-is-swagger-and-why-it-is-used/">What Is Swagger and Why It Is Used</a></p>
+</blockquote>
 
 <h2 id="life-cycle-of-creating-an-api">Life-cycle of creating an API</h2>
 
@@ -260,7 +264,7 @@ Credit: swagger.io</p>
 
 <p>But the <a href="https://app.swaggerhub.com/">SwaggerHub</a> brings the Swagger Editor, UI, and Codegen tools to the cloud in an integrated API design and documentation, built for API teams working with the Swagger (OpenAPI) specification.</p>
 
-<p>Since we will be using the Editor, UI and the Codegen tools, I will be using SwaggerHub for this post. Let&rsquo;s get started.</p>
+<p>Since we will be using the Editor, UI, and Codegen tools, I will be using SwaggerHub for this post. Let&rsquo;s get started.</p>
 
 <h4 id="create-or-import-an-api">Create or Import an API</h4>
 
@@ -300,11 +304,11 @@ Credit: swagger.io</p>
 
 <p>To have a consistent and standard for all APIs within an organization, it is important to have an org-wide style guide of conventions while creating API specs.</p>
 
-<p>SwaggerHub provides a <a href="https://app.swaggerhub.com/help/integrations/style-validator">Style Validator</a>, that can check if the API matches the guidelines set forth by the company. The style validator lets you define the validation rules, automates all those checks and notifies you of any failed validations or mismatches. The style validator can be added as an Integration and can validate aspects of the basic API info., operations, naming strategies, and object models.</p>
+<p>SwaggerHub provides a <a href="https://app.swaggerhub.com/help/integrations/style-validator">Style Validator</a>, that can check if the API matches the guidelines set forth by the company. The style validator lets you define the validation rules, automates all those checks, and notifies you of any failed validations or mismatches. The style validator can be added as an Integration and can validate aspects of the basic API info., operations, naming strategies, and object models.</p>
 
 <h3 id="building-the-api-from-specs">Building the API from Specs</h3>
 
-<p>After designing the API, SwaggerHub allows for server and client code generation, and interactive documentation.</p>
+<p>After designing the API, SwaggerHub allows for the server and client code generation, and interactive documentation.</p>
 
 <h4 id="code-generation">Code Generation</h4>
 
@@ -347,25 +351,25 @@ Credit: swagger.io</p>
 <p>​
 ​<img src="https://user-images.githubusercontent.com/8188/46378276-17534900-c669-11e8-9bba-0dc3226d191e.png" alt="image" />
 ​
-​​And, we have a local API server running with full interactive API documentation. The server exposes a very similar interface as SwaggerHub. But, the local server code can be updated with custom implementation for further testing.
+​​And, we have a local API server running with the full interactive API documentation. The server exposes a very similar interface to SwaggerHub. But, the local server code can be updated with custom implementation for further testing.
 ​​
 ​​You can also use the <a href="https://swagger.io/tools/swagger-ui/">Swagger UI</a> interface to visualize and interact with your API just by having an API spec in place.
 ​​
-​​​​​​Although you can tweak the <a href="https://app.swaggerhub.com/help/apis/generating-code/options">code generation options</a> in SwaggerHub, if you want a lot of flexibility with code generation you should use the <a href="https://swagger.io/tools/swagger-codegen/">Swagger Codegen</a> tool. It is an open-source tool with <a href="https://github.com/swagger-api/swagger-codegen#public-docker-image">lot more flexibility</a> for generating code.</p>
+​​​​​​Although you can tweak the <a href="https://app.swaggerhub.com/help/apis/generating-code/options">code generation options</a> in SwaggerHub, if you want a lot of flexibility with code generation you should use the <a href="https://swagger.io/tools/swagger-codegen/">Swagger Codegen</a> tool. It is an open-source tool with a <a href="https://github.com/swagger-api/swagger-codegen#public-docker-image">lot more flexibility</a> for generating code.</p>
 
 <h3 id="team-collaboration-sharing">Team Collaboration &amp; Sharing</h3>
 
 <p>SwaggerHub has built-in capabilities to share and collaborate the API specs with the whole team.</p>
 
-<p>Team members can be made <a href="https://app.swaggerhub.com/help/collaboration/collaborators">collaborators</a> and <a href="https://app.swaggerhub.com/help/collaboration/sharing-api">share the API</a> specs with other members. The users can be assigned Editor, Viewer or Commentator roles based on their needs. All collaborators can receive <a href="https://app.swaggerhub.com/help/email-notifications">email notifications</a> as and when changes are done to the API specs.</p>
+<p>Team members can be made <a href="https://app.swaggerhub.com/help/collaboration/collaborators">collaborators</a> and <a href="https://app.swaggerhub.com/help/collaboration/sharing-api">share the API</a> specs with other members. The users can be assigned Editor, Viewer, or Commentator roles based on their needs. All collaborators can receive <a href="https://app.swaggerhub.com/help/email-notifications">email notifications</a> as and when changes are done to the API specs.</p>
 
 <p>Users can edit the API specs concurrently and SwaggerHub provides an elegant way to <a href="https://app.swaggerhub.com/help/apis/compare-and-merge">compare and merge</a> such changes.</p>
 
 <h4 id="orgs-teams-and-projects">Orgs, Teams and Projects</h4>
 
-<p>SwaggerHub also provides further flexibility in managing control over the API specs by allowing the creation of <a href="https://app.swaggerhub.com/help/organizations/index">Organizations, Teams, and Projects</a>. This simplifies and structures the different APIs across the organization. Access controls specified at the Org, team or project levels govern permissions allowed for collaborators.</p>
+<p>SwaggerHub also provides further flexibility in managing control over the API specs by allowing the creation of <a href="https://app.swaggerhub.com/help/organizations/index">Organizations, Teams, and Projects</a>. This simplifies and structures the different APIs across the organization. Access controls specified at the Org, team, or project levels govern permissions allowed for collaborators.</p>
 
-<p><strong>Note</strong>: Organizations need a paid-plan based on the number of user and features.</p>
+<p><strong>Note</strong>: Organizations need a paid plan based on the number of users and features.</p>
 
 <h4 id="reviewing-the-api">Reviewing the API</h4>
 
@@ -373,7 +377,7 @@ Credit: swagger.io</p>
 
 <h4 id="api-versioning">API Versioning</h4>
 
-<p>​In the real world, while developing an API spec, it is imperative that there is a lot of back and forth that happens which leads to many versions of the API. SwaggerHub recognizes that and allows for <a href="https://app.swaggerhub.com/help/apis/versioning">versioning</a> of APIs along the way. Team members can edit the API and specify a new version that can later be <a href="https://app.swaggerhub.com/help/apis/compare-and-merge">compared and merged</a>.</p>
+<p>​In the real world, while developing an API spec, it is imperative that there is a lot of back and forth that happens which leads to many versions of the API. SwaggerHub recognizes that and allows for the <a href="https://app.swaggerhub.com/help/apis/versioning">versioning</a> of APIs along the way. Team members can edit the API and specify a new version that can later be <a href="https://app.swaggerhub.com/help/apis/compare-and-merge">compared and merged</a>.</p>
 
 <p>Multiple versions of an API can live side-by-side and the design view on SwaggerHub allows users to easily switch between the different versions.</p>
 
@@ -383,15 +387,15 @@ Credit: swagger.io</p>
 
 <h3 id="testing-the-api">Testing the API</h3>
 
-<p>After designing an API and before the developers actually implement it in code, some initial testing provides a lot of value. This kind of testing involves testing the API methods, requests, response, object models and security aspects. It allows the design team to fine tune and solidifies the API design before the API is implemented in code. It jump starts the process of developers to start writing client code and testing against the stub generated from the API spec.</p>
+<p>After designing an API and before the developers actually implement it in code, some initial testing provides a lot of value. This kind of testing involves testing the API methods, requests, responses, object models, and security aspects. It allows the design team to fine-tune and solidifies the API design before the API is implemented in code. It jump starts the process of developers to start writing client code and testing against the stub generated from the API spec.</p>
 
 <h4 id="mock-implementations">Mock Implementations</h4>
 
 <p>SwaggerHub provides a cool feature of <a href="https://app.swaggerhub.com/help/integrations/api-auto-mocking">Auto Mocking</a> as part of its integrations. To make use of auto-mocking, the API spec can specify examples for requests and response schemas for its methods.</p>
 
-<p>The API spec can define formats for the data types, reference object models in responses and specify request/response headers.</p>
+<p>The API spec can define formats for the data types, reference object models in responses, and specify request/response headers.</p>
 
-<p>Authorization on API calls can be mocked by allowing users to send in arbitrary API token along with the requests.</p>
+<p>Authorization on API calls can be mocked by allowing users to send in arbitrary API tokens along with the requests.</p>
 
 <p>It also supports CORS requests and can automatically add CORS headers to all responses.</p>
 
@@ -399,23 +403,23 @@ Credit: swagger.io</p>
 
 <h3 id="publishing-the-api">Publishing the API</h3>
 
-<p>Once you are ready to release an API, you can choose a particular version and <a href="https://app.swaggerhub.com/help/apis/publishing-api">publish</a> it. Published APIs are read-only and they are not allowed to be modified. Unpublished APIs can be held as working drafts in SwaggerHub and modified at will. Published versions can be kept private or made public based on readiness. Swagger allows usage of API tokens to access private APIs.</p>
+<p>Once you are ready to release an API, you can choose a particular version and <a href="https://app.swaggerhub.com/help/apis/publishing-api">publish</a> it. Published APIs are read-only and they are not allowed to be modified. Unpublished APIs can be held as working drafts in SwaggerHub and modified at will. Published versions can be kept private or made public based on readiness. Swagger allows the usage of API tokens to access private APIs.</p>
 
 <h2 id="leveraging-swagger-for-existing-apis">Leveraging Swagger for existing APIs</h2>
 
-<p>Swagger toolchain provides a <a href="https://inspector.swagger.io">Swagger Inspector</a>, a web-based, Postman-style testing of APIs. It allows making requests on your API methods and validates API request/responses. All tests are saved so you can replay them and view the responses later. The Swagger Inspector can test any kind of API including REST, SOAP or GraphQL based APIs.</p>
+<p>Swagger toolchain provides a <a href="https://inspector.swagger.io">Swagger Inspector</a>, a web-based, Postman-style testing of APIs. It allows making requests on your API methods and validates API requests/responses. All tests are saved so you can replay them and view the responses later. The Swagger Inspector can test any kind of API including REST, SOAP or GraphQL-based APIs.</p>
 
-<p>The best use case for the Inspector is if you have any existing API and you want to create an API definition for it. You can make calls to your API methods and can easily <a href="https://swagger.io/docs/swagger-inspector/how-to-create-an-openapi-definition-using-swagger/">generate OpenAPI defnitions</a> from the request and responses. You can auto-generate documentation for your API endpoints from the previously saved tests.</p>
+<p>The best use case for the Inspector is if you have any existing API and you want to create an API definition for it. You can make calls to your API methods and can easily <a href="https://swagger.io/docs/swagger-inspector/how-to-create-an-openapi-definition-using-swagger/">generate OpenAPI definitions</a> from the request and responses. You can auto-generate documentation for your API endpoints from the previously saved tests.</p>
 
-<p>Another interesting open-source project useful for Java developers is the <a href="https://github.com/swagger-api/swagger-inflector">Swagger Inflector</a> that can be used to <a href="https://swagger.io/blog/api-development/writing-apis-with-the-swagger-inflector/">parse and generate OpenAPI definitions</a> during runtime.</p>
+<p>Another interesting open-source project useful for Java developers is the <a href="https://github.com/swagger-api/swagger-inflector">Swagger Inflector</a> which can be used to <a href="https://swagger.io/blog/api-development/writing-apis-with-the-swagger-inflector/">parse and generate OpenAPI definitions</a> during runtime.</p>
 
 <p>Once you have the API spec generated and saved into SwaggerHub, you can take advantage of the full Swagger toolchain from there on.</p>
 
 <h2 id="summary">Summary</h2>
 
-<p>In this post, we looked at the workflow of building an API using the various tools available in the Swagger toolchain. We looked at designing an API using a template on SwaggerHub. We explored how SwaggerHub allows for standardization of APIs via styling guidelines and validation rules via the Style Validator. Swagger Codegen allows generation of server and client code stubs for easy testing. We looked at the team collaboration and sharing features of SwaggerHub, and explored ways to manage access controls using orgs., teams and projects. Then we looked at versioning and testing the APIs using mock implementations.</p>
+<p>In this post, we looked at the workflow of building an API using the various tools available in the Swagger toolchain. We looked at designing an API using a template on SwaggerHub. We explored how SwaggerHub allows for the standardization of APIs via styling guidelines and validation rules via the Style Validator. Swagger Codegen allows the generation of server and client code stubs for easy testing. We looked at the team collaboration and sharing features of SwaggerHub, and explored ways to manage access controls using orgs., teams and projects. Then we looked at versioning and testing the APIs using mock implementations.</p>
 
-<p>As you can see, the Swagger toolchain has all the tools to help you through the life-cycle of designing, testing and publishing an API from scratch.</p>
+<p>As you can see, the Swagger toolchain has all the tools to help you through the life-cycle of designing, testing, and publishing an API from scratch.</p>
 
 <p>If you have any feedback or questions, feel free to let me know in the comments below.</p>
   </div>

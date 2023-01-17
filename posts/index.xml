@@ -95,7 +95,7 @@
       <pubDate>Wed, 03 Oct 2018 00:29:37 -0400</pubDate>
       
       <guid>https://rupakganguly.com/posts/building-an-api-using-the-swagger-toolchain/</guid>
-      <description>&lt;p&gt;We have been building APIs for ages, with varying standards and design styles - &lt;a href=&#34;https://en.wikipedia.org/wiki/SOAP&#34;&gt;SOAP&lt;/a&gt; web services, &lt;a href=&#34;https://en.wikipedia.org/wiki/GRPC&#34;&gt;gRPC&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST&lt;/a&gt;, and until recently &lt;a href=&#34;https://en.wikipedia.org/wiki/GraphQL&#34;&gt;GraphQL&lt;/a&gt;. Instead of declaring a winning design style, I believe that each one of these design styles stands their ground, and it depends on the use case &lt;a href=&#34;https://nordicapis.com/when-to-use-what-rest-graphql-webhooks-grpc/&#34;&gt;when to use which style&lt;/a&gt;.
+      <description>&lt;p&gt;We have been building APIs for ages, with varying standards and design styles - &lt;a href=&#34;https://en.wikipedia.org/wiki/SOAP&#34;&gt;SOAP&lt;/a&gt; web services, &lt;a href=&#34;https://en.wikipedia.org/wiki/GRPC&#34;&gt;gRPC&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST&lt;/a&gt;, and until recently &lt;a href=&#34;https://en.wikipedia.org/wiki/GraphQL&#34;&gt;GraphQL&lt;/a&gt;. Instead of declaring a winning design style, I believe that each one of these design styles stands its ground, and it depends on the use case &lt;a href=&#34;https://nordicapis.com/when-to-use-what-rest-graphql-webhooks-grpc/&#34;&gt;when to use which style&lt;/a&gt;.
 &lt;/p&gt;</description>
     </item>
     

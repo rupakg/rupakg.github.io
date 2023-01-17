@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Glossaries on Rupak Ganguly</title>
+    <link>https://rupakganguly.com/glossary/</link>
+    <description>Recent content in Glossaries on Rupak Ganguly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Jan 2023 18:10:49 -0500</lastBuildDate>
+    
+	<atom:link href="https://rupakganguly.com/glossary/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What Is Swagger and Why It Is Used</title>
+      <link>https://rupakganguly.com/glossary/what-is-swagger-and-why-it-is-used/</link>
+      <pubDate>Tue, 17 Jan 2023 18:10:49 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/glossary/what-is-swagger-and-why-it-is-used/</guid>
+      <description>&lt;p&gt;Swagger is a toolset that simplifies the design, development, documentation, and publishing of REST APIs based on OpenAPI specifications.&lt;/p&gt;
+
+&lt;p&gt;The Swagger toolset consists of open-source and paid tools: Swagger Editor, Swagger UI, Swagger Codegen, Swagger Hub, Swagger Inspector, ReadyAPI, and AlertSite.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
