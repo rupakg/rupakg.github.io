@@ -6,10 +6,20 @@
     <description>Recent content in Cms on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jan 2023 16:30:55 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 19 Feb 2023 14:29:05 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/categories/cms/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to create a Strapi CMS app to manage content</title>
+      <link>https://rupakganguly.com/posts/how-to-create-a-strapi-cms-app-to-manage-content/</link>
+      <pubDate>Sun, 19 Feb 2023 14:29:05 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/how-to-create-a-strapi-cms-app-to-manage-content/</guid>
+      <description>&lt;p&gt;In this article, we will create a Strapi-powered app, to manage content using the Strapi CMS. To manage the content, we will use the Strapi Dashboard Admin UI to create the content types, create content data, set roles and permissions, and then expose the content via automatically generated APIs. Finally, we will access the APIs to retrieve the content data.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>What Is Strapi Headless CMS?</title>

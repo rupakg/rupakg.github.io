@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Learn how to create a Strapi-powered app to manage content using the Strapi CMS and consume the content via APIs.">
+    
+        
+        <meta name="keywords" content="strapi, CMS, content management system, headless cms, api">
+    
+    
+
+<title>How to create a Strapi CMS app to manage content • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to create a Strapi CMS app to manage content"/>
+<meta name="twitter:description" content="Learn how to create a Strapi-powered app to manage content using the Strapi CMS and consume the content via APIs."/>
+
+<meta property="og:title" content="How to create a Strapi CMS app to manage content" />
+<meta property="og:description" content="Learn how to create a Strapi-powered app to manage content using the Strapi CMS and consume the content via APIs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/how-to-create-a-strapi-cms-app-to-manage-content/" /><meta property="article:published_time" content="2023-02-19T14:29:05-05:00"/>
+<meta property="article:modified_time" content="2023-02-19T14:29:05-05:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://rupakganguly.com//img/rg10-square.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         personal opinions, experiences and writings... 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:rupakg&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <p class="copyright">
+      &copy; 2023 Rupak Ganguly.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>How to create a Strapi CMS app to manage content</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Feb 19, 2023
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/cms">CMS</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/strapi">strapi</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/cms">cms</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/api">api</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 12 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>In this article, we will create a Strapi-powered app, to manage content using the Strapi CMS. To manage the content, we will use the Strapi Dashboard Admin UI to create the content types, create content data, set roles and permissions, and then expose the content via automatically generated APIs. Finally, we will access the APIs to retrieve the content data.
+</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/219970375-fe82faf0-6706-4e2a-9df0-d85e53bd776e.png" alt="Use Strapi CMS to define, create, and manage content" /></p>
+
+<h2 id="what-we-will-learn">What we will learn</h2>
+
+<p>We will learn to do the following things as part of this hands-on lab:</p>
+
+<ul>
+<li>Create the Strapi app</li>
+<li>Create content types</li>
+<li>Manage content and relations</li>
+<li>Set roles and permissions for the content</li>
+<li>Publish the content</li>
+<li>Access the content</li>
+</ul>
+
+<blockquote>
+<p><a href="/glossary/what-is-strapi-headless-cms/">What is Strapi headless CMS?</a></p>
+</blockquote>
+
+<h2 id="pre-requisites">Pre-requisites</h2>
+
+<p>To follow the article and build the app step-by-step, you will need the following:</p>
+
+<ul>
+<li><strong>Node.js</strong> installed
+
+<ul>
+<li>Only Maintenance and LTS versions are supported (<code>v14</code>, <code>v16</code>, and <code>v18</code>).</li>
+<li>Node v18.x is recommended for Strapi <code>v4.3.9</code> and above</li>
+</ul></li>
+<li>Node.js package manager
+
+<ul>
+<li><strong>npm</strong> (<code>v6</code> only) or <strong>yarn</strong> (we will use npm in the lab)</li>
+</ul></li>
+<li><strong>Python</strong> (needed for using <strong>SQLite</strong> database)</li>
+<li>The <code>strapi-books-api</code> app project <a href="https://github.com/rupakg/strapi-books-api">source code repository</a></li>
+</ul>
+
+<p><strong>Note</strong>: I am using Node.js <code>v18.13.0</code> and Python <code>2.7.15</code> (since we will be using an SQLite database)</p>
+
+<h2 id="creating-the-strapi-app">Creating the Strapi app</h2>
+
+<p>Let&rsquo;s create the Strapi app named <code>strapi-books-api</code> that will manage the content for a list of books with their authors, and then expose the data via APIs.</p>
+
+<ol>
+<li>To create the Strapi project, let&rsquo;s run the following command in a terminal window:</li>
+</ol>
+
+<pre><code class="language-bash">npx create-strapi-app@4.5.6 strapi-books-api
+</code></pre>
+
+<p>where,
+- <code>create-strapi-app</code> is the Strapi package
+- <code>@4.5.6</code> indicates the version of the Strapi package being used
+- <code>strapi-books-api</code> is the name of the Strapi project</p>
+
+<p>The above command will ask to install the <code>create-strapi-app@4.5.6</code> package. It will also create a folder under the current folder by the project name <code>strapi-books-api</code>.</p>
+
+<ol>
+<li>Choose the installation type as: <code>Quickstart (recommended)</code>. This will allow Strapi to use SQLite as the default database. You can choose to use the <code>Custom (manual settings)</code> option if you want to use any of the other supported databases.</li>
+<li>Here is what the output will look like:</li>
+</ol>
+
+<pre><code class="language-bash">Need to install the following packages:
+  create-strapi-app@4.5.6
+Ok to proceed? (y) y
+? Choose your installation type Quickstart (recommended)
+Creating a quickstart project.
+Creating a new Strapi application at /&lt;your project path&gt;/strapi-books-api.
+Creating files.
+⠇ Installing dependencies: ...
+Dependencies installed successfully.
+
+Your application was created at /&lt;your project path&gt;/strapi-books-api.
+</code></pre>
+
+<ol>
+<li>At the end of the Strapi app creation process, a set of documentation pointers are generated and displayed on the terminal:</li>
+</ol>
+
+<pre><code class="language-bash">Available commands in your project:
+
+  npm run develop
+  Start Strapi in watch mode. (Changes in Strapi project files will trigger a server restart)
+
+  npm run start
+  Start Strapi without watch mode.
+
+  npm run build
+  Build Strapi admin panel.
+
+  npm run strapi
+  Display all available commands.
+
+You can start by doing:
+
+  cd /&lt;your project path&gt;/strapi-books-api
+  npm run develop
+
+Running your Strapi application.
+
+&gt; strapi-books-api@0.1.0 develop
+&gt; strapi develop
+
+Building your admin UI with development configuration...
+Admin UI built successfully
+[2023-01-25 08:17:45.397] info: The Users &amp; Permissions plugin automatically generated a jwt secret and stored it in .env under the name JWT_SECRET.
+
+ Project information
+
+┌────────────────────┬──────────────────────────────────────────────────┐
+│ Time               │ Wed Jan 25 2023 08:17:46 GMT-0500 (Eastern Stan… │
+│ Launched in        │ 3911 ms                                          │
+│ Environment        │ development                                      │
+│ Process PID        │ 24703                                            │
+│ Version            │ 4.5.6 (node v18.13.0)                            │
+│ Edition            │ Community                                        │
+└────────────────────┴──────────────────────────────────────────────────┘
+
+ Actions available
+
+One more thing...
+Create your first administrator 💻 by going to the administration panel at:
+
+┌─────────────────────────────┐
+│ http://localhost:1337/admin │
+└─────────────────────────────┘
+</code></pre>
+
+<p><strong>Note</strong>: For the curious reader, please note the fact that a <code>jwt</code> secret was automatically created. <code>The Users &amp; Permissions plugin automatically generated a jwt secret and stored it in .env under the name JWT_SECRET.</code></p>
+
+<ol>
+<li>The above creation process automatically triggers running the app, and opens a browser window to <code>http://localhost:1337/admin/auth/register-admin</code> for creating a new admin user. Fill in the info. on the screen to create an admin user.
+<strong>Note:</strong> This is a local user and is <strong>required</strong> to manage content in the Strapi Dashboard UI.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/214574738-362f66e0-209c-418a-810b-cc2573e8ab87.png" alt="The Welcome to Strapi screen for creating a new admin user" />
+<em>The Welcome to Strapi screen for creating a new admin user</em></p>
+
+<p>Once you have completed the form and submitted it, the admin user will be created and you will be redirected to the <code>http://localhost:1337/admin/</code> page, which is the Strapi Dashboard UI. We will dig deep into it in the next section.</p>
+
+<ol>
+<li>This marks the completion of the Strapi app creation process. If you want you can <code>CTRL+C</code> on your terminal window to exit the running Strapi app. We will start the app again in the next section.</li>
+</ol>
+
+<p><strong>Note</strong>: If you have different <code>node</code> versions installed and use <code>nvm</code> to manage them, I suggest you create a <code>.nvmrc</code> file at the root of the project. The <code>.nvmrc</code> file just contains the version of node e.g. <code>v18.13.0</code> in my case. Then, every time you switch to the project folder, run <code>nvm use &lt;version&gt;</code> to automatically switch to the <code>node</code> version in your <code>.nvmrc</code> file.</p>
+
+<h2 id="creating-content-types">Creating content types</h2>
+
+<p>Strapi allows us to define content types for different kinds of content you might have. The content types are categorized into two main categories: <em>Collection</em> and <em>Single</em> types.</p>
+
+<p>Collection types define the kinds of content that can be visualized as a list i.e. a collection of things. Single types define kinds of content that can hold a single data structure.</p>
+
+<p>Let&rsquo;s define the content types for our demo app that will have books and authors. We need a  collection of books so we will define a <code>collection</code> content type named <code>Book</code>. We also need a  collection of authors so we will define a <code>collection</code> content type named <code>Author</code>.</p>
+
+<p>The collection content type <code>Book</code> will have these attributes: <code>name</code>, <code>description</code>, <code>cover_pic</code>, <code>format</code>, <code>isbn</code>, <code>published_year</code>, and <code>buy_url</code>.</p>
+
+<p>The collection content type <code>Author</code> will have these attributes: <code>name</code>, and <code>bio</code>.</p>
+
+<p>The <code>Author</code> type will have a <code>Relation</code> field of type &ldquo;many-to-many&rdquo; with <code>Book</code>, so we can have multiple authors associated with a book.</p>
+
+<p>Let&rsquo;s jump in and create the above content types using the Strapi Dashboard Admin UI.</p>
+
+<h3 id="create-a-book-collection-type">Create a &ldquo;Book&rdquo; collection type</h3>
+
+<p>We will create a <code>Book</code> collection type. Then we will define the attributes to display when adding a new book entry:</p>
+
+<ol>
+<li>Go to <strong>Content-type Builder</strong> in the main navigation.</li>
+<li>Click on <strong>Create new collection type</strong>.</li>
+<li>Enter <code>Book</code> for the <em>Display name</em></li>
+<li>Click <strong>Continue</strong>.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/215478766-fad54326-a684-4507-8814-cc9877a3c73b.png" alt="Create a collection type screen" />
+<em>Create a collection type screen</em></p>
+
+<ol>
+<li>Click the Text field.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/215478970-c1e671b6-741f-4d6f-8f22-79aee97de678.png" alt="Select a field for the collection type screen" />
+<em>Select a field for the collection type screen</em></p>
+
+<ol>
+<li>Enter <code>name</code> in the _Name_ field.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/215479705-a5f20d1b-0bc0-4910-83ea-640f3e685e5c.png" alt="The Basic settings tab of the Add a new Text field screen" />
+<em>The Basic settings tab of the Add a new Text field screen</em></p>
+
+<ol>
+<li>Switch to the _Advanced Settings_ tab, and check the <strong>Required field</strong> and the <strong>Unique field</strong> settings.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/215479869-e4ad435e-7a4e-4a04-9034-911d0fd11d9b.png" alt="The Advanced Settings tab of the Add a new Text field screen" />
+<em>The Advanced Settings tab of the Add a new Text field screen</em></p>
+
+<ol>
+<li>Click on <strong>Add another field</strong>.</li>
+<li>Choose the Rich text field.</li>
+<li>Type <code>description</code> under the _Name_ field.</li>
+<li>Repeat, to add the other fields as necessary and click <strong>Finish</strong>.</li>
+<li>Click <strong>Save</strong> and wait for Strapi to restart.</li>
+</ol>
+
+<p>After adding all the fields for <code>Book</code>, the type definition looks like this:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/215484106-cf8f6c1a-6a5c-4ffd-8722-df0127fb862a.png" alt="The Book collection content type with all its attributes" />
+<em>The Book collection content type with all its attributes</em></p>
+
+<h3 id="create-an-author-collection-type">Create an &ldquo;Author&rdquo; collection type</h3>
+
+<p>We will create an <code>Author</code> collection type. Every book has authors, so we will use this type to assign author(s) to a book.</p>
+
+<p>Let&rsquo;s create an <code>Author</code> collection type:</p>
+
+<ol>
+<li>Go to <strong>Content-type Builder</strong> in the main navigation.</li>
+<li>Click on <strong>Create new collection type</strong>.</li>
+<li>Type <code>Author</code> for the <em>Display name</em>, and click <strong>Continue</strong>.</li>
+<li>Click the Text field.</li>
+<li>Type <code>name</code> in the _Name_ field.</li>
+<li>Switch to the _Advanced Settings_ tab, and check the <strong>Required field</strong> and the <strong>Unique field</strong> settings.</li>
+<li>Click on <strong>Add another field</strong>.</li>
+<li>Choose the Rich text field.</li>
+<li>Type <code>bio</code> under the _Name_ field.</li>
+<li>Click on <strong>Add another field</strong>.</li>
+<li>Choose the Relation field.</li>
+<li>On the right side, click the _Author_ relational fields box and select &ldquo;Book&rdquo;.</li>
+<li>In the center, select the icon that represents &ldquo;many-to-many&rdquo;. The text should read <code>Authors has and belongs to many Books</code>.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/215486545-4194021c-3227-49f4-be5c-048328366639.png" alt="The Relation field for creating a &quot;many-to-many&quot; relationship between books and authors" />
+<em>The <code>Relation</code> field for creating a &ldquo;many-to-many&rdquo; relationship between books and authors</em></p>
+
+<ol>
+<li>Click <strong>Save</strong> and wait for Strapi to restart.</li>
+</ol>
+
+<p>The Author type definition looks like this:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/215487158-203d54bc-4aa8-4c45-8b3c-b6748e9b86c2.png" alt="The Author collection type with all its attributes" />
+<em>The Author collection type with all its attributes</em></p>
+
+<h3 id="configuring-the-view">Configuring the View</h3>
+
+<p>After we have defined the content types, Strapi allows configuring the view to manage the content. You can choose to move the layout of the fields around as you would like it to be displayed to the user managing the content data.</p>
+
+<p>Let&rsquo;s see what the <code>Author</code> type looks like:</p>
+
+<ol>
+<li>Go to <strong>Content-type Builder</strong> in the main navigation.</li>
+<li>Click on the <code>Author</code> type from the secondary navigation.</li>
+<li>Click on the <strong>Configure the view</strong> button on the top-right.</li>
+<li>You can move the fields around as you wish to show them while managing the content.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/215489989-a37f4f9f-61fe-4906-a596-ee974964ab77.png" alt="Configuring the view for the Author content type" />
+<em>Configuring the view for the <code>Author</code> content type</em></p>
+
+<p>You can similarly, configure the view for the <code>Book</code> content type as well.</p>
+
+<p>That concludes the part of creating the content types. Now, let&rsquo;s see how we can create data for the content types we defined.</p>
+
+<h2 id="managing-content">Managing content</h2>
+
+<p>Now that we have defined the content types for <code>Book</code> and <code>Author</code>, let&rsquo;s add some content entries.</p>
+
+<h3 id="creating-content-entries-for-book">Creating content entries for &ldquo;Book&rdquo;</h3>
+
+<p>For adding a Book entry, follow the steps below:</p>
+
+<ol>
+<li>Go to <strong>Content Manager</strong> -&gt; <strong>Collection types</strong> -&gt; <strong>Book</strong> in the navigation.</li>
+<li>Click on <strong>Add new entry</strong>.</li>
+<li>Fill in the fields with data.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218114915-a12fed37-310a-4ccc-a492-db84916a297c.png" alt="*Content added for a book*" />
+<em>Content added for a book</em></p>
+
+<h3 id="creating-content-entries-for-author">Creating content entries for &ldquo;Author&rdquo;</h3>
+
+<p>For adding an Author entry, follow the steps below:</p>
+
+<ol>
+<li>Go to <strong>Content Manager</strong> -&gt; <strong>Collection types</strong> -&gt; <strong>Author</strong> in the navigation.</li>
+<li>Click on <strong>Add new entry</strong>.</li>
+<li>Fill in the fields with data.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218115236-c0dfa409-af08-4772-8d96-5b2d277e26fe.png" alt="Content added for authors" />
+<em>Content added for authors</em></p>
+
+<h3 id="adding-relations-for-author-s-to-a-book">Adding relations for &ldquo;Author(s)&rdquo; to a &ldquo;Book&rdquo;</h3>
+
+<p>We will now add the authors that are related to a book, using the Relation type that we had defined earlier.</p>
+
+<p>Follow the steps below:</p>
+
+<ol>
+<li>Go to <strong>Content Manager</strong> -&gt; <strong>Collection types</strong> -&gt; <strong>Book</strong> in the navigation, and click on the first book listed.</li>
+<li>In the right sidebar, in the <strong>Authors</strong> drop-down list, select an <strong>Author</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<h2 id="setting-roles-and-permissions">Setting roles and permissions</h2>
+
+<p>We added some books and authors. To consume the content data via the API, we need to make sure that the content is publicly accessible through the API. We will only allow the <code>find</code> (get all books) and <code>fineOne</code> (get one book) APIs for now.</p>
+
+<p>Follow the steps below to give selected permissions to the Public role:</p>
+
+<ol>
+<li>Click on <strong>General</strong> -&gt; <strong>Settings</strong> at the bottom of the main navigation.</li>
+<li>Under the <strong>Users &amp; Permissions Plugin</strong>, choose <strong>Roles</strong>.</li>
+<li>Click the <strong>Public</strong> role.</li>
+<li>Scroll down under <strong>Permissions</strong>.</li>
+<li>In the <strong>Permissions</strong> tab, find <strong>Book</strong> and click on it.</li>
+<li>Click the checkboxes next to <strong>find</strong> and <strong>findone</strong>.</li>
+<li>Repeat for <strong>Author</strong>: click the checkboxes next to <strong>find</strong> and <strong>findone</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<p>After performing the above steps, the screen will look like this:</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/215494306-ff619d3f-02ed-423b-bf92-b8ae7b5f58cd.png" alt="Setting roles and permissions for Book and Author content types" />
+<em>Setting roles and permissions for Book and Author content types</em></p>
+
+<h2 id="publishing-the-content">Publishing the content</h2>
+
+<p>To be able to access the content data publicly, we need to publish the content. By default, Strapi keeps all the content data as drafts. This allows content creators to review the content before publishing.</p>
+
+<p>To publish the content, follow the steps below:</p>
+
+<ol>
+<li>Go to <strong>Content Manager</strong> -&gt; <strong>Collection types</strong> -&gt; <strong>Book</strong> in the navigation.</li>
+<li>Click on the book that you want to publish.</li>
+<li>Click <strong>Publish</strong> button on the top-right corner.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218116094-e6293227-74c8-43ea-b3ee-f3286eab0da5.png" alt="Draft of the book content, ready to be published" />
+<em>Draft of the book content, ready to be published</em></p>
+
+<p>Once the book is published, the status of the book will show as <strong>Published</strong>.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218116532-e2d3d26b-bd3c-443a-a2c7-d446eda7f915.png" alt="The status of the book changed to Published" />
+<em>The status of the book changed to Published</em></p>
+
+<p><strong>Note</strong>: Since the <code>Book</code> type has a relation to <code>Author</code> type, we need to make sure that we go and publish the authors related to the book we published as well.</p>
+
+<p>That concludes the part of creating the data for the content types we defined. Now, let&rsquo;s see how we can access the data.</p>
+
+<h2 id="accessing-the-content">Accessing the content</h2>
+
+<p>Strapi automatically creates API routes and exposes the content via APIs. Let&rsquo;s look at retrieving the content using the APIs that Strapi created for us.</p>
+
+<p>The general format of the API url is as follows:</p>
+
+<pre><code>http://localhost:1337/api/{content_type_plural}
+</code></pre>
+
+<h3 id="get-books">Get Books</h3>
+
+<p>Point your browser to this url: <code>http://localhost:1337/api/books</code> and you will see the books you have added as shown below:</p>
+
+<pre><code class="language-json">{&quot;data&quot;: 
+   [{
+	   &quot;id&quot;: 1,
+	   &quot;attributes&quot;: {
+	     &quot;name&quot;: &quot;Will&quot;,
+	     &quot;description&quot;: &quot;Will Smith’s transformation from a West Philadelphia kid to one of the biggest rap stars of his era, and then one of the biggest...&quot;,
+	     &quot;format&quot;: &quot;Hardcover&quot;,
+	     &quot;isbn&quot;: &quot;0593152301&quot;,
+	     &quot;published_year&quot;: &quot;2022-01-11&quot;,
+	     &quot;buy_url&quot;: &quot;[https://amzn.to/3XeaTzt](https://amzn.to/3XeaTzt)&quot;,
+	     &quot;createdAt&quot;: &quot;2023-02-10T14:19:36.054Z&quot;,
+	     &quot;updatedAt&quot;: &quot;2023-02-10T14:28:12.687Z&quot;,
+	     &quot;publishedAt&quot;: &quot;2023-02-10T14:28:12.675Z&quot;
+	   }
+    }],
+	&quot;meta&quot;: {
+	  &quot;pagination&quot;: {&quot;page&quot;: 1,&quot;pageSize&quot;: 25,&quot;pageCount&quot;: 1,&quot;total&quot;: 1}
+	}
+}
+</code></pre>
+
+<p><strong>Note</strong>: I have chopped the <code>description</code> field for brevity.</p>
+
+<h3 id="get-authors">Get Authors</h3>
+
+<p>Point your browser to this url: <code>http://localhost:1337/api/authors</code> and you will see the authors you have added as shown below:</p>
+
+<pre><code class="language-json">{&quot;data&quot;: 
+   [{
+	   &quot;id&quot;: 1,
+	   &quot;attributes&quot;: {
+	     &quot;name&quot;: &quot;Will Smith&quot;,
+	     &quot;bio&quot;: null,
+	     &quot;createdAt&quot;: &quot;2023-02-10T14:20:12.583Z&quot;,
+	     &quot;updatedAt&quot;: &quot;2023-02-10T14:28:30.556Z&quot;,
+	     &quot;publishedAt&quot;: &quot;2023-02-10T14:28:30.551Z&quot;
+	   }
+   },
+   {
+	   &quot;id&quot;: 2,
+	   &quot;attributes&quot;: {
+	     &quot;name&quot;: &quot;Mark Manson&quot;,
+	     &quot;bio&quot;: null,
+	     &quot;createdAt&quot;: &quot;2023-02-10T14:20:43.131Z&quot;,
+	     &quot;updatedAt&quot;: &quot;2023-02-10T14:28:19.116Z&quot;,
+	     &quot;publishedAt&quot;: &quot;2023-02-10T14:28:19.109Z&quot;
+	   }
+   }],
+   &quot;meta&quot;: {
+	   &quot;pagination&quot;: {&quot;page&quot;: 1,&quot;pageSize&quot;: 25,&quot;pageCount&quot;: 1,&quot;total&quot;: 2}
+   }
+}
+</code></pre>
+
+<h3 id="get-books-with-authors">Get Books with Authors</h3>
+
+<p>Point your browser to this url: <code>http://localhost:1337/api/books?populate=*</code> and you will see the books along with the author data you have added as shown below:</p>
+
+<pre><code class="language-json">{
+  &quot;data&quot;: [{
+    &quot;id&quot;: 1,
+    &quot;attributes&quot;: {
+      &quot;name&quot;: &quot;Will&quot;,
+      &quot;description&quot;: &quot;Will Smith’s transformation from a West Philadelphia kid to one of the biggest rap stars of his era...&quot;,
+      &quot;format&quot;: &quot;Hardcover&quot;,
+      &quot;isbn&quot;: &quot;0593152301&quot;,
+      &quot;published_year&quot;: &quot;2022-01-11&quot;,
+      &quot;buy_url&quot;: &quot;https://amzn.to/3XeaTzt&quot;,
+      // ... clipped for brevity
+      &quot;cover_pic&quot;: {
+        &quot;data&quot;: {
+          &quot;id&quot;: 1,
+          &quot;attributes&quot;: {
+            &quot;name&quot;: &quot;will_cover.jpeg&quot;,
+            // ... clipped for brevity
+          }
+        }
+      },
+      &quot;authors&quot;: {
+        &quot;data&quot;: [{
+            &quot;id&quot;: 1,
+            &quot;attributes&quot;: {
+              &quot;name&quot;: &quot;Will Smith&quot;,
+              &quot;bio&quot;: null,
+              // ... clipped for brevity
+            }
+          },
+          {
+            &quot;id&quot;: 2,
+            &quot;attributes&quot;: {
+              &quot;name&quot;: &quot;Mark Manson&quot;,
+              &quot;bio&quot;: null,
+			        // ... clipped for brevity
+            }
+          }
+        ]
+      }
+    }
+  }],
+  &quot;meta&quot;: {
+    &quot;pagination&quot;: {
+      &quot;page&quot;: 1,
+      &quot;pageSize&quot;: 25,
+      &quot;pageCount&quot;: 1,
+      &quot;total&quot;: 1
+    }
+  }
+}
+</code></pre>
+
+<p>That concludes the article looking at Strapi CMS for managing content and accessing the content via the APIs. You can follow along with the article and review the <a href="https://github.com/rupakg/strapi-books-api">source code repository</a> for the <code>strapi-books-api</code> app project we created in this article.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>To recap, we explored creating a <code>strapi-books-api</code> app using the Strapi CMS. We learned how to create some content types <code>Book</code> and <code>Author</code> and create data for that content, all using the Strapi Dashboard Admin UI. We then learned how to manage the content and set roles &amp; permissions for the content so that we could publish &amp; access the content publicly via the APIs. Last but not the least, we learned how to use the APIs generated automatically by Strapi CMS to retrieve the content that we created.</p>
+
+<p>If you have questions or feedback, please let me know in the comments below.</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/how-to-read-24-or-more-books-in-a-year/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">How to Read 24 or More Books in a Year</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/glossary/what-is-strapi-headless-cms/">What Is Strapi Headless CMS?</a>
+      
+      <time class="pull-right hidden-tablet">Jan 18 &#39;23</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/glossary/what-is-swagger-and-why-it-is-used/">What Is Swagger and Why It Is Used</a>
+      
+      <time class="pull-right hidden-tablet">Jan 17 &#39;23</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/building-an-api-using-the-swagger-toolchain/">Building an API using the Swagger toolchain</a>
+      
+      <time class="pull-right hidden-tablet">Oct 03 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/roundup-of-api-platforms-and-specifications/">Roundup of API Platforms and Specifications</a>
+      
+      <time class="pull-right hidden-tablet">Aug 31 &#39;18</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+<script src="https://my.hellobar.com/ad52a4bd59b73e5c8aa1711f75d67b5b94300080.js" 
+  type="text/javascript" charset="utf-8" async="async"> 
+</script>
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>
