@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Learn how to create a Strapi CMS app to programmatically create content types, manage content, and consume the content via the Strapi CLI and APIs.">
+    
+        
+        <meta name="keywords" content="strapi, CMS, content management system, headless cms, api">
+    
+    
+
+<title>How to Programmatically Manage Website Content Using Strapi CMS • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Programmatically Manage Website Content Using Strapi CMS"/>
+<meta name="twitter:description" content="Learn how to create a Strapi CMS app to programmatically create content types, manage content, and consume the content via the Strapi CLI and APIs."/>
+
+<meta property="og:title" content="How to Programmatically Manage Website Content Using Strapi CMS" />
+<meta property="og:description" content="Learn how to create a Strapi CMS app to programmatically create content types, manage content, and consume the content via the Strapi CLI and APIs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/how-to-programmatically-manage-website-content-using-strapi-cms/" /><meta property="article:published_time" content="2023-02-26T22:08:42-05:00"/>
+<meta property="article:modified_time" content="2023-02-26T22:08:42-05:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://rupakganguly.com//img/rg10-square.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         personal opinions, experiences and writings... 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:rupakg&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <p class="copyright">
+      &copy; 2023 Rupak Ganguly.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>How to Programmatically Manage Website Content Using Strapi CMS</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Feb 26, 2023
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/cms">CMS</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/strapi">strapi</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/cms">cms</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/api">api</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 20 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>In this Part 2 article, we will build upon the Strapi app we built in the Part 1 article <a href="/posts/how-to-create-a-strapi-cms-app-to-manage-content/">How to create a Strapi CMS app to manage content</a>. But, instead of using the Strapi Dashboard Admin UI to manage content, we will take a deep dive into exploring how we can programmatically create content types, manage content, and consume the content via the Strapi CLI and APIs. We will also look at the anatomy of the Strapi app that is created and explore some of the functionalities that it provides out-of-the-box.
+</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/220255147-26bc9aab-b7d9-42ee-bf6c-87b1db2fb346.png" alt="Use Strapi CMS APIs to programmatically define, create, and manage content" /></p>
+
+<p>In the previous <a href="/posts/how-to-create-a-strapi-cms-app-to-manage-content/">article</a>, we created a <code>strapi-books-api</code> Strapi app to create and consume an API for books and authors. In this article, we will create a website with some pages to build our <code>bookshelf</code> app. This app will demonstrate how we can programmatically use Strapi CMS to manage content for web pages using the Strapi CLI and APIs.</p>
+
+<blockquote>
+<p><a href="/glossary/what-is-strapi-headless-cms/">What is Strapi headless CMS?</a></p>
+</blockquote>
+
+<h2 id="what-we-will-learn">What we will learn</h2>
+
+<p>We will learn the following things as part of this hands-on lab:</p>
+
+<ul>
+<li>Create the Strapi app</li>
+<li>Review the Strapi app code</li>
+<li>Define content types</li>
+<li>Expose the content via APIs</li>
+<li>Manage and consume the content via APIs</li>
+</ul>
+
+<h2 id="pre-requisites">Pre-requisites</h2>
+
+<p>To follow the article and build the app step-by-step, you will need the following:</p>
+
+<ul>
+<li><strong>Node.js</strong> installed
+
+<ul>
+<li>Only Maintenance and LTS versions are supported (<code>v14</code>, <code>v16</code>, and <code>v18</code>).</li>
+<li>Node v18.x is recommended for Strapi <code>v4.3.9</code> and above</li>
+</ul></li>
+<li>Node.js package manager
+
+<ul>
+<li><strong>npm</strong> (<code>v6</code> only) or <strong>yarn</strong> (we will use npm in the lab)</li>
+</ul></li>
+<li><strong>Python</strong> (needed for using <strong>SQLite</strong> database)</li>
+<li>The <code>strapi-bookshelf</code> app project <a href="https://github.com/rupakg/strapi-bookshelf">source code repository</a></li>
+</ul>
+
+<p><strong>Note</strong>: I will be using Node.js <code>v18.13.0</code> and Python <code>2.7.15</code> (since we will be using an SQLite database)</p>
+
+<h2 id="creating-the-strapi-app">Creating the Strapi app</h2>
+
+<p>Let&rsquo;s create the Strapi app named <code>strapi-bookshelf</code> which will display the books, and let users manage the books.</p>
+
+<p>I. To create the Strapi project, let&rsquo;s run the following command in a terminal window:</p>
+
+<pre><code class="language-bash">npx create-strapi-app@4.5.6 strapi-bookshelf --quickstart --no-run
+</code></pre>
+
+<p>The above command will ask to install the <code>create-strapi-app@4.5.6</code> package. It will create a folder under the current folder by the project name <code>strapi-bookshelf</code>.</p>
+
+<p>II. We are passing in the installation type as  <code>--quickstart</code>. This will allow Strapi to use SQLite as the default database. You can choose to use the custom option if you want to use any of the other supported databases. We are passing in the flag <code>--no-run</code> so that after the project creation, the app is not automatically run.</p>
+
+<p>III. After the above step you should have the <code>strapi-bookshelf</code> app  created under <code>/&lt;your project path&gt;/strapi-bookshelf</code></p>
+
+<p>IV. Now that the app is created, let&rsquo;s run the app by running <code>npm run develop</code>.</p>
+
+<p>V. The above command starts the app, and opens a browser window to <code>http://localhost:1337/admin/auth/register-admin</code> for creating a new admin user via the UI. We can create an admin user using the UI, but instead, let&rsquo;s create the admin user using the command line.</p>
+
+<p>VI. Let&rsquo;s exit the running app by pressing <code>CTRL+C</code> on your terminal window.</p>
+
+<p>VII. To create a new admin user, run the following command in a terminal window:</p>
+
+<pre><code class="language-bash">npm run strapi admin:create-user -- --firstname=Book --lastname=Admin --email=admin@test.com --password=&lt;password here&gt;
+</code></pre>
+
+<p><strong>Note</strong>: You can omit the <code>--password</code> option, to set the password interactively via the command line.</p>
+
+<p>VIII. The new admin user is created as seen in the following output:</p>
+
+<pre><code class="language-bash">&gt; teststrapi@0.1.0 strapi
+&gt; strapi admin:create-user --firstname=Book --lastname=Admin --email=admin@test.com --password=&lt;password here&gt;
+
+Successfully created new admin
+</code></pre>
+
+<p><strong>Note:</strong> This is a local user and is <strong>required</strong> to manage content in the Strapi Dashboard UI.</p>
+
+<p>IX. Let&rsquo;s start the app again by <code>npm run develop</code>. You will notice that the output suggests going to url <code>http://localhost:1337/admin</code> to open the admin panel.</p>
+
+<p>X. The browser now takes us to the login page for the Strapi Admin site. Use the email and password we used to create the admin user to login.</p>
+
+<p>XI. Now, you are in Strapi&rsquo;s Dashboard Admin UI. The dashboard site can be used for all admin purposes.</p>
+
+<p>This marks the completion of the Strapi app creation process. If you want, you can <code>CTRL+C</code> on your terminal window to exit the running Strapi app. We will start the app again in the next section.</p>
+
+<blockquote>
+<p>To get in-depth details of using the Strapi Dashboard Admin UI to manage content, please check out my article on <a href="/posts/how-to-create-a-strapi-cms-app-to-manage-content/">How to create a Strapi CMS app to manage content</a>.</p>
+</blockquote>
+
+<h2 id="reviewing-the-strapi-app-code">Reviewing the Strapi app code</h2>
+
+<h3 id="review-the-project-structure">Review the project structure</h3>
+
+<p>Let&rsquo;s examine what we got by creating a Strapi app.</p>
+
+<p>We have a new folder <code>strapi-bookshelf</code> created with the following folder structure:</p>
+
+<pre><code class="language-bash">cd strapi-bookshelf
+tree -L 3 -I node_modules
+
+.
+├── README.md
+├── config
+│   ├── admin.js
+│   ├── api.js
+│   ├── database.js
+│   ├── middlewares.js
+│   └── server.js
+├── database
+│   └── migrations
+├── favicon.png
+├── package-lock.json
+├── package.json
+├── public
+│   ├── robots.txt
+│   └── uploads
+└── src
+    ├── admin
+    │   ├── app.example.js
+    │   └── webpack.config.example.js
+    ├── api
+    ├── extensions
+    └── index.js
+</code></pre>
+
+<h3 id="review-the-project-files">Review the project files</h3>
+
+<p>Let&rsquo;s examine each of the sub-folders and their content and details.</p>
+
+<ol>
+<li>The <code>config</code> folder holds a bunch of JS files that define configurations for different parts of the Strapi app.
+
+<ul>
+<li>The <code>admin.js</code> file reads the <code>env</code> data and exports the <code>auth token</code> and the <code>apiToken salt</code>.</li>
+<li>The <code>api.js</code> file defines some configuration parameters for the REST API.</li>
+<li>The <code>database.js</code> file reads the <code>env</code> data and defines the configuration details for the SQLite database.</li>
+<li>The <code>middleware.js</code> file has the configuration details for the Strapi middleware that are included by default.</li>
+<li>The <code>server.js</code> file has the configuration details for the Strapi server.</li>
+</ul></li>
+<li>The <code>database</code> folder is empty to start with but has an empty folder <code>migrations</code> to hold any database migration files. Migrations are a way to incrementally update the database schema with versioning. It allows the developer to upgrade to a new version or downgrade to an older version of the schema.</li>
+<li>The <code>public</code> folder is empty to start with but will contain any publicly accessible static files or media assets. It has an empty folder <code>uploads</code> to hold any uploaded asset files like images or documents. These asset files are shown in the Admin UI under the Media Library and can be used in the app.</li>
+<li>The <code>src</code> folder is where all the source code for the app is stored. All auto-generated code is stored here under separate folders namely, <code>admin</code>, <code>api</code>, and <code>extensions</code>.
+
+<ul>
+<li>The <code>admin</code> folder holds some example files to customize and configure the admin part of the Strapi app.</li>
+<li>The <code>api</code> folder holds the business logic of the project split into subfolders per API that are defined by the app. We will review the API code structure in the next section after we define the content types.</li>
+<li>The <code>extensions</code> folder holds files to files to extend any installed plugins.</li>
+<li>The <code>index.js</code> file at the root of the project exports two functions: <code>register</code> and <code>bootstrap</code>.
+
+<ul>
+<li>The <code>register</code> function is an asynchronous register function that runs before the application is initialized. This gives the developer an opportunity to extend the code.</li>
+<li>The <code>bootstrap</code> function is an asynchronous bootstrap function that runs before the application gets started. This gives the developer an opportunity to set up the data model, run jobs, or perform some special logic.</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<p>Now that we understand the basic project structure of a Strapi app, let&rsquo;s dive into working on the demo app, starting with defining the content types.</p>
+
+<h2 id="defining-content-types">Defining content types</h2>
+
+<p>Strapi allows us to define content types for different kinds of content you might have. The content types are categorized into two main categories: <em>Collection</em> and <em>Single</em> types.</p>
+
+<p>Collection types define the kinds of content that can be visualized as a list i.e. a collection of things. Single types define kinds of content that can hold a single data structure.</p>
+
+<p>Let&rsquo;s define the content types for our demo app that will have some web pages. We need a home page for general information about the app, and a bookshelf page to display the various bookshelves with books.</p>
+
+<p>We will take a programmatic approach in this article, to create the content types in Strapi using the Strapi CLI.</p>
+
+<p>If you stopped the app in the previous section, let&rsquo;s start the app by:</p>
+
+<pre><code class="language-bash">npm run develop
+</code></pre>
+
+<h3 id="creating-a-homepage-single-content-type">Creating a &ldquo;Homepage&rdquo; single content type</h3>
+
+<p>The home page is a single structure of content so we will define a <code>single</code> content type named <code>Homepage</code>. The single content type <code>Homepage</code> will have these attributes: <code>header</code>, <code>hero_image</code>, <code>sub_header</code>, <code>content</code>, and <code>footer</code>.</p>
+
+<p>To create the <code>Homepage</code> single content type, let&rsquo;s run:</p>
+
+<pre><code class="language-bash">npm run strapi generate
+</code></pre>
+
+<p>The output we get is as follows:</p>
+
+<pre><code class="language-bash">&gt; strapi-bookshelf@0.1.0 strapi
+&gt; strapi generate
+
+? Strapi Generators content-type - Generate a content type for an API
+? Content type display name Homepage
+? Content type singular name homepage
+? Content type plural name homepages
+? Please choose the model type Single Type
+? Use draft and publish? Yes
+? Do you want to add attributes? Yes
+? Name of attribute header
+? What type of attribute string
+? Do you want to add another attribute? Yes
+? Name of attribute sub_header
+? What type of attribute string
+? Do you want to add another attribute? Yes
+? Name of attribute hero_image
+? What type of attribute media
+? Choose media type Single
+? Name of attribute content
+? What type of attribute richtext
+? Do you want to add another attribute? Yes
+? Name of attribute footer
+? What type of attribute string
+? Do you want to add another attribute? No
+? Where do you want to add this model? Add model to new API
+? Name of the new API? homepage
+? Bootstrap API related files? Yes
+✔  ++ /api/homepage/content-types/homepage/schema.json
+✔  +- /api/homepage/content-types/homepage/schema.json
+✔  ++ /api/homepage/controllers/homepage.js
+✔  ++ /api/homepage/services/homepage.js
+✔  ++ /api/homepage/routes/homepage.js
+</code></pre>
+
+<p>Now that the <code>Homepage</code> single content type is created, let&rsquo;s go back to the Strapi Dashboard Admin UI site and verify that it was created as we needed.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218310728-f183fa1b-342a-4fd2-bb18-88c507f27e5d.png" alt="The Homepage single content type with all its attributes" />
+<em>The <code>Homepage</code> single content type with all its attributes</em></p>
+
+<h3 id="creating-a-bookshelf-collection-content-type">Creating a &ldquo;Bookshelf&rdquo; collection content type</h3>
+
+<p>The bookshelf page will display a list of shelves which in turn will have a list of books.  So we will define a <code>collection</code> content type named <code>Bookshelf</code>. The collection content type <code>Bookshelf</code> will have these attributes: <code>name</code>, and <code>description</code>.</p>
+
+<p>To create the <code>Bookshelf</code> collection content type, let&rsquo;s run:</p>
+
+<pre><code class="language-bash">npm run strapi generate
+</code></pre>
+
+<p>The output we get is as follows:</p>
+
+<pre><code class="language-bash">&gt; strapi-bookshelf@0.1.0 strapi
+&gt; strapi generate
+
+? Strapi Generators content-type - Generate a content type for an API
+? Content type display name Bookshelf
+? Content type singular name bookshelf
+? Content type plural name bookshelves
+? Please choose the model type Collection Type
+? Use draft and publish? Yes
+? Do you want to add attributes? Yes
+? Name of attribute name
+? What type of attribute string
+? Do you want to add another attribute? Yes
+? Name of attribute description
+? What type of attribute richtext
+? Do you want to add another attribute? No
+? Where do you want to add this model? Add model to new API
+? Name of the new API? bookshelf
+? Bootstrap API related files? Yes
+✔  ++ /api/bookshelf/content-types/bookshelf/schema.json
+✔  +- /api/bookshelf/content-types/bookshelf/schema.json
+✔  ++ /api/bookshelf/controllers/bookshelf.js
+✔  ++ /api/bookshelf/services/bookshelf.js
+✔  ++ /api/bookshelf/routes/bookshelf.js
+</code></pre>
+
+<p>Now that the <code>Bookshelf</code> collection content type is created, let&rsquo;s go back to the Strapi Dashboard Admin UI site and verify that it was created as we needed.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218311163-d5ec7a06-1957-4e99-9126-99721698c038.png" alt="The Bookshelf collection content type with all its attributes" />
+<em>The <code>Bookshelf</code> collection content type with all its attributes</em></p>
+
+<h3 id="review-auto-generated-code">Review auto-generated code</h3>
+
+<p>Now that we created the <code>Homepage</code> and <code>Bookshelf</code> content types, let&rsquo;s review the code that Strapi CLI generated automatically for us.</p>
+
+<pre><code class="language-bash">cd strapi-bookshelf
+tree -L 4 src/api
+
+src/api
+├── bookshelf
+│   ├── content-types
+│   │   └── bookshelf
+│   │       └── schema.json
+│   ├── controllers
+│   │   └── bookshelf.js
+│   ├── routes
+│   │   └── bookshelf.js
+│   └── services
+│       └── bookshelf.js
+└── homepage
+    ├── content-types
+    │   └── homepage
+    │       └── schema.json
+    ├── controllers
+    │   └── homepage.js
+    ├── routes
+    │   └── homepage.js
+    └── services
+        └── homepage.js
+</code></pre>
+
+<p>At this time, we will focus our attention on the <code>schema.json</code> file created under the folder <code>src/api/bookshelf/content-types/bookshelf</code> and <code>src/api/homepage/content-types/homepage</code>.</p>
+
+<p>Let&rsquo;s open the <code>src/api/bookshelf/content-types/bookshelf/schema.json</code> file in any code editor and have a look:</p>
+
+<pre><code class="language-json">// src/api/bookshelf/content-types/bookshelf/schema.json
+
+{
+	&quot;kind&quot;: &quot;collectionType&quot;,
+	&quot;collectionName&quot;: &quot;bookshelves&quot;,
+	&quot;info&quot;: {
+		&quot;singularName&quot;: &quot;bookshelf&quot;,
+		&quot;pluralName&quot;: &quot;bookshelves&quot;,
+		&quot;displayName&quot;: &quot;Bookshelf&quot;
+	},
+	&quot;options&quot;: {
+		&quot;draftAndPublish&quot;: true,
+		&quot;comment&quot;: &quot;&quot;
+	},
+	&quot;attributes&quot;: {
+		&quot;name&quot;: {
+			&quot;type&quot;: &quot;string&quot;
+		},
+		&quot;description&quot;: {
+			&quot;type&quot;: &quot;richtext&quot;
+		}
+	}
+}
+</code></pre>
+
+<p>You will notice that the above json structure describes the information that we supplied via the Strapi CLIs <code>generate</code> command.</p>
+
+<p>Let&rsquo;s enrich the content type by updating it with some <code>required</code> &amp; <code>unique</code> constraints, and a <code>relation</code> type.</p>
+
+<h3 id="update-content-type-schema">Update content type schema</h3>
+
+<p>At this time, Strapi CLI&rsquo;s <code>generate</code> command <strong>does not allow</strong> creating <code>relation</code> type attributes and setting advanced settings of <code>required</code> and <code>unique</code>.</p>
+
+<p>Let&rsquo;s edit and update the <code>schema.json</code> files for both <code>Homepage</code> and <code>Bookshelf</code> content types to add:
+- <code>required</code> and <code>unique</code> constraints
+- <code>relation</code> type (<code>Homepage</code> has a <code>one-to-many</code> relation to <code>Bookshelf</code>)</p>
+
+<p>The edited <code>bookshelf/schema.json</code> file looks like this:</p>
+
+<pre><code class="language-json">// Edited src/api/bookshelf/content-types/bookshelf/schema.json
+
+{
+	&quot;kind&quot;: &quot;collectionType&quot;,
+	&quot;collectionName&quot;: &quot;bookshelves&quot;,
+	&quot;info&quot;: {
+		&quot;singularName&quot;: &quot;bookshelf&quot;,
+		&quot;pluralName&quot;: &quot;bookshelves&quot;,
+		&quot;displayName&quot;: &quot;Bookshelf&quot;
+	},
+	&quot;options&quot;: {
+		&quot;draftAndPublish&quot;: true,
+		&quot;comment&quot;: &quot;&quot;
+	},
+	&quot;attributes&quot;: {
+		&quot;name&quot;: {
+			&quot;type&quot;: &quot;string&quot;,
+			&quot;required&quot;: true,   // &lt;=== added
+			&quot;unique&quot;: true      // &lt;=== added
+		},
+		&quot;description&quot;: {
+			&quot;type&quot;: &quot;richtext&quot;
+		}
+	}
+}
+</code></pre>
+
+<p>The edited <code>homepage/schema.json</code> file looks like this:</p>
+
+<pre><code class="language-json">// Edited src/api/homepage/content-types/homepage/schema.json
+
+{
+
+	&quot;kind&quot;: &quot;singleType&quot;,
+	&quot;collectionName&quot;: &quot;homepages&quot;,
+	&quot;info&quot;: {
+		&quot;singularName&quot;: &quot;homepage&quot;,
+		&quot;pluralName&quot;: &quot;homepages&quot;,
+		&quot;displayName&quot;: &quot;Homepage&quot;
+	},
+	&quot;options&quot;: {
+		&quot;draftAndPublish&quot;: true,
+		&quot;comment&quot;: &quot;&quot;
+	},
+	&quot;attributes&quot;: {
+		&quot;header&quot;: {
+			&quot;type&quot;: &quot;string&quot;,
+			&quot;required&quot;: true    // &lt;=== added
+		},
+		&quot;sub_header&quot;: {
+			&quot;type&quot;: &quot;string&quot;
+		},
+		&quot;hero_image&quot;: {
+			&quot;type&quot;: &quot;media&quot;,
+			&quot;allowedTypes&quot;: [
+				&quot;images&quot;,
+				&quot;files&quot;,
+				&quot;videos&quot;,
+				&quot;audios&quot;
+			],
+			&quot;multiple&quot;: false
+		},
+		&quot;content&quot;: {
+			&quot;type&quot;: &quot;richtext&quot;,
+			&quot;required&quot;: true    // &lt;=== added
+		},
+		&quot;footer&quot;: {
+			&quot;type&quot;: &quot;string&quot;,
+			&quot;required&quot;: true    // &lt;=== added
+		},
+		&quot;bookshelves&quot;: {        // &lt;=== added
+			&quot;type&quot;: &quot;relation&quot;,
+			&quot;relation&quot;: &quot;oneToMany&quot;,
+			&quot;target&quot;: &quot;api::bookshelf.bookshelf&quot;
+		}
+	}
+}
+</code></pre>
+
+<p>Now that the <code>Bookshelf</code> and <code>Homepage</code> content types are updated, let&rsquo;s go back to the Strapi Dashboard Admin UI site and verify that it was updated as we needed.</p>
+
+<blockquote>
+<p>To get in-depth details of using the Strapi Dashboard Admin UI to manage content, please check out my article on <a href="/posts/how-to-create-a-strapi-cms-app-to-manage-content/">How to create a Strapi CMS app to manage content</a>.</p>
+</blockquote>
+
+<p>That concludes the part of updating the content types. Now, let&rsquo;s see how we can create data for the content types we defined via the APIs Strapi created for us automatically.</p>
+
+<h2 id="exposing-the-content-via-apis">Exposing the content via APIs</h2>
+
+<p>Before we can expose the content, we need to set the roles &amp; permissions for the content, so that we can publicly access the content via the APIs.</p>
+
+<p>We want to add content for the homepage and bookshelves. To create and consume the content data via the APIs, we need to make sure that the content is publicly accessible through the API.</p>
+
+<p>We will allow <strong>authenticated</strong> access to <code>create</code>, <code>update</code>, and <code>delete</code> APIs. We will allow <strong>public</strong> access to <code>find</code> and <code>findOne</code> APIs.</p>
+
+<p><strong>Note</strong>: At this time, Strapi CLI <strong>does not allow</strong> setting roles and permissions programmatically. We will have to use the Strapi Dashboard Admin UI to set roles and permissions for our content types.</p>
+
+<h3 id="setting-roles-and-permissions-for-the-content">Setting roles and permissions for the content</h3>
+
+<p>Follow the steps below to give selected permissions to the <strong>Authenticated</strong> role:</p>
+
+<ol>
+<li>Click on <strong>General</strong> -&gt; <strong>Settings</strong> at the bottom of the main navigation.</li>
+<li>Under the <strong>Users &amp; Permissions Plugin</strong>, choose <strong>Roles</strong>.</li>
+<li>Click the <strong>Authenticated</strong> role.</li>
+<li>Scroll down under <strong>Permissions</strong>.</li>
+<li>In the <strong>Permissions</strong> tab, find <strong>Bookshelf</strong> and click on it.</li>
+<li>Check the <strong>create</strong>, <strong>delete</strong>, and <strong>update</strong> checkboxes.</li>
+<li>In the <strong>Permissions</strong> tab, find <strong>Homepage</strong> and click on it.</li>
+<li>Check the <strong>delete</strong> and <strong>update</strong> checkboxes.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218317300-24618c94-a5a0-4a3a-a0e0-5205293fc0ba.png" alt="Setting roles and permissions for the Authenticated role for the Bookshelf content type" />
+<em>Setting roles and permissions for the Authenticated role for the Bookshelf content type</em></p>
+
+<p>Follow the steps below to give selected permissions to the <strong>Public</strong> role:</p>
+
+<ol>
+<li>Click on <strong>General</strong> -&gt; <strong>Settings</strong> at the bottom of the main navigation.</li>
+<li>Under the <strong>Users &amp; Permissions Plugin</strong>, choose <strong>Roles</strong>.</li>
+<li>Click the <strong>Public</strong> role.</li>
+<li>Scroll down under <strong>Permissions</strong>.</li>
+<li>In the <strong>Permissions</strong> tab, find <strong>Bookshelf</strong> and click on it.</li>
+<li>Check the <strong>find</strong> and <strong>findOne</strong> checkboxes.</li>
+<li>In the <strong>Permissions</strong> tab, find <strong>Homepage</strong> and click on it.</li>
+<li>Check the <strong>find</strong> checkbox.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218317871-6024ca57-5a58-47a2-b00d-840c259623ef.png" alt="image" />
+<em>Setting roles and permissions for the Public role for the Bookshelf content type</em></p>
+
+<h3 id="create-users-with-roles">Create users with roles</h3>
+
+<p>Strapi allows different roles for different access control for users to access content data. It allows a <strong>Public</strong> role for public access and an <strong>Authenticated</strong> role for authenticated access.</p>
+
+<p>Let&rsquo;s create two users: Bob and Alice. Bob will have a Public role and Alice will have an Authenticated role.</p>
+
+<p>Start the app in a terminal window by <code>npm run develop</code>. To create the two new registered users, we will make a <code>curl</code> calls from a new terminal window.</p>
+
+<p>Let&rsquo;s create a new registered user Bob:</p>
+
+<pre><code class="language-bash">curl -X POST 'http://localhost:1337/api/auth/local/register' \
+--header 'Content-Type: application/json' \
+-d '{
+    &quot;username&quot;: &quot;bob&quot;,
+    &quot;email&quot;: &quot;bob@test.com&quot;,
+    &quot;password&quot;: &quot;Bob@public&quot;
+}'
+</code></pre>
+
+<p>The response to the above call:</p>
+
+<pre><code class="language-json">{
+    &quot;jwt&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....pvTuY&quot;,
+    &quot;user&quot;: {
+        &quot;id&quot;: 1,
+        &quot;username&quot;: &quot;bob&quot;,
+        &quot;email&quot;: &quot;bob@test.com&quot;,
+        &quot;provider&quot;: &quot;local&quot;,
+        &quot;confirmed&quot;: true,
+        &quot;blocked&quot;: false,
+        &quot;createdAt&quot;: &quot;2023-02-12T15:41:59.403Z&quot;,
+        &quot;updatedAt&quot;: &quot;2023-02-12T15:41:59.403Z&quot;
+    }
+}
+</code></pre>
+
+<p><strong>Note</strong>: By default, the <code>register</code> API creates a user with an Authenticated role. To update the role to a Public role, we will have to use the Strapi Dashboard Admin UI by following steps below:</p>
+
+<ol>
+<li>Go to <strong>Content Manager</strong> -&gt; <strong>Collection Types</strong> -&gt; <strong>User</strong>.</li>
+<li>Click on the user <code>bob</code>.</li>
+<li>Notice that under <strong>role</strong>, the role is defaulted to <strong>Authenticated</strong>.</li>
+<li>Under the <strong>role</strong>, click on the <strong>Add relation</strong> dropdown and select <strong>Public</strong>. The <strong>Authenticated</strong> role is removed.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<p>Similarly, let&rsquo;s create a new registered user for Alice:</p>
+
+<pre><code class="language-bash">curl -X POST 'http://localhost:1337/api/auth/local/register' \
+--header 'Content-Type: application/json' \
+-d '{
+    &quot;username&quot;: &quot;alice&quot;,
+    &quot;email&quot;: &quot;alice@test.com&quot;,
+    &quot;password&quot;: &quot;Alice@auth&quot;
+}'
+</code></pre>
+
+<p>The response to the above call:</p>
+
+<pre><code class="language-json">{
+    &quot;jwt&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....0fyyw&quot;,
+    &quot;user&quot;: {
+        &quot;id&quot;: 2,
+        &quot;username&quot;: &quot;alice&quot;,
+        &quot;email&quot;: &quot;alice@test.com&quot;,
+        &quot;provider&quot;: &quot;local&quot;,
+        &quot;confirmed&quot;: true,
+        &quot;blocked&quot;: false,
+        &quot;createdAt&quot;: &quot;2023-02-12T15:58:51.670Z&quot;,
+        &quot;updatedAt&quot;: &quot;2023-02-12T15:58:51.670Z&quot;
+    }
+}
+</code></pre>
+
+<p>You can verify that the two users got created by going to the Strapi Dashboard Admin UI.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218321951-bedc49e3-4c36-402d-b8a7-2b6ab37b3ac8.png" alt="Registered users Bob and Alice created" />
+<em>Registered users Bob and Alice created</em></p>
+
+<blockquote>
+<p>To get in-depth details of using the Strapi Dashboard Admin UI to manage content, please check out my article on <a href="/posts/how-to-create-a-strapi-cms-app-to-manage-content/">How to create a Strapi CMS app to manage content</a>.</p>
+</blockquote>
+
+<h2 id="managing-and-consuming-the-content-via-apis">Managing and consuming the content via APIs</h2>
+
+<p>We will add content for the homepage and bookshelves via the APIs that Strapi automatically created for us. See Strapi&rsquo;s <a href="https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest-api.html#endpoints">REST API Endpoints</a> documentation for details.</p>
+
+<p>We will look at the authenticated APIs i.e. <code>create</code>, <code>update</code>, and <code>delete</code> APIs, and then the public API i.e. <code>get</code> API. See Strapi&rsquo;s <a href="https://docs.strapi.io/developer-docs/latest/plugins/users-permissions.html#manage-role-permissions">Manage Role Permissions</a> documentation to understand how to make authenticated API calls.</p>
+
+<h3 id="authentication">Authentication</h3>
+
+<p>Before we make any authenticated API calls, we need to <code>login</code> by passing the <code>identifier</code> (can be username or email) and the <code>password</code> of a registered user with Authenticated access. This operation has to be done once till the authentication session expires. The <code>login</code> call will return a JWT Token which we will be using in our subsequent autheticated calls.</p>
+
+<p>Start the app in a terminal window by <code>npm run develop</code>. To login, we will make a <code>curl</code> call from a new terminal window.</p>
+
+<p>In our case, let&rsquo;s use user Alice to login since this user has an Authenticated role.</p>
+
+<pre><code class="language-bash">curl -X POST http://localhost:1337/api/auth/local \
+--header 'Content-Type: application/json' \
+-d '{
+    &quot;identifier&quot;:&quot;alice@test.com&quot;, 
+    &quot;password&quot;:&quot;Alice@auth&quot;
+}'
+</code></pre>
+
+<p>The response to the above call is successful:</p>
+
+<pre><code class="language-json">{
+    &quot;jwt&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....pursc&quot;,
+    &quot;user&quot;: {
+        &quot;id&quot;: 2,
+        &quot;username&quot;: &quot;alice&quot;,
+        &quot;email&quot;: &quot;alice@test.com&quot;,
+        &quot;provider&quot;: &quot;local&quot;,
+        &quot;confirmed&quot;: true,
+        &quot;blocked&quot;: false,
+        &quot;createdAt&quot;: &quot;2023-02-12T15:58:51.670Z&quot;,
+        &quot;updatedAt&quot;: &quot;2023-02-12T15:58:51.670Z&quot;
+    }
+}
+</code></pre>
+
+<p>From the above response, we need the <code>jwt</code> token to be passed in the <code>Authorization</code> header for the subsequent API calls as a <code>Bearer</code> token. Any authentication failures return a <code>401 (unauthorized)</code> error.</p>
+
+<h3 id="creating-content-entry-for-homepage">Creating content entry for &ldquo;Homepage&rdquo;</h3>
+
+<p>Start the app in a terminal window by <code>npm run develop</code>. To create a new Homepage entry, we will make a <code>curl</code> call from a new terminal window.</p>
+
+<p>Let&rsquo;s try to create the Homepage entry <strong>without</strong> passing in the authentication token.</p>
+
+<pre><code class="language-bash">curl -X PUT http://localhost:1337/api/homepage \
+--header 'Content-Type: application/json' \
+-d '{
+	&quot;data&quot;: {
+	    &quot;header&quot;: &quot;My Bookcase&quot;,
+	    &quot;sub_header&quot;: &quot;Books are your best friends...&quot;,
+	    &quot;content&quot;: &quot;Fill this area with bookshelves with books.&quot;,
+	    &quot;footer&quot;: &quot;Copyright (c) 2023 Rupak Ganguly&quot;
+	}
+}'
+</code></pre>
+
+<p>We get a <code>403 Forbidden</code> error as a response to the above call. That tells us that we cannot access the creation call publicly and it needs authentication.</p>
+
+<pre><code class="language-json">{
+	&quot;data&quot;: null,
+	&quot;error&quot;: {
+		&quot;status&quot;: 403,
+		&quot;name&quot;: &quot;ForbiddenError&quot;,
+		&quot;message&quot;: &quot;Forbidden&quot;,
+		&quot;details&quot;: {}
+	}
+}
+</code></pre>
+
+<p>Now, let&rsquo;s create the Homepage entry by passing in the authentication token.</p>
+
+<pre><code class="language-bash">curl -X PUT http://localhost:1337/api/homepage \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer &lt;your_jwt_token_here&gt;' \
+-d '{
+	&quot;data&quot;: {
+	    &quot;header&quot;: &quot;My Bookcase&quot;,
+	    &quot;sub_header&quot;: &quot;Books are your best friends...&quot;,
+	    &quot;content&quot;: &quot;Fill this area with bookshelves with books.&quot;,
+	    &quot;footer&quot;: &quot;Copyright (c) 2023 Rupak Ganguly&quot;
+	}
+}'
+</code></pre>
+
+<p>The response from the above call is successful:</p>
+
+<pre><code class="language-json">{
+	&quot;data&quot;: {
+		&quot;id&quot;: 1,
+		&quot;attributes&quot;: {
+			&quot;header&quot;: &quot;My Bookcase&quot;,
+			&quot;sub_header&quot;: &quot;Books are your best friends...&quot;,
+			&quot;content&quot;: &quot;Fill this area with bookshelves with books.&quot;,
+			&quot;footer&quot;: &quot;Copyright (c) 2023 Rupak Ganguly&quot;,
+			&quot;createdAt&quot;: &quot;2023-02-12T17:42:49.321Z&quot;,
+			&quot;updatedAt&quot;: &quot;2023-02-12T17:42:49.321Z&quot;,
+			&quot;publishedAt&quot;: &quot;2023-02-12T17:42:49.239Z&quot;
+		}
+	},
+	&quot;meta&quot;: {}
+}
+</code></pre>
+
+<h3 id="consuming-content-for-homepage">Consuming content for &ldquo;Homepage&rdquo;</h3>
+
+<p>Let&rsquo;s make a <code>curl</code> call to see if we can retrieve the Homepage content that we just created. Since we allowed retrieval calls (find and findOne) to be publicly accessible, we should not require an authenticated call.</p>
+
+<pre><code>curl -X GET http://localhost:1337/api/homepage
+</code></pre>
+
+<p>We get a successful response which is identical to the response from create call we made earlier. It also means that the roles we set are working properly.</p>
+
+<h3 id="creating-content-entries-for-bookshelf">Creating content entries for &ldquo;Bookshelf&rdquo;</h3>
+
+<p>Similar to Homepage, let&rsquo;s create a couple of bookshelf entries.</p>
+
+<pre><code class="language-bash">curl -X POST http://localhost:1337/api/bookshelves \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer &lt;your_jwt_token_here&gt;' \
+-d '{
+	&quot;data&quot;: {
+	    &quot;name&quot;: &quot;Business Books&quot;,
+	    &quot;description&quot;: &quot;A collection of business books.&quot;
+	}
+}'
+
+curl -X POST http://localhost:1337/api/bookshelves \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer &lt;your_jwt_token_here&gt;' \
+-d '{
+	&quot;data&quot;: {
+	    &quot;name&quot;: &quot;Technical Books&quot;,
+	    &quot;description&quot;: &quot;A collection of technical books.&quot;
+	}
+}'
+</code></pre>
+
+<h3 id="consuming-content-for-bookshelf">Consuming content for &ldquo;Bookshelf&rdquo;</h3>
+
+<p>Let&rsquo;s make a <code>curl</code> call to see if we can retrieve the Bookshelf content that we just created. Since we allowed retrieval calls (find and findOne) to be publicly accessible, we should not require an authenticated call.</p>
+
+<pre><code>curl -X GET http://localhost:1337/api/bookshelves
+</code></pre>
+
+<p>The successfull response for the above call:</p>
+
+<pre><code class="language-json">{
+	&quot;data&quot;: [{
+		&quot;id&quot;: 1,
+		&quot;attributes&quot;: {
+			&quot;name&quot;: &quot;Business Books&quot;,
+			&quot;description&quot;: &quot;A collection of business books.&quot;,
+			&quot;createdAt&quot;: &quot;2023-02-12T18:05:31.168Z&quot;,
+			&quot;updatedAt&quot;: &quot;2023-02-12T18:05:31.168Z&quot;,
+			&quot;publishedAt&quot;: &quot;2023-02-12T18:05:31.160Z&quot;
+		}
+	}, {
+		&quot;id&quot;: 2,
+		&quot;attributes&quot;: {
+			&quot;name&quot;: &quot;Technical Books&quot;,
+			&quot;description&quot;: &quot;A collection of technical books.&quot;,
+			&quot;createdAt&quot;: &quot;2023-02-12T18:06:04.937Z&quot;,
+			&quot;updatedAt&quot;: &quot;2023-02-12T18:06:04.937Z&quot;,
+			&quot;publishedAt&quot;: &quot;2023-02-12T18:06:04.934Z&quot;
+		}
+	}],
+	&quot;meta&quot;: {
+		&quot;pagination&quot;: {
+			&quot;page&quot;: 1,
+			&quot;pageSize&quot;: 25,
+			&quot;pageCount&quot;: 1,
+			&quot;total&quot;: 2
+		}
+	}
+}
+</code></pre>
+
+<h3 id="updating-relations">Updating relations</h3>
+
+<p>Last but not the least, we need to associate the Homepage with the two bookshelves that we created. To do that we will make an update call to the Homepage entry and pass it the <code>relation</code> data for bookshelves. See Strapi&rsquo;s <a href="https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest/relations.html#managing-relations-through-the-rest-api">Managing relations through the REST API</a> documentation for details.</p>
+
+<pre><code class="language-bash">curl -X PUT http://localhost:1337/api/homepage \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer &lt;your_jwt_token_here&gt;' \
+-d '{
+  &quot;data&quot;: {
+    &quot;bookshelves&quot;: { 
+      &quot;connect&quot;: [
+        { &quot;id&quot;: 1 },
+        { &quot;id&quot;: 2 }
+      ], 
+    }
+  }
+}'
+</code></pre>
+
+<p><strong>Note</strong>: <strong>This above call does not work. Or at least I could not get it to work</strong>.</p>
+
+<p>For that reason, I used the Strapi Dashboard Admin UI to associate the bookshelves to the homepage.</p>
+
+<p><img src="https://user-images.githubusercontent.com/8188/218335612-11dda036-0d4e-4306-8199-26a9dd54870c.png" alt="Associating the bookshelves to the homepage" />
+<em>Associating the bookshelves to the homepage</em></p>
+
+<h3 id="consuming-data-including-relations">Consuming data including relations</h3>
+
+<p>Let&rsquo;s verify that the relations have been set properly:</p>
+
+<pre><code class="language-bash">curl -X GET http://localhost:1337/api/homepage?populate=*
+</code></pre>
+
+<p>The response was successful and you will notice that the single call to the homepage retrieves the associated bookshelves data as well:</p>
+
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;attributes&quot;: {
+      &quot;header&quot;: &quot;My Bookcase&quot;,
+      // ... clipped for brevity
+      },
+      &quot;bookshelves&quot;: {
+        &quot;data&quot;: [{
+          &quot;id&quot;: 1,
+          &quot;attributes&quot;: {
+            &quot;name&quot;: &quot;Business Books&quot;,
+            // ... clipped for brevity
+          }
+        }, {
+          &quot;id&quot;: 2,
+          &quot;attributes&quot;: {
+            &quot;name&quot;: &quot;Technical Books&quot;,
+            // ... clipped for brevity
+          }
+        }]
+      }
+    }
+  },
+  &quot;meta&quot;: {}
+}
+</code></pre>
+
+<p>Similar to the creation and retrieval calls, we can also make delete calls. This concludes the section for managing content for the content types that we defined.</p>
+
+<blockquote>
+<p>To get in-depth details of using the Strapi Dashboard Admin UI to manage content, please check out my article on <a href="/posts/how-to-create-a-strapi-cms-app-to-manage-content/">How to create a Strapi CMS app to manage content</a></p>
+</blockquote>
+
+<p>That concludes the article looking at Strapi CMS for programmatically creating content types, managing content, and consuming the content via the Strapi CLI and APIs. You can follow along with the article and review the <a href="https://github.com/rupakg/strapi-bookshelf">source code repository</a> for the <code>strapi-bookshelf</code> app project we created in this article.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>To recap, we learned how to create a new Strapi app bookshelf using the Strapi CLI. We created a new admin user to manage content types using the Strapi CLI. We then explored the anatomy of the Strapi app we created by reviewing the project structure, files, and auto-generated code. We then learned how to programmatically generate a single and a collection of content types using the Strapi CLI. We also learned how to update the content schema to add other extra constraints and relations. We learned how to limit access controls for exposing authenticated and public operations by setting roles and permissions. Next, we learned how to create a couple of end users with authenticated and public roles to consume the content. We also learned how to create, update and query content with relations programmatically using the APIs.</p>
+
+<p>If you have questions or feedback, please let me know in the comments below.</p>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/how-to-create-a-strapi-cms-app-to-manage-content/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">How to create a Strapi CMS app to manage content</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/how-to-create-a-strapi-cms-app-to-manage-content/">How to create a Strapi CMS app to manage content</a>
+      
+      <time class="pull-right hidden-tablet">Feb 19 &#39;23</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/glossary/what-is-strapi-headless-cms/">What Is Strapi Headless CMS?</a>
+      
+      <time class="pull-right hidden-tablet">Jan 18 &#39;23</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/glossary/what-is-swagger-and-why-it-is-used/">What Is Swagger and Why It Is Used</a>
+      
+      <time class="pull-right hidden-tablet">Jan 17 &#39;23</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/building-an-api-using-the-swagger-toolchain/">Building an API using the Swagger toolchain</a>
+      
+      <time class="pull-right hidden-tablet">Oct 03 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/roundup-of-api-platforms-and-specifications/">Roundup of API Platforms and Specifications</a>
+      
+      <time class="pull-right hidden-tablet">Aug 31 &#39;18</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+<script src="https://my.hellobar.com/ad52a4bd59b73e5c8aa1711f75d67b5b94300080.js" 
+  type="text/javascript" charset="utf-8" async="async"> 
+</script>
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

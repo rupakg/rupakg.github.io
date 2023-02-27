@@ -6,10 +6,20 @@
     <description>Recent content in Cms on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Feb 2023 14:29:05 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 26 Feb 2023 22:08:42 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/cms/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to Programmatically Manage Website Content Using Strapi CMS</title>
+      <link>https://rupakganguly.com/posts/how-to-programmatically-manage-website-content-using-strapi-cms/</link>
+      <pubDate>Sun, 26 Feb 2023 22:08:42 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/how-to-programmatically-manage-website-content-using-strapi-cms/</guid>
+      <description>&lt;p&gt;In this Part 2 article, we will build upon the Strapi app we built in the Part 1 article &lt;a href=&#34;https://rupakganguly.com/posts/how-to-create-a-strapi-cms-app-to-manage-content/&#34;&gt;How to create a Strapi CMS app to manage content&lt;/a&gt;. But, instead of using the Strapi Dashboard Admin UI to manage content, we will take a deep dive into exploring how we can programmatically create content types, manage content, and consume the content via the Strapi CLI and APIs. We will also look at the anatomy of the Strapi app that is created and explore some of the functionalities that it provides out-of-the-box.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>How to create a Strapi CMS app to manage content</title>
