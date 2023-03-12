@@ -6,10 +6,22 @@
     <description>Recent content in Glossaries on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jan 2023 16:30:55 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 11 Mar 2023 23:06:36 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/glossary/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What is SlimAI and its benefits</title>
+      <link>https://rupakganguly.com/glossary/what-is-slim-ai-and-its-benefits/</link>
+      <pubDate>Sat, 11 Mar 2023 23:06:36 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/glossary/what-is-slim-ai-and-its-benefits/</guid>
+      <description>&lt;p&gt;Containers have been around for a while and Docker commoditized them and brought it into the hands of every developer. The usage was simple and everyone could create a Docker image and run their apps in a container. Docker Swarm and Kubernetes took it further and made it possible for us to deploy and run containerized apps at scale.&lt;/p&gt;
+
+&lt;p&gt;The ease of use and small learning curve to entry for creating and running containers had their shortcomings as well. Lots of developers without a deep knowledge of operating systems, systems administration, packaging, and dependency management have been Docker images and containers without much care. This proliferated docker images and containers that had unnecessary packages &amp;amp; dependencies leading to huge image sizes and vulnerabilities. This resulted in increasing the attack surface area for security hacks and decreased performance due to large image download sizes.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>What Is Strapi Headless CMS?</title>

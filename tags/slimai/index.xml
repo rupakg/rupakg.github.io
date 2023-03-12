@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Devops on Rupak Ganguly</title>
-    <link>https://rupakganguly.com/categories/devops/</link>
-    <description>Recent content in Devops on Rupak Ganguly</description>
+    <title>Slimai on Rupak Ganguly</title>
+    <link>https://rupakganguly.com/tags/slimai/</link>
+    <description>Recent content in Slimai on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 11 Mar 2023 23:06:36 -0500</lastBuildDate>
     
-	<atom:link href="https://rupakganguly.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/tags/slimai/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,15 +21,6 @@
 
 &lt;p&gt;The ease of use and small learning curve to entry for creating and running containers had their shortcomings as well. Lots of developers without a deep knowledge of operating systems, systems administration, packaging, and dependency management have been Docker images and containers without much care. This proliferated docker images and containers that had unnecessary packages &amp;amp; dependencies leading to huge image sizes and vulnerabilities. This resulted in increasing the attack surface area for security hacks and decreased performance due to large image download sizes.
 &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Monitoring Docker Services With Prometheus</title>
-      <link>https://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</link>
-      <pubDate>Tue, 21 Jul 2015 14:08:43 -0400</pubDate>
-      
-      <guid>https://rupakganguly.com/posts/monitoring-docker-services-with-prometheus/</guid>
-      <description>With the advent of the &amp;lsquo;micro-services&amp;rsquo; architecture and the evolving trend for using Docker, monolithic applications are being broken up into smaller and independent services. The idea is to keep the services small so that small groups of developers can work on them, upgrade or patch them quickly, and build &amp;amp; release them continuously. Although that vision is promising, it introduces complexity as the number of services grow. With that also grows the need to monitor these services around the clock, to maintain the healthy functioning of the application.</description>
     </item>
     
   </channel>
