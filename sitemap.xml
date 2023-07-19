@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rupakganguly.com/glossary/what-is-a-workflow-engine-and-its-uses/</loc>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/glossary/what-is-slim-ai-and-its-benefits/</loc>
     <lastmod>2023-03-11T23:06:36-05:00</lastmod>
   </url>
@@ -155,6 +160,12 @@
   </url>
   
   <url>
+    <loc>https://rupakganguly.com/categories/automation/</loc>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/tags/aws/</loc>
     <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
@@ -175,6 +186,18 @@
   <url>
     <loc>https://rupakganguly.com/categories/books/</loc>
     <lastmod>2022-12-31T11:55:38-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/categories/business/</loc>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/business-rules/</loc>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -288,7 +311,7 @@
   
   <url>
     <loc>https://rupakganguly.com/glossary/</loc>
-    <lastmod>2023-03-11T23:06:36-05:00</lastmod>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -377,6 +400,18 @@
   </url>
   
   <url>
+    <loc>https://rupakganguly.com/categories/process/</loc>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/process-automation/</loc>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/tags/prometheus/</loc>
     <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
@@ -413,8 +448,14 @@
   </url>
   
   <url>
+    <loc>https://rupakganguly.com/tags/rules-engine/</loc>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/</loc>
-    <lastmod>2023-03-11T23:06:36-05:00</lastmod>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -496,6 +537,12 @@
   
   <url>
     <loc>https://rupakganguly.com/webinars/</loc>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/workflow/</loc>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

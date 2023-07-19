@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rules Engine on Rupak Ganguly</title>
+    <link>https://rupakganguly.com/tags/rules-engine/</link>
+    <description>Recent content in Rules Engine on Rupak Ganguly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 19 Jul 2023 08:23:38 -0400</lastBuildDate>
+    
+	<atom:link href="https://rupakganguly.com/tags/rules-engine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is a Workflow Engine and its uses?</title>
+      <link>https://rupakganguly.com/glossary/what-is-a-workflow-engine-and-its-uses/</link>
+      <pubDate>Wed, 19 Jul 2023 08:23:38 -0400</pubDate>
+      
+      <guid>https://rupakganguly.com/glossary/what-is-a-workflow-engine-and-its-uses/</guid>
+      <description>&lt;p&gt;Every business has processes that follow certain work that needs to be done in a particular order, has conditional logic that can branch out work, and may involve data transformation or processing of data based on certain business rules. To facilitate the automation of such complex processing rules and logic, workflow engines and business rule engines were developed.&lt;/p&gt;
+
+&lt;p&gt;We will learn about workflow engines, different types of workflows, the components of a workflow, their benefits, and how they can be used to solve business process automation.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
