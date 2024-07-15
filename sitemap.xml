@@ -134,20 +134,14 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/alexa-skill/</loc>
-    <lastmod>2018-08-29T17:29:03-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://rupakganguly.com/categories/alexa-skill/</loc>
     <lastmod>2018-08-29T17:29:03-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/announcements/</loc>
-    <lastmod>2018-12-21T12:25:26-05:00</lastmod>
+    <loc>https://rupakganguly.com/tags/alexa-skill/</loc>
+    <lastmod>2018-08-29T17:29:03-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -158,8 +152,8 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/api/</loc>
-    <lastmod>2023-02-26T22:08:42-05:00</lastmod>
+    <loc>https://rupakganguly.com/tags/announcements/</loc>
+    <lastmod>2018-12-21T12:25:26-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -170,14 +164,14 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/categories/automation/</loc>
-    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
+    <loc>https://rupakganguly.com/tags/api/</loc>
+    <lastmod>2023-02-26T22:08:42-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/aws/</loc>
-    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+    <loc>https://rupakganguly.com/categories/automation/</loc>
+    <lastmod>2023-07-19T08:23:38-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -188,13 +182,19 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/books/</loc>
-    <lastmod>2023-12-22T10:02:33-05:00</lastmod>
+    <loc>https://rupakganguly.com/tags/aws/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/categories/books/</loc>
+    <lastmod>2023-12-22T10:02:33-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/books/</loc>
     <lastmod>2023-12-22T10:02:33-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -230,20 +230,14 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/cms/</loc>
-    <lastmod>2023-02-26T22:08:42-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://rupakganguly.com/categories/cms/</loc>
     <lastmod>2023-02-26T22:08:42-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/conference/</loc>
-    <lastmod>2015-07-15T13:49:28-04:00</lastmod>
+    <loc>https://rupakganguly.com/tags/cms/</loc>
+    <lastmod>2023-02-26T22:08:42-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -254,8 +248,8 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/containers/</loc>
-    <lastmod>2023-03-11T23:06:36-05:00</lastmod>
+    <loc>https://rupakganguly.com/tags/conference/</loc>
+    <lastmod>2015-07-15T13:49:28-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -266,8 +260,8 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/development/</loc>
-    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
+    <loc>https://rupakganguly.com/tags/containers/</loc>
+    <lastmod>2023-03-11T23:06:36-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -278,8 +272,8 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/devops/</loc>
-    <lastmod>2015-07-21T14:08:43-04:00</lastmod>
+    <loc>https://rupakganguly.com/tags/development/</loc>
+    <lastmod>2018-10-03T00:29:37-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -290,13 +284,19 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/docker/</loc>
-    <lastmod>2023-03-11T23:06:36-05:00</lastmod>
+    <loc>https://rupakganguly.com/tags/devops/</loc>
+    <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/categories/docker/</loc>
+    <lastmod>2023-03-11T23:06:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/docker/</loc>
     <lastmod>2023-03-11T23:06:36-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -344,25 +344,25 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/microservices/</loc>
-    <lastmod>2015-07-21T14:08:43-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://rupakganguly.com/categories/microservices/</loc>
     <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/monitoring/</loc>
+    <loc>https://rupakganguly.com/tags/microservices/</loc>
     <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/categories/monitoring/</loc>
+    <lastmod>2015-07-21T14:08:43-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/monitoring/</loc>
     <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -386,14 +386,14 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/personal/</loc>
-    <lastmod>2018-05-01T17:50:17-04:00</lastmod>
+    <loc>https://rupakganguly.com/categories/personal/</loc>
+    <lastmod>2023-12-29T14:17:21-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/categories/personal/</loc>
-    <lastmod>2023-12-29T14:17:21-05:00</lastmod>
+    <loc>https://rupakganguly.com/tags/personal/</loc>
+    <lastmod>2018-05-01T17:50:17-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -446,13 +446,13 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/reinvent/</loc>
+    <loc>https://rupakganguly.com/categories/reinvent/</loc>
     <lastmod>2018-12-21T12:25:26-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/categories/reinvent/</loc>
+    <loc>https://rupakganguly.com/tags/reinvent/</loc>
     <lastmod>2018-12-21T12:25:26-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -476,14 +476,14 @@
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/tags/serverless/</loc>
-    <lastmod>2019-05-06T23:00:20-04:00</lastmod>
+    <loc>https://rupakganguly.com/categories/serverless/</loc>
+    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rupakganguly.com/categories/serverless/</loc>
-    <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+    <loc>https://rupakganguly.com/tags/serverless/</loc>
+    <lastmod>2019-05-06T23:00:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   
