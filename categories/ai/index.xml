@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ai on Rupak Ganguly</title>
+    <link>https://rupakganguly.com/categories/ai/</link>
+    <description>Recent content in Ai on Rupak Ganguly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Mar 2024 14:00:50 -0400</lastBuildDate>
+    
+	<atom:link href="https://rupakganguly.com/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Comparing Chat GPT, Gemini, Copilot and Claude AI Chatbots</title>
+      <link>https://rupakganguly.com/posts/comparing-chatgpt-gemini-copilot-and-claude-ai-chatbots/</link>
+      <pubDate>Sun, 10 Mar 2024 14:00:50 -0400</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/comparing-chatgpt-gemini-copilot-and-claude-ai-chatbots/</guid>
+      <description>&lt;p&gt;As I dove into AI head first, I learned a lot. In discussions around AI with several people, I realized that an article rounding up and comparing the major AI chat bots in the ecosystem will help a lot of people, not only understand AI chat bots but encourage them to use these, based on their use cases.&lt;/p&gt;
+
+&lt;p&gt;Starting with an introduction, I cover an overview of the AI chat bots, discuss the comparison criteria &amp;amp; their impacts, do a detailed comparison, touch upon their image generation capabilities, illustrate some use cases &amp;amp; best-case scenarios and finally finish off with a section on future developments of the AI chat bots.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
