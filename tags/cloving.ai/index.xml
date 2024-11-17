@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chatbots on Rupak Ganguly</title>
-    <link>https://rupakganguly.com/tags/chatbots/</link>
-    <description>Recent content in Chatbots on Rupak Ganguly</description>
+    <title>Cloving.ai on Rupak Ganguly</title>
+    <link>https://rupakganguly.com/tags/cloving.ai/</link>
+    <description>Recent content in Cloving.ai on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Nov 2024 15:12:52 -0500</lastBuildDate>
     
-	<atom:link href="https://rupakganguly.com/tags/chatbots/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rupakganguly.com/tags/cloving.ai/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,19 +20,6 @@
       <description>&lt;p&gt;With the advent of AI chatbots, many have been using it to write code and develop apps. But, in reality (at least in my experience), it has been a huge disappointment. The technology is great but works well in the hands of people who know how to use it. A lot has been talked about ‘prompt engineering’ which is at the core of making these AI chatbots respond in a more productive way.&lt;/p&gt;
 
 &lt;p&gt;I have tried creating apps using these AI chatbots but it is a pain. It is a nerve wreaking back and forth prompt writing in chat, and copy/paste in the code base. And, the code never works as expected. It is tough to progressively build on your app using the chatbots because the chatbots are unaware of your full code base.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Comparing Chat GPT, Gemini, Copilot and Claude AI Chatbots</title>
-      <link>https://rupakganguly.com/posts/comparing-chatgpt-gemini-copilot-and-claude-ai-chatbots/</link>
-      <pubDate>Sun, 10 Mar 2024 14:00:50 -0400</pubDate>
-      
-      <guid>https://rupakganguly.com/posts/comparing-chatgpt-gemini-copilot-and-claude-ai-chatbots/</guid>
-      <description>&lt;p&gt;As I dove into AI head first, I learned a lot. In discussions around AI with several people, I realized that an article rounding up and comparing the major AI chat bots in the ecosystem will help a lot of people, not only understand AI chat bots but encourage them to use these, based on their use cases.&lt;/p&gt;
-
-&lt;p&gt;Starting with an introduction, I cover an overview of the AI chat bots, discuss the comparison criteria &amp;amp; their impacts, do a detailed comparison, touch upon their image generation capabilities, illustrate some use cases &amp;amp; best-case scenarios and finally finish off with a section on future developments of the AI chat bots.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

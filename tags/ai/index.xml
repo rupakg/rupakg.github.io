@@ -6,10 +6,23 @@
     <description>Recent content in Ai on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Mar 2024 14:00:50 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 16 Nov 2024 15:12:52 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building a web app using AI without the prompt engineering headaches</title>
+      <link>https://rupakganguly.com/posts/building-a-web-app-using-ai-without-the-prompt-engineering-headaches/</link>
+      <pubDate>Sat, 16 Nov 2024 15:12:52 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/building-a-web-app-using-ai-without-the-prompt-engineering-headaches/</guid>
+      <description>&lt;p&gt;With the advent of AI chatbots, many have been using it to write code and develop apps. But, in reality (at least in my experience), it has been a huge disappointment. The technology is great but works well in the hands of people who know how to use it. A lot has been talked about ‘prompt engineering’ which is at the core of making these AI chatbots respond in a more productive way.&lt;/p&gt;
+
+&lt;p&gt;I have tried creating apps using these AI chatbots but it is a pain. It is a nerve wreaking back and forth prompt writing in chat, and copy/paste in the code base. And, the code never works as expected. It is tough to progressively build on your app using the chatbots because the chatbots are unaware of your full code base.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Comparing Chat GPT, Gemini, Copilot and Claude AI Chatbots</title>
