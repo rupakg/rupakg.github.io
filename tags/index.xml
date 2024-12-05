@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Nov 2024 15:12:52 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2024 12:46:50 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Ai</title>
       <link>https://rupakganguly.com/tags/ai/</link>
-      <pubDate>Sat, 16 Nov 2024 15:12:52 -0500</pubDate>
+      <pubDate>Thu, 05 Dec 2024 12:46:50 -0500</pubDate>
       
       <guid>https://rupakganguly.com/tags/ai/</guid>
       <description></description>
@@ -104,7 +104,7 @@
     <item>
       <title>Chatbots</title>
       <link>https://rupakganguly.com/tags/chatbots/</link>
-      <pubDate>Sat, 16 Nov 2024 15:12:52 -0500</pubDate>
+      <pubDate>Thu, 05 Dec 2024 12:46:50 -0500</pubDate>
       
       <guid>https://rupakganguly.com/tags/chatbots/</guid>
       <description></description>
@@ -149,7 +149,7 @@
     <item>
       <title>Development</title>
       <link>https://rupakganguly.com/tags/development/</link>
-      <pubDate>Sat, 16 Nov 2024 15:12:52 -0500</pubDate>
+      <pubDate>Thu, 05 Dec 2024 12:46:50 -0500</pubDate>
       
       <guid>https://rupakganguly.com/tags/development/</guid>
       <description></description>
@@ -201,6 +201,15 @@
     </item>
     
     <item>
+      <title>Guide</title>
+      <link>https://rupakganguly.com/tags/guide/</link>
+      <pubDate>Thu, 05 Dec 2024 12:46:50 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/tags/guide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Jobs</title>
       <link>https://rupakganguly.com/tags/jobs/</link>
       <pubDate>Sat, 02 May 2020 21:18:19 -0400</pubDate>
@@ -212,7 +221,7 @@
     <item>
       <title>Learnings</title>
       <link>https://rupakganguly.com/tags/learnings/</link>
-      <pubDate>Sat, 02 May 2020 21:18:19 -0400</pubDate>
+      <pubDate>Thu, 05 Dec 2024 12:46:50 -0500</pubDate>
       
       <guid>https://rupakganguly.com/tags/learnings/</guid>
       <description></description>
@@ -305,6 +314,15 @@
       <pubDate>Tue, 25 Dec 2018 12:46:08 -0500</pubDate>
       
       <guid>https://rupakganguly.com/tags/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://rupakganguly.com/tags/python/</link>
+      <pubDate>Thu, 05 Dec 2024 12:46:50 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/tags/python/</guid>
       <description></description>
     </item>
     

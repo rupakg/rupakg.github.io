@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rupakganguly.com/posts/master-ai-the-ultimate-learning-plan-for-beginners-2024-guide/</loc>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/posts/building-a-web-app-using-ai-without-the-prompt-engineering-headaches/</loc>
     <lastmod>2024-11-16T15:12:52-05:00</lastmod>
   </url>
@@ -139,13 +144,13 @@
   
   <url>
     <loc>https://rupakganguly.com/tags/ai/</loc>
-    <lastmod>2024-11-16T15:12:52-05:00</lastmod>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/categories/ai/</loc>
-    <lastmod>2024-11-16T15:12:52-05:00</lastmod>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -247,13 +252,19 @@
   
   <url>
     <loc>https://rupakganguly.com/categories/</loc>
-    <lastmod>2024-11-16T15:12:52-05:00</lastmod>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/tags/chatbots/</loc>
-    <lastmod>2024-11-16T15:12:52-05:00</lastmod>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/categories/chatbots/</loc>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -301,7 +312,7 @@
   
   <url>
     <loc>https://rupakganguly.com/tags/development/</loc>
-    <lastmod>2024-11-16T15:12:52-05:00</lastmod>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -360,6 +371,18 @@
   </url>
   
   <url>
+    <loc>https://rupakganguly.com/tags/guide/</loc>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/categories/guide/</loc>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/tags/jobs/</loc>
     <lastmod>2020-05-02T21:18:19-04:00</lastmod>
     <priority>0</priority>
@@ -367,7 +390,7 @@
   
   <url>
     <loc>https://rupakganguly.com/tags/learnings/</loc>
-    <lastmod>2020-05-02T21:18:19-04:00</lastmod>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -439,7 +462,7 @@
   
   <url>
     <loc>https://rupakganguly.com/posts/</loc>
-    <lastmod>2024-11-16T15:12:52-05:00</lastmod>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -464,6 +487,12 @@
   <url>
     <loc>https://rupakganguly.com/tags/publications/</loc>
     <lastmod>2018-12-25T12:46:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/python/</loc>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -505,7 +534,7 @@
   
   <url>
     <loc>https://rupakganguly.com/</loc>
-    <lastmod>2024-11-16T15:12:52-05:00</lastmod>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -547,7 +576,7 @@
   
   <url>
     <loc>https://rupakganguly.com/tags/</loc>
-    <lastmod>2024-11-16T15:12:52-05:00</lastmod>
+    <lastmod>2024-12-05T12:46:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
