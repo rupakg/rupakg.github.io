@@ -6,10 +6,24 @@
     <description>Recent content in Development on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Nov 2024 15:12:52 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2024 15:00:30 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploring AI Assisted Development: Building a Feature Rich Web App With Bolt.new</title>
+      <link>https://rupakganguly.com/posts/exploring-ai-assisted-development-building-a-feature-rich-web-app-with-bolt/</link>
+      <pubDate>Tue, 10 Dec 2024 15:00:30 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/exploring-ai-assisted-development-building-a-feature-rich-web-app-with-bolt/</guid>
+      <description>&lt;p&gt;In the rapidly evolving landscape of software development, AI-powered coding assistants are emerging as powerful tools for accelerating application development. This article explores the capabilities of Bolt.new, an AI coding assistant by StackBlitz, through the practical exercise of building a dynamic Todo List application using Next.js and nothing else but prompts.&lt;/p&gt;
+
+&lt;p&gt;The demonstration showcases how Bolt.new can not only generate a basic application from scratch but also iteratively add complex features through simple prompts. We&amp;rsquo;ll examine the assistant&amp;rsquo;s ability to handle various development tasks, from implementing UI components to managing data structures, while also highlighting both its strengths and limitations.&lt;/p&gt;
+
+&lt;p&gt;Throughout this hands-on exploration, we&amp;rsquo;ll see how Bolt.new handles different challenges, including error resolution and code refactoring, providing valuable insights into the current state of AI-assisted development and its practical applications in real-world scenarios.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Building a web app using AI without the prompt engineering headaches</title>

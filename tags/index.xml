@@ -6,17 +6,44 @@
     <description>Recent content in Tags on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Dec 2024 12:46:50 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2024 15:00:30 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Agents</title>
+      <link>https://rupakganguly.com/tags/agents/</link>
+      <pubDate>Tue, 10 Dec 2024 15:00:30 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/tags/agents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ai</title>
       <link>https://rupakganguly.com/tags/ai/</link>
-      <pubDate>Thu, 05 Dec 2024 12:46:50 -0500</pubDate>
+      <pubDate>Tue, 10 Dec 2024 15:00:30 -0500</pubDate>
       
       <guid>https://rupakganguly.com/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ai Development</title>
+      <link>https://rupakganguly.com/tags/ai-development/</link>
+      <pubDate>Tue, 10 Dec 2024 15:00:30 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/tags/ai-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ai Tools</title>
+      <link>https://rupakganguly.com/tags/ai-tools/</link>
+      <pubDate>Tue, 10 Dec 2024 15:00:30 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/tags/ai-tools/</guid>
       <description></description>
     </item>
     
@@ -66,6 +93,15 @@
     </item>
     
     <item>
+      <title>Bolt.new</title>
+      <link>https://rupakganguly.com/tags/bolt.new/</link>
+      <pubDate>Tue, 10 Dec 2024 15:00:30 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/tags/bolt.new/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Books</title>
       <link>https://rupakganguly.com/tags/books/</link>
       <pubDate>Fri, 22 Dec 2023 10:02:33 -0500</pubDate>
@@ -104,7 +140,7 @@
     <item>
       <title>Chatbots</title>
       <link>https://rupakganguly.com/tags/chatbots/</link>
-      <pubDate>Thu, 05 Dec 2024 12:46:50 -0500</pubDate>
+      <pubDate>Tue, 10 Dec 2024 15:00:30 -0500</pubDate>
       
       <guid>https://rupakganguly.com/tags/chatbots/</guid>
       <description></description>

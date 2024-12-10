@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Generate a feature rich web application from scratch and iteratively add complex features through simple prompts using Bolt.new AI assistant.">
+    
+        
+        <meta name="keywords" content="ai-development, chatbots, coding-assistant, agents, Bolt.new, ai-tools">
+    
+    
+
+<title>Exploring AI Assisted Development: Building a Feature Rich Web App With Bolt.new • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exploring AI Assisted Development: Building a Feature Rich Web App With Bolt.new"/>
+<meta name="twitter:description" content="Generate a feature rich web application from scratch and iteratively add complex features through simple prompts using Bolt.new AI assistant."/>
+
+<meta property="og:title" content="Exploring AI Assisted Development: Building a Feature Rich Web App With Bolt.new" />
+<meta property="og:description" content="Generate a feature rich web application from scratch and iteratively add complex features through simple prompts using Bolt.new AI assistant." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/exploring-ai-assisted-development-building-a-feature-rich-web-app-with-bolt/" /><meta property="article:published_time" content="2024-12-10T15:00:30-05:00"/>
+<meta property="article:modified_time" content="2024-12-10T15:00:30-05:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    
+    <div class="sidebar-about">
+  <span class="site__title">
+    <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+  </span>
+  
+  
+  
+  <div class="author-image">
+    <img src="https://rupakganguly.com//img/rg_mug_conf.png" alt="Rupak Ganguly" class="img--circle img--headshot element--center">
+  </div>
+  
+  <p class="site__description">
+     opinions, experiences &amp; writings... 
+  </p>
+</div>
+
+    
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/glossary/">
+						<span>Glossaries</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:biz@rupakganguly.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <div>
+      
+      <p>
+  <iframe src="https://rupakganguly.substack.com/embed" width="100%" height="150" style="border:1px solid #6a9fb5; background:#6a9fb5;" frameborder="0" scrolling="no"></iframe>
+</p>
+    </div>
+    
+    <div class="copyright">
+  &copy; 2024 Rupak Ganguly.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Exploring AI Assisted Development: Building a Feature Rich Web App With Bolt.new</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Dec 10, 2024
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/ai">AI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/assistants">ASSISTANTS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/ai">ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/chatbots">chatbots</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-development">ai-development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agents">agents</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/bolt.new">bolt.new</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-tools">ai-tools</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 5 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>In the rapidly evolving landscape of software development, AI-powered coding assistants are emerging as powerful tools for accelerating application development. This article explores the capabilities of Bolt.new, an AI coding assistant by StackBlitz, through the practical exercise of building a dynamic Todo List application using Next.js and nothing else but prompts.</p>
+
+<p>The demonstration showcases how Bolt.new can not only generate a basic application from scratch but also iteratively add complex features through simple prompts. We&rsquo;ll examine the assistant&rsquo;s ability to handle various development tasks, from implementing UI components to managing data structures, while also highlighting both its strengths and limitations.</p>
+
+<p>Throughout this hands-on exploration, we&rsquo;ll see how Bolt.new handles different challenges, including error resolution and code refactoring, providing valuable insights into the current state of AI-assisted development and its practical applications in real-world scenarios.
+</p>
+
+<p><img src="https://plus.unsplash.com/premium_photo-1677094310899-02303289cadf?q=80&amp;w=1632&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="a robot flying through the air surrounded by gears" />
+<em>[Photo Credit: <a href="https://unsplash.com/@maria_shalabaieva">Mariia Shalabaieva</a> at <a href="https://unsplash.com/photos/a-robot-flying-through-the-air-surrounded-by-gears-C4KspT2KypI">Unsplash</a>]</em></p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>It was fairly easy to sign up on <a href="http://bolt.new">Bolt.new</a> as a new user via Github. It dropped me into a page with two panels. An area on the left to provide prompts, while the code editor, managed by StackBlitz, sat on the right. The interface is very intuitive &amp; simple to use and needed no documentation to get started.</p>
+
+<p>Let’s dive in and build a dynamic Todo list app.</p>
+
+<h2 id="build-the-todo-list-app">Build the Todo list app</h2>
+
+<p>💬 <strong>Prompt</strong>: <em>Build a todo list app with Next.js and Bootstrap with a primary light blue and secondary purple color theme.</em></p>
+
+<p>Bolt went to work and started creating the Next.js Todo application. It was pretty cool to see that it showed its “work” as steps on the left panel while it displayed the code being generated on the right panel. Pretty amazing.</p>
+
+<p>The interface is pretty slick, and it presents a full code editor with a live preview. A terminal window at the bottom is “watching” the files as they are being changed for the live preview.</p>
+
+<p><img src="https://github.com/user-attachments/assets/882ad7f4-b45f-4a31-8fc3-69847c1c2119" alt="Build a todo list app with Next.js and Bootstrap" /></p>
+
+<p>✨ And, in about a minute, it created the base version of the Todo list application with theme colors that I specified. It complied and ran the app with a live preview. The app is fully functional at this point.</p>
+
+<p><img src="https://github.com/user-attachments/assets/00987a97-559c-4f57-b8b6-a446222b2772" alt="Base version of the Todo list application" /></p>
+
+<p>Let’s go beyond a bit further and iteratively add some features.</p>
+
+<h2 id="feature-add-start-and-end-dates-to-item">Feature: Add start and end dates to item</h2>
+
+<p>💬 <strong>Prompt</strong>: <em>Add a start date and an end date to a todo item.</em></p>
+
+<p>❌ Bolt refactored the code and tried to add the feature but encountered issues.</p>
+
+<p><img src="https://github.com/user-attachments/assets/b0c485ca-5d48-48db-8a3d-4bba4af99f41" alt="Add a start date and an end date to a todo item" /></p>
+
+<p>❌ Bolt encountered errors, then analyzed the error and proposed a fix. But, the fix did not work and it posed new errors while refactoring code.</p>
+
+<p>✅ Bolt tried one more round to fix the issues, and got it right this time. Pretty cool.</p>
+
+<blockquote>
+<p>💡<strong>Note</strong>: Shows the capabilities of Bolt to acknowledge issues/errors by running code live and parsing the errors. And, then understanding the issue and proposing a fix.</p>
+</blockquote>
+
+<p>✅ And, now we have a the todo items with a start and end dates.</p>
+
+<p><img src="https://github.com/user-attachments/assets/36679070-9685-4e95-8967-8742939f1271" alt="Add a start date and an end date to a todo item" /></p>
+
+<p>Let’s add another feature to add editing capabilities to a todo item.</p>
+
+<h2 id="feature-editing-an-existing-item">Feature: Editing an existing item</h2>
+
+<p>💬 <strong>Prompt</strong>: <em>Add feature to edit an existing todo item.</em></p>
+
+<p>✅ Bolt refactored the code and added the feature without any errors. It added a pencil icon next to the todo item which when pressed allows the item to be edited.</p>
+
+<p><img src="https://github.com/user-attachments/assets/41d9732c-5e11-4fcf-94a2-fe69e42544f3" alt="Add feature to edit an existing todo item" /></p>
+
+<p>Let’s add some categories and then add the capability to assign the category to a todo item.</p>
+
+<h2 id="feature-add-category-management-and-assign-category-to-item">Feature: Add category management and assign category to item</h2>
+
+<p>💬 <strong>Prompt</strong>: <em>Add a feature to assign categories like Personal, Work etc. to a todo item. Create a separate screen to add, edit and delete categories.</em></p>
+
+<p>❌ First attempt, had some errors, which Bolt analyzed and proposed to fix.</p>
+
+<p>❌ Even with multiple attempts, Bolt could not fix the following error. It went into a loop showing the same errors and not able to fix the errors.</p>
+
+<pre><code>Error: A &lt;Select.Item /&gt; must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.
+</code></pre>
+
+<p>👨🏼‍💻Intervention from an engineer who knew the code was required in this case. The fix was pretty simple, and I manually fixed the code.</p>
+
+<p>Updated the following lines from:</p>
+
+<pre><code>&lt;Select value={value || ''} onValueChange={(val) =&gt; onChange(val || null)}&gt;
+...
+...
+&lt;SelectItem value=&quot;&quot;&gt;No category&lt;/SelectItem&gt;
+</code></pre>
+
+<p>to</p>
+
+<pre><code>&lt;Select value={value || ''} onValueChange={(val) =&gt; onChange(val === &quot;unassigned&quot; ? null : val)}&gt;
+...
+...
+&lt;SelectItem value=&quot;unassigned&quot;&gt;No category&lt;/SelectItem&gt;
+</code></pre>
+
+<p>The above changes fixed the code and we have a working app again. 🎇</p>
+
+<p><img src="https://github.com/user-attachments/assets/4688a4fc-6cdc-47ff-b1d3-55a2fa0e0c09" alt="Todo List app created using Bolt.new" /></p>
+
+<p>😢 Unfortunately, at this point I had used all my remaining tokens so I could not proceed further.</p>
+
+<p>🎉 But, overall, I had a blast building with Bolt.new. As you can see that in about 5 mins, I had a fully functioning app ready to go, built by just supplying some simple prompts. That is really cool and very powerful.</p>
+
+<h2 id="what-s-next">What’s Next?</h2>
+
+<p>As much fun I had building the app, I was wondering what could I do next. Then I saw that Bolt.new allows you to download the code and also lets you continue to work on the code in the StackBlitz cloud code workspace. If I had to keep using Bolt.new I could subscribe to the Pro version starting at $20/month.</p>
+
+<blockquote>
+<p>ℹ️ Check out the <a href="https://github.com/rupakg/bolt-ai-todo-list"><strong>full source code</strong></a> generated by Bolt.new for the Todo list app we built in this article.</p>
+</blockquote>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Bolt.new is an excellent full stack AI code assistant that can not only create an app from scratch but help to add features interactively. It successfully added features like start/end dates and item editing capabilities through iterative prompts.</p>
+
+<p>As far as technical challenges are concerned, Bolt.new encountered and fixed some errors independently, demonstrating its ability to analyze and debug code. It required an engineer&rsquo;s manual intervention for a specific component error that Bolt couldn&rsquo;t resolve. We need to be on a watch out for issues created while refactoring code.</p>
+
+<p>👉🏼 So, it is important to understand that AI tools are most effective when used by engineers familiar with the domain knowledge, and who can maintain the AI-generated codebase. While non-engineers who can’t code will struggle after a certain point.</p>
+
+<p>🛑 AI tools are not replacing engineers any time soon!!!</p>
+
+<blockquote>
+<p>❔<strong><em>What are you going to build today?</em></strong></p>
+</blockquote>
+
+<p>If you build something with Bolt.new, or if you have questions or feedback, please let me know in the comments below.</p>
+  </div>
+  
+  <hr/>
+<h3 align="center">Monthly Newsletter</h3>
+<div>
+  <p><strong><i>If you like the content I share, you can sign up below for the <a href="https://rupakganguly.substack.com">free monthly newsletter</a>.</i></strong></p>
+</div>  
+<iframe src="https://rupakganguly.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/master-ai-the-ultimate-learning-plan-for-beginners-2024-guide/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Master AI: The Ultimate Learning Plan for Beginners (2024 Guide)</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/comparing-chatgpt-gemini-copilot-and-claude-ai-chatbots/">Comparing Chat GPT, Gemini, Copilot and Claude AI Chatbots</a>
+      
+      <time class="pull-right hidden-tablet">Mar 10 &#39;24</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/master-ai-the-ultimate-learning-plan-for-beginners-2024-guide/">Master AI: The Ultimate Learning Plan for Beginners (2024 Guide)</a>
+      
+      <time class="pull-right hidden-tablet">Dec 05 &#39;24</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/building-a-web-app-using-ai-without-the-prompt-engineering-headaches/">Building a web app using AI without the prompt engineering headaches</a>
+      
+      <time class="pull-right hidden-tablet">Nov 16 &#39;24</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>
