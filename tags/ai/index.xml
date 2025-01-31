@@ -6,10 +6,32 @@
     <description>Recent content in Ai on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Dec 2024 16:44:43 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jan 2025 14:20:44 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploring AI Assistants: Building a Rails app With Cline AI and Deepseek Model</title>
+      <link>https://rupakganguly.com/posts/exploring-ai-assistants-building-a-rails-app-with-cline-and-deepseek-model/</link>
+      <pubDate>Fri, 31 Jan 2025 14:20:44 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/exploring-ai-assistants-building-a-rails-app-with-cline-and-deepseek-model/</guid>
+      <description>&lt;p&gt;In this detailed walkthrough, we&amp;rsquo;ll explore how to build a Ruby on Rails application from scratch using Cline AI powered by the Deepseek model. We&amp;rsquo;ll examine Cline&amp;rsquo;s capabilities in planning, reasoning, and code generation while setting up a Rails app with authentication using Devise.&lt;/p&gt;
+
+&lt;p&gt;The article provides a hands-on exploration of using Cline in:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Creating a new Rails application with specific configurations&lt;/li&gt;
+&lt;li&gt;Setting up authentication using Devise&lt;/li&gt;
+&lt;li&gt;Working with Cline&amp;rsquo;s Plan and Act modes&lt;/li&gt;
+&lt;li&gt;Understanding Cline&amp;rsquo;s interface and cost structure&lt;/li&gt;
+&lt;li&gt;Analyzing the strengths and limitations of the Deepseek model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Throughout this journey, we&amp;rsquo;ll see how Cline handles various tasks, from basic setup to error resolution, while keeping track of costs and providing transparent feedback about its operations. Whether you&amp;rsquo;re new to Rails or an experienced developer, this exploration offers valuable insights into how AI can assist in web application development.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Practical Guide to AI Assisted Development: Enhancing a Web App With Cursor AI</title>
