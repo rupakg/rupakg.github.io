@@ -6,10 +6,22 @@
     <description>Recent content in Assistants on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jan 2025 14:20:44 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2025 16:41:56 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/categories/assistants/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploring V0 AI-Powered Code Assistant: Building a Flashcard App</title>
+      <link>https://rupakganguly.com/posts/exploring-v0-ai-powered-code-assistant-building-a-flashcard-app/</link>
+      <pubDate>Wed, 05 Feb 2025 16:41:56 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/exploring-v0-ai-powered-code-assistant-building-a-flashcard-app/</guid>
+      <description>&lt;p&gt;This article documents my experience exploring V0 AI, a powerful AI-powered code assistant &amp;amp; web development tool. V0 offers a seamless development experience, allowing me to create a flashcard application from scratch using Next.js, styled with Tailwind CSS.&lt;/p&gt;
+
+&lt;p&gt;Through this journey, I tested various features including basic app creation, project file management, import/export functionality, and UI enhancements. The documentation covers both the successes and challenges encountered while building with V0, providing insights into its capabilities, limitations, and overall development experience.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Exploring AI Assistants: Building a Rails app With Cline AI and Deepseek Model</title>

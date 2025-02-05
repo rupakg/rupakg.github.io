@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Exploring V0 AI, a powerful AI-powered code assistant &amp; web development tool, to build a flash card web application using Next.js, styled with Tailwind CSS.">
+    
+        
+        <meta name="keywords" content="AI, ai-development, coding-assistant, V0, ai-tools, Next.js, Tailwind">
+    
+    
+
+<title>Exploring V0 AI-Powered Code Assistant: Building a Flashcard App • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exploring V0 AI-Powered Code Assistant: Building a Flashcard App"/>
+<meta name="twitter:description" content="Exploring V0 AI, a powerful AI-powered code assistant &amp; web development tool, to build a flash card web application using Next.js, styled with Tailwind CSS."/>
+
+<meta property="og:title" content="Exploring V0 AI-Powered Code Assistant: Building a Flashcard App" />
+<meta property="og:description" content="Exploring V0 AI, a powerful AI-powered code assistant &amp; web development tool, to build a flash card web application using Next.js, styled with Tailwind CSS." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/exploring-v0-ai-powered-code-assistant-building-a-flashcard-app/" /><meta property="article:published_time" content="2025-02-05T16:41:56-05:00"/>
+<meta property="article:modified_time" content="2025-02-05T16:41:56-05:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    
+    <div class="sidebar-about">
+  <span class="site__title">
+    <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+  </span>
+  
+  
+  
+  <div class="author-image">
+    <img src="https://rupakganguly.com//img/rg_mug_conf.png" alt="Rupak Ganguly" class="img--circle img--headshot element--center">
+  </div>
+  
+  <p class="site__description">
+     opinions, experiences &amp; writings... 
+  </p>
+</div>
+
+    
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/glossary/">
+						<span>Glossaries</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:biz@rupakganguly.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <div>
+      
+      <p>
+  <iframe src="https://rupakganguly.substack.com/embed" width="100%" height="150" style="border:1px solid #6a9fb5; background:#6a9fb5;" frameborder="0" scrolling="no"></iframe>
+</p>
+    </div>
+    
+    <div class="copyright">
+  &copy; 2025 Rupak Ganguly.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Exploring V0 AI-Powered Code Assistant: Building a Flashcard App</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Feb 5, 2025
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/ai">AI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/assistants">ASSISTANTS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/ai">ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-development">ai-development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/v0">v0</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-tools">ai-tools</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 15 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>This article documents my experience exploring V0 AI, a powerful AI-powered code assistant &amp; web development tool. V0 offers a seamless development experience, allowing me to create a flashcard application from scratch using Next.js, styled with Tailwind CSS.</p>
+
+<p>Through this journey, I tested various features including basic app creation, project file management, import/export functionality, and UI enhancements. The documentation covers both the successes and challenges encountered while building with V0, providing insights into its capabilities, limitations, and overall development experience.
+</p>
+
+<p>![header image]()
+<em>[Photo by ]</em></p>
+
+<h1 id="getting-started">Getting Started</h1>
+
+<p>Getting started with V0 was totally frictionless. No sign up required. Just dive right into the welcoming screen.</p>
+
+<p><img src="https://github.com/user-attachments/assets/1c7c0f03-29d4-4970-8bc4-67cb7795d8d4" alt="V0 welcome screen" /></p>
+
+<h1 id="building-the-app">Building the app</h1>
+
+<p>💬 <strong>Prompt</strong>: Create a Next.js app named “Cue Notes” with a pastel green color theme. The app will allow the user to add question-and-answer pairs. The app will display the question-and-answer pairs in the form of flashcards.</p>
+
+<p><img src="https://github.com/user-attachments/assets/b99daf27-a9d5-41a3-a47b-dd2be24c46c3" alt="V0 prompt to build the app" /></p>
+
+<p>💭 <strong>V0 Response</strong>:</p>
+
+<p>I&rsquo;ll create a Next.js app named &ldquo;Cue Notes&rdquo; with a pastel green color theme that allows users to add question and answer pairs and display them as flashcards. Here&rsquo;s the implementation:</p>
+
+<p><img src="https://github.com/user-attachments/assets/2bd7d066-fd80-4b9f-b005-65dab70f11b2" alt="V0 generated files" /></p>
+
+<p>This implementation creates a Next.js app named &ldquo;Cue Notes&rdquo; with the following features:</p>
+
+<ol>
+<li>A pastel green color theme using Tailwind CSS.</li>
+<li>A form to add question and answer pairs.</li>
+<li>A flashcard component that displays the questions and answers.</li>
+<li>Functionality to navigate between flashcards and toggle between questions and answers.</li>
+</ol>
+
+<p>The app uses client-side state management with React hooks to handle the flashcards and user interactions. The pastel green theme is implemented using Tailwind CSS classes and custom CSS variables.</p>
+
+<p>To use this app:</p>
+
+<ol>
+<li>Users can add new flashcards by entering a question and an answer in the form and clicking &ldquo;Add Flashcard&rdquo;.</li>
+<li>Once flashcards are added, they will appear in a card below the form.</li>
+<li>Users can navigate between flashcards using the &ldquo;Previous&rdquo; and &ldquo;Next&rdquo; buttons.</li>
+<li>The &ldquo;Show Answer&rdquo; / &ldquo;Show Question&rdquo; button toggles between the question and answer for each flashcard.</li>
+</ol>
+
+<p>This implementation provides a simple and intuitive interface for creating and studying flashcards with a pleasant pastel green color scheme.</p>
+
+<p>🎯 <strong>Output Result</strong>:</p>
+
+<p><img src="https://github.com/user-attachments/assets/c70ea85a-6250-473b-a395-0b855f0f00f2" alt="V0 output" /></p>
+
+<p>V0 created a fully functional app with a green theme, and with features to add questions &amp; answers, a screen to display the question/answer pair in a flashcard format, and navigation to view the next question/answer pair.</p>
+
+<p><img src="https://github.com/user-attachments/assets/31f85677-90d4-484b-9da2-64d06f8b76ef" alt="Question card" /></p>
+
+<p><img src="https://github.com/user-attachments/assets/2fb3d369-e523-4ba6-ba2e-40829dfae299" alt="Answer card" /></p>
+
+<p>The code generated by V0 is functional, but it is laid out into a simple structure. It also did not create any build files for the project.</p>
+
+<p>The code view shows the files tree:</p>
+
+<p><img src="https://github.com/user-attachments/assets/316ba3d0-130c-4d0b-8b9a-9af155b5a268" alt="Code files" /></p>
+
+<p>🫴🏼 <strong>Takeaway</strong>: Using a simple prompt, V0 generated code to create a fully functional app that add a screen to add question/answer pairs, a screen to view the question/answer pairs, and navigation to scroll through them.</p>
+
+<p>Let’s try and see if we can refactor the code to add some necessary project files.</p>
+
+<h2 id="feature-add-project-files">Feature: Add project files</h2>
+
+<p>💬 <strong>Prompt</strong>: Add files to build and run the project. The project should include “package.json”, “tailwind.config.ts”, “tsconfig.json”, “postcss.config.js”, “next.config.js”, “components.json”, “next-env.d.ts” and a “README.md” files.</p>
+
+<p>💭 <strong>V0 Response</strong>:</p>
+
+<p>I&rsquo;ll add the necessary files to build and run the project. I&rsquo;ll create these files with the appropriate configurations for our &ldquo;Cue Notes&rdquo; project.</p>
+
+<p><img src="https://github.com/user-attachments/assets/bd507a3a-4064-4ac8-b2e5-daa159651b7e" alt="Generated files" /></p>
+
+<p>I&rsquo;ve created all the necessary files to build and run the &ldquo;Cue Notes&rdquo; project. Here&rsquo;s a summary of what each file does:</p>
+
+<ol>
+<li><code>package.json</code>: Defines the project dependencies and scripts.</li>
+<li><code>tailwind.config.ts</code>: Configures Tailwind CSS, including custom color definitions for our pastel green theme.</li>
+<li><code>tsconfig.json</code>: Configures TypeScript compiler options.</li>
+<li><code>postcss.config.js</code>: Configures PostCSS for processing CSS.</li>
+<li><code>next.config.js</code>: Configures Next.js (currently empty, but can be used for custom Next.js configurations).</li>
+<li><code>components.json</code>: Configures shadcn/ui components.</li>
+<li><code>next-env.d.ts</code>: Type definitions for Next.js.</li>
+<li><code>README.md</code>: Provides information about the project, how to run it, and its structure.</li>
+</ol>
+
+<p>These files, along with the previously created <code>app/layout.tsx</code>, <code>app/page.tsx</code>, and <code>app/globals.css</code>, form a complete Next.js project structure. You can now build and run the project using the following commands:</p>
+
+<ol>
+<li>Install dependencies: <code>npm install</code></li>
+<li>Run the development server: <code>npm run dev</code></li>
+</ol>
+
+<p>The project should now be accessible at <code>http://localhost:3000</code>.</p>
+
+<p>🎯 <strong>Output Result</strong>:</p>
+
+<p>The Code tab shows the files tree:</p>
+
+<p><img src="https://github.com/user-attachments/assets/b194b88e-7f4f-4737-9a8e-1472d655f0c7" alt="The code file tree" /></p>
+
+<p>✅ The Preview tab shows the fully functioning app, but I lost the question/answer pairs that I added earlier. We will implement the persistence layer later.</p>
+
+<p>🫴🏼 <strong>Takeaway</strong>:</p>
+
+<ul>
+<li>V0 can take and understand clear instructions and act on it. It gave clear explanations of the work done.</li>
+<li>It does not stray from the given instructions.</li>
+<li>AI code assistants  suggesting features is useful, but I like that I have control over how I want to proceed.</li>
+</ul>
+
+<h3 id="signing-up">Signing up</h3>
+
+<p>👉🏼 At this point, I was out of free messages and V0 required me to sign up.</p>
+
+<p><img src="https://github.com/user-attachments/assets/81c96e34-c2d7-40e6-a3b5-7e0384a5e431" alt="Out of free messages quota" /></p>
+
+<p>So I did! Signing up with V0 using Github was quick and easy.</p>
+
+<p>After I signed up, I saw that I can now <strong>deploy my code</strong>.</p>
+
+<p>Continuing with our mission to explore V0, let’s ask V0 to suggest some new features for the app.</p>
+
+<h2 id="feature-suggest-new-features">Feature: Suggest new features</h2>
+
+<p>💬 <strong>Prompt</strong>: Suggest some new features to enhance the app.</p>
+
+<p>💭 <strong>V0 Response</strong>:</p>
+
+<p>I&rsquo;d be happy to suggest some new features to enhance the Cue Notes app. Let me think about some improvements that could make the app more useful and engaging for users.</p>
+
+<p>Here are some new features to enhance the Cue Notes app:</p>
+
+<ol>
+<li>Categories for Flashcards: Allow users to create categories or tags for their flashcards. This will help organize the cards and enable users to study specific topics.</li>
+<li>Study Sessions: Implement a study mode where users can go through a set of flashcards, mark ones they got right or wrong, and see their progress.</li>
+<li>Spaced Repetition: Incorporate a spaced repetition algorithm to help users review cards at optimal intervals for better retention.</li>
+<li>Import/Export Functionality: Allow users to import and export their flashcards in common formats like CSV or JSON. This will enable backing up and sharing of card sets.</li>
+<li>Rich Text Formatting: Enhance the question and answer inputs to support rich text formatting, allowing users to add emphasis, lists, or even simple diagrams to their cards.</li>
+<li>Search Functionality: Add a search bar to help users quickly find specific cards or topics within their collection.</li>
+<li>Progress Tracking: Implement a dashboard that shows statistics on study sessions, correctly answered cards, and overall progress.</li>
+<li>Dark Mode: Add a toggle for dark mode, which could use a darker shade of the pastel green theme for users who prefer studying at night.</li>
+<li>Mobile Responsiveness: Ensure the app is fully responsive and works well on mobile devices, possibly implementing swipe gestures for card navigation.</li>
+<li>Audio Support: Allow users to add audio recordings to their flashcards, which can be especially useful for language learning.</li>
+<li>Collaborative Decks: Implement a feature where users can share decks with others or collaborate on creating flashcard sets.</li>
+<li>Gamification Elements: Add points, streaks, or achievements to motivate users to study regularly.</li>
+</ol>
+
+<p>Would you like me to elaborate on any of these features or start implementing one of them?</p>
+
+<p>🎯 <strong>Output Result</strong>:</p>
+
+<p>Very interesting list!</p>
+
+<p>🫴🏼 <strong>Takeaway</strong>: With control over what is generated by V0, you can always come back and ask V0 to suggest new features and have it implemented for us.</p>
+
+<p>Let’s take up V0 on that task and ask it to implement the import/export functionality.</p>
+
+<h2 id="feature-import-export-data">Feature: Import/Export data</h2>
+
+<p>💬 Prompt: Implement the Import/Export Functionality: Allow users to import and export their flashcards in common formats like CSV or JSON. This will enable backing up and sharing of card sets. Refactor the code to add components into separate files under a “components” folder.</p>
+
+<p>💭 <strong>V0 Response</strong>:</p>
+
+<p>I&rsquo;ll implement the Import/Export functionality and refactor the code to add components into separate files under a &ldquo;components&rdquo; folder. Let&rsquo;s start by making these changes.</p>
+
+<p><img src="https://github.com/user-attachments/assets/b89956e4-0e91-4658-a418-bea986de70f0" alt="Generated files" /></p>
+
+<p>These changes implement the Import/Export functionality and refactor the code to add components into separate files under a &ldquo;components&rdquo; folder. Here&rsquo;s a summary of the changes:</p>
+
+<ol>
+<li>Created a <code>Flashcard</code> component in <code>components/Flashcard.tsx</code>.</li>
+<li>Created a <code>FlashcardForm</code> component in <code>components/FlashcardForm.tsx</code>.</li>
+<li>Updated <code>app/page.tsx</code> to use the new components and implement import/export functionality.</li>
+<li>The import functionality allows users to upload a JSON file containing flashcards.</li>
+<li>The export functionality allows users to download their flashcards as a JSON file.</li>
+</ol>
+
+<p>The app now has a more modular structure, making it easier to maintain and extend. Users can now import and export their flashcards, enabling them to backup their data or share card sets with others.</p>
+
+<p>To use the import/export functionality:</p>
+
+<ul>
+<li>Click the &ldquo;Export Flashcards&rdquo; button to download the current set of flashcards as a JSON file.</li>
+<li>Click the &ldquo;Import Flashcards&rdquo; button to upload a previously exported JSON file of flashcards.</li>
+</ul>
+
+<p>The app maintains its pastel green color theme and responsive design. If you want to make any further enhancements or have any questions about the implementation, please let me know!</p>
+
+<p>🎯 <strong>Output Result</strong>:</p>
+
+<p>✅ The Export functionality works as expected. And, it creates a new <code>flashcards.json</code> file with the existing data in it.</p>
+
+<p>❌ But, I noticed that the Import functionality does not work as expected.</p>
+
+<p>🫴🏼 <strong>Takeaway</strong>:</p>
+
+<ul>
+<li>It understood the two part instruction. It refactored the code to separate out the components into a separate folder, and then implemented the new feature as instructed</li>
+<li>The import functionality was broken</li>
+</ul>
+
+<h3 id="fixing-errors">Fixing errors</h3>
+
+<p>💬 <strong>Prompt</strong>: The import functionality is not working as expected.</p>
+
+<p>💭 <strong>V0 Response</strong>:</p>
+
+<p>Let&rsquo;s investigate and fix the import functionality. I&rsquo;ll review the code and make the necessary adjustments to ensure it works correctly.</p>
+
+<p><img src="https://github.com/user-attachments/assets/65822036-20c3-48a5-b482-104349d39e8b" alt="Modified code files" /></p>
+
+<p>Let&rsquo;s fix the import functionality in the <code>app/page.tsx</code> file. We&rsquo;ll make sure the file input is properly handled and the state is updated correctly.</p>
+
+<p>These changes should fix the import functionality and improve the overall user experience. Here&rsquo;s a summary of the modifications:</p>
+
+<ol>
+<li>In the <code>importFlashcards</code> function:</li>
+<li>We now validate that the imported data is an array of objects with &lsquo;question&rsquo; and &lsquo;answer&rsquo; properties.</li>
+<li>We set the current card to 0 after importing to ensure the user starts from the beginning of the imported set.</li>
+<li>We added an alert to inform the user about the successful import and the number of imported flashcards.</li>
+<li>The file input now resets after each import, allowing users to import the same file multiple times if needed.</li>
+<li>In the <code>FlashcardForm</code> component, we now trim the question and answer inputs and only add the flashcard if both fields are non-empty after trimming.</li>
+</ol>
+
+<p>These improvements should make the import functionality work as expected and provide a better user experience when adding new flashcards.</p>
+
+<p>To test the import functionality:</p>
+
+<ol>
+<li>Create some flashcards using the form.</li>
+<li>Export the flashcards using the &ldquo;Export Flashcards&rdquo; button.</li>
+<li>Clear all flashcards by refreshing the page.</li>
+<li>Use the &ldquo;Import Flashcards&rdquo; button to upload the previously exported JSON file.</li>
+<li>You should see an alert confirming the successful import, and the flashcards should be loaded into the app.</li>
+</ol>
+
+<p>If you encounter any issues or would like further improvements, please let me know, and I&rsquo;ll be happy to help!</p>
+
+<p>🎯 <strong>Output Result</strong>:</p>
+
+<p>❌ The Import functionality still does not work as expected. The app does not show a file dialog to select a file to import.</p>
+
+<p>Let’s see if V0 can fix it.</p>
+
+<p>💬 <strong>Prompt</strong>: The Import Flashcards button when pressed does not allow a way to select a file.</p>
+
+<p>💭 <strong>V0 Response</strong>:</p>
+
+<p>Let&rsquo;s fix this issue with the Import Flashcards button. I&rsquo;ll modify the code to ensure that clicking the button allows the user to select a file.</p>
+
+<p>Let&rsquo;s modify the <code>app/page.tsx</code> file to fix this issue:</p>
+
+<p><img src="https://github.com/user-attachments/assets/d53ca904-4622-446e-8646-573a3f33a318" alt="Modified files" /></p>
+
+<p>🎯 <strong>Output Result</strong>:</p>
+
+<p>✅ And, finally the Import Flashcards button displayed a file dialog to let me select the previously exported JSON file. And, the import worked flawlessly. I could see the question/answer pairs imported and displayed in the app.</p>
+
+<p>🫴🏼 <strong>Takeaway</strong>:</p>
+
+<ul>
+<li>V0 will understand and correct errors, but the prompt has to be very specific and clear as to what the issue is.</li>
+<li>V0 does have commits for versions of the code, so you can revert back to that version of the code.</li>
+<li>V0 also allows you to run the code at a certain commit version.</li>
+<li>V0 allows you to move between commit versions using the Previous &amp; Next buttons in the toolbar.</li>
+<li>If you choose to be at a different commit version from the latest, V0 shows the diff of the code changes using the diff button on the toolbar.</li>
+<li>V0 also allows you to Restore the code at a particular commit version.</li>
+</ul>
+
+<h2 id="feature-create-tooltips">Feature: Create tooltips</h2>
+
+<p>💬 <strong>Prompt</strong>: It is not clear how to use the import/export functionality. Create tooltips with help instructions for the &ldquo;Export Flashcards&rdquo; and the &ldquo;Import Flashcards&rdquo; buttons.</p>
+
+<p>💭 <strong>V0 Response</strong>:</p>
+
+<p>I&rsquo;ll add tooltips with help instructions for the &ldquo;Export Flashcards&rdquo; and &ldquo;Import Flashcards&rdquo; buttons to make their functionality clearer to users. I&rsquo;ll use the Tooltip component from shadcn/ui to implement this feature.</p>
+
+<p><img src="https://github.com/user-attachments/assets/1b0cf094-8d43-4449-ad29-0c84ad9fd89b" alt="Modified files" /></p>
+
+<p>These changes add tooltips with help instructions for the &ldquo;Export Flashcards&rdquo; and &ldquo;Import Flashcards&rdquo; buttons. Here&rsquo;s a summary of the changes:</p>
+
+<ol>
+<li>Created a new <code>Tooltip</code> component in <code>components/ui/tooltip.tsx</code>.</li>
+<li>Updated <code>app/page.tsx</code> to include tooltips for the import and export buttons.</li>
+<li>Updated <code>app/layout.tsx</code> to wrap the entire application with the <code>TooltipProvider</code>.</li>
+</ol>
+
+<p>The tooltips provide clear instructions on how to use the import/export functionality:</p>
+
+<ul>
+<li>For the &ldquo;Export Flashcards&rdquo; button, the tooltip says: &ldquo;Click to download your flashcards as a JSON file&rdquo;</li>
+<li>For the &ldquo;Import Flashcards&rdquo; button, the tooltip says: &ldquo;Click to upload a JSON file of flashcards&rdquo;</li>
+</ul>
+
+<p>These tooltips will appear when the user hovers over the respective buttons, making it clearer how to use the import/export functionality.</p>
+
+<p>The existing styling and layout have been maintained, and the pastel green color theme is still in place. The tooltips are designed to be unobtrusive but informative, enhancing the user experience without disrupting the app&rsquo;s clean design.</p>
+
+<p>Is there anything else you&rsquo;d like me to add or modify in the Cue Notes app?</p>
+
+<p>🎯 <strong>Output Result</strong>:</p>
+
+<p>❌ I noticed that the tooltip functionality is not working. Hovering over the &ldquo;Export Flashcards&rdquo; and &ldquo;Import Flashcards&rdquo; buttons do not show the tooltips.</p>
+
+<p>💬 <strong>Prompt</strong>: The tooltip functionality is not working. Hovering over the &ldquo;Export Flashcards&rdquo; and &ldquo;Import Flashcards&rdquo; does not show the tooltips.</p>
+
+<p>💭 <strong>V0 Response</strong>:</p>
+
+<p>Let&rsquo;s fix the tooltip functionality. I&rsquo;ll review and update the code to ensure the tooltips appear when hovering over the buttons.</p>
+
+<p>Let&rsquo;s update the <code>app/page.tsx</code> file to fix the tooltip functionality:</p>
+
+<p><img src="https://github.com/user-attachments/assets/80e90753-db52-4e2a-973c-abef2b94e10c" alt="Modified files" /></p>
+
+<p>These changes should fix the tooltip functionality. Here&rsquo;s a summary of the modifications:</p>
+
+<ol>
+<li>In <code>app/page.tsx</code>:</li>
+<li>We&rsquo;ve ensured that the <code>Tooltip</code>, <code>TooltipContent</code>, <code>TooltipProvider</code>, and <code>TooltipTrigger</code> components are properly imported and used.</li>
+<li>The <code>TooltipProvider</code> now wraps only the section with the Export and Import buttons.</li>
+<li>Each button is wrapped with a <code>Tooltip</code> component, which includes a <code>TooltipTrigger</code> and <code>TooltipContent</code>.</li>
+<li>In <code>app/layout.tsx</code>:</li>
+<li>We&rsquo;ve added the <code>TooltipProvider</code> to wrap the entire application, ensuring that tooltips can work throughout the app.</li>
+</ol>
+
+<p>With these changes, the tooltips should now appear when hovering over the &ldquo;Export Flashcards&rdquo; and &ldquo;Import Flashcards&rdquo; buttons. The tooltips will display the helpful messages we&rsquo;ve set up earlier.</p>
+
+<p>Is there anything else you&rsquo;d like me to modify or improve in the Cue Notes app?</p>
+
+<p>🎯 <strong>Output Result</strong>:</p>
+
+<p>❌ The tooltip functionality is still broken.</p>
+
+<p>❌ Trying to fix the tooltip functionality, broke the previously working Import functionality.</p>
+
+<p>✅ After pointing out the code that worked and asking V0 to implement that version of the code, fixed the Import functionality. In my next set of instructions, I kept instructing V0 to not change the code for the Import functionality to prevent any further regressions.</p>
+
+<p>🫴🏼 <strong>Takeaway</strong>:</p>
+
+<ul>
+<li>Fixing errors and issues can be a challenge if you don’t understand the code that is being generated.</li>
+<li>Be careful: Trying to fix errors can introduce regression issues.</li>
+<li>You have to know the code that the code assistant generates and keep correcting, otherwise, there are chances of regression issues.</li>
+<li>Having well-written tests as you implement features is a good way to ensure regression errors don’t creep up on you.</li>
+</ul>
+
+<p>At this point, I ran out of free messages for the day. I feel that the free quota was pretty generous.</p>
+
+<p><img src="https://github.com/user-attachments/assets/881fd5b7-5c04-498f-af0b-b5a320d3adf4" alt="Out of quota message" /></p>
+
+<h1 id="deploying-the-app">Deploying the app</h1>
+
+<p>To deploy the app, I performed the following steps:</p>
+
+<ol>
+<li>Create a project named Cue Notes</li>
+<li>Associate the chat Cue Notes App with the Cue Notes project</li>
+<li>Click the Deploy button on the top-right</li>
+</ol>
+
+<p>When the deployment is completed, you will see the following:</p>
+
+<p><img src="https://github.com/user-attachments/assets/e3444a6e-6306-4496-9161-fd0a74664b0b" alt="Deploying the app" /></p>
+
+<p><strong>Note</strong>: To add a custom domain for your app, you need to upgrade to the Pro plan.</p>
+
+<p>To view the deployed app, visit <a href="https://v0-cue-notes-krsq8r.vercel.app/">https://v0-cue-notes-krsq8r.vercel.app</a></p>
+
+<h1 id="other-v0-features">Other V0 Features</h1>
+
+<p>V0 has a wide variety of features that it offers. Here are some highlights:</p>
+
+<ul>
+<li>Has 3 panes: Preview, Code and Console
+
+<ul>
+<li>Preview: shows the fully functioning preview of the app that user can interact with</li>
+<li>Code: shows the code editor with a file tree and code pane</li>
+<li>Console: shows the console output when the app is running</li>
+</ul></li>
+<li>Allows to view previous / next versions of code, and restore code to those versions</li>
+<li>Allows users to view a diff of a code file, copy the code and download the code file</li>
+<li>Allows users to add blocks of code to code base and download the code as a zip file</li>
+<li>Allows users to create a project from the chat</li>
+<li>Allows users to fork the code base</li>
+<li>Allows users to share the app via a public link</li>
+<li>Allows users to deploy the app using Vercel</li>
+</ul>
+
+<h1 id="summary">Summary</h1>
+
+<p>I really enjoyed working with V0. The free tier with the quota of messages for trying out V0 is very generous and I could create a fully functioning app. The Premium plan is $20/user/month and details are posted on their <a href="https://v0.dev/pricing">pricing page</a>.</p>
+
+<p>In summary, we explored the following in the article:</p>
+
+<p><strong>Development Experience</strong></p>
+
+<ul>
+<li>V0 provides a frictionless experience with no initial signup required, allowing immediate development of web applications</li>
+<li>Successfully created a functional flashcards app with features for adding question/answer pairs, displaying flashcards, and navigating between cards</li>
+<li>Code refactoring and feature additions were straightforward through clear prompts, including implementing import/export functionality and component organization</li>
+</ul>
+
+<p><strong>Technical Features</strong></p>
+
+<ul>
+<li>V0 offers a three-pane development environment with Preview, Code, and Console views for a comprehensive development experience</li>
+<li>Includes version control features with the ability to view diffs, restore previous versions, and fork codebases</li>
+<li>Supports deployment through Vercel and sharing via public links</li>
+</ul>
+
+<p><strong>Limitations and Considerations</strong></p>
+
+<ul>
+<li>Error fixing requires careful attention as new fixes can introduce regression issues in previously working functionality</li>
+<li>The free tier provides a generous message quota, with the Premium plan available at $20/user/month</li>
+</ul>
+
+<p>If you have questions or feedback, please let me know in the comments below.</p>
+  </div>
+  
+  <hr/>
+<h3 align="center">Monthly Newsletter</h3>
+<div>
+  <p><strong><i>If you like the content I share, you can sign up below for the <a href="https://rupakganguly.substack.com">free monthly newsletter</a>.</i></strong></p>
+</div>  
+<iframe src="https://rupakganguly.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/exploring-ai-assistants-building-a-rails-app-with-cline-and-deepseek-model/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Exploring AI Assistants: Building a Rails app With Cline AI and Deepseek Model</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/exploring-ai-assistants-building-a-rails-app-with-cline-and-deepseek-model/">Exploring AI Assistants: Building a Rails app With Cline AI and Deepseek Model</a>
+      
+      <time class="pull-right hidden-tablet">Jan 31 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/exploring-ai-assisted-development-building-a-feature-rich-web-app-with-bolt/">Exploring AI Assisted Development: Building a Feature Rich Web App With Bolt.new</a>
+      
+      <time class="pull-right hidden-tablet">Dec 10 &#39;24</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/practical-guide-to-ai-assisted-development-enhancing-a-web-app-with-cursor-ai/">Practical Guide to AI Assisted Development: Enhancing a Web App With Cursor AI</a>
+      
+      <time class="pull-right hidden-tablet">Dec 17 &#39;24</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/the-comprehensive-guide-to-leveraging-ai-tools-from-chatbots-to-code-assistants/">The Comprehensive Guide to Leveraging AI Tools: From Chatbots to Code Assistants</a>
+      
+      <time class="pull-right hidden-tablet">Dec 12 &#39;24</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/master-ai-the-ultimate-learning-plan-for-beginners-2024-guide/">Master AI: The Ultimate Learning Plan for Beginners (2024 Guide)</a>
+      
+      <time class="pull-right hidden-tablet">Dec 05 &#39;24</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>
