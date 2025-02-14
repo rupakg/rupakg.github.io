@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Step-by-step tutorial for building a modern habit-tracking application built with Lovable AI code assistant. A deep-dive and walk through the development process, from initial setup to implementing advanced features, while addressing various technical challenges and improvements along the way.">
+    
+        
+        <meta name="keywords" content="AI, ai-development, coding-assistant, Lovable, ai-tools, Node.js, Tailwind, Vite, React, Typescript">
+    
+    
+
+<title>Building a Habit Tracker App With Lovable Ai a Step by Step Tutorial • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Building a Habit Tracker App With Lovable Ai a Step by Step Tutorial"/>
+<meta name="twitter:description" content="Step-by-step tutorial for building a modern habit-tracking application built with Lovable AI code assistant. A deep-dive and walk through the development process, from initial setup to implementing advanced features, while addressing various technical challenges and improvements along the way."/>
+
+<meta property="og:title" content="Building a Habit Tracker App With Lovable Ai a Step by Step Tutorial" />
+<meta property="og:description" content="Step-by-step tutorial for building a modern habit-tracking application built with Lovable AI code assistant. A deep-dive and walk through the development process, from initial setup to implementing advanced features, while addressing various technical challenges and improvements along the way." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/building-a-habit-tracker-app-with-lovable-ai-a-step-by-step-tutorial/" /><meta property="article:published_time" content="2025-02-14T13:53:04-05:00"/>
+<meta property="article:modified_time" content="2025-02-14T13:53:04-05:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    
+    <div class="sidebar-about">
+  <span class="site__title">
+    <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+  </span>
+  
+  
+  
+  <div class="author-image">
+    <img src="https://rupakganguly.com//img/rg_mug_conf.png" alt="Rupak Ganguly" class="img--circle img--headshot element--center">
+  </div>
+  
+  <p class="site__description">
+     opinions, experiences &amp; writings... 
+  </p>
+</div>
+
+    
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/glossary/">
+						<span>Glossaries</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:biz@rupakganguly.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <div>
+      
+      <p>
+  <iframe src="https://rupakganguly.substack.com/embed" width="100%" height="150" style="border:1px solid #6a9fb5; background:#6a9fb5;" frameborder="0" scrolling="no"></iframe>
+</p>
+    </div>
+    
+    <div class="copyright">
+  &copy; 2025 Rupak Ganguly.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Building a Habit Tracker App With Lovable Ai a Step by Step Tutorial</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Feb 14, 2025
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/ai">AI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/assistants">ASSISTANTS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/ai">ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-development">ai-development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/lovable">lovable</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-tools">ai-tools</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 11 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>In this article, we&rsquo;ll explore the development of a modern habit-tracking application built with Node.js. Using <strong>Lovable</strong>, a powerful <strong>AI code assistant</strong> platform, we&rsquo;ll create a feature-rich application that combines intuitive design with practical functionality.</p>
+
+<p>The application showcases essential features like customizable activity scheduling, streak tracking, and a visual calendar interface. We&rsquo;ll walk through the development process, from initial setup to implementing advanced features, while addressing various technical challenges and improvements along the way. We will explore the technical aspects of building an application with Lovable AI coding assistant and provide valuable insights into the development process and the final product.</p>
+
+<p>Through this journey, we&rsquo;ll see how we used Lovable AI to combine thoughtful design, user-friendly features, and robust technical implementation to create a modern habit-tracking app.
+</p>
+
+<p><img src="https://plus.unsplash.com/premium_photo-1682308256034-dda4b204f4d2?q=80&amp;w=1601&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="A lovable robot reaching out to a butterfly" />
+<em>[Photo by <a href="https://unsplash.com/@gettyimages">Getty Images</a> at <a href="https://unsplash.com/photos/surreal-artwork-of-life-freedom-technology-science-and-hope-concept-idea-robot-with-red-butterfly-imagination-painting-futuristic-art-3d-illustration-ARDnPmA1JzY">Unsplash</a>]</em></p>
+
+<blockquote>
+<p>❤️ <strong>Happy Valentine&rsquo;s Day to all</strong> ❤️</p>
+</blockquote>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Getting started was very easy. Just signed up on Lovable and authenticated with Github OAuth.</p>
+
+<h2 id="building-the-app">Building the app</h2>
+
+<p>Let’s jump in and start creating the app in Lovable. The opening page is a welcome page with a simple area to just start entering your prompt to build an app. Clean and simple.</p>
+
+<p><img src="https://github.com/user-attachments/assets/0d234e80-28d1-4810-84a3-25b50495a4fc" alt="Lovable AI" /></p>
+
+<p><strong>💬 Prompt:</strong> Create a Node.js app to track health and fitness activities. The main goal of the app is to form healthy habits by doing them regularly. The app will allow creation of activities and allow the user to specify a schedule, for e.g. daily, weekly, etc. by providing a calendar interface. The app will track streaks for each activity.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll help you create a beautiful and functional health and fitness habit tracker! Let&rsquo;s draw inspiration from popular habit tracking apps like Strides and Habitify, while focusing on a clean, motivating design that encourages users to maintain their healthy habits.</p>
+
+<p>For the design, let&rsquo;s use:</p>
+
+<ul>
+<li>A calming color palette with a primary teal/mint color (#14B8A6) for success and progress indicators</li>
+<li>Soft grays for the background and cards</li>
+<li>Smooth animations for interactions</li>
+<li>Clean, modern typography using the Inter font family</li>
+<li>Subtle gradients for visual interest</li>
+<li>Progress circles and streak counters for motivation</li>
+</ul>
+
+<p>Features for this first version:</p>
+
+<ol>
+<li>Activity management (create, edit, delete health activities)</li>
+<li>Calendar interface for scheduling and tracking</li>
+<li>Streak tracking with visual indicators</li>
+<li>Daily view of activities</li>
+<li>Basic statistics for each habit</li>
+</ol>
+
+<p>Created a beautiful health habit tracker with activity cards, streak tracking, and a clean interface. Users can add new activities, mark them as complete, and track their progress with streaks.</p>
+
+<blockquote>
+<p>Note: I love the suggestions. It shows the planning part of the model.</p>
+</blockquote>
+
+<p>✅ Let’s see the preview and see what it created. The first draft is a beautiful and functional app.</p>
+
+<p><img src="https://github.com/user-attachments/assets/66a4f978-5aa8-4aa9-be92-8e9c0b7c29ea" alt="First draft of the habit-tracker app" /></p>
+
+<h3 id="takeaways">🫴🏼 <strong>Takeaways</strong></h3>
+
+<ul>
+<li>Out of the gate, Lovable described a plan with design suggestions for the app</li>
+<li>Built an app with a clean and intuitive UI</li>
+<li>Created a Github repo with the code</li>
+<li>Allows opening and editing the project directly on Github</li>
+<li>Provides desktop and mobile previews</li>
+<li>Publish the app easily</li>
+<li>Uses technologies such as React, Typescript, Vite, shadcn-ui and Tailwind CSS</li>
+</ul>
+
+<h2 id="running-the-app">Running the app</h2>
+
+<p>Let’s give it a twirl, and add some activities.</p>
+
+<p><img src="https://github.com/user-attachments/assets/8701eee7-f751-404a-a1c8-3e7f10052842" alt="Add a new activity to the habit-tracker app" /></p>
+
+<p>✅ And, here is the app with some activities added.</p>
+
+<p><img src="https://github.com/user-attachments/assets/2823dcc6-71cd-4b9f-8748-8c4026fa2382" alt="Habit-tracker app with some activities added" /></p>
+
+<p>Let’s look at the code. Lovable also creates checkpoints with the capability to restore.</p>
+
+<p><img src="https://github.com/user-attachments/assets/38165605-954c-4b98-ac68-f9c2b7209d3a" alt="Lovable checkpoints" /></p>
+
+<h3 id="takeaways-1">🫴🏼 <strong>Takeaways</strong></h3>
+
+<ul>
+<li>The app was functional and had the features built-in that I asked for in the initial prompt</li>
+<li>I like the fact that I can set a knowledge, context or custom instructions for every edit in the project</li>
+<li>Supabase integration for backend</li>
+<li>Code can be viewed in Raw or Diff formats</li>
+<li>Creates checkpoints with the capability to restore</li>
+</ul>
+
+<h2 id="feature-updating-the-schedule">Feature: Updating the schedule</h2>
+
+<p><strong>💬 Prompt:</strong> In the new activity popup, let users pick a day of the week if they choose a &ldquo;Weekly&rdquo;, &ldquo;Weekdays&rdquo; or &ldquo;Weekends&rdquo; schedule.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll modify the NewActivityDialog component to add a day picker that appears when the user selects a weekly, weekdays, or weekends schedule.</p>
+
+<p>Added a day picker that appears when users select weekly, weekdays, or weekends schedules, showing only relevant days for each schedule type.</p>
+
+<p><img src="https://github.com/user-attachments/assets/26a46792-90ea-4a10-b39d-9120eca2c29e" alt="Updating the schedule for activities" /></p>
+
+<p><strong>💬 Prompt:</strong> If a day of the week is picked for a schedule, display that day of the week on the activity card after the activity is added.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll update the ActivityCard component to display the selected day of the week when it&rsquo;s available.</p>
+
+<p>The activity card now shows the day of the week alongside the schedule when available (e.g., &ldquo;weekly on Monday&rdquo; or &ldquo;weekends on Saturday&rdquo;).</p>
+
+<p><img src="https://github.com/user-attachments/assets/9dba6d33-1460-464f-b9cc-f7f135bd7f26" alt="Show selected day on the activity card" /></p>
+
+<p><strong>💬 Prompt:</strong> In case of &ldquo;Weekdays&rdquo; or &ldquo;Weekends&rdquo; schedule, allow selection of multiple days of the week.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll modify the NewActivityDialog component to allow multiple day selection for &ldquo;Weekdays&rdquo; and &ldquo;Weekends&rdquo; schedules using checkboxes instead of radio buttons.</p>
+
+<p>Updated the NewActivityDialog to use checkboxes for multiple day selection in &ldquo;Weekdays&rdquo; and &ldquo;Weekends&rdquo; schedules, while keeping radio buttons for &ldquo;Weekly&rdquo; schedule. Days are now joined with commas when displayed in the ActivityCard.</p>
+
+<p>Note: The <code>NewActivityDialog.tsx</code> file is getting quite long (160+ lines). Consider asking me to refactor it into smaller components after you&rsquo;re satisfied with the functionality.</p>
+
+<blockquote>
+<p><strong>Note</strong>: Lovable makes sensible suggestions to streamline code</p>
+</blockquote>
+
+<p><img src="https://github.com/user-attachments/assets/312f8cd7-2033-4ae8-9225-dc6157ef0918" alt="Allow selection of multiple days" /></p>
+
+<p>✅ Multiple day of the week selection enabled for Weekdays and Weekends.</p>
+
+<p><img src="https://github.com/user-attachments/assets/0dfe685b-636c-449e-bd3d-1dba55f59fb8" alt="Multiple day of the week selection enabled" /></p>
+
+<p>✅ On completion of the activity, the streak counter was updated.</p>
+
+<p><strong>💬 Prompt:</strong> Use a colored circle for each new activity. Create a panel on the right that display a calendar view with activities marked with the same colored circle as the activity completed on that day. Allow users to navigate the calendar view to view different months.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll help you create a calendar view with colored activity markers. We&rsquo;ll need to modify the existing components and create a new calendar component.</p>
+
+<p>Added a calendar view with colored activity markers, allowing users to navigate between months and see their completed activities marked with corresponding colored dots. The calendar is displayed in a panel on the right side of the screen.</p>
+
+<p><img src="https://github.com/user-attachments/assets/d999c5d1-79c1-40ec-a497-fd4507b1eb69" alt="Add a calendar view" /></p>
+
+<p><strong>Free Credits and Pricing</strong></p>
+
+<p>Well, I ran out of credits for the day. But, I think that was pretty generous daily limit.</p>
+
+<h3 id="code-commits">Code commits</h3>
+
+<p>I love the fact that the code commits are automatically pushed to Github.</p>
+
+<p><img src="https://github.com/user-attachments/assets/67f18121-736a-47df-a396-601904ef6576" alt="Code commits are automatically pushed to Github" /></p>
+
+<h3 id="takeaways-2">🫴🏼 <strong>Takeaways</strong></h3>
+
+<p><strong>I really love Lovable</strong>. As you can see the app was created exactly as I instructed, without any major bugs or issues.</p>
+
+<p>Continuing on the next day.</p>
+
+<h3 id="bug-fix-issue-with-the-calendar-view">Bug Fix: Issue with the calendar view</h3>
+
+<p><strong>💬 Prompt:</strong> There is a bug where the calendar view does not refresh to show the correct dates for the month, when the month is changed at the top navigator section.</p>
+
+<p><strong>💭 Lovable Response</strong>:</p>
+
+<p>Let me check the issue with the calendar view not refreshing correctly when navigating between months.</p>
+
+<p>Fixed the calendar navigation by adding a month prop to the Calendar component and implementing a proper month change handler function.</p>
+
+<p>✅ The issue was promptly fixed in one attempt, without any regressions.</p>
+
+<p><img src="https://github.com/user-attachments/assets/8f3e6d11-d05a-46fb-9922-6fe5e1276bc5" alt="Calendar view bug fixed" /></p>
+
+<h2 id="feature-adding-a-checkmark-for-completed-activities">Feature: Adding a checkmark for completed activities</h2>
+
+<p><strong>💬 Prompt:</strong> Add a translucent check mark on the date an activity is completed. Make the checkmark icon with 50% opacity.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll add a translucent checkmark icon from lucide-react to show completed activities in the calendar view.</p>
+
+<p>Added a translucent checkmark icon that appears in the top-right corner of calendar dates where activities were completed.</p>
+
+<p>Let me update the opacity of the checkmark icon in the ActivityCalendar component.</p>
+
+<p>Updated the checkmark icon&rsquo;s opacity from 20% to 50% by changing the opacity class from opacity-20 to opacity-50.</p>
+
+<p><img src="https://github.com/user-attachments/assets/80445897-765d-496e-82aa-abbe706e0bdc" alt="Adding a checkmark for completed activities" /></p>
+
+<h2 id="chore-creating-a-dockerfile">Chore: Creating a Dockerfile</h2>
+
+<p><strong>💬 Prompt:</strong> Create a Dockerfile for the app so that the application can be run in a container. Update the documentation in the readme file to include instructions to run the app with Docker.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll help create a Dockerfile for containerizing the application and update the README with Docker instructions.</p>
+
+<p>Added a Dockerfile to containerize the application and updated the README with Docker build and run instructions.</p>
+
+<p>A Dockerfile was created and the <a href="http://README.md">README.md</a> file was updated as instructed.</p>
+
+<h2 id="feature-editing-an-activity">Feature: Editing an activity</h2>
+
+<p><strong>💬 Prompt:</strong> Add the capability to edit an activity.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll implement the edit functionality for activities by updating the NewActivityDialog component to handle both creation and editing modes.</p>
+
+<p>Added the ability to edit activities by modifying the NewActivityDialog component to handle both creation and editing modes, updating the ActivityCard to use the dialog for editing, and implementing the edit functionality in the Index page.</p>
+
+<h3 id="bug-fix-issue-with-editing">Bug Fix: Issue with editing</h3>
+
+<p>❌ I tested editing the activity by changing the icon color and the scheduled days. But, it seems there is a bug. You can see below that I selected Saturday but the display still shows Saturday and Sunday.</p>
+
+<p><img src="https://github.com/user-attachments/assets/7010b24f-9741-453f-aba7-24dcb6de2a22" alt="Bug with editing activity" /></p>
+
+<p><img src="https://github.com/user-attachments/assets/4c00488b-a42f-4768-8689-acaf41ad76e4" alt="Bug with editing activity" /></p>
+
+<p>Let’s ask Lovable to fix it.</p>
+
+<p><strong>💬 Prompt:</strong> The edit functionality is not working. I changed the Activity Name, the icon color and the Select Days and upon saving the activity, none of those changes were reflected. Fix the issue.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll fix the edit functionality by properly handling the updated activity data in the Index component.</p>
+
+<p>Fixed the edit functionality by properly updating all activity properties (name, schedule, day, and color) when saving edited activities. The changes will now be reflected in the UI immediately after editing.</p>
+
+<h3 id="build-error-build-was-unsuccessful">Build Error: Build was unsuccessful</h3>
+
+<p>❌ When Lovable tried to build the code it was unsuccessful.</p>
+
+<p><img src="https://github.com/user-attachments/assets/b2771045-b210-4333-ba83-1be724ac4a7c" alt="Build error" /></p>
+
+<p>So, it tried to analyze and fix the error.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>Let me analyze the error and fix it step by step.</p>
+
+<ol>
+<li>The error occurs because there&rsquo;s a type mismatch in the onEdit prop:
+
+<ul>
+<li>The ActivityCard component expects onEdit to be a function that takes a string parameter (id)</li>
+<li>But we&rsquo;re passing handleSaveActivity which expects an activity data object</li>
+</ul></li>
+<li>Looking at the ActivityCard component, we need to align the types between what NewActivityDialog provides and what ActivityCard expects.</li>
+</ol>
+
+<p>I&rsquo;ve updated the onEdit prop type in ActivityCard to match the activity data structure that NewActivityDialog provides when saving. This resolves the type mismatch error while maintaining the existing functionality.</p>
+
+<p>✅ The issue was promptly fixed. The edits to the color icon, activity name and the selected days for the schedule was reflected correctly.</p>
+
+<p><img src="https://github.com/user-attachments/assets/bba9ffdf-0313-4b26-9dd5-dde8c36d9566" alt="Activity editing bugs fixed" /></p>
+
+<h2 id="feature-updating-calendar-positioning">Feature: Updating calendar positioning</h2>
+
+<p><strong>💬 Prompt:</strong> Update the layout so that the calendar is fixed on the top right side of the screen, and the activities are on the left in a two-column grid.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll update the layout to have a fixed calendar on the top right and arrange activities in a two-column grid on the left.</p>
+
+<p>The layout has been updated to show the calendar fixed on the right side and activities in a responsive two-column grid on the left, with proper spacing and mobile responsiveness.</p>
+
+<p><strong>💬 Prompt:</strong> I want the activities to span two-columns and the calendar to span one column. The calendar should be on the right.</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>Looking at the current code, I&rsquo;ll adjust the grid layout to achieve the requested column spans.</p>
+
+<p>The layout now uses a 3-column grid where activities span 2 columns and the calendar takes up 1 column on the right, with the calendar remaining sticky while scrolling.</p>
+
+<p><strong>💬 Prompt:</strong> Make the minimum width of the calendar to 320px</p>
+
+<p><strong>💭 Lovable Response:</strong></p>
+
+<p>I&rsquo;ll update the layout to ensure the calendar has a minimum width of 320px.</p>
+
+<p>Added a minimum width of 320px to the calendar container while maintaining its position and other styling properties.</p>
+
+<p><img src="https://github.com/user-attachments/assets/d7e3c697-6f3d-412c-9dff-80e8d956e60a" alt="Updating calendar positioning" /></p>
+
+<p>✅ The calendar positioning and styling as implemented as instructed.</p>
+
+<h2 id="visual-editing-ui-elements">Visual editing UI elements</h2>
+
+<p>Lovable allows you to “select” any area of the UI and directly ask to make changes to it.</p>
+
+<p><img src="https://github.com/user-attachments/assets/7a21dede-ab6d-4485-87dc-5aa831fb08e3" alt="Select multiple elements for visual editing" /></p>
+
+<p>I want to change the app title and the tagline.</p>
+
+<p>Click on the Select button. And, you can move around the mouse around, and will see the elements highlighted.</p>
+
+<p><img src="https://github.com/user-attachments/assets/2f6c5026-a3d4-42e9-bd99-4b574abe1d1f" alt="Visual editing" /></p>
+
+<p>Select the title element. And, ask to change the text.</p>
+
+<p><img src="https://github.com/user-attachments/assets/7836981b-6af3-4d80-98c8-a817cb886b3d" alt="Change text for header" /></p>
+
+<p>Similarly, update the tagline text as well.</p>
+
+<p>Or you can actually just visually edit the highlighted text, right there from the UI.</p>
+
+<h2 id="the-final-cut">The Final Cut</h2>
+
+<p>✅ Here is the final result of the fully functioning Habit Tracker app.</p>
+
+<p><img src="https://github.com/user-attachments/assets/fdf29ab9-d818-4c57-b138-3fa78bdb9ce9" alt="Final cut of the habit-tracker app" /></p>
+
+<p>I hope you enjoyed the article. <strong>I really love Lovable</strong>. Please try <a href="https://lovable.dev/">Lovable</a> and share your feedback with the community.</p>
+
+<blockquote>
+<p>🧑🏼‍💻 You can find the <a href="https://github.com/rupakg/streaks-for-health">source code</a> to the Habit Tracker app on GitHub.</p>
+</blockquote>
+
+<h2 id="takeaways-3">Takeaways</h2>
+
+<p>The development experience was amazing, and I enjoyed building the app with Lovable. Here are some key observations:</p>
+
+<ul>
+<li>Lovable produced a beautiful UI design, and the first draft was implemented flawlessly with minimal prompting</li>
+<li>The code structure was organized based on standard Node.js best practices</li>
+<li>The UI was broken up into pages and components utilizing Tailwind CSS</li>
+<li>Development with Lovable proved efficient, with bugs being promptly fixed and features implemented accurately as instructed</li>
+<li>Build errors were identified from the resulting error messages and automatically fixed</li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<p>Here are some of the key features of the app that were implemented in the article:</p>
+
+<ul>
+<li>A Node.js habits tracker app was developed to help users form healthy habits through regular activity tracking and scheduling</li>
+<li>Users can create activities with flexible scheduling options (daily, weekly, weekdays, weekends) and select specific days of the week</li>
+<li>The app includes a streak counter that updates upon activity completion</li>
+<li>Activities are displayed with colored circles and a calendar view shows completed activities with matching colors and checkmarks</li>
+<li>Implements activity editing functionality allowing users to modify names, colors, and schedules</li>
+<li>The application was containerized using Docker with documented setup instructions</li>
+</ul>
+
+<p>If you have questions or feedback, please let me know in the comments below.</p>
+  </div>
+  
+  <hr/>
+<h3 align="center">Monthly Newsletter</h3>
+<div>
+  <p><strong><i>If you like the content I share, you can sign up below for the <a href="https://rupakganguly.substack.com">free monthly newsletter</a>.</i></strong></p>
+</div>  
+<iframe src="https://rupakganguly.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/exploring-v0-ai-powered-code-assistant-building-a-flashcard-app/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Exploring V0 AI-Powered Code Assistant: Building a Flashcard App</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/exploring-v0-ai-powered-code-assistant-building-a-flashcard-app/">Exploring V0 AI-Powered Code Assistant: Building a Flashcard App</a>
+      
+      <time class="pull-right hidden-tablet">Feb 05 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/exploring-ai-assistants-building-a-rails-app-with-cline-and-deepseek-model/">Exploring AI Assistants: Building a Rails app With Cline AI and Deepseek Model</a>
+      
+      <time class="pull-right hidden-tablet">Jan 31 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/exploring-ai-assisted-development-building-a-feature-rich-web-app-with-bolt/">Exploring AI Assisted Development: Building a Feature Rich Web App With Bolt.new</a>
+      
+      <time class="pull-right hidden-tablet">Dec 10 &#39;24</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/practical-guide-to-ai-assisted-development-enhancing-a-web-app-with-cursor-ai/">Practical Guide to AI Assisted Development: Enhancing a Web App With Cursor AI</a>
+      
+      <time class="pull-right hidden-tablet">Dec 17 &#39;24</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/the-comprehensive-guide-to-leveraging-ai-tools-from-chatbots-to-code-assistants/">The Comprehensive Guide to Leveraging AI Tools: From Chatbots to Code Assistants</a>
+      
+      <time class="pull-right hidden-tablet">Dec 12 &#39;24</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

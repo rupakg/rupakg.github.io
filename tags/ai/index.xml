@@ -6,10 +6,24 @@
     <description>Recent content in Ai on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Feb 2025 16:41:56 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2025 13:53:04 -0500</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building a Habit Tracker App With Lovable Ai a Step by Step Tutorial</title>
+      <link>https://rupakganguly.com/posts/building-a-habit-tracker-app-with-lovable-ai-a-step-by-step-tutorial/</link>
+      <pubDate>Fri, 14 Feb 2025 13:53:04 -0500</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/building-a-habit-tracker-app-with-lovable-ai-a-step-by-step-tutorial/</guid>
+      <description>&lt;p&gt;In this article, we&amp;rsquo;ll explore the development of a modern habit-tracking application built with Node.js. Using &lt;strong&gt;Lovable&lt;/strong&gt;, a powerful &lt;strong&gt;AI code assistant&lt;/strong&gt; platform, we&amp;rsquo;ll create a feature-rich application that combines intuitive design with practical functionality.&lt;/p&gt;
+
+&lt;p&gt;The application showcases essential features like customizable activity scheduling, streak tracking, and a visual calendar interface. We&amp;rsquo;ll walk through the development process, from initial setup to implementing advanced features, while addressing various technical challenges and improvements along the way. We will explore the technical aspects of building an application with Lovable AI coding assistant and provide valuable insights into the development process and the final product.&lt;/p&gt;
+
+&lt;p&gt;Through this journey, we&amp;rsquo;ll see how we used Lovable AI to combine thoughtful design, user-friendly features, and robust technical implementation to create a modern habit-tracking app.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Exploring V0 AI-Powered Code Assistant: Building a Flashcard App</title>
