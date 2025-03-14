@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agenticai on Rupak Ganguly</title>
+    <link>https://rupakganguly.com/categories/agenticai/</link>
+    <description>Recent content in Agenticai on Rupak Ganguly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Mar 2025 14:04:50 -0400</lastBuildDate>
+    
+	<atom:link href="https://rupakganguly.com/categories/agenticai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial</title>
+      <link>https://rupakganguly.com/posts/agent.ai-mcp-server-integration-with-claude-desktop-a-step-by-step-tutorial/</link>
+      <pubDate>Fri, 14 Mar 2025 14:04:50 -0400</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/agent.ai-mcp-server-integration-with-claude-desktop-a-step-by-step-tutorial/</guid>
+      <description>&lt;p&gt;In this article, we will set up an Agent.ai MCP Server in Claude Desktop and explore the various possibilities MCP integration offers.&lt;/p&gt;
+
+&lt;p&gt;The Model Context Protocol (MCP) significantly advances how Large Language Models (LLMs) interact with external tools and services. At its core, MCP is a standardized communication protocol that enables AI models to seamlessly integrate with various tools, expanding their capabilities beyond basic text generation.&lt;/p&gt;
+
+&lt;p&gt;MCP works by establishing a structured framework for tools to register their capabilities with LLMs and for LLMs to understand and utilize these tools effectively. When an LLM like Claude encounters a query that could benefit from external tools, it can identify the appropriate MCP-compatible tool, request permission to use it, and incorporate the retrieved information into its response. This creates a more dynamic and capable AI system that can access real-time data, perform complex calculations, or interact with external services.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

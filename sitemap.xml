@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rupakganguly.com/posts/agent.ai-mcp-server-integration-with-claude-desktop-a-step-by-step-tutorial/</loc>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/posts/building-a-habit-tracker-app-with-lovable-ai-a-step-by-step-tutorial/</loc>
     <lastmod>2025-02-14T13:53:04-05:00</lastmod>
   </url>
@@ -183,32 +188,56 @@
   </url>
   
   <url>
+    <loc>https://rupakganguly.com/tags/agent.ai/</loc>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/tags/agenticai/</loc>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/categories/agenticai/</loc>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/tags/agents/</loc>
-    <lastmod>2024-12-17T16:44:43-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rupakganguly.com/categories/agents/</loc>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/tags/ai/</loc>
-    <lastmod>2025-02-14T13:53:04-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/categories/ai/</loc>
-    <lastmod>2025-02-14T13:53:04-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/tags/ai-development/</loc>
-    <lastmod>2025-02-14T13:53:04-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rupakganguly.com/tags/ai-tools/</loc>
-    <lastmod>2025-02-14T13:53:04-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -322,7 +351,7 @@
   
   <url>
     <loc>https://rupakganguly.com/categories/</loc>
-    <lastmod>2025-02-14T13:53:04-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -406,7 +435,7 @@
   
   <url>
     <loc>https://rupakganguly.com/categories/development/</loc>
-    <lastmod>2025-02-14T13:53:04-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -495,6 +524,12 @@
   </url>
   
   <url>
+    <loc>https://rupakganguly.com/tags/mcp-servers/</loc>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://rupakganguly.com/tags/microservices/</loc>
     <lastmod>2015-07-21T14:08:43-04:00</lastmod>
     <priority>0</priority>
@@ -556,7 +591,7 @@
   
   <url>
     <loc>https://rupakganguly.com/posts/</loc>
-    <lastmod>2025-02-14T13:53:04-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -628,7 +663,7 @@
   
   <url>
     <loc>https://rupakganguly.com/</loc>
-    <lastmod>2025-02-14T13:53:04-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -670,7 +705,7 @@
   
   <url>
     <loc>https://rupakganguly.com/tags/</loc>
-    <lastmod>2024-12-17T16:44:43-05:00</lastmod>
+    <lastmod>2025-03-14T14:04:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   

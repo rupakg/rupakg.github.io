@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="A step-by-step tutorial to set up an Agent.ai MCP Server in Claude Desktop and explore the various possibilities MCP integration offers.">
+    
+        
+        <meta name="keywords" content="AI, ai-development, Agent.ai, AgenticAI, Agents, model-context-protocol, MCP Servers, Claude, ai-tools">
+    
+    
+
+<title>Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial"/>
+<meta name="twitter:description" content="A step-by-step tutorial to set up an Agent.ai MCP Server in Claude Desktop and explore the various possibilities MCP integration offers."/>
+
+<meta property="og:title" content="Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial" />
+<meta property="og:description" content="A step-by-step tutorial to set up an Agent.ai MCP Server in Claude Desktop and explore the various possibilities MCP integration offers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/agent.ai-mcp-server-integration-with-claude-desktop-a-step-by-step-tutorial/" /><meta property="article:published_time" content="2025-03-14T14:04:50-04:00"/>
+<meta property="article:modified_time" content="2025-03-14T14:04:50-04:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    
+    <div class="sidebar-about">
+  <span class="site__title">
+    <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+  </span>
+  
+  
+  
+  <div class="author-image">
+    <img src="https://rupakganguly.com//img/rg_mug_conf.png" alt="Rupak Ganguly" class="img--circle img--headshot element--center">
+  </div>
+  
+  <p class="site__description">
+     opinions, experiences &amp; writings... 
+  </p>
+</div>
+
+    
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/glossary/">
+						<span>Glossaries</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:biz@rupakganguly.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <div>
+      
+      <p>
+  <iframe src="https://rupakganguly.substack.com/embed" width="100%" height="150" style="border:1px solid #6a9fb5; background:#6a9fb5;" frameborder="0" scrolling="no"></iframe>
+</p>
+    </div>
+    
+    <div class="copyright">
+  &copy; 2025 Rupak Ganguly.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Mar 14, 2025
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/ai">AI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agenticai">AGENTICAI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agents">AGENTS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/ai">ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-development">ai-development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agent.ai">agent.ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agenticai">agenticai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agents">agents</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/mcp-servers">mcp servers</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-tools">ai-tools</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 8 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>In this article, we will set up an Agent.ai MCP Server in Claude Desktop and explore the various possibilities MCP integration offers.</p>
+
+<p>The Model Context Protocol (MCP) significantly advances how Large Language Models (LLMs) interact with external tools and services. At its core, MCP is a standardized communication protocol that enables AI models to seamlessly integrate with various tools, expanding their capabilities beyond basic text generation.</p>
+
+<p>MCP works by establishing a structured framework for tools to register their capabilities with LLMs and for LLMs to understand and utilize these tools effectively. When an LLM like Claude encounters a query that could benefit from external tools, it can identify the appropriate MCP-compatible tool, request permission to use it, and incorporate the retrieved information into its response. This creates a more dynamic and capable AI system that can access real-time data, perform complex calculations, or interact with external services.
+</p>
+
+<p><img src="https://github.com/user-attachments/assets/bba894a9-0399-4db2-9e78-47a9053224d4" alt="General Architecture for MCP" />
+<em>[General Architecture for MCP - Image Credit <a href="http://modelcontextprotocol.iohttps://modelcontextprotocol.io/introduction">modelcontextprotocol.io</a>]</em></p>
+
+<p>In the context of Claude, MCP integration allows the AI to enhance its responses with current information and specialized capabilities. For example, when asked about company financials or market data, Claude can utilize MCP-enabled tools like Agent.ai to access and analyze the most recent information. This integration ensures that responses are not just based on training data but incorporate up-to-date, accurate information from reliable sources.</p>
+
+<p>The protocol&rsquo;s design emphasizes security and user control, requiring explicit permission before accessing external tools. This ensures transparency and maintains user autonomy while allowing for powerful tool-augmented conversations. As more tools become MCP-compatible, the potential applications and capabilities of LLMs like Claude continue to expand, creating more versatile and practical AI assistants.</p>
+
+<blockquote>
+<p>Read all about <a href="https://modelcontextprotocol.io/introduction">Model-Context-Protocol</a></p>
+</blockquote>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<ul>
+<li><a href="https://claude.ai/download">Download</a> Claude Desktop</li>
+<li>Read the documentation for MCP Server provided by Agent.ai
+
+<ul>
+<li>Get an Agent.ai API key</li>
+<li>Set up the MCP server with Claude Desktop</li>
+</ul></li>
+</ul>
+
+<blockquote>
+<p>If you are interested in using other MCP servers with Claude or any other MCP compatible LLM, see the <a href="https://github.com/modelcontextprotocol/servers">list here</a>.</p>
+</blockquote>
+
+<h3 id="getting-an-agent-ai-api-key">Getting an Agent.ai API Key</h3>
+
+<ul>
+<li>To get an API token from Agent.ai follow the steps:
+
+<ul>
+<li><a href="https://agent.ai/?referrer=rupakg">Sign up</a> for an Agent.ai account (if you don’t have an account)</li>
+<li>Login to your Agent.ai account</li>
+<li>Click on the chevron next to your profile pic</li>
+<li>Click on User Settings</li>
+<li>Click on the Credit tab at the top</li>
+<li>Scroll down to find your API Key</li>
+</ul></li>
+</ul>
+
+<h3 id="setting-up-the-mcp-server-with-claude-desktop">Setting up the MCP Server with Claude Desktop</h3>
+
+<p>Follow the <a href="https://docs.agent.ai/mcp-server">instructions</a> at Agent.ai to configure Claude Desktop. You will need your Agent.ai API key for this step. Here is the summary of the steps:</p>
+
+<ul>
+<li>Configure the server as instructed. Use either the NPX or the Docker config options</li>
+<li>This will open the <code>claude_desktop_config.json</code> for you to edit</li>
+<li>Paste your Agent.ai API key replacing <code>YOUR_API_TOKEN_HERE</code> in the config file</li>
+<li>Save the config file</li>
+<li>Restart Claude Desktop</li>
+</ul>
+
+<p>You have two options to configure the Agent.ai MCP Server in Claude Desktop:</p>
+
+<p><strong>NPX Config option</strong>: (I used this option and it works great.)</p>
+
+<pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;agentai&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;,&quot;@agentai/mcp-server&quot;
+      ],
+      &quot;env&quot;: {
+        &quot;API_TOKEN&quot;: &quot;YOUR_API_TOKEN_HERE&quot;
+      }
+    }
+  }
+}
+</code></pre>
+
+<p><strong>Docker Config option</strong>:</p>
+
+<pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;agentai&quot;: {
+      &quot;command&quot;: &quot;docker&quot;,
+      &quot;args&quot;: [&quot;run&quot;, &quot;-i&quot;, &quot;--rm&quot;, &quot;-e&quot;, &quot;API_TOKEN&quot;, &quot;mcp/agentai&quot;
+      ],
+      &quot;env&quot;: {
+        &quot;API_TOKEN&quot;: &quot;YOUR_API_TOKEN_HERE&quot;
+      }
+    }
+  }
+}
+</code></pre>
+
+<blockquote>
+<p><strong>Note</strong>: You can read more about the Agent.ai MCP Server npm package at <a href="https://www.npmjs.com/package/@agentai/mcp-server">https://www.npmjs.com/package/@agentai/mcp-server</a></p>
+</blockquote>
+
+<h2 id="using-mcp-tools-with-claude-desktop">Using MCP Tools with Claude Desktop</h2>
+
+<ul>
+<li>Start a new chat in Claude</li>
+<li>Click the Tools icon in Claude</li>
+</ul>
+
+<p><img src="https://github.com/user-attachments/assets/3c3fc73b-7e32-4439-ac24-093870be0675" alt="MCP tools icon in Claude" /></p>
+
+<ul>
+<li>Verify that you can see the Agent.ai MCP server listed.</li>
+</ul>
+
+<p><img src="https://github.com/user-attachments/assets/afba9ae0-b011-44be-84ab-e8ebea291c89" alt="Installed MCP Servers on Claude" /></p>
+
+<ul>
+<li>And, clicking on the hammer icon you will see the available MCP Tools (not a full list in the screenshot)</li>
+</ul>
+
+<p><img src="https://github.com/user-attachments/assets/57ff9fd7-9232-47ee-9875-f098278edf27" alt="Available MCP Tools in Claude" /></p>
+
+<h2 id="querying-claude-using-agent-ai-tools">Querying Claude Using Agent.ai Tools</h2>
+
+<p>To test out the fact that the MCP server config and Claude Desktop is setup correctly, try the following example:</p>
+
+<p>💬 <strong>Prompt</strong>: Give me the latest company financial details about HubSpot</p>
+
+<p>🗣️ <strong>Claude Response</strong>:</p>
+
+<p><img src="https://github.com/user-attachments/assets/70327e3a-b1a8-48b9-9a77-2699beeb4b63" alt="Permissions to use tools in Claude" /></p>
+
+<p><strong>Note</strong>: Claude automatically identifies the MCP Server for Agent.ai that is configured, to be the best tool to use for this query. And, then asks permissions to use it. Note that you can give it permission to use for this chat or allow only once.</p>
+
+<p>I gave it permission to use the MCP tool for this chat.</p>
+
+<h3 id="issues">Issues</h3>
+
+<p>I kept getting an error from Claude saying that there was some network connection issues, and the Claude would kill the chat after trying for sometime.</p>
+
+<p><img src="https://github.com/user-attachments/assets/e2c3ad90-9a79-497f-8a5b-cf54a52cf9cc" alt="Errors in Claude" /></p>
+
+<h3 id="enable-developer-mode">Enable Developer Mode</h3>
+
+<p>To enable Developer Mode and look at the logs, do the following:</p>
+
+<ul>
+<li>In Claude Desktop, go to Help → Enable Developer Mode</li>
+<li>Now, you will see a new menu item “Developer”</li>
+<li>You can also see the sub-menu item “Open MCP Log File”. This will be useful for troubleshooting issues</li>
+</ul>
+
+<h3 id="quota-capped-by-claude">Quota Capped by Claude</h3>
+
+<p>Looking at the logs, I figured that the above query was working correctly, as I could see the response from the Agent.ai MCP server as shown below:</p>
+
+<pre><code>{&quot;company&quot;:&quot;HUBS&quot;}},&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:12}
+2025-03-13T20:16:14.117Z [info] [agentai] Message from server: 
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:12,&quot;result&quot;:{&quot;content&quot;:
+[{&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;{\n  \&quot;response\&quot;: 
+{\n    \&quot;income_statement\&quot;: [\n      {\n        
+\&quot;acceptedDate\&quot;: \&quot;2025-02-12 16:25:29\&quot;,\n        
+\&quot;calendarYear\&quot;: \&quot;2024\&quot;,\n        
+\&quot;cik\&quot;: \&quot;0001404655\&quot;,\n        
+\&quot;costAndExpenses\&quot;: 2695145000,\n 
+
+...
+
+\&quot;fullTimeEmployees\&quot;: \&quot;8246\&quot;,\n        
+\&quot;image\&quot;: \&quot;https://images.financialmodelingprep.com/symbol/HUBS.png\&quot;,\n       
+\&quot;industry\&quot;: \&quot;Software - Application\&quot;,\n        
+\&quot;ipoDate\&quot;: \&quot;2014-10-09\&quot;,\n        
+\&quot;isActivelyTrading\&quot;: true,\n        \&quot;isAdr\&quot;: false,\n        
+\&quot;isEtf\&quot;: false,\n        \&quot;isFund\&quot;: false,\n        
+\&quot;isin\&quot;: \&quot;US4435731009\&quot;,\n        \&quot;lastDiv\&quot;: 0,\n        
+\&quot;mktCap\&quot;: 31204242792,\n        \&quot;phone\&quot;: \&quot;888 482 7768\&quot;,\n        
+\&quot;price\&quot;: 598.32,\n        \&quot;range\&quot;: \&quot;434.84-881.13\&quot;,\n        
+\&quot;sector\&quot;: \&quot;Technology\&quot;,\n        \&quot;state\&quot;: \&quot;MA\&quot;,\n        
+\&quot;symbol\&quot;: \&quot;HUBS\&quot;,\n        \&quot;volAvg\&quot;: 527475,\n        
+\&quot;website\&quot;: \&quot;https://www.hubspot.com\&quot;,\n        \&quot;zip\&quot;: \&quot;02141\&quot;\n      
+}\n    ]\n  },\n  \&quot;status\&quot;: 200\n}&quot;}],&quot;isError&quot;:false}}
+</code></pre>
+
+<p>I am guessing since I have Claude’s Free Plan, the amount of data it can send back is limited, and I was being capped for content that was too large to be displayed.</p>
+
+<p>To confirm my suspicion, I asked a very specific question about HubSpot that does not involve a lot of data.</p>
+
+<p>💬 <strong>Prompt</strong>: Give the number of full-time employees in HubSpot</p>
+
+<p>🗣️ <strong>Claude Response</strong>:</p>
+
+<p><img src="https://github.com/user-attachments/assets/e8922485-c6d9-413b-ae16-e7402097e202" alt="Claude response" /></p>
+
+<p>🫴🏼 <strong>Takeaway</strong>: And, I had the answer, but I guess the company info. API response was still pretty large as seen in the logs, and it exhausted the quota for output tokens in Claude. So, instead of using the more richer API from Agent.ai, Claude used a Google search to find the answer. Notice the key pair <code>&quot;fullTimeEmployees\&quot;: \&quot;8246\&quot;</code> in the above JSON chunk that confirms the answer.</p>
+
+<p>It also shows how Claude can automatically switch between given tools to come up with an answer.</p>
+
+<p>👉🏼 I was wondering that if the API call had a filter or allowed passing query params, for only specific items that I needed, the API response would have been smaller, and then Claude could return a response within the quota limits. That might be a significant design choice that API developers have to make when dealing with LLMs that call them via tools.</p>
+
+<p>Let’s try another one.</p>
+
+<p>💬 <strong>Prompt</strong>: Get domain info for chat.com</p>
+
+<p>🗣️ <strong>Claude Response</strong>:</p>
+
+<p><img src="https://github.com/user-attachments/assets/59efc9fd-7fa3-4ad9-ac71-e9c2784d91d4" alt="Claude response" /></p>
+
+<p>🫴🏼 <strong>Takeaway</strong>: Claude inspected the tools available to it and correctly identified that it can call the <code>domain_info</code> tool from Agent.ai to get the results.</p>
+
+<p>Here&rsquo;s the domain information for chat.com:</p>
+
+<p><strong>Domain Details:</strong></p>
+
+<ul>
+<li>Domain name: chat.com</li>
+<li>Registration status: Active/Registered</li>
+<li>Creation date: September 20, 1996</li>
+<li>Expiration date: September 19, 2027</li>
+<li>Last updated: November 13, 2024</li>
+</ul>
+
+<p><strong>Ownership Information:</strong></p>
+
+<ul>
+<li>Registrant organization: OpenAI</li>
+<li>Registrant location: California, United States</li>
+</ul>
+
+<p><strong>Technical Details:</strong></p>
+
+<ul>
+<li>Name servers:
+
+<ul>
+<li>dahlia.ns.cloudflare.com</li>
+<li>kip.ns.cloudflare.com</li>
+</ul></li>
+<li>Registrar: MarkMonitor, Inc. (IANA ID: 292)</li>
+<li>DNSSEC: signedDelegation</li>
+</ul>
+
+<p><strong>Domain Status:</strong>
+The domain has multiple protection statuses applied (clientUpdateProhibited, clientTransferProhibited, clientDeleteProhibited, etc.) which indicates it&rsquo;s locked against unauthorized transfers or modifications.</p>
+
+<p>The domain is currently owned by OpenAI and uses Cloudflare&rsquo;s nameservers for its DNS management.</p>
+
+<p>🫴🏼 <strong>Takeaway</strong>: This time around the query worked and Claude returned the results as expected.</p>
+
+<p>Let’s try another one.</p>
+
+<p>💬 <strong>Prompt</strong>: Get 3 recent tweets from Sam Altman&rsquo;s Twitter account</p>
+
+<p>🗣️ <strong>Claude Response</strong>:</p>
+
+<p><img src="https://github.com/user-attachments/assets/e497ce5e-1f7f-4b57-b5f0-0eb81eb08d2e" alt="Claude response" /></p>
+
+<p>I tried to retrieve Sam Altman&rsquo;s recent tweets, but it appears there was no data returned. This could be due to a few reasons:</p>
+
+<ol>
+<li>There might be an issue with accessing Twitter data at the moment</li>
+<li>The handle &ldquo;sama&rdquo; might not be returning results (though this is Sam Altman&rsquo;s known Twitter handle)</li>
+<li>There might be API limitations</li>
+</ol>
+
+<p>Let me try searching for his Twitter profile to confirm the handle:</p>
+
+<p><img src="https://github.com/user-attachments/assets/e24300b1-b430-4894-8dc6-58ab4250467e" alt="Claude response" /></p>
+
+<p>I apologize, but I&rsquo;m currently unable to retrieve Sam Altman&rsquo;s tweets. It appears there&rsquo;s an authentication limitation with the Twitter/X API.</p>
+
+<p>If you&rsquo;d like to see Sam Altman&rsquo;s recent tweets, I recommend:</p>
+
+<ol>
+<li>Visiting his Twitter/X profile directly at twitter.com/sama</li>
+<li>Or if you&rsquo;re interested in specific information about Sam Altman or OpenAI, I could help you search for news or other information about him using alternative sources.</li>
+</ol>
+
+<p>Would you like me to try another approach to get information about Sam Altman&rsquo;s recent activities?</p>
+
+<p>🫴🏼 <strong>Takeaway</strong>: Claude tried the <code>get_recent_tweets</code> call, and when it failed to get a response, it used reasoning to figure out that it needs to verify the user’s handle by calling the <code>get_twitter_users</code> tool. And, then when it got a 403 Forbidden status, it determined that the account has a authentication limitation.</p>
+
+<p>👉🏼 This capability to reason and then automatically choose a different path and other tools, is the main highlight of agentic AI systems.</p>
+
+<blockquote>
+<p><strong>Note</strong>: To use the full potential of MCP servers on Claude, you need the Claude Pro plan at $20/month.</p>
+</blockquote>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Although, this article was more about setting up Agent.ai MCP Server with Claude, and give you a taste of running some queries, but you can see despite the limitations of the Claude Free Plan, the applications of this technology is limitless.</p>
+
+<p>The Model Context Protocol (MCP) represents a significant advancement in AI-tool integration, allowing Large Language Models like Claude to interact seamlessly with external services.</p>
+
+<p>This article detailed the setup process for the Agent.ai MCP Server with Claude Desktop, covering essential steps from obtaining an API key to configuring the server using either NPX or Docker options. It also addressed common issues users might encounter, such as network connection problems and quota limitations on the free plan.</p>
+
+<p>Key takeaways include the importance of proper configuration, the availability of developer mode for troubleshooting, and the understanding that full MCP functionality requires a Claude Pro subscription.</p>
+
+<p>The article highlighted how Claude can intelligently switch between different tools to provide accurate responses, showcasing the practical benefits of MCP integration in enhancing AI capabilities in limitless use cases.</p>
+
+<p>If you have questions or feedback, please let me know in the comments below.</p>
+  </div>
+  
+  <hr/>
+<h3 align="center">Monthly Newsletter</h3>
+<div>
+  <p><strong><i>If you like the content I share, you can sign up below for the <a href="https://rupakganguly.substack.com">free monthly newsletter</a>.</i></strong></p>
+</div>  
+<iframe src="https://rupakganguly.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/building-a-habit-tracker-app-with-lovable-ai-a-step-by-step-tutorial/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Building a Habit Tracker App With Lovable AI: A Step-by-Step Tutorial</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/building-a-habit-tracker-app-with-lovable-ai-a-step-by-step-tutorial/">Building a Habit Tracker App With Lovable AI: A Step-by-Step Tutorial</a>
+      
+      <time class="pull-right hidden-tablet">Feb 14 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/exploring-v0-ai-powered-code-assistant-building-a-flashcard-app/">Exploring V0 AI-Powered Code Assistant: Building a Flashcard App</a>
+      
+      <time class="pull-right hidden-tablet">Feb 05 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/practical-guide-to-ai-assisted-development-enhancing-a-web-app-with-cursor-ai/">Practical Guide to AI Assisted Development: Enhancing a Web App With Cursor AI</a>
+      
+      <time class="pull-right hidden-tablet">Dec 17 &#39;24</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/the-comprehensive-guide-to-leveraging-ai-tools-from-chatbots-to-code-assistants/">The Comprehensive Guide to Leveraging AI Tools: From Chatbots to Code Assistants</a>
+      
+      <time class="pull-right hidden-tablet">Dec 12 &#39;24</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/exploring-ai-assistants-building-a-rails-app-with-cline-and-deepseek-model/">Exploring AI Assistants: Building a Rails app With Cline AI and Deepseek Model</a>
+      
+      <time class="pull-right hidden-tablet">Jan 31 &#39;25</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>
