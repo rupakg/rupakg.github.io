@@ -6,10 +6,22 @@
     <description>Recent content in Agents on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Mar 2025 14:04:50 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 15 Oct 2025 13:21:01 -0400</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/categories/agents/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Agentic Commerce Protocol (ACP): The Future of AI-Powered Transactions</title>
+      <link>https://rupakganguly.com/posts/agentic-commerce-protocol-the-future-of-ai-powered-transactions/</link>
+      <pubDate>Wed, 15 Oct 2025 13:21:01 -0400</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/agentic-commerce-protocol-the-future-of-ai-powered-transactions/</guid>
+      <description>&lt;p&gt;The &lt;strong&gt;Agentic Commerce Protocol (ACP)&lt;/strong&gt; is shaking up how we interact with online stores. Instead of clicking through web pages, imagine instructing an AI agent—like ChatGPT—to shop for you, handling everything from product discovery to checkout, all within a single conversation.&lt;/p&gt;
+
+&lt;p&gt;ACP is an open standard that enables secure, seamless transactions between buyers (and their AI agents) and businesses, ensuring each party stays in control and informed throughout the process. It can let an AI agent discover products, validate availability, collect consent, and complete checkout using a retailer’s systems. The retailer is still in charge of the actual transaction details like availability, tax, fulfillment and delivery but the assistants help with the conversation and capturing the customer&amp;rsquo;s intent.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial</title>
