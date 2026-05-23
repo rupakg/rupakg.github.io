@@ -6,10 +6,25 @@
     <description>Recent content in Agent.ai on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Dec 2025 16:19:53 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 00:14:36 +0000</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/agent.ai/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You</title>
+      <link>https://rupakganguly.com/posts/designing-backends-for-ai-agents-first-humans-second-the-architecture-nobody-taught-you/</link>
+      <pubDate>Thu, 21 May 2026 00:14:36 +0000</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/designing-backends-for-ai-agents-first-humans-second-the-architecture-nobody-taught-you/</guid>
+      <description>&lt;p&gt;I had a bad dream&amp;hellip; a disturbing one&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;I plugged an AI agent into a production internal API. The API had been running in production for many years. Solid REST design, reasonable error handling, decent OpenAPI coverage. By every measure we used when we built it, it was a good API.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The agent broke it in about four minutes.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>How to Run a Profitable Business as a Solo Founder With AI as Your Co‑founder</title>

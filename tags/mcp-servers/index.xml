@@ -6,10 +6,25 @@
     <description>Recent content in Mcp Servers on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Mar 2025 14:04:50 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 00:14:36 +0000</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/mcp-servers/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You</title>
+      <link>https://rupakganguly.com/posts/designing-backends-for-ai-agents-first-humans-second-the-architecture-nobody-taught-you/</link>
+      <pubDate>Thu, 21 May 2026 00:14:36 +0000</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/designing-backends-for-ai-agents-first-humans-second-the-architecture-nobody-taught-you/</guid>
+      <description>&lt;p&gt;I had a bad dream&amp;hellip; a disturbing one&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;I plugged an AI agent into a production internal API. The API had been running in production for many years. Solid REST design, reasonable error handling, decent OpenAPI coverage. By every measure we used when we built it, it was a good API.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The agent broke it in about four minutes.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial</title>

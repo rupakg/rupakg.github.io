@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Most backend APIs were designed for developers — humans who read docs, ask questions, and adapt when something breaks. AI agents can&#39;t do any of that. This post walks through the real gaps: undocumented side effects that fool agents into firing live emails in test runs, request-count rate limiting that looks like a DDoS to a bursty agent workflow, and the surprising difference a capability registry makes when an agent needs to plan before it acts. Includes practical patterns like x-side-effects OpenAPI extensions, consumption-based metering, and the A2A protocol — and how Stripe, Twilio, and Google are already building with them.">
+    
+        
+        <meta name="keywords" content="AI, ai-development, AgenticAI, Agents, model-context-protocol, MCP Servers, Claude, ai-tools, agent-first, a2a-protocol">
+    
+    
+
+<title>Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You"/>
+<meta name="twitter:description" content="Most backend APIs were designed for developers — humans who read docs, ask questions, and adapt when something breaks. AI agents can&#39;t do any of that. This post walks through the real gaps: undocumented side effects that fool agents into firing live emails in test runs, request-count rate limiting that looks like a DDoS to a bursty agent workflow, and the surprising difference a capability registry makes when an agent needs to plan before it acts. Includes practical patterns like x-side-effects OpenAPI extensions, consumption-based metering, and the A2A protocol — and how Stripe, Twilio, and Google are already building with them."/>
+
+<meta property="og:title" content="Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You" />
+<meta property="og:description" content="Most backend APIs were designed for developers — humans who read docs, ask questions, and adapt when something breaks. AI agents can&#39;t do any of that. This post walks through the real gaps: undocumented side effects that fool agents into firing live emails in test runs, request-count rate limiting that looks like a DDoS to a bursty agent workflow, and the surprising difference a capability registry makes when an agent needs to plan before it acts. Includes practical patterns like x-side-effects OpenAPI extensions, consumption-based metering, and the A2A protocol — and how Stripe, Twilio, and Google are already building with them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/designing-backends-for-ai-agents-first-humans-second-the-architecture-nobody-taught-you/" /><meta property="article:published_time" content="2026-05-21T00:14:36&#43;00:00"/>
+<meta property="article:modified_time" content="2026-05-21T00:14:36&#43;00:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    
+    <div class="sidebar-about">
+  <span class="site__title">
+    <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+  </span>
+  
+  
+  
+  <div class="author-image">
+    <img src="https://rupakganguly.com//img/rg_mug_conf.png" alt="Rupak Ganguly" class="img--circle img--headshot element--center">
+  </div>
+  
+  <p class="site__description">
+     opinions, experiences &amp; writings... 
+  </p>
+</div>
+
+    
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/glossary/">
+						<span>Glossaries</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:biz@rupakganguly.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <div>
+      
+      <p>
+  <iframe src="https://rupakganguly.substack.com/embed" width="100%" height="150" style="border:1px solid #6a9fb5; background:#6a9fb5;" frameborder="0" scrolling="no"></iframe>
+</p>
+    </div>
+    
+    <div class="copyright">
+  &copy; 2026 Rupak Ganguly.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> May 21, 2026
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/ai">AI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agenticai">AGENTICAI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agents">AGENTS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/ai">ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-development">ai-development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agent.ai">agent.ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agenticai">agenticai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agents">agents</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/mcp-servers">mcp servers</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-tools">ai-tools</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 11 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>I had a bad dream&hellip; a disturbing one&hellip;</p>
+
+<p>I plugged an AI agent into a production internal API. The API had been running in production for many years. Solid REST design, reasonable error handling, decent OpenAPI coverage. By every measure we used when we built it, it was a good API.</p>
+
+<p><strong>The agent broke it in about four minutes.</strong></p>
+
+<p></p>
+
+<p><img src="/img/hero_designing-backends-for-ai-agents.jpg" alt="header image" />
+<em>[The AI agent that broke the API]</em></p>
+
+<p>Not catastrophically: no data corruption, no cascading failures. But the agent got stuck in a retry loop on a vague <code>400 Bad Request</code> that gave it no signal about what was actually wrong. It hit the same endpoint nine times in sixty seconds. It called a <code>POST /transfer</code> endpoint twice because the first call timed out and it had no way of knowing whether the operation had actually gone through. It hallucinated a query parameter that appeared in some of our other endpoints but not this one, and when it got back a <code>404</code>, it concluded the entire resource didn&rsquo;t exist rather than that it had called the endpoint wrong.</p>
+
+<p>None of these things would have happened with a human developer at the keyboard. A human reads the error message and looks up the docs. A human waits before retrying when they&rsquo;re not sure if a write went through. A human notices the pattern and adapts. The agent just executed, and in doing so, it exposed every assumption we&rsquo;d quietly baked into the API over the years, assumptions that only worked because a human was on the other end.</p>
+
+<p>I woke up, rattled. Not because it was a bad dream, but because <strong>I realized that the problem was real</strong>.</p>
+
+<p>Every piece of API design education most of us received (REST conventions, OpenAPI specs, HTTP status semantics) was written for a world where the consumer was a developer with a browser tab, a Slack channel, and the ability to ask questions. AI agents don&rsquo;t have any of that. Building backends they can actually use requires rethinking some things we thought were settled.</p>
+
+<h2 id="the-side-effect-problem-nobody-put-in-the-spec">The Side Effect Problem Nobody Put in the Spec</h2>
+
+<p>Here&rsquo;s the principle that changed how I think about this: describe the side effect, not just the shape.</p>
+
+<p>OpenAPI is excellent at describing what goes in and what comes out. Parameters, request bodies, response schemas: all documented. What it doesn&rsquo;t capture is what happens in between. Does this POST write to a database? Does it trigger an async job that you&rsquo;ll need to poll separately? Does it deduct from a quota? Does it send an email? Is it idempotent?</p>
+
+<p>Human developers learn this from README files, Stack Overflow threads, internal wikis, and the painful experience of discovering a <code>POST /send-invoice</code> endpoint fires an actual email to an actual customer when you test it in staging. They build up a mental model of the side effect topology over time. It&rsquo;s implicit knowledge, shared verbally, never formally captured.</p>
+
+<p>Agents don&rsquo;t accumulate implicit knowledge. They work from what you give them. If your OpenAPI spec says a <code>POST /orders</code> endpoint takes a <code>product_id</code> and returns an <code>order_id</code>, that&rsquo;s what the agent knows. It doesn&rsquo;t know the request also sends a confirmation email, reserves inventory, and triggers a fulfillment workflow. So it&rsquo;ll call that endpoint in a test context and wonder why a customer just got an order confirmation for a QA transaction.</p>
+
+<p>The fix isn&rsquo;t complicated, but it requires a mindset shift: treat side-effect documentation as a first-class element of your API contract, not a nice-to-have in the README. In practice this looks like adding an <code>x-side-effects</code> extension to your OpenAPI spec:</p>
+
+<pre><code class="language-yaml">paths:
+  /orders:
+    post:
+      summary: Create a new order
+      x-side-effects:
+        - type: email
+          description: Sends order confirmation to customer email on file
+        - type: inventory
+          description: Reserves inventory for all line items; non-reversible without explicit cancel
+        - type: async
+          description: Triggers fulfillment workflow; poll /orders/{id}/status for completion
+      x-idempotent: false
+      x-idempotency-key-required: true
+</code></pre>
+
+<blockquote>
+<p>Note: The <code>x-side-effects</code> is an unofficial, vendor-specific OpenAPI extension commonly used in agentic and programmatic API frameworks such as <a href="https://agenticapi.com/docs/openapi-extensions/">AgenticAPI</a> to annotate endpoints with out-of-band impacts (e.g., database changes, sent emails, or payment charges)</p>
+</blockquote>
+
+<p>This is not in the OpenAPI 3.x standard. It&rsquo;s a convention you establish. But when you pass this spec to an agent via Anthropic&rsquo;s MCP or Google&rsquo;s Agent Development Kit (ADK), the agent now knows to require an idempotency key before calling this endpoint, to not call it in read-only planning passes, and to check fulfillment status asynchronously rather than expecting a synchronous result. That&rsquo;s a completely different quality of agent behavior, and it costs you a few extra lines in the spec.</p>
+
+<h2 id="token-based-rate-limiting-is-a-different-problem-than-you-think">Token-Based Rate Limiting Is a Different Problem Than You Think</h2>
+
+<p>Most of us grew up rate-limiting by request count. Stripe allows N API calls per second. Twilio allows N messages per minute. This made sense when every API call was one human decision: one button click, one form submit, one developer trigger.</p>
+
+<p>AI agents don&rsquo;t work like that. An agent planning a multi-step workflow will fan out to your API in ways that look nothing like human usage patterns. I&rsquo;ve watched agents fire forty tool calls inside a single reasoning step because the task required checking forty things to make a decision. Forty calls in under a second, all legitimate, all from a single authorized session. Under request-count rate limiting, this looks like a DDoS. The agent hits your limit, gets back a <code>429</code>, has no idea whether it should slow down or retry immediately, and either grinds to a halt or hammers you in a backoff loop.</p>
+
+<p>The emerging solution is rate limiting by resource consumption rather than request count. What did this session actually cost? How many tokens got processed? How much compute time was consumed? This is how Stripe is thinking about metering in their agentic infrastructure work, and it maps much more naturally to the bursty, high-volume patterns agents generate.</p>
+
+<p>For most teams this requires new backend instrumentation. You need to emit consumption metrics per session, not just per request. You need to expose those metrics back to the agent in a form it can reason about: a <code>Retry-After</code> header is not enough; an agent that knows it has consumed 80% of its compute budget in this session can plan differently, batching remaining calls or deferring non-critical ones. That&rsquo;s behavioral information, not just a throttle.</p>
+
+<p>If you&rsquo;re building this today, look at how Twilio is approaching agentic billing in their SIGNAL 2026 releases. Their <code>Agent Connect</code> GA release exposes quota state as a structured API response, not just a rate limit error. The agent gets context, not just a stop sign.</p>
+
+<h2 id="self-describing-backends-what-actually-helps-agents-plan">Self-Describing Backends: What Actually Helps Agents Plan</h2>
+
+<p>One of the more revealing things I&rsquo;ve seen in practice is what happens when you give an agent two different API surfaces for the same underlying platform.</p>
+
+<p>In one case: a standard OpenAPI spec with path descriptions, parameter types, and response schemas. The agent calls endpoints, gets results, makes wrong assumptions, calls the wrong endpoint for a use case, tries to chain two endpoints that weren&rsquo;t designed to chain. It works eventually, but it&rsquo;s noisy.</p>
+
+<p>In the other case: the same platform with a <code>/capabilities</code> endpoint that returns a structured manifest: every action the API can perform, grouped by intent, with side effects documented, with cost and latency characteristics, with explicit pointers to related actions. The agent calls this first, builds a plan, then executes. Tool-call failures drop sharply. The reasoning is cleaner. The whole thing takes fewer steps.</p>
+
+<p>This pattern is called a <strong>capability registry</strong>. Stripe built one into <a href="https://docs.stripe.com/projects">Stripe Projects</a>, announced at <a href="https://stripe.com/newsroom/news/sessions-2026">Sessions 2026</a>, and it&rsquo;s what lets an AI coding agent run <code>stripe projects provision</code> or <code>stripe projects catalog</code> against a catalog of 32 infrastructure partners (Render, Sentry, Twilio, Vercel, and others) using a single standardized interface. The agent doesn&rsquo;t need to know any partner&rsquo;s individual API surface. It just knows what the Stripe Projects catalog can do, and it asks for what it needs.</p>
+
+<p>Google&rsquo;s <a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/">A2A (Agent-to-Agent) protocol</a>, <a href="https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/">donated to the Linux Foundation in June 2025</a> and now backed by <a href="https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year">150+ organizations</a> across supply chain, financial services, and IT ops, formalizes this idea at the inter-agent level. An agent publishes an Agent Card at <code>/.well-known/agent-card.json</code>: a machine-readable description of its capabilities, endpoints, authentication requirements, and declared skills. Other agents discover it, evaluate whether it can satisfy a sub-task, and delegate to it. It&rsquo;s the same capability-registry concept applied to agents calling agents rather than clients calling backends.</p>
+
+<p>For your own platform, you don&rsquo;t need to implement full A2A to get value from this. Start simpler: a single <code>GET /agent/capabilities</code> endpoint that returns structured JSON describing what your API can do, grouped by the intent categories your users actually care about. If you&rsquo;re building a logistics platform, that&rsquo;s probably <code>shipment-management</code>, <code>carrier-selection</code>, <code>tracking</code>, and <code>billing</code>. Let the agent orient first, then act.</p>
+
+<p>The <a href="https://www.openapis.org/arazzo-specification">Arazzo specification</a> (v1.0.1, stable since January 2025) is worth looking at here too: it&rsquo;s an OpenAPI Initiative project under Linux Foundation governance that formalizes multi-step API workflows as machine-readable contracts with step ordering, success criteria, and conditional branching. Unlike <code>llms.txt</code>, which is a community convention with no major AI provider committed to reading it in production, Arazzo is a ratified specification with a Technical Steering Committee behind it. It lets you formally declare that &ldquo;to create a shipment, call <code>/carrier-quote</code> first, pass the <code>quote_id</code> to <code>/shipment/create</code>, then call <code>/shipment/{id}/label</code>&rdquo; — not as a prose tutorial, but as a contract an agent can execute deterministically.</p>
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ul>
+<li><p>Side effects belong in the spec, not the README. Use <code>x-side-effects</code>, <code>x-idempotent</code>, and <code>x-idempotency-key-required</code> extensions to make your OpenAPI contract honest about what an endpoint actually does. Agents work from what you give them — implicit knowledge doesn&rsquo;t transfer.</p></li>
+
+<li><p>Request-count rate limiting breaks under agent traffic. Agents fan out — forty legitimate calls in a second is normal agent behavior, not an attack. Move toward consumption-based quotas and expose quota state as structured data in your responses, not just <code>429</code> headers.</p></li>
+
+<li><p>Build a capability registry before you build agent integrations. A <code>GET /agent/capabilities</code> endpoint that groups your API by intent lets agents plan before they act. Stripe Projects does this at the platform level across 32 infrastructure partners; A2A Agent Cards do it at the inter-agent level. The pattern scales.</p></li>
+
+<li><p>A2A (backed by 150+ organizations under Linux Foundation governance) and Arazzo (v1.0.1, ratified by the OpenAPI Initiative) are production-ready specs. Build on them. <code>llms.txt</code> has no major AI provider committed to reading it in production — don&rsquo;t treat it as equivalent.</p></li>
+
+<li><p>Semantic richness helps human developers too. Side-effect annotations, structured capability registries, and Arazzo workflow contracts make the implicit knowledge in your system explicit. Teams that have done this report faster onboarding for human integrators as a side effect.</p></li>
+
+<li><p>Don&rsquo;t retrofit AI onto a human-centric API. Adding an AI shim on top of an API that wasn&rsquo;t designed for agent consumption doesn&rsquo;t fix the underlying problems — it buries them. Idempotency, side-effect transparency, and capability description need to be designed in, not bolted on.</p></li>
+</ul>
+
+<h2 id="where-do-you-start">Where Do You Start?</h2>
+
+<p>The gap between &ldquo;API that works fine when a human is calling it&rdquo; and &ldquo;API that an agent can use reliably&rdquo; is real, but it&rsquo;s not mysterious. The patterns exist. Idempotency keys, side-effect annotations, capability registries, consumption-based rate limiting: these are all implementable today, with specifications and production examples to reference.</p>
+
+<p>The hard part isn&rsquo;t the technology. It&rsquo;s the mindset shift. We&rsquo;ve spent a decade building APIs for developers, and good developer experience meant ergonomic REST conventions, clean error messages a human can read, and documentation a human will eventually find. Agent experience requires something more explicit, more formal, and more honest about what an endpoint actually does.</p>
+
+<p>Stripe figured this out. Twilio is in the middle of figuring it out. The platforms that get there first become the default building blocks in agentic workflows, not because of marketing, but because agents can actually use them without constant human supervision.</p>
+
+<h2 id="the-shift-that-s-already-happening">The Shift That&rsquo;s Already Happening</h2>
+
+<p>The dream at the start of this post wasn&rsquo;t really a nightmare — it was a diagnostic. A well-built API, years of production hardening, failing in four minutes because the consumer was an agent instead of a developer. The API didn&rsquo;t break. The assumptions broke.</p>
+
+<p>That&rsquo;s the actual shift: not the technology, but the contract. We built APIs assuming a human was always in the loop — reading errors, adapting, asking questions. Agents remove that assumption entirely. The implicit knowledge that lived in README files, Slack threads, and developer intuition now has to live in the spec.</p>
+
+<p>The good news is the work is defined. Idempotency keys, side-effect annotations, capability registries, consumption-based quotas — none of these require you to rebuild your backend. They require you to be more honest about what your backend already does. The platforms doing this now aren&rsquo;t just better for agents. They&rsquo;re better documented, easier to onboard onto, and more resilient to misuse in general.</p>
+
+<p>Agent-first isn&rsquo;t a replacement for human-first. It&rsquo;s a higher bar that benefits everyone.</p>
+
+<p>If you&rsquo;re building a platform today and you haven&rsquo;t thought through what it looks like from an agent&rsquo;s perspective, that&rsquo;s worth putting on your backlog now.</p>
+
+<p>Drop me a message if you&rsquo;ve run into specific integration pain points. I&rsquo;d genuinely like to hear what&rsquo;s breaking in your stack and what you&rsquo;ve tried. The more of us sharing real patterns (and real failures), the faster everyone figures this out.</p>
+  </div>
+  
+  <hr/>
+<h3 align="center">Monthly Newsletter</h3>
+<div>
+  <p><strong><i>If you like the content I share, you can sign up below for the <a href="https://rupakganguly.substack.com">free monthly newsletter</a>.</i></strong></p>
+</div>  
+<iframe src="https://rupakganguly.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/how-i-read-38-books-in-2025-simple-habits-anyone-can-start-today/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">How I Read 38 Books in 2025: Simple Habits Anyone Can Start Today</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/agent.ai-mcp-server-integration-with-claude-desktop-a-step-by-step-tutorial/">Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial</a>
+      
+      <time class="pull-right hidden-tablet">Mar 14 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/how-to-run-a-profitable-business-as-a-solo-founder-with-ai-as-your-cofounder/">How to Run a Profitable Business as a Solo Founder With AI as Your Co‑founder</a>
+      
+      <time class="pull-right hidden-tablet">Dec 24 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/comparing-agentic-commerce-protocol-vs-computer-use-and-browser-use/">Comparing Agentic Commerce Protocol vs Computer Use and Browser Use</a>
+      
+      <time class="pull-right hidden-tablet">Nov 01 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/agentic-commerce-protocol-the-future-of-ai-powered-transactions/">Agentic Commerce Protocol (ACP): The Future of AI-Powered Transactions</a>
+      
+      <time class="pull-right hidden-tablet">Oct 15 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/building-a-habit-tracker-app-with-lovable-ai-a-step-by-step-tutorial/">Building a Habit Tracker App With Lovable AI: A Step-by-Step Tutorial</a>
+      
+      <time class="pull-right hidden-tablet">Feb 14 &#39;25</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>
