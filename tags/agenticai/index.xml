@@ -6,10 +6,23 @@
     <description>Recent content in Agenticai on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2026 00:14:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 01:37:08 +0000</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/agenticai/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>I Stopped Writing My Newsletter. An AI System Does It Now.</title>
+      <link>https://rupakganguly.com/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/</link>
+      <pubDate>Wed, 22 Jul 2026 01:37:08 +0000</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/</guid>
+      <description>&lt;p&gt;Last Thursday I opened my laptop at 7am, and I saw that my scheduled AI newsletter workflow in Claude was completed while I was still in bed. It ran the &lt;code&gt;/ai-newsletter&lt;/code&gt; research and write steps, and the draft was waiting for me. I edited it, cut two items, added one I&amp;rsquo;d spotted on my own, and typed &lt;code&gt;/ai-newsletter publish all&lt;/code&gt;. The newsletter went to Notion, queued as a draft on Substack, generated a hero image, and created social posts for X, Facebook and LinkedIn. The whole thing, including my review time, took about 15 minutes.&lt;/p&gt;
+
+&lt;p&gt;Six months ago, that same workflow took me three to four hours. Every single week.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You</title>

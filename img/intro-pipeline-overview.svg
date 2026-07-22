@@ -1,0 +1,294 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+
+  <!-- Background: light warm grey -->
+  <rect width="1200" height="560" fill="#f4f5f7" rx="16"/>
+
+  <defs>
+    <!-- Subtle dot grid -->
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#d1d5db"/>
+    </pattern>
+    <!--
+      Arrow marker: refX=9 so tip lands at line x2.
+      Path tip is at x=9, base at x=0, midpoint y=4.
+      Color: light blue #7dd3fc
+    -->
+    <marker id="arrow" markerWidth="10" markerHeight="9" refX="9" refY="4" orient="auto">
+      <path d="M0,0.5 L0,7.5 L9,4 Z" fill="#7dd3fc"/>
+    </marker>
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+    <!-- Human review shadow -->
+    <filter id="shadow-review" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#f59e0b30"/>
+    </filter>
+  </defs>
+
+  <!-- Dot grid overlay -->
+  <rect width="1200" height="560" fill="url(#dots)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="16" font-weight="800" fill="#4b5563" letter-spacing="4">THE AI NEWSLETTER PIPELINE</text>
+
+  <!--
+    LAYOUT CONSTANTS
+    Left padding: 61px, right padding: 61px
+    Card width=163, gap=20
+    6×163 + 5×20 = 978 + 100 = 1078; left=(1200-1078)/2=61
+    Card x positions: 61,  244,  427,  610,  793,  976
+    Card right edges: 224, 407,  590,  773,  956, 1139
+    Card centers:     142, 325,  508,  691,  874, 1057
+    Cards: y=84, height=230, bottom=314
+    Arrow mid-y = 84 + 115 = 199
+    Arrows: x1=card_right+4, x2=next_card_left-4 (12px clearance for 9px arrowhead)
+      1→2: x1=228, x2=240
+      2→3: x1=411, x2=423
+      3→4: x1=594, x2=606
+      4→5: x1=777, x2=789
+      5→6: x1=960, x2=972
+    Sub-boxes under 4 Agents (center=508):
+      4 boxes w=74 h=88 gap=10, total=4×74+3×10=326, x_start=508-163=345
+      Box x: 345, 429, 513, 597; centers: 382, 466, 550, 634
+  -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- STAGE 1: DIRECTIVE -->
+  <!-- ══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="61" y="84" width="163" height="230" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="61" y="84" width="163" height="5" rx="5" fill="#4f6ef7"/>
+    <circle cx="142" cy="152" r="32" fill="#eef0fe" stroke="#4f6ef7" stroke-width="1.5"/>
+    <!-- Document icon — centered on cx=142, cy=152; icon 21×27 → origin (131.5,138.5) -->
+    <g transform="translate(131.5,138.5)" fill="none" stroke="#4f6ef7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="0" width="21" height="27" rx="3" fill="#eef0fe" stroke="#4f6ef7"/>
+      <line x1="4" y1="8"  x2="17" y2="8"/>
+      <line x1="4" y1="13" x2="17" y2="13"/>
+      <line x1="4" y1="18" x2="13" y2="18"/>
+    </g>
+    <text x="142" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" letter-spacing="1">DIRECTIVE</text>
+    <text x="142" y="222" text-anchor="middle" font-size="11" fill="#6b7280">Employee manual</text>
+    <text x="142" y="237" text-anchor="middle" font-size="11" fill="#6b7280">in Markdown</text>
+    <text x="142" y="252" text-anchor="middle" font-size="11" fill="#6b7280">Your voice + rules</text>
+    <rect x="79" y="298" width="126" height="16" rx="8" fill="#eef0fe"/>
+    <text x="142" y="310" text-anchor="middle" font-size="9" font-weight="600" fill="#4f6ef7" letter-spacing="1">LAYER 1 · SOP</text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <line x1="228" y1="199" x2="240" y2="199" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- STAGE 2: SKILL -->
+  <!-- ══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="244" y="84" width="163" height="230" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="244" y="84" width="163" height="5" rx="5" fill="#7c3aed"/>
+    <circle cx="325" cy="152" r="32" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <!-- Terminal icon — centered on cx=325, cy=152; icon 24×24 → origin (313,140) -->
+    <g transform="translate(313,140)" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round">
+      <rect x="0" y="0" width="24" height="24" rx="4" fill="#f5f3ff" stroke="#7c3aed"/>
+      <polyline points="4,7 10,12 4,17" stroke-linejoin="round"/>
+      <line x1="13" y1="17" x2="20" y2="17"/>
+    </g>
+    <text x="325" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" letter-spacing="1">SKILL</text>
+    <text x="325" y="222" text-anchor="middle" font-size="11" fill="#6b7280">One command</text>
+    <text x="325" y="237" text-anchor="middle" font-size="11" fill="#6b7280">routes the entire</text>
+    <text x="325" y="252" text-anchor="middle" font-size="11" fill="#6b7280">pipeline</text>
+    <rect x="262" y="298" width="126" height="16" rx="8" fill="#f5f3ff"/>
+    <text x="325" y="310" text-anchor="middle" font-size="9" font-weight="600" fill="#7c3aed" letter-spacing="1">LAYER 2 · /ai-newsletter</text>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <line x1="411" y1="199" x2="423" y2="199" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- STAGE 3: 4 AGENTS -->
+  <!-- ══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="427" y="84" width="163" height="230" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="427" y="84" width="163" height="5" rx="5" fill="#059669"/>
+    <circle cx="508" cy="148" r="30" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+    <!-- 2x2 grid icon — centered on cx=508, cy=148; grid 25×25 → origin (495.5,135.5) -->
+    <g transform="translate(495.5,135.5)">
+      <rect x="0"  y="0"  width="11" height="11" rx="2" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+      <rect x="14" y="0"  width="11" height="11" rx="2" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+      <rect x="0"  y="14" width="11" height="11" rx="2" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+      <rect x="14" y="14" width="11" height="11" rx="2" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+    </g>
+    <text x="508" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" letter-spacing="1">4 AGENTS</text>
+    <text x="508" y="218" text-anchor="middle" font-size="11" fill="#6b7280">Specialist pipeline</text>
+    <text x="508" y="233" text-anchor="middle" font-size="11" fill="#6b7280">each with one job</text>
+    <rect x="445" y="298" width="126" height="16" rx="8" fill="#ecfdf5"/>
+    <text x="508" y="310" text-anchor="middle" font-size="9" font-weight="600" fill="#059669" letter-spacing="1">LAYER 3 · EXECUTION</text>
+  </g>
+
+  <!--
+    Sub-box layout under 4 Agents (center=508):
+    4×74 + 3×10 = 326, x_start=508-163=345
+    Box x: 345, 429, 513, 597
+    Box centers: 382, 466, 550, 634
+    Spine y=342, sub-box top=352
+  -->
+  <!-- Vertical dashed connector from card bottom to spine -->
+  <line x1="508" y1="316" x2="508" y2="362" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Horizontal spine -->
+  <line x1="382" y1="362" x2="634" y2="362" stroke="#059669" stroke-width="1.5"/>
+  <!-- Drop lines -->
+  <line x1="382" y1="362" x2="382" y2="372" stroke="#059669" stroke-width="1.5"/>
+  <line x1="466" y1="362" x2="466" y2="372" stroke="#059669" stroke-width="1.5"/>
+  <line x1="550" y1="362" x2="550" y2="372" stroke="#059669" stroke-width="1.5"/>
+  <line x1="634" y1="362" x2="634" y2="372" stroke="#059669" stroke-width="1.5"/>
+
+  <!-- Sub-box 1: Researcher (center-x=382) -->
+  <g filter="url(#shadow)">
+    <rect x="345" y="372" width="74" height="88" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect x="345" y="372" width="74" height="5" rx="4" fill="#059669"/>
+    <circle cx="382" cy="394" r="10" fill="none" stroke="#059669" stroke-width="1.6"/>
+    <line x1="389" y1="401" x2="396" y2="408" stroke="#059669" stroke-width="1.6" stroke-linecap="round"/>
+    <text x="382" y="427" text-anchor="middle" font-size="8.5" font-weight="700" fill="#059669">RESEARCHER</text>
+    <text x="382" y="441" text-anchor="middle" font-size="8" fill="#6b7280">Gathers AI news</text>
+    <text x="382" y="453" text-anchor="middle" font-size="8" fill="#6b7280">from 15+ sources</text>
+  </g>
+
+  <!-- Sub-box 2: Writer (center-x=466) -->
+  <g filter="url(#shadow)">
+    <rect x="429" y="372" width="74" height="88" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect x="429" y="372" width="74" height="5" rx="4" fill="#059669"/>
+    <!-- Pen icon centered on (466,394); 19×19 → translate(456.5,384.5) -->
+    <g transform="translate(456.5,384.5)" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12,0 L19,7 L7,19 L0,19 L0,12 Z"/>
+      <line x1="10" y1="2" x2="17" y2="9"/>
+    </g>
+    <text x="466" y="427" text-anchor="middle" font-size="8.5" font-weight="700" fill="#059669">WRITER</text>
+    <text x="466" y="441" text-anchor="middle" font-size="8" fill="#6b7280">Formats draft</text>
+    <text x="466" y="453" text-anchor="middle" font-size="8" fill="#6b7280">with placeholders</text>
+  </g>
+
+  <!-- Sub-box 3: Publisher (center-x=550) -->
+  <g filter="url(#shadow)">
+    <rect x="513" y="372" width="74" height="88" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect x="513" y="372" width="74" height="5" rx="4" fill="#059669"/>
+    <!-- Upload icon centered on (550,394); 18×20 → translate(541,384) -->
+    <g transform="translate(541,384)" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9,17 9,2 3,8 9,2 15,8"/>
+      <line x1="0" y1="20" x2="18" y2="20"/>
+    </g>
+    <text x="550" y="427" text-anchor="middle" font-size="8.5" font-weight="700" fill="#059669">PUBLISHER</text>
+    <text x="550" y="441" text-anchor="middle" font-size="8" fill="#6b7280">Publishes to</text>
+    <text x="550" y="453" text-anchor="middle" font-size="8" fill="#6b7280">all destinations</text>
+  </g>
+
+  <!-- Sub-box 4: Hero Image (center-x=634) -->
+  <g filter="url(#shadow)">
+    <rect x="597" y="372" width="74" height="88" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect x="597" y="372" width="74" height="5" rx="4" fill="#059669"/>
+    <!-- Landscape icon centered on (634,394); 24×19 → translate(622,384.5) -->
+    <g transform="translate(622,384.5)" fill="none" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="0" width="24" height="19" rx="3"/>
+      <circle cx="6" cy="6" r="2.5"/>
+      <polyline points="0,14 7,9 13,13 18,9 24,14"/>
+    </g>
+    <text x="634" y="427" text-anchor="middle" font-size="8.5" font-weight="700" fill="#059669">HERO IMAGE</text>
+    <text x="634" y="441" text-anchor="middle" font-size="8" fill="#6b7280">Cover image</text>
+    <text x="634" y="453" text-anchor="middle" font-size="8" fill="#6b7280">generator</text>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <line x1="594" y1="199" x2="606" y2="199" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- STAGE 4: HUMAN REVIEW (elevated, amber) -->
+  <!-- ══════════════════════════════════════════ -->
+  <g filter="url(#shadow-review)">
+    <rect x="610" y="74" width="163" height="250" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="610" y="74" width="163" height="5" rx="5" fill="#f59e0b"/>
+    <!-- YOU badge -->
+    <rect x="745" y="82" width="28" height="16" rx="8" fill="#f59e0b"/>
+    <text x="759" y="94" text-anchor="middle" font-size="8" font-weight="700" fill="#ffffff" letter-spacing="0.5">YOU</text>
+    <!-- Eye icon circle -->
+    <circle cx="691" cy="152" r="32" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <!-- Eye icon — centered on cx=691, cy=152; path spans 28×16 → origin (677,144) -->
+    <g transform="translate(677,144)" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round">
+      <path d="M0,8 C5,0 23,0 28,8 C23,16 5,16 0,8 Z"/>
+      <circle cx="14" cy="8" r="4" fill="#fef3c7" stroke="#f59e0b"/>
+    </g>
+    <text x="691" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e" letter-spacing="1">HUMAN</text>
+    <text x="691" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e" letter-spacing="1">REVIEW</text>
+    <text x="691" y="242" text-anchor="middle" font-size="11" fill="#78350f">Edit · Cut · Add</text>
+    <text x="691" y="257" text-anchor="middle" font-size="11" fill="#78350f">You stay in</text>
+    <text x="691" y="272" text-anchor="middle" font-size="11" fill="#78350f">control.</text>
+    <rect x="628" y="306" width="126" height="16" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="691" y="318" text-anchor="middle" font-size="9" font-weight="700" fill="#d97706" letter-spacing="1">INTENTIONAL PAUSE</text>
+  </g>
+
+  <!-- Arrow 4→5 -->
+  <line x1="777" y1="199" x2="789" y2="199" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- STAGE 5: PUBLISH -->
+  <!-- ══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="793" y="84" width="163" height="230" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="793" y="84" width="163" height="5" rx="5" fill="#0891b2"/>
+    <circle cx="874" cy="152" r="32" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+    <!-- Upload icon — centered on cx=874, cy=152; icon 20×24 → origin (864,140) -->
+    <g transform="translate(864,140)" fill="none" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="10,14 10,1 4,7 10,1 16,7"/>
+      <rect x="0" y="18" width="20" height="4" rx="2" fill="#ecfeff" stroke="#0891b2"/>
+    </g>
+    <text x="874" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" letter-spacing="1">PUBLISH</text>
+    <text x="874" y="222" text-anchor="middle" font-size="11" fill="#6b7280">Notion · Substack</text>
+    <text x="874" y="237" text-anchor="middle" font-size="11" fill="#6b7280">Disk · Hero</text>
+    <text x="874" y="252" text-anchor="middle" font-size="11" fill="#6b7280">Image</text>
+    <rect x="811" y="298" width="126" height="16" rx="8" fill="#ecfeff"/>
+    <text x="874" y="310" text-anchor="middle" font-size="9" font-weight="600" fill="#0891b2" letter-spacing="1">LAYER 3 · OUTPUT</text>
+  </g>
+
+  <!-- Arrow 5→6 -->
+  <line x1="960" y1="199" x2="972" y2="199" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- STAGE 6: SOCIAL POSTS -->
+  <!-- ══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="976" y="84" width="163" height="230" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="976" y="84" width="163" height="5" rx="5" fill="#db2777"/>
+    <circle cx="1057" cy="152" r="32" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
+    <!-- Share icon — centered on cx=1057, cy=152; spans 29×29 → origin (1042.5,137.5) -->
+    <g transform="translate(1042.5,137.5)" fill="none" stroke="#db2777" stroke-width="1.8" stroke-linecap="round">
+      <circle cx="24" cy="4"  r="4.5" fill="#fdf2f8" stroke="#db2777"/>
+      <circle cx="4"  cy="14" r="4.5" fill="#fdf2f8" stroke="#db2777"/>
+      <circle cx="24" cy="24" r="4.5" fill="#fdf2f8" stroke="#db2777"/>
+      <line x1="8.5"  y1="11.5" x2="19.5" y2="6.5"/>
+      <line x1="8.5"  y1="16.5" x2="19.5" y2="21.5"/>
+    </g>
+    <text x="1057" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" letter-spacing="1">SOCIAL</text>
+    <text x="1057" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" letter-spacing="1">POSTS</text>
+    <text x="1057" y="240" text-anchor="middle" font-size="11" fill="#6b7280">X · LinkedIn</text>
+    <text x="1057" y="255" text-anchor="middle" font-size="11" fill="#6b7280">Facebook</text>
+    <rect x="994" y="298" width="126" height="16" rx="8" fill="#fdf2f8"/>
+    <text x="1057" y="310" text-anchor="middle" font-size="9" font-weight="600" fill="#db2777" letter-spacing="1">3 VARIATIONS EACH</text>
+  </g>
+
+  <!-- ─── SUBLABELS directly under cards (y=346, 16px below badge bottom y=330) ─── -->
+  <text x="142"  y="346" text-anchor="middle" font-size="9" font-weight="600" fill="#4f6ef7" letter-spacing="1.5">write_ai_news_newsletter.md</text>
+  <text x="325"  y="346" text-anchor="middle" font-size="9" font-weight="600" fill="#7c3aed" letter-spacing="1.5">/ai-newsletter</text>
+  <text x="508"  y="346" text-anchor="middle" font-size="9" font-weight="600" fill="#059669" letter-spacing="1.5">researcher · writer · publisher · hero</text>
+  <text x="691"  y="346" text-anchor="middle" font-size="9" font-weight="600" fill="#d97706" letter-spacing="1.5">editorial control</text>
+  <text x="874"  y="346" text-anchor="middle" font-size="9" font-weight="600" fill="#0891b2" letter-spacing="1.5">notion · substack · disk</text>
+  <text x="1057" y="346" text-anchor="middle" font-size="9" font-weight="600" fill="#db2777" letter-spacing="1.5">/social-posts</text>
+
+  <!-- ─── BOTTOM SECTION ─── -->
+  <path d="M0,476 L1200,476 L1200,544 Q1200,560 1184,560 L16,560 Q0,560 0,544 Z" fill="#e8eaf0"/>
+  <line x1="0" y1="476" x2="1200" y2="476" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <!-- Core principle quote -->
+  <text x="600" y="508" text-anchor="middle" font-size="13" font-weight="700" fill="#374151" font-style="italic">
+    "Prompts are the code. The directive is the SOP. The agents are your specialists. The human has the control."
+  </text>
+
+  <!-- Watermark -->
+  <text x="600" y="542" text-anchor="middle" font-size="13" font-weight="700" fill="#9ca3af" letter-spacing="1">rupakganguly.com</text>
+
+</svg>
