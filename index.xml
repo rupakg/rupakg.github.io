@@ -6,10 +6,27 @@
     <description>Recent content on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jul 2026 01:37:08 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 14:14:20 +0000</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Blueprint: Writing a Directive That Acts Like an Employee Manual</title>
+      <link>https://rupakganguly.com/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/</link>
+      <pubDate>Wed, 29 Jul 2026 14:14:20 +0000</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/</guid>
+      <description>&lt;p&gt;Six months ago, I tried the obvious thing: I pasted my newsletter template into ChatGPT and asked it to research and write the week&amp;rsquo;s edition.&lt;/p&gt;
+
+&lt;p&gt;It gave me something that looked like a newsletter. Professional formatting. Five sections. Even a few bullet points with numbers in them. But it was wrong in ways that were subtle and maddening. It included stories from two weeks ago. It repeated an item I&amp;rsquo;d covered in the previous edition. The summary and the bullets said the same thing in different words. The tone was off. It didn&amp;rsquo;t sound like me.&lt;/p&gt;
+
+&lt;p&gt;I fixed it manually. And the next week, I did the same thing again. And the week after that.&lt;/p&gt;
+
+&lt;p&gt;The problem wasn&amp;rsquo;t the model. The problem was that I was treating a repeating process like a one-time prompt.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>I Stopped Writing My Newsletter. An AI System Does It Now.</title>

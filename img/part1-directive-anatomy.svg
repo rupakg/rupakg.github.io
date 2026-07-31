@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#f4f5f7" rx="16"/>
+
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#d1d5db"/>
+    </pattern>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+  <!-- Dot grid -->
+  <rect width="1200" height="600" fill="url(#dots)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="44" text-anchor="middle" font-size="16" font-weight="800" fill="#4b5563" letter-spacing="4">ANATOMY OF A DIRECTIVE</text>
+
+  <!--
+    LAYOUT
+    Left: Document card x=52, y=64, w=380, h=432, right=432, center-x=242
+    Right: Callout cards x=540, w=600, right=1140
+    Connector lines: from right edge of doc card (x=432) to left edge of callout (x=540)
+    Each section in the doc card at specific y positions.
+    Callout y positions align with connector mid-y.
+
+    Doc card section y-positions (section label top):
+      Goal:         y=112
+      Inputs:       y=164
+      No Repeat:    y=212
+      Duplication:  y=264
+      Date-range:   y=316
+      Edge cases:   y=368
+      Quality chk:  y=420
+
+    Callout card heights: 48px each, with 14px gap between
+    Callout y positions (card top): matched to connector y − 24
+      Goal connector mid-y:        128 → callout y=68,   bottom=116
+      Inputs connector mid-y:      180 → callout y=120,  bottom=168
+      No Repeat connector mid-y:   228 → callout y=176,  bottom=224
+      Duplication connector mid-y: 276 → callout y=234,  bottom=282
+      Date-range connector mid-y:  332 → callout y=292,  bottom=340
+      Edge cases connector mid-y:  378 → callout y=350,  bottom=398
+      Quality chk connector mid-y: 436 → callout y=406,  bottom=454
+  -->
+
+  <!-- ════════════════════════════════════ -->
+  <!-- DOCUMENT CARD (left column)         -->
+  <!-- ════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="52" y="64" width="380" height="432" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <!-- Blue top accent bar -->
+    <rect x="52" y="64" width="380" height="5" rx="5" fill="#4f6ef7"/>
+    <!-- File label tab -->
+    <rect x="52" y="74" width="220" height="22" rx="0" fill="#eef0fe"/>
+    <text x="64" y="90" font-size="10" font-weight="700" fill="#4f6ef7" letter-spacing="0.5">write_ai_news_newsletter.md</text>
+
+    <!-- Section 1: Goal -->
+    <rect x="68" y="102" width="348" height="46" rx="6" fill="#f8f9ff" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="80" y="120" font-size="10" font-weight="700" fill="#4f6ef7">## Goal</text>
+    <text x="80" y="136" font-size="9.5" fill="#6b7280">Create a weekly newsletter covering AI news,</text>
+    <text x="80" y="149" font-size="9.5" fill="#6b7280">curated and synthesized into actionable insights.</text>
+
+    <!-- Section 2: Inputs -->
+    <rect x="68" y="154" width="348" height="46" rx="6" fill="#f8f9ff" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="80" y="172" font-size="10" font-weight="700" fill="#4f6ef7">## Inputs</text>
+    <text x="80" y="187" font-size="9.5" fill="#6b7280">Friday Date · Publish Day · Date range</text>
+    <text x="80" y="200" font-size="9.5" fill="#6b7280">Saturday–Friday of the previous week.</text>
+
+    <!-- Section 3: No Repeat Rule -->
+    <rect x="68" y="206" width="348" height="46" rx="6" fill="#f8f9ff" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="80" y="224" font-size="10" font-weight="700" fill="#4f6ef7">## No Repeat Rule</text>
+    <text x="80" y="239" font-size="9.5" fill="#6b7280">Check .tmp/newsletter-publisher/ first.</text>
+    <text x="80" y="252" font-size="9.5" fill="#6b7280">Never repeat last week's headlines.</text>
+
+    <!-- Section 4: Duplication Rule -->
+    <rect x="68" y="258" width="348" height="46" rx="6" fill="#f8f9ff" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="80" y="276" font-size="10" font-weight="700" fill="#4f6ef7">## Duplication Rule</text>
+    <text x="80" y="291" font-size="9.5" fill="#6b7280">Summary = "so what." Bullets = evidence.</text>
+    <text x="80" y="304" font-size="9.5" fill="#6b7280">They must not say the same thing twice.</text>
+
+    <!-- Section 5: Date-Range Enforcement -->
+    <rect x="68" y="310" width="348" height="46" rx="6" fill="#f8f9ff" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="80" y="328" font-size="10" font-weight="700" fill="#4f6ef7">## Date-Range Enforcement</text>
+    <text x="80" y="343" font-size="9.5" fill="#6b7280">ALL items must be published Sat–Fri.</text>
+    <text x="80" y="356" font-size="9.5" fill="#6b7280">Outside that range: excluded. Hard rule.</text>
+
+    <!-- Section 6: Edge Cases -->
+    <rect x="68" y="362" width="348" height="46" rx="6" fill="#f8f9ff" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="80" y="380" font-size="10" font-weight="700" fill="#4f6ef7">## Edge Cases</text>
+    <text x="80" y="395" font-size="9.5" fill="#6b7280">Slow news week · Breaking news mid-week</text>
+    <text x="80" y="408" font-size="9.5" fill="#6b7280">Story spans two categories · Slow sources</text>
+
+    <!-- Section 7: Quality Checklist -->
+    <rect x="68" y="414" width="348" height="46" rx="6" fill="#eef0fe" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="80" y="432" font-size="10" font-weight="700" fill="#4f6ef7">## Quality Checklist</text>
+    <text x="80" y="447" font-size="9.5" fill="#6b7280">Agent reads before marking task complete.</text>
+    <text x="80" y="460" font-size="9.5" fill="#6b7280">Gates: date range · no repeats · no duplication</text>
+  </g>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- CONNECTOR LINES + CALLOUT CARDS     -->
+  <!-- ════════════════════════════════════ -->
+
+  <!-- Callout 1: Goal — doc section mid-y=125, callout mid-y=125 -->
+  <line x1="432" y1="125" x2="540" y2="125" stroke="#4f6ef7" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <g filter="url(#shadow)">
+    <rect x="540" y="100" width="608" height="50" rx="8" fill="#ffffff" stroke="#4f6ef7" stroke-width="1.5"/>
+    <rect x="540" y="100" width="608" height="4" rx="4" fill="#4f6ef7"/>
+    <text x="556" y="120" font-size="11" font-weight="700" fill="#4f6ef7">GOAL</text>
+    <text x="640" y="120" font-size="11" fill="#374151">One sentence. What does this produce, and for whom?</text>
+    <text x="556" y="138" font-size="10" fill="#6b7280">Anchors everything. If the agent drifts, the goal pulls it back.</text>
+  </g>
+
+  <!-- Callout 2: Inputs — doc section mid-y=177, callout mid-y=177 -->
+  <line x1="432" y1="177" x2="540" y2="177" stroke="#4f6ef7" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <g filter="url(#shadow)">
+    <rect x="540" y="152" width="608" height="50" rx="8" fill="#ffffff" stroke="#4f6ef7" stroke-width="1.5"/>
+    <rect x="540" y="152" width="608" height="4" rx="4" fill="#4f6ef7"/>
+    <text x="556" y="172" font-size="11" font-weight="700" fill="#4f6ef7">INPUTS</text>
+    <text x="640" y="172" font-size="11" fill="#374151">Be specific. "A date" → "the Friday of the target week."</text>
+    <text x="556" y="190" font-size="10" fill="#6b7280">Vague inputs produce inconsistent outputs. Precision here costs nothing.</text>
+  </g>
+
+  <!-- Callout 3: No Repeat — doc section mid-y=229, callout mid-y=229 -->
+  <line x1="432" y1="229" x2="540" y2="229" stroke="#059669" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <g filter="url(#shadow)">
+    <rect x="540" y="204" width="608" height="50" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect x="540" y="204" width="608" height="4" rx="4" fill="#059669"/>
+    <text x="556" y="224" font-size="11" font-weight="700" fill="#059669">NO REPEAT RULE</text>
+    <text x="680" y="224" font-size="11" fill="#374151">Researcher checks last week's newsletter first.</text>
+    <text x="556" y="242" font-size="10" fill="#6b7280">Added after duplicate items slipped through. Now enforced on every run.</text>
+  </g>
+
+  <!-- Callout 4: Duplication — doc section mid-y=281, callout mid-y=281 -->
+  <line x1="432" y1="281" x2="540" y2="281" stroke="#059669" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <g filter="url(#shadow)">
+    <rect x="540" y="256" width="608" height="50" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect x="540" y="256" width="608" height="4" rx="4" fill="#059669"/>
+    <text x="556" y="276" font-size="11" font-weight="700" fill="#059669">DUPLICATION RULE</text>
+    <text x="690" y="276" font-size="11" fill="#374151">Summary ≠ bullets. Explicit with good/bad examples.</text>
+    <text x="556" y="294" font-size="10" fill="#6b7280">Without this, LLMs restate the summary in bullet form by default.</text>
+  </g>
+
+  <!-- Callout 5: Date-Range — doc section mid-y=333, callout mid-y=333 -->
+  <line x1="432" y1="333" x2="540" y2="333" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <g filter="url(#shadow)">
+    <rect x="540" y="308" width="608" height="50" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="540" y="308" width="608" height="4" rx="4" fill="#f59e0b"/>
+    <text x="556" y="328" font-size="11" font-weight="700" fill="#b45309">DATE-RANGE ENFORCEMENT</text>
+    <text x="730" y="328" font-size="11" fill="#374151">Hard exclusion, not a preference.</text>
+    <text x="556" y="346" font-size="10" fill="#6b7280">Without it, researcher includes articles from 3 weeks ago. Happens every time.</text>
+  </g>
+
+  <!-- Callout 6: Edge Cases — doc section mid-y=385, callout mid-y=385 -->
+  <line x1="432" y1="385" x2="540" y2="385" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <g filter="url(#shadow)">
+    <rect x="540" y="360" width="608" height="50" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="540" y="360" width="608" height="4" rx="4" fill="#f59e0b"/>
+    <text x="556" y="380" font-size="11" font-weight="700" fill="#b45309">EDGE CASES</text>
+    <text x="640" y="380" font-size="11" fill="#374151">Document the non-obvious. Only add when they happen.</text>
+    <text x="556" y="398" font-size="10" fill="#6b7280">Slow week, breaking news, overlapping categories — each one from a real incident.</text>
+  </g>
+
+  <!-- Callout 7: Quality Checklist — doc section mid-y=437, callout mid-y=437 -->
+  <line x1="432" y1="437" x2="540" y2="437" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <g filter="url(#shadow)">
+    <rect x="540" y="412" width="608" height="50" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <rect x="540" y="412" width="608" height="4" rx="4" fill="#7c3aed"/>
+    <text x="556" y="432" font-size="11" font-weight="700" fill="#7c3aed">QUALITY CHECKLIST</text>
+    <text x="690" y="432" font-size="11" fill="#374151">The last gate before the agent calls it done.</text>
+    <text x="556" y="450" font-size="10" fill="#6b7280">Forces the agent to re-verify date range, duplication, and no-repeat on every run.</text>
+  </g>
+
+  <!-- ─── FOOTER ─── -->
+  <path d="M0,510 L1200,510 L1200,584 Q1200,600 1184,600 L16,600 Q0,600 0,584 Z" fill="#e8eaf0"/>
+  <line x1="0" y1="510" x2="1200" y2="510" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <!-- Pull quote -->
+  <text x="600" y="546" text-anchor="middle" font-size="13" font-weight="700" fill="#374151" font-style="italic">
+    "If you can't write the directive, you're not ready to automate the task."
+  </text>
+
+  <!-- Watermark -->
+  <text x="600" y="582" text-anchor="middle" font-size="13" font-weight="700" fill="#9ca3af" letter-spacing="1">rupakganguly.com</text>
+
+</svg>

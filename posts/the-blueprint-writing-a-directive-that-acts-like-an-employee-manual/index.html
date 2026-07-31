@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Why &#39;just ask ChatGPT&#39; fails for repeating workflows, and how a Markdown directive — a permanent employee manual for your AI agents — turns a probabilistic model into a reliable, self-improving system. Part 2 of the AI newsletter automation series.">
+    
+        
+        <meta name="keywords" content="AI, ai-development, AgenticAI, AIWorkflow, Agents, Claude, ai-tools, agent-first">
+    
+    
+
+<title>The Blueprint: Writing a Directive That Acts Like an Employee Manual • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Blueprint: Writing a Directive That Acts Like an Employee Manual"/>
+<meta name="twitter:description" content="Why &#39;just ask ChatGPT&#39; fails for repeating workflows, and how a Markdown directive — a permanent employee manual for your AI agents — turns a probabilistic model into a reliable, self-improving system. Part 2 of the AI newsletter automation series."/>
+
+<meta property="og:title" content="The Blueprint: Writing a Directive That Acts Like an Employee Manual" />
+<meta property="og:description" content="Why &#39;just ask ChatGPT&#39; fails for repeating workflows, and how a Markdown directive — a permanent employee manual for your AI agents — turns a probabilistic model into a reliable, self-improving system. Part 2 of the AI newsletter automation series." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/" /><meta property="article:published_time" content="2026-07-29T14:14:20&#43;00:00"/>
+<meta property="article:modified_time" content="2026-07-29T14:14:20&#43;00:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    
+    <div class="sidebar-about">
+  <span class="site__title">
+    <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+  </span>
+  
+  
+  
+  <div class="author-image">
+    <img src="https://rupakganguly.com//img/rg_mug_conf.png" alt="Rupak Ganguly" class="img--circle img--headshot element--center">
+  </div>
+  
+  <p class="site__description">
+     opinions, experiences &amp; writings... 
+  </p>
+</div>
+
+    
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/glossary/">
+						<span>Glossaries</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:biz@rupakganguly.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <div>
+      
+      <p>
+  <iframe src="https://rupakganguly.substack.com/embed" width="100%" height="150" style="border:1px solid #6a9fb5; background:#6a9fb5;" frameborder="0" scrolling="no"></iframe>
+</p>
+    </div>
+    
+    <div class="copyright">
+  &copy; 2026 Rupak Ganguly.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>The Blueprint: Writing a Directive That Acts Like an Employee Manual</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 29, 2026
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/ai">AI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/aiworkflow">AIWORKFLOW</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agenticai">AGENTICAI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agents">AGENTS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/ai">ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-development">ai-development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agenticai">agenticai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/aiworkflow">aiworkflow</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agents">agents</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-tools">ai-tools</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 10 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>Six months ago, I tried the obvious thing: I pasted my newsletter template into ChatGPT and asked it to research and write the week&rsquo;s edition.</p>
+
+<p>It gave me something that looked like a newsletter. Professional formatting. Five sections. Even a few bullet points with numbers in them. But it was wrong in ways that were subtle and maddening. It included stories from two weeks ago. It repeated an item I&rsquo;d covered in the previous edition. The summary and the bullets said the same thing in different words. The tone was off. It didn&rsquo;t sound like me.</p>
+
+<p>I fixed it manually. And the next week, I did the same thing again. And the week after that.</p>
+
+<p>The problem wasn&rsquo;t the model. The problem was that I was treating a repeating process like a one-time prompt.</p>
+
+<p></p>
+
+<blockquote>
+<p><em>If you missed the intro post <a href="https://rupakganguly.com/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/">I Stopped Writing My Newsletter. An AI System Does It Now.</a>, that&rsquo;s the right place to start. It covers the full system at a high level and explains why I built it the way I did.</em></p>
+</blockquote>
+
+<hr />
+
+<h2 id="why-just-ask-chatgpt-fails-for-repeating-workflows">Why &ldquo;Just Ask ChatGPT&rdquo; Fails for Repeating Workflows</h2>
+
+<p>There&rsquo;s a number I keep coming back to: 90% accuracy per step compounds to 59% success over five steps.</p>
+
+<p>That&rsquo;s not a knock on LLMs. That&rsquo;s the math of any probabilistic system running without guardrails. If a model gets a fact right 90% of the time, strings five of those judgments together and you&rsquo;ve got barely coin-flip odds that the output is correct end-to-end.</p>
+
+<p>LLMs are probabilistic. They&rsquo;re excellent at judgment calls, synthesis, and language. But business logic is deterministic. It has rules. Rules like: &ldquo;all news items must have a published date within Saturday to Friday of the target week.&rdquo; Or: &ldquo;never repeat a headline that ran in last week&rsquo;s newsletter.&rdquo; Or: &ldquo;the summary and bullet points cannot say the same thing twice.&rdquo;</p>
+
+<p>These aren&rsquo;t style preferences. They&rsquo;re quality gates. And quality gates need to be written down somewhere permanent, enforced every single run, not just when they happen to fit inside a prompt you typed this Tuesday.</p>
+
+<p>The mismatch between probabilistic AI and deterministic business logic is the real design problem. Not the model. Not the tools. The architecture.</p>
+
+<hr />
+
+<h2 id="the-3-layer-architecture-that-actually-holds-up">The 3-Layer Architecture That Actually Holds Up</h2>
+
+<p>The system I built to run my newsletter rests on three layers. Each one has a single job.</p>
+
+<p><strong>Layer 1 is the Directive.</strong> This is a Markdown file that lives in <code>directives/write_ai_news_newsletter.md</code>. Think of it as the permanent employee manual for your newsletter. It defines the goal, the inputs, the newsletter structure, the tone and voice guidelines, the sources to check, the sources to exclude, what to do during a slow news week, what to do when a story straddles two categories. It doesn&rsquo;t change week to week. It&rsquo;s the standing instruction set.</p>
+
+<p><strong>Layer 2 is Orchestration.</strong> This is Claude acting as the intelligent decision-maker. Not doing the work. Making routing decisions. Reading the directive, calling the right agents in the right order, handling errors, checking for edge cases. Claude&rsquo;s job at this layer is judgment, not execution. And because judgment is exactly what probabilistic systems are good at, this layer works.</p>
+
+<p><strong>Layer 3 is Execution.</strong> The actual work gets done by Claude subagents and Python scripts. Subagents handle AI-powered tasks: research, writing, publishing. Python scripts handle deterministic operations: date calculations, Notion API calls, hero image compositing. The split is intentional. AI does what AI is good at. Deterministic code does what deterministic code is good at.</p>
+
+<p>The insight that ties it together: <strong>push complexity into deterministic code so Claude focuses on decision-making.</strong> Every rule you move out of a runtime prompt and into a directive or a script is a rule that will be enforced the same way every single time.</p>
+
+<p><img src="/img/part1-3layer-architecture.svg" alt="The 3-Layer Architecture" /></p>
+
+<p><em>[The 3-Layer Architecture]</em></p>
+
+<hr />
+
+<h2 id="deep-dive-what-s-actually-in-the-newsletter-directive">Deep Dive: What&rsquo;s Actually in the Newsletter Directive</h2>
+
+<p>The directive file isn&rsquo;t a prompt. It doesn&rsquo;t start with &ldquo;You are a helpful assistant.&rdquo; It reads more like a policy document that a mid-level employee would use to do their job without having to ask questions.</p>
+
+<p>Here&rsquo;s what it defines:</p>
+
+<p><strong>The goal and inputs.</strong> The newsletter covers AI news from Saturday to Friday of the previous week. The input is a Friday date. The date range is calculated from that date. That sounds simple until you realize that without this explicit rule, the researcher agent will happily include articles from three weeks ago because they happened to come up in a search.</p>
+
+<p><strong>The newsletter structure.</strong> Four main sections, defined by category: AI and ML Breakthroughs, Major Tech Company Strategic Moves, Emerging Tech Trends and Potential Impact, Developer Tooling and Automation. Each section has guidance on what belongs there and what doesn&rsquo;t.</p>
+
+<p><strong>The No Repeat rule.</strong> Before gathering any news, the researcher agent reads the most recent processed newsletter from <code>.tmp/newsletter-publisher/</code>. It extracts every headline that ran. Then it excludes all of those items from the new edition, even if there&rsquo;s follow-up coverage. Readers who follow every week already saw them. Repeating items wastes their time.</p>
+
+<p><strong>The duplication rule.</strong> The summary paragraph and the bullet points under each news item must not say the same thing. The summary answers &ldquo;so what.&rdquo; The bullets answer &ldquo;here&rsquo;s the evidence.&rdquo; This is written out explicitly with a bad example and a good example in the directive, because without it, LLMs default to restating the summary in bullet form.</p>
+
+<p><strong>Date-range enforcement.</strong> Every news item must have a published date within the Saturday-to-Friday window. Items outside that range get excluded. Not softened. Excluded. This is a hard rule, not a preference.</p>
+
+<p><strong>Edge cases.</strong> What to do on a slow news week. What to do when a major story breaks mid-week. What to do when a story fits two categories equally. These aren&rsquo;t hypothetical. They&rsquo;re documented because they happened.</p>
+
+<p><strong>Excluded sources.</strong> Bloomberg, Forbes, Reuters, individual LinkedIn posts (unless from a verified author). Listed explicitly because &ldquo;use reputable sources&rdquo; is too vague to enforce.</p>
+
+<p><strong>Tone and voice guidelines.</strong> The directive points to two separate files: <code>directives/output-styles/executive.md</code> for newsletter tone, and <code>directives/output-styles/mytonevoice.md</code> for the blog posts. The researcher and writer agents read these before they produce any output.</p>
+
+<p><img src="/img/part1-directive-anatomy.svg" alt="Anatomy of a Directive" /></p>
+
+<p><em>[Anatomy of a Directive]</em></p>
+
+<hr />
+
+<h2 id="the-living-document-principle">The Living Document Principle</h2>
+
+<p>The directive I have today is not the directive I had in March.</p>
+
+<p>In March, the sub-bullet indentation in Notion and Substack was broken. Items rendered flat, no nesting, everything at the same depth. It looked good on the Markdown published to disk, but broke when published to Notion and Substack. I found the fix: convert 2-space indents to 4-space before publishing. I fixed the publisher agent. Then I documented the fix in the directive so that anyone reading it would understand why that pre-processing step exists.</p>
+
+<p>A few weeks later, I noticed that the researcher agent was pulling items from the previous newsletter and not catching all of them. It was checking the right file, but the exclusion logic was too loose. Fixed the agent&rsquo;s instructions. Added an explicit note to the directive: &ldquo;Exclude duplicate coverage — if a news item&rsquo;s core announcement was covered in the previous newsletter, do not include it even if there is follow-up coverage or ongoing discussion.&rdquo;</p>
+
+<p>The hero image agent once included keywords from items I&rsquo;d marked <code>[DO NOT PUBLISH]</code>. That&rsquo;s misleading: the keyword is on the cover image but the article was cut. Fixed it by adding a keyword filtering step. Added the rule to the directive.</p>
+
+<p>Not every update came from a break. Some came from thinking more carefully about what &ldquo;good&rdquo; actually means. The Related Articles section at the bottom of each newsletter pulls links from two places: my Substack archive and my personal blog at <code>rupakganguly.com/tags/ai/</code>.</p>
+
+<p>Early on, the writer agent would just grab recent posts and call it done. But readers who follow every edition started seeing the same blog posts recommended week after week. So I added a rule to the directive: check which blog posts appeared in the previous newsletter, then pick different ones. Also exclude any blog post older than one year. The agent now interleaves Substack editions with fresh blog posts in a rotating pattern, and the selection is different every week without me touching it.</p>
+
+<p>That&rsquo;s the kind of thing that gets built into a directive when you stop asking &ldquo;is it working?&rdquo; and start asking &ldquo;is it good?&rdquo;</p>
+
+<p>Every one of these became a permanent improvement. The directive is now the accumulated knowledge of six months of edge cases. The agent running today has all of that context baked in from the first line it reads.</p>
+
+<p>This is what I mean by <strong>self-annealing</strong>. The system gets smarter because every failure becomes a documented update. Not a workaround buried in a prompt. A standing rule in the instruction set.</p>
+
+<hr />
+
+<h2 id="how-to-write-your-first-directive-for-any-repeating-task">How to Write Your First Directive for Any Repeating Task</h2>
+
+<p>I&rsquo;ve started using this same pattern for other workflows: a lead generation pipeline, a blog post series, competitive research reports. The structure that works is always the same:</p>
+
+<p><strong>Goal.</strong> One sentence. What does this process produce, and for whom?</p>
+
+<p><strong>Inputs.</strong> What does the process need to start? Be specific. &ldquo;A date&rdquo; is not as good as &ldquo;the Friday date of the week being covered, used to calculate the Saturday-to-Friday news window.&rdquo;</p>
+
+<p><strong>Output format.</strong> What does done look like? Include structure, section names, file paths, formatting requirements. If the output goes somewhere specific (Notion, Substack, disk), define where and in what format.</p>
+
+<p><strong>Tone and voice.</strong> If this process produces written content, point to voice guidelines. Don&rsquo;t embed them in the directive. Keep them in separate files that multiple processes can reference. Rinse and repeat using more examples from my new articles look like. Keep enhancing, keep refining.</p>
+
+<p><strong>Rules and quality gates.</strong> This is where most directives are too thin. Write out every rule you&rsquo;d catch yourself enforcing manually: the no-repeat rule, the date-range check, the duplication check, the excluded sources. If you&rsquo;ve ever fixed something manually more than once, that fix belongs in the directive.</p>
+
+<p><strong>Edge cases.</strong> Document the non-obvious situations. Slow week. Major breaking news. Story that spans categories. Rate limit on a source. What does the right behavior look like in each case?</p>
+
+<p><strong>A quality checklist at the end.</strong> The agent reads this before it considers the task complete. It&rsquo;s a forcing function to catch the things that are easy to skip. My newsletter directive&rsquo;s checklist includes: verify all news items have a published date within the week&rsquo;s range, verify no items duplicate last week&rsquo;s newsletter, verify the summary and bullets don&rsquo;t repeat each other, check the tone guidelines one more time and remove any AI slop.</p>
+
+<hr />
+
+<h2 id="what-this-changes">What This Changes</h2>
+
+<p>The first time I ran the system and walked away while it researched, wrote, and produced a draft that was actually good, I felt something close to relief. Not amazement. Relief.</p>
+
+<p>Because it had been a grind. Not the thinking part. The mechanical overhead around the thinking part. The checking, the formatting, the de-duplicating, the worrying about whether I&rsquo;d missed something.</p>
+
+<p>The directive offloaded all of that. The thinking still happens, by me, when I review the draft. But the mechanical scaffolding runs itself.</p>
+
+<p>That&rsquo;s the real shift. <strong>You&rsquo;re not delegating your judgment</strong>. <strong>You&rsquo;re delegating the process that surrounds your judgment</strong>. And to delegate a process, you have to write it down. You have to understand it well enough to put it in a document that a mid-level employee could follow without you in the room.</p>
+
+<p><strong>If you can&rsquo;t write the directive, you&rsquo;re not ready to automate the task. You just don&rsquo;t know the process well enough yet.</strong></p>
+
+<hr />
+
+<blockquote>
+<p><em>If you missed the intro post <a href="https://rupakganguly.com/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/">I Stopped Writing My Newsletter. An AI System Does It Now.</a>, that&rsquo;s the right place to start. It covers the full system at a high level and explains why I built it the way I did.</em></p>
+</blockquote>
+
+<p>In Part 2, I&rsquo;ll go deep on the skill: the single <code>/ai-newsletter</code> command that activates the entire pipeline. It has a command tree with 10-plus sub-commands, a Draft-First Check that prevents wasted work when you&rsquo;re iterating on a draft, and a marker system that lets you control the draft with editorial annotations. You&rsquo;ll also see how natural language works just as well as the slash commands, and why that matters for anyone who isn&rsquo;t an engineer.</p>
+
+<hr />
+
+<p><em>If you want to see the newsletter this system produces, subscribe at <a href="https://rupakganguly.substack.com">rupakganguly.substack.com</a>. If you&rsquo;re building something similar or have hit a wall trying, I&rsquo;d genuinely like to hear what broke.</em></p>
+  </div>
+  
+  <hr/>
+<h3 align="center">Monthly Newsletter</h3>
+<div>
+  <p><strong><i>If you like the content I share, you can sign up below for the <a href="https://rupakganguly.substack.com">free monthly newsletter</a>.</i></strong></p>
+</div>  
+<iframe src="https://rupakganguly.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">I Stopped Writing My Newsletter. An AI System Does It Now.</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/">I Stopped Writing My Newsletter. An AI System Does It Now.</a>
+      
+      <time class="pull-right hidden-tablet">Jul 22 &#39;26</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/designing-backends-for-ai-agents-first-humans-second-the-architecture-nobody-taught-you/">Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You</a>
+      
+      <time class="pull-right hidden-tablet">May 21 &#39;26</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/agent.ai-mcp-server-integration-with-claude-desktop-a-step-by-step-tutorial/">Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial</a>
+      
+      <time class="pull-right hidden-tablet">Mar 14 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/how-to-run-a-profitable-business-as-a-solo-founder-with-ai-as-your-cofounder/">How to Run a Profitable Business as a Solo Founder With AI as Your Co‑founder</a>
+      
+      <time class="pull-right hidden-tablet">Dec 24 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/comparing-agentic-commerce-protocol-vs-computer-use-and-browser-use/">Comparing Agentic Commerce Protocol vs Computer Use and Browser Use</a>
+      
+      <time class="pull-right hidden-tablet">Nov 01 &#39;25</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

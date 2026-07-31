@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1200" height="480" fill="#f4f5f7" rx="16"/>
+
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#d1d5db"/>
+    </pattern>
+    <!--
+      Arrow: tip at x=9, so refX=9 places tip exactly at x2.
+      Gap between cards = 60px; margins 4px each side → 52px clearance > 9px marker ✓
+    -->
+    <marker id="arrow" markerWidth="10" markerHeight="9" refX="9" refY="4" orient="auto">
+      <path d="M0,0.5 L0,7.5 L9,4 Z" fill="#7dd3fc"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+  <!-- Dot grid -->
+  <rect width="1200" height="480" fill="url(#dots)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="52" text-anchor="middle" font-size="16" font-weight="800" fill="#4b5563" letter-spacing="4">THE 3-LAYER ARCHITECTURE</text>
+
+  <!--
+    LAYOUT CONSTANTS
+    Card width=280, gap=60
+    3×280 + 2×60 = 960; left=(1200-960)/2=120
+    Card x:      120,  460,  800
+    Card right:  400,  740, 1080
+    Card center: 260,  600,  940
+    Cards: y=72, height=242, bottom=314
+    Badge: y=298, height=16, bottom=314
+    Sublabels: y=330 (16px below badge bottom)
+    Arrow mid-y = 72 + 121 = 193
+    Arrow 1→2: x1=404, x2=456
+    Arrow 2→3: x1=744, x2=796
+  -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LAYER 1: DIRECTIVE -->
+  <!-- ══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="72" width="280" height="242" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="120" y="72" width="280" height="5" rx="5" fill="#4f6ef7"/>
+    <circle cx="260" cy="152" r="34" fill="#eef0fe" stroke="#4f6ef7" stroke-width="1.5"/>
+    <!-- Document icon — 22×28 → origin (249,138) = (260−11, 152−14) -->
+    <g transform="translate(249,138)" fill="none" stroke="#4f6ef7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="0" width="22" height="28" rx="3" fill="#eef0fe" stroke="#4f6ef7"/>
+      <line x1="4" y1="8"  x2="18" y2="8"/>
+      <line x1="4" y1="14" x2="18" y2="14"/>
+      <line x1="4" y1="20" x2="14" y2="20"/>
+    </g>
+    <text x="260" y="208" text-anchor="middle" font-size="14" font-weight="800" fill="#1f2937" letter-spacing="2">DIRECTIVE</text>
+    <text x="260" y="228" text-anchor="middle" font-size="12" fill="#6b7280">Defines goals, inputs, outputs,</text>
+    <text x="260" y="244" text-anchor="middle" font-size="12" fill="#6b7280">rules, edge cases, and tone.</text>
+    <text x="260" y="260" text-anchor="middle" font-size="12" fill="#6b7280">Natural language. Permanent.</text>
+    <text x="260" y="276" text-anchor="middle" font-size="12" fill="#6b7280">Lives in directives/*.md</text>
+    <!-- Badge pill -->
+    <rect x="153" y="298" width="214" height="16" rx="8" fill="#eef0fe"/>
+    <text x="260" y="310" text-anchor="middle" font-size="9" font-weight="600" fill="#4f6ef7" letter-spacing="1">LAYER 1 · THE "WHAT TO DO"</text>
+  </g>
+
+  <!-- Arrow 1→2: x1=404, x2=456, y=193 -->
+  <line x1="404" y1="193" x2="456" y2="193" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LAYER 2: ORCHESTRATION (Claude) -->
+  <!-- ══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="460" y="72" width="280" height="242" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="460" y="72" width="280" height="5" rx="5" fill="#7c3aed"/>
+    <circle cx="600" cy="152" r="34" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <!-- Brain/circuit icon — 28×24 → origin (586,140) = (600−14, 152−12) -->
+    <g transform="translate(586,140)" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="20" height="16" rx="4" fill="#f5f3ff" stroke="#7c3aed"/>
+      <line x1="8"  y1="4"  x2="8"  y2="0"/>
+      <line x1="14" y1="4"  x2="14" y2="0"/>
+      <line x1="20" y1="4"  x2="20" y2="0"/>
+      <line x1="8"  y1="20" x2="8"  y2="24"/>
+      <line x1="14" y1="20" x2="14" y2="24"/>
+      <line x1="20" y1="20" x2="20" y2="24"/>
+      <line x1="0"  y1="9"  x2="4"  y2="9"/>
+      <line x1="0"  y1="15" x2="4"  y2="15"/>
+      <line x1="24" y1="9"  x2="28" y2="9"/>
+      <line x1="24" y1="15" x2="28" y2="15"/>
+    </g>
+    <text x="600" y="208" text-anchor="middle" font-size="14" font-weight="800" fill="#1f2937" letter-spacing="2">ORCHESTRATION</text>
+    <text x="600" y="228" text-anchor="middle" font-size="12" fill="#6b7280">Claude reads the directive,</text>
+    <text x="600" y="244" text-anchor="middle" font-size="12" fill="#6b7280">routes work to agents, handles</text>
+    <text x="600" y="260" text-anchor="middle" font-size="12" fill="#6b7280">errors, and makes decisions.</text>
+    <text x="600" y="276" text-anchor="middle" font-size="12" fill="#6b7280">Judgment, not execution.</text>
+    <!-- Badge pill -->
+    <rect x="493" y="298" width="214" height="16" rx="8" fill="#f5f3ff"/>
+    <text x="600" y="310" text-anchor="middle" font-size="9" font-weight="600" fill="#7c3aed" letter-spacing="1">LAYER 2 · THE "DECISION MAKER"</text>
+  </g>
+
+  <!-- Arrow 2→3: x1=744, x2=796, y=193 -->
+  <line x1="744" y1="193" x2="796" y2="193" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LAYER 3: EXECUTION -->
+  <!-- ══════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="800" y="72" width="280" height="242" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="800" y="72" width="280" height="5" rx="5" fill="#059669"/>
+    <circle cx="940" cy="152" r="34" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+    <!-- Gear icon — 28×28 → origin (926,138) = (940−14, 152−14) -->
+    <g transform="translate(926,138)" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="14" cy="14" r="5" fill="#ecfdf5"/>
+      <path d="M14,0 L14,4 M14,24 L14,28 M0,14 L4,14 M24,14 L28,14
+               M3.5,3.5 L6.3,6.3 M21.7,21.7 L24.5,24.5
+               M24.5,3.5 L21.7,6.3 M6.3,21.7 L3.5,24.5" stroke-linecap="round"/>
+    </g>
+    <text x="940" y="208" text-anchor="middle" font-size="14" font-weight="800" fill="#1f2937" letter-spacing="2">EXECUTION</text>
+    <text x="940" y="228" text-anchor="middle" font-size="12" fill="#6b7280">Claude subagents (AI tasks)</text>
+    <text x="940" y="244" text-anchor="middle" font-size="12" fill="#6b7280">+ Python scripts (deterministic</text>
+    <text x="940" y="260" text-anchor="middle" font-size="12" fill="#6b7280">ops: API calls, dates, files).</text>
+    <text x="940" y="276" text-anchor="middle" font-size="12" fill="#6b7280">Lives in .claude/agents/ + scripts/</text>
+    <!-- Badge pill -->
+    <rect x="833" y="298" width="214" height="16" rx="8" fill="#ecfdf5"/>
+    <text x="940" y="310" text-anchor="middle" font-size="9" font-weight="600" fill="#059669" letter-spacing="1">LAYER 3 · THE "DOERS"</text>
+  </g>
+
+  <!-- ─── SUBLABELS (y=330, 16px below badge bottom y=314) ─── -->
+  <text x="260" y="330" text-anchor="middle" font-size="9" font-weight="600" fill="#4f6ef7" letter-spacing="1.5">write_ai_news_newsletter.md</text>
+  <text x="600" y="330" text-anchor="middle" font-size="9" font-weight="600" fill="#7c3aed" letter-spacing="1.5">Claude (intelligent routing)</text>
+  <text x="940" y="330" text-anchor="middle" font-size="9" font-weight="600" fill="#059669" letter-spacing="1.5">subagents · Python scripts</text>
+
+  <!-- ─── FOOTER ─── -->
+  <path d="M0,392 L1200,392 L1200,464 Q1200,480 1184,480 L16,480 Q0,480 0,464 Z" fill="#e8eaf0"/>
+  <line x1="0" y1="392" x2="1200" y2="392" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <!-- Pull quote -->
+  <text x="600" y="428" text-anchor="middle" font-size="13" font-weight="700" fill="#374151" font-style="italic">
+    "Push complexity into deterministic code so Claude focuses on decision-making."
+  </text>
+
+  <!-- Watermark -->
+  <text x="600" y="462" text-anchor="middle" font-size="13" font-weight="700" fill="#9ca3af" letter-spacing="1">rupakganguly.com</text>
+
+</svg>
