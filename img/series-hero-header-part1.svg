@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#d1d5db"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="9" refX="9" refY="4" orient="auto">
+      <path d="M0,0.5 L0,7.5 L9,4 Z" fill="#7dd3fc"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+    <filter id="shadow-review" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#f59e0b30"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="560" fill="#f4f5f7" rx="16"/>
+  <rect width="1200" height="560" fill="url(#dots)" rx="16"/>
+
+  <!-- Top Banner -->
+  <rect x="420" y="22" width="360" height="20" rx="10" fill="#eef0fe"/>
+  <text x="600" y="36" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#4f6ef7" letter-spacing="2">5-PART BLOG SERIES</text>
+
+  <text x="600" y="76" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="800" fill="#1f2937">How I Automated My Weekly AI Newsletter</text>
+  <text x="600" y="104" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="800" fill="#1f2937">with an AI Agentic Workflow</text>
+
+  <line x1="440" y1="122" x2="760" y2="122" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <text x="600" y="150" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6b7280">Architecture · Agents · Automation · Learnings — a practitioner's guide</text>
+
+  <!-- Arrows between cards -->
+  <line x1="281" y1="306" x2="297" y2="306" stroke="#7dd3fc" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="489" y1="306" x2="505" y2="306" stroke="#7dd3fc" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="697" y1="306" x2="713" y2="306" stroke="#7dd3fc" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="905" y1="306" x2="921" y2="306" stroke="#7dd3fc" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== SLOT 1: INTRO (normal, pink #db2777) ===== -->
+  <rect x="95" y="182" width="178" height="248" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <!-- Top bar -->
+  <rect x="95" y="182" width="178" height="5" rx="5" fill="#db2777"/>
+  <!-- Part badge -->
+  <rect x="113" y="196" width="52" height="18" rx="9" fill="#fdf2f8"/>
+  <text x="139" y="209" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#db2777" letter-spacing="1">INTRO</text>
+  <!-- Icon circle -->
+  <circle cx="184" cy="274" r="32" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
+  <!-- Lightbulb icon -->
+  <g transform="translate(174,261)" fill="none" stroke="#db2777" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10,0 C4.5,0 0,4.5 0,10 C0,14.5 2.5,18 6,19.5 L6,22 L14,22 L14,19.5 C17.5,18 20,14.5 20,10 C20,4.5 15.5,0 10,0 Z" fill="#fdf2f8"/>
+    <line x1="6" y1="24" x2="14" y2="24"/>
+  </g>
+  <!-- Card title -->
+  <text x="184" y="328" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#1f2937" letter-spacing="0.5">The Big Idea</text>
+  <!-- Card description -->
+  <text x="184" y="346" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">Why this system works</text>
+  <text x="184" y="360" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">and what it means for</text>
+  <text x="184" y="374" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">your own workflows</text>
+  <!-- Bottom badge -->
+  <rect x="113" y="408" width="142" height="16" rx="8" fill="#fdf2f8"/>
+  <text x="184" y="420" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#db2777" letter-spacing="1">THE SERIES INTRO</text>
+
+  <!-- ===== SLOT 2: PART 1 — HIGHLIGHTED (indigo #4f6ef7, amber highlight) ===== -->
+  <rect x="303" y="172" width="178" height="268" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" filter="url(#shadow-review)"/>
+  <!-- Top accent bar -->
+  <rect x="303" y="172" width="178" height="5" rx="5" fill="#f59e0b"/>
+  <!-- YOU ARE HERE badge -->
+  <rect x="422" y="180" width="82" height="18" rx="9" fill="#f59e0b"/>
+  <text x="463" y="193" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="700" fill="#ffffff" letter-spacing="0.5">YOU ARE HERE</text>
+  <!-- Part badge -->
+  <rect x="321" y="189" width="52" height="18" rx="9" fill="#fef3c7"/>
+  <text x="347" y="202" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#d97706" letter-spacing="1">PART 1</text>
+  <!-- Icon circle -->
+  <circle cx="392" cy="277" r="32" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Document icon -->
+  <g transform="translate(381.5,263.5)" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="21" height="27" rx="3" fill="#fef3c7" stroke="#f59e0b"/>
+    <line x1="4" y1="8" x2="17" y2="8"/>
+    <line x1="4" y1="13" x2="17" y2="13"/>
+    <line x1="4" y1="18" x2="13" y2="18"/>
+  </g>
+  <!-- Card title -->
+  <text x="392" y="334" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#92400e" letter-spacing="0.5">The Blueprint</text>
+  <!-- Card description -->
+  <text x="392" y="352" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#78350f">Writing a directive that</text>
+  <text x="392" y="366" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#78350f">acts like an employee</text>
+  <text x="392" y="380" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#78350f">manual</text>
+  <!-- Bottom badge -->
+  <rect x="321" y="418" width="142" height="16" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="392" y="430" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#d97706" letter-spacing="1">THE DIRECTIVE</text>
+
+  <!-- ===== SLOT 3: PART 2 — normal (violet #7c3aed) ===== -->
+  <rect x="511" y="182" width="178" height="248" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <!-- Top bar -->
+  <rect x="511" y="182" width="178" height="5" rx="5" fill="#7c3aed"/>
+  <!-- Part badge -->
+  <rect x="529" y="196" width="52" height="18" rx="9" fill="#f5f3ff"/>
+  <text x="555" y="209" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#7c3aed" letter-spacing="1">PART 2</text>
+  <!-- Icon circle -->
+  <circle cx="600" cy="274" r="32" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <!-- Terminal icon -->
+  <g transform="translate(588,262)" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round">
+    <rect x="0" y="0" width="24" height="24" rx="4" fill="#f5f3ff" stroke="#7c3aed"/>
+    <polyline points="4,7 10,12 4,17" stroke-linejoin="round"/>
+    <line x1="13" y1="17" x2="20" y2="17"/>
+  </g>
+  <!-- Card title -->
+  <text x="600" y="328" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#1f2937" letter-spacing="0.5">One Command</text>
+  <!-- Card description -->
+  <text x="600" y="346" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">How a single skill routes</text>
+  <text x="600" y="360" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">an entire pipeline with</text>
+  <text x="600" y="374" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">draft-first checks</text>
+  <!-- Bottom badge -->
+  <rect x="529" y="408" width="142" height="16" rx="8" fill="#f5f3ff"/>
+  <text x="600" y="420" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#7c3aed" letter-spacing="1">THE SKILL</text>
+
+  <!-- ===== SLOT 4: PART 3 — normal (green #059669) ===== -->
+  <rect x="719" y="182" width="178" height="248" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <!-- Top bar -->
+  <rect x="719" y="182" width="178" height="5" rx="5" fill="#059669"/>
+  <!-- Part badge -->
+  <rect x="737" y="196" width="52" height="18" rx="9" fill="#ecfdf5"/>
+  <text x="763" y="209" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#059669" letter-spacing="1">PART 3</text>
+  <!-- Icon circle -->
+  <circle cx="808" cy="274" r="32" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <!-- 2x2 grid icon -->
+  <g transform="translate(795.5,261.5)" fill="none" stroke="#059669" stroke-width="1.5">
+    <rect x="0" y="0" width="11" height="11" rx="2" fill="#ecfdf5" stroke="#059669"/>
+    <rect x="14" y="0" width="11" height="11" rx="2" fill="#ecfdf5" stroke="#059669"/>
+    <rect x="0" y="14" width="11" height="11" rx="2" fill="#ecfdf5" stroke="#059669"/>
+    <rect x="14" y="14" width="11" height="11" rx="2" fill="#ecfdf5" stroke="#059669"/>
+  </g>
+  <!-- Card title -->
+  <text x="808" y="328" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#1f2937" letter-spacing="0.5">Meet the Team</text>
+  <!-- Card description -->
+  <text x="808" y="346" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">Four AI agents, one</text>
+  <text x="808" y="360" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">pipeline — and why</text>
+  <text x="808" y="374" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">scope boundaries matter</text>
+  <!-- Bottom badge -->
+  <rect x="737" y="408" width="142" height="16" rx="8" fill="#ecfdf5"/>
+  <text x="808" y="420" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#059669" letter-spacing="1">THE AGENTS</text>
+
+  <!-- ===== SLOT 5: PART 4 — normal (cyan #0891b2) ===== -->
+  <rect x="927" y="182" width="178" height="248" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <!-- Top bar -->
+  <rect x="927" y="182" width="178" height="5" rx="5" fill="#0891b2"/>
+  <!-- Part badge -->
+  <rect x="945" y="196" width="52" height="18" rx="9" fill="#ecfeff"/>
+  <text x="971" y="209" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#0891b2" letter-spacing="1">PART 4</text>
+  <!-- Icon circle -->
+  <circle cx="1016" cy="274" r="32" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+  <!-- Bar chart icon -->
+  <g transform="translate(1004,263)" fill="none" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="24" height="22" rx="3" fill="#ecfeff" stroke="#0891b2"/>
+    <line x1="4" y1="16" x2="4" y2="10"/>
+    <line x1="9" y1="16" x2="9" y2="7"/>
+    <line x1="14" y1="16" x2="14" y2="12"/>
+    <line x1="19" y1="16" x2="19" y2="5"/>
+    <line x1="1" y1="18" x2="23" y2="18"/>
+  </g>
+  <!-- Card title (two lines) -->
+  <text x="1016" y="328" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#1f2937">What Shipped,</text>
+  <text x="1016" y="343" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#1f2937">What Broke</text>
+  <!-- Card description -->
+  <text x="1016" y="361" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">Actual outputs, real</text>
+  <text x="1016" y="375" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">failures, and how to</text>
+  <text x="1016" y="389" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280">apply this anywhere</text>
+  <!-- Bottom badge -->
+  <rect x="945" y="408" width="142" height="16" rx="8" fill="#ecfeff"/>
+  <text x="1016" y="420" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#0891b2" letter-spacing="1">OUTPUTS · LEARNINGS</text>
+
+  <!-- Footer -->
+  <path d="M0,476 L1200,476 L1200,544 Q1200,560 1184,560 L16,560 Q0,560 0,544 Z" fill="#e8eaf0"/>
+  <line x1="0" y1="476" x2="1200" y2="476" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="600" y="508" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#374151" font-style="italic">"Prompts are the code. The directive is the SOP. The agents are your specialists. The human has the control."</text>
+  <text x="600" y="542" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#9ca3af" letter-spacing="1">rupakganguly.com</text>
+</svg>

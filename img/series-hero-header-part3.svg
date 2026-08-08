@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#d1d5db"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="9" refX="9" refY="4" orient="auto">
+      <path d="M0,0.5 L0,7.5 L9,4 Z" fill="#7dd3fc"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+    <filter id="shadow-review" x="-10%" y="-10%" width="120%" height="135%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#f59e0b40"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="560" fill="#f4f5f7" rx="16"/>
+  <rect width="1200" height="560" fill="url(#dots)" rx="16"/>
+
+  <!-- Top Banner: Eyebrow -->
+  <rect x="420" y="22" width="360" height="20" rx="10" fill="#eef0fe"/>
+  <text x="600" y="36" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" fill="#4f6ef7" text-anchor="middle" letter-spacing="2">5-PART BLOG SERIES</text>
+
+  <!-- Top Banner: Title -->
+  <text x="600" y="76" font-family="Inter,system-ui,sans-serif" font-size="26" font-weight="800" fill="#1f2937" text-anchor="middle">How I Automated My Weekly AI Newsletter</text>
+  <text x="600" y="104" font-family="Inter,system-ui,sans-serif" font-size="26" font-weight="800" fill="#1f2937" text-anchor="middle">with an AI Agentic Workflow</text>
+
+  <!-- Divider -->
+  <line x1="440" y1="122" x2="760" y2="122" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <!-- Tagline -->
+  <text x="600" y="150" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Architecture · Agents · Automation · Learnings — a practitioner's guide</text>
+
+  <!-- Arrows between cards -->
+  <line x1="281" y1="306" x2="297" y2="306" stroke="#7dd3fc" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="489" y1="306" x2="505" y2="306" stroke="#7dd3fc" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="697" y1="306" x2="713" y2="306" stroke="#7dd3fc" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="905" y1="306" x2="921" y2="306" stroke="#7dd3fc" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- SLOT 1: INTRO — normal (pink #db2777) -->
+  <rect x="95" y="182" width="178" height="248" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <!-- Top bar -->
+  <rect x="95" y="182" width="178" height="6" rx="5" fill="#db2777"/>
+  <!-- Badge -->
+  <rect x="113" y="196" width="52" height="18" rx="9" fill="#fdf2f8"/>
+  <text x="139" y="209" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#db2777" text-anchor="middle" letter-spacing="1">INTRO</text>
+  <!-- Icon circle -->
+  <circle cx="184" cy="274" r="32" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
+  <!-- Lightbulb icon -->
+  <g transform="translate(174,261)">
+    <path d="M10,0 C4.5,0 0,4.5 0,10 C0,14.5 2.5,18 6,19.5 L6,22 L14,22 L14,19.5 C17.5,18 20,14.5 20,10 C20,4.5 15.5,0 10,0 Z" fill="#fdf2f8" stroke="#db2777" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="6" y1="24" x2="14" y2="24" stroke="#db2777" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <!-- Title -->
+  <text x="184" y="328" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#1f2937" text-anchor="middle">The Big Idea</text>
+  <!-- Description -->
+  <text x="184" y="346" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Why this system works</text>
+  <text x="184" y="360" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">and what it means for</text>
+  <text x="184" y="374" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">your own workflows</text>
+  <!-- Bottom badge -->
+  <rect x="113" y="396" width="142" height="16" rx="8" fill="#fdf2f8"/>
+  <text x="184" y="408" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#db2777" text-anchor="middle" letter-spacing="1">THE SERIES INTRO</text>
+
+  <!-- SLOT 2: PART 1 — normal (indigo #4f6ef7) -->
+  <rect x="303" y="182" width="178" height="248" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <!-- Top bar -->
+  <rect x="303" y="182" width="178" height="6" rx="5" fill="#4f6ef7"/>
+  <!-- Badge -->
+  <rect x="321" y="196" width="52" height="18" rx="9" fill="#eef0fe"/>
+  <text x="347" y="209" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#4f6ef7" text-anchor="middle" letter-spacing="1">PART 1</text>
+  <!-- Icon circle -->
+  <circle cx="392" cy="274" r="32" fill="#eef0fe" stroke="#4f6ef7" stroke-width="1.5"/>
+  <!-- Document icon -->
+  <g transform="translate(381.5,260.5)">
+    <rect width="21" height="27" rx="3" fill="#eef0fe" stroke="#4f6ef7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="4" y1="8" x2="17" y2="8" stroke="#4f6ef7" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="4" y1="13" x2="17" y2="13" stroke="#4f6ef7" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="4" y1="18" x2="17" y2="18" stroke="#4f6ef7" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <!-- Title -->
+  <text x="392" y="328" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#1f2937" text-anchor="middle">The Blueprint</text>
+  <!-- Description -->
+  <text x="392" y="346" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Writing a directive that</text>
+  <text x="392" y="360" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">acts like an employee</text>
+  <text x="392" y="374" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">manual</text>
+  <!-- Bottom badge -->
+  <rect x="321" y="396" width="142" height="16" rx="8" fill="#eef0fe"/>
+  <text x="392" y="408" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#4f6ef7" text-anchor="middle" letter-spacing="1">THE DIRECTIVE</text>
+
+  <!-- SLOT 3: PART 2 — normal (violet #7c3aed) -->
+  <rect x="511" y="182" width="178" height="248" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <!-- Top bar -->
+  <rect x="511" y="182" width="178" height="6" rx="5" fill="#7c3aed"/>
+  <!-- Badge -->
+  <rect x="529" y="196" width="52" height="18" rx="9" fill="#f5f3ff"/>
+  <text x="555" y="209" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#7c3aed" text-anchor="middle" letter-spacing="1">PART 2</text>
+  <!-- Icon circle -->
+  <circle cx="600" cy="274" r="32" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <!-- Terminal icon -->
+  <g transform="translate(588,262)">
+    <rect width="24" height="24" rx="4" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/>
+    <polyline points="4,7 10,12 4,17" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="13" y1="17" x2="20" y2="17" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <!-- Title -->
+  <text x="600" y="328" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#1f2937" text-anchor="middle">One Command</text>
+  <!-- Description -->
+  <text x="600" y="346" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">How a single skill routes</text>
+  <text x="600" y="360" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">an entire pipeline with</text>
+  <text x="600" y="374" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">draft-first checks</text>
+  <!-- Bottom badge -->
+  <rect x="529" y="396" width="142" height="16" rx="8" fill="#f5f3ff"/>
+  <text x="600" y="408" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#7c3aed" text-anchor="middle" letter-spacing="1">THE SKILL</text>
+
+  <!-- SLOT 4: PART 3 — HIGHLIGHTED (amber) -->
+  <rect x="719" y="172" width="178" height="268" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" filter="url(#shadow-review)"/>
+  <!-- Top accent bar -->
+  <rect x="719" y="172" width="178" height="5" rx="5" fill="#f59e0b"/>
+  <!-- YOU ARE HERE badge -->
+  <rect x="838" y="180" width="82" height="18" rx="9" fill="#f59e0b"/>
+  <text x="879" y="193" font-family="Inter,system-ui,sans-serif" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">YOU ARE HERE</text>
+  <!-- Part badge -->
+  <rect x="737" y="189" width="52" height="18" rx="9" fill="#fef3c7"/>
+  <text x="763" y="202" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#d97706" text-anchor="middle" letter-spacing="1">PART 3</text>
+  <!-- Icon circle -->
+  <circle cx="808" cy="277" r="32" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <!-- 2x2 grid icon -->
+  <g transform="translate(795.5,264.5)">
+    <rect x="0" y="0" width="11" height="11" rx="2" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="14" y="0" width="11" height="11" rx="2" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="0" y="14" width="11" height="11" rx="2" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="14" y="14" width="11" height="11" rx="2" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  </g>
+  <!-- Title -->
+  <text x="808" y="334" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#92400e" text-anchor="middle" letter-spacing="0.5">Meet the Team</text>
+  <!-- Description -->
+  <text x="808" y="352" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">Four AI agents, one</text>
+  <text x="808" y="366" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">pipeline — and why</text>
+  <text x="808" y="380" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">scope boundaries matter</text>
+  <!-- Bottom badge -->
+  <rect x="737" y="418" width="142" height="16" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="808" y="430" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#d97706" text-anchor="middle" letter-spacing="1">THE AGENTS</text>
+
+  <!-- SLOT 5: PART 4 — normal (cyan #0891b2) -->
+  <rect x="927" y="182" width="178" height="248" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#shadow)"/>
+  <!-- Top bar -->
+  <rect x="927" y="182" width="178" height="6" rx="5" fill="#0891b2"/>
+  <!-- Badge -->
+  <rect x="945" y="196" width="52" height="18" rx="9" fill="#ecfeff"/>
+  <text x="971" y="209" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#0891b2" text-anchor="middle" letter-spacing="1">PART 4</text>
+  <!-- Icon circle -->
+  <circle cx="1016" cy="274" r="32" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+  <!-- Bar chart icon -->
+  <g transform="translate(1004,263)">
+    <rect width="24" height="22" rx="3" fill="#ecfeff" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="4" y1="18" x2="4" y2="12" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="9" y1="18" x2="9" y2="8" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="14" y1="18" x2="14" y2="11" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="19" y1="18" x2="19" y2="5" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <!-- Title -->
+  <text x="1016" y="328" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#1f2937" text-anchor="middle">What Shipped,</text>
+  <text x="1016" y="343" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#1f2937" text-anchor="middle">What Broke</text>
+  <!-- Description -->
+  <text x="1016" y="361" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Actual outputs, real</text>
+  <text x="1016" y="375" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">failures, and how to</text>
+  <text x="1016" y="389" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">apply this anywhere</text>
+  <!-- Bottom badge -->
+  <rect x="945" y="408" width="142" height="16" rx="8" fill="#ecfeff"/>
+  <text x="1016" y="420" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#0891b2" text-anchor="middle" letter-spacing="1">OUTPUTS · LEARNINGS</text>
+
+  <!-- Footer -->
+  <path d="M0,476 L1200,476 L1200,544 Q1200,560 1184,560 L16,560 Q0,560 0,544 Z" fill="#e8eaf0"/>
+  <line x1="0" y1="476" x2="1200" y2="476" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="600" y="508" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#374151" text-anchor="middle" font-style="italic">"Prompts are the code. The directive is the SOP. The agents are your specialists. The human has the control."</text>
+  <text x="600" y="542" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#9ca3af" text-anchor="middle" letter-spacing="1">rupakganguly.com</text>
+</svg>

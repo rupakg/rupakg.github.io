@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Part 2 of the newsletter automation series: how the /ai-newsletter Claude Code skill routes commands, checks for existing drafts, and uses plain-text markers to give you editorial control without writing any code.">
+    
+        
+        <meta name="keywords" content="AI, ai-development, AgenticAI, AIWorkflow, Agents, Claude, ai-tools, agent-first">
+    
+    
+
+<title>One Command to Run It All: How the `/ai-newsletter` Skill Works • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="One Command to Run It All: How the `/ai-newsletter` Skill Works"/>
+<meta name="twitter:description" content="Part 2 of the newsletter automation series: how the /ai-newsletter Claude Code skill routes commands, checks for existing drafts, and uses plain-text markers to give you editorial control without writing any code."/>
+
+<meta property="og:title" content="One Command to Run It All: How the `/ai-newsletter` Skill Works" />
+<meta property="og:description" content="Part 2 of the newsletter automation series: how the /ai-newsletter Claude Code skill routes commands, checks for existing drafts, and uses plain-text markers to give you editorial control without writing any code." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/one-command-to-run-it-all-how-the-ai-newsletter-skill-works/" /><meta property="article:published_time" content="2026-08-05T23:33:52&#43;00:00"/>
+<meta property="article:modified_time" content="2026-08-05T23:33:52&#43;00:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    
+    <div class="sidebar-about">
+  <span class="site__title">
+    <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+  </span>
+  
+  
+  
+  <div class="author-image">
+    <img src="https://rupakganguly.com//img/rg_mug_conf.png" alt="Rupak Ganguly" class="img--circle img--headshot element--center">
+  </div>
+  
+  <p class="site__description">
+     opinions, experiences &amp; writings... 
+  </p>
+</div>
+
+    
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/glossary/">
+						<span>Glossaries</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:biz@rupakganguly.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <div>
+      
+      <p>
+  <iframe src="https://rupakganguly.substack.com/embed" width="100%" height="150" style="border:1px solid #6a9fb5; background:#6a9fb5;" frameborder="0" scrolling="no"></iframe>
+</p>
+    </div>
+    
+    <div class="copyright">
+  &copy; 2026 Rupak Ganguly.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>One Command to Run It All: How the `/ai-newsletter` Skill Works</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Aug 5, 2026
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/ai">AI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/aiworkflow">AIWORKFLOW</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agenticai">AGENTICAI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agents">AGENTS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/ai">ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-development">ai-development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agenticai">agenticai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/aiworkflow">aiworkflow</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agents">agents</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-tools">ai-tools</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 7 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>The directive tells the system what to do. But a directive sitting in a file doesn&rsquo;t run anything. You need something that activates it. Something you can type once and walk away from.</p>
+
+<p>That&rsquo;s what a skill is.</p>
+
+<p>In Claude Code, a skill is a Markdown file that lives in <code>.claude/skills/</code>. It defines commands, routes work to agents, and holds the workflow logic. When you type <code>/ai-newsletter</code>, Claude reads that file, figures out what you want, and starts making decisions. You don&rsquo;t touch any code. You don&rsquo;t configure any pipeline. You just type the command.</p>
+
+<p>The difference between a prompt and a skill is the difference between a one-shot request and a repeatable, stateful workflow manager. A prompt is &ldquo;write me a newsletter.&rdquo; A skill is a system that knows where to look for existing work, what to do based on what it finds, and how to route the right task to the right agent depending on context.</p>
+
+<p></p>
+
+<p><img src="/img/series-hero-header-part2.svg" alt="Part 2 of the 5-part blog series" /></p>
+
+<p><em>[Part 2 of the 5-part blog series]</em></p>
+
+<blockquote>
+<p>If you missed the intro post <a href="https://rupakganguly.com/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/">I Stopped Writing My Newsletter. An AI System Does It Now.</a>, that&rsquo;s the right place to start. It covers the full system at a high level and explains why I built it the way I did.</p>
+
+<p>Part 1 covers <a href="https://rupakganguly.com/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/">the directive and the 3-layer architecture</a>.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="the-command-map-ten-plus-commands-from-one-entry-point">The Command Map: Ten-Plus Commands from One Entry Point</h2>
+
+<p>The <code>/ai-newsletter</code> skill accepts sub-commands. Here&rsquo;s the full map:</p>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>/ai-newsletter</code></td>
+<td>Full workflow: research → write → user review → publish</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter research</code></td>
+<td>Gather news only, stop before writing</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter write</code></td>
+<td>Format newsletter from saved research</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter publish disk</code></td>
+<td>Generate Intro and Takeaways, save to disk</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter publish notion</code></td>
+<td>Generate Intro and Takeaways, push to Notion</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter publish substack</code></td>
+<td>Save newsletter as a Substack draft</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter publish both</code></td>
+<td>Publish to disk and Notion</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter publish all</code></td>
+<td>Publish to disk, Notion, and Substack draft</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter week &quot;2026-07-18&quot;</code></td>
+<td>Run the full workflow for a specific Friday</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter hero &quot;kw1, kw2&quot;</code></td>
+<td>Regenerate the hero cover image with custom keywords</td>
+</tr>
+
+<tr>
+<td><code>/ai-newsletter help</code></td>
+<td>Show the usage guide</td>
+</tr>
+</tbody>
+</table>
+
+<p>Natural language works just as well. &ldquo;Generate this week&rsquo;s newsletter&rdquo; triggers the full workflow. &ldquo;Just research AI news&rdquo; runs the researcher agent only. &ldquo;Publish to Notion&rdquo; routes to the publisher with Notion as the destination. &ldquo;Add a new item about the OpenAI announcement, here&rsquo;s the link&rdquo; adds a <code>[NEW ITEM]</code> marker and queues it for processing. You don&rsquo;t need to remember the exact command syntax. The skill interprets intent.</p>
+
+<p>This matters more than it might seem. The people I&rsquo;ve shown this to who are not engineers — content creators, operators, marketers — found the natural language interface more comfortable than memorizing slash commands. The skill handles both. Same routing logic underneath.</p>
+
+<p><img src="/img/part2-skill-command-tree.svg" alt="The /ai-newsletter skill Command Tree" /></p>
+
+<p><em>[The <code>/ai-newsletter</code> skill Command Tree]</em></p>
+
+<hr />
+
+<h2 id="the-draft-first-check-preventing-wasted-work">The Draft-First Check: Preventing Wasted Work</h2>
+
+<p>Before running any agent, the skill checks for an existing draft.</p>
+
+<p>This was not in the original design. I added it after running research twice in the same week because I forgot I&rsquo;d already done it. That&rsquo;s an expensive mistake when research involves 15-plus web searches across company blogs, research archives, and tech publications.</p>
+
+<p>The check works like this:</p>
+
+<ol>
+<li>Look for a file matching <code>.tmp/newsletter-writer/newsletter-content-*.md</code></li>
+<li>If a draft exists with <code>[NEW ITEM]</code> markers — run the writer agent to process them, then stop</li>
+<li>If a draft exists without markers — tell the user it&rsquo;s ready for review or publishing, stop</li>
+<li>If no draft exists — run the full research and write workflow</li>
+</ol>
+
+<p>That branching logic sits entirely in the skill file. No code. Just instructions Claude follows every time.</p>
+
+<p>The result: you can close your laptop mid-workflow, come back two days later, type <code>/ai-newsletter</code>, and the system picks up exactly where you left off. It finds the draft, scans it, tells you what it found, and waits for you to confirm before doing anything.</p>
+
+<p><img src="/img/part2-draft-first-check.svg" alt="Draft-First Check Flowchart" /></p>
+
+<p><em>[Draft-First Check Flowchart]</em></p>
+
+<hr />
+
+<h2 id="the-marker-system-editorial-control-in-plain-text">The Marker System: Editorial Control in Plain Text</h2>
+
+<p>Two markers give you control over the draft without opening any tool other than your text editor.</p>
+
+<p><strong><code>[DO NOT PUBLISH]</code></strong> — place it at the start of any news item headline to exclude that item from the final newsletter. The publisher agent removes the entire item: headline, summary, all bullets. The marker never appears in what gets published to Notion, Substack, or disk.</p>
+
+<p><strong><code>[NEW ITEM]</code></strong> — place it on its own line with a description and a source URL:</p>
+
+<pre><code>- [NEW ITEM] OpenAI discontinued Sora video app to refocus on core models and enterprise. Source: https://...
+</code></pre>
+
+<p>The writer agent sees that marker, fetches the source URL, reads the article, and writes a properly formatted news item in the same structure as everything else in the draft. It replaces the marker with the finished item. You don&rsquo;t write the item. You just point the agent at the source.</p>
+
+<p>These markers survive file saves. You can add a <code>[DO NOT PUBLISH]</code> tag, save the file, go for a walk, come back, and it&rsquo;s still there when you run publish. The system scans for them before doing anything and shows you a report before it proceeds.</p>
+
+<pre><code>Marker Scan: .tmp/newsletter-writer/newsletter-content-2026-07-18.md
+
+[NEW ITEM] markers found (1):
+  - Line 93: [NEW ITEM] Claude adds memory to projects. Source: https://...
+
+[DO NOT PUBLISH] markers found (2):
+  - Line 23: [DO NOT PUBLISH] Google DeepMind Co-Scientist Published in Nature...
+  - Line 41: [DO NOT PUBLISH] CME Group GPU Index Launch...
+
+Proceed? (yes to continue / no to cancel)
+</code></pre>
+
+<p>Nothing runs until you say yes. If you want to go back and edit the draft more, say no and the system waits.</p>
+
+<hr />
+
+<h2 id="the-routing-logic-how-decisions-actually-get-made">The Routing Logic: How Decisions Actually Get Made</h2>
+
+<p>The skill file doesn&rsquo;t contain Python. It contains instructions for Claude. Here&rsquo;s what the decision tree looks like when you run <code>/ai-newsletter publish disk</code>:</p>
+
+<ol>
+<li>Find the latest draft in <code>.tmp/newsletter-writer/</code></li>
+<li>Read the file, scan line by line for literal strings <code>[NEW ITEM]</code> and <code>[DO NOT PUBLISH]</code></li>
+<li>Display the Marker Scan Report</li>
+<li>Wait for user confirmation</li>
+<li>If <code>[NEW ITEM]</code> markers exist: invoke the writer agent first to process them</li>
+<li>Invoke the publisher agent with destination: disk</li>
+<li>The publisher checks for an existing processed file in <code>.tmp/newsletter-publisher/</code> — if it exists, use it directly and skip re-processing</li>
+<li>If no processed file: process markers, generate Introduction and Key Takeaways, save the processed file</li>
+<li>Save final newsletter to <code>output/ai-newsletter/</code></li>
+</ol>
+
+<p>Step 7 is worth noting. If you&rsquo;ve already published to disk and now want to push to Notion, the publisher doesn&rsquo;t reprocess the newsletter from scratch. It finds the already-processed file and uses it. That means the Intro and Takeaways are identical across destinations. No drift between the Notion version and the Substack version.</p>
+
+<hr />
+
+<h2 id="why-this-matters-for-non-engineers">Why This Matters for Non-Engineers</h2>
+
+<p>I want to be direct about something: most people who could benefit from this pattern won&rsquo;t build it because they assume it requires engineering skills. It doesn&rsquo;t.</p>
+
+<p>The skill file is a Markdown document. The directive is a Markdown document. The agent definitions are Markdown documents. The configuration that makes all of this work is text that Claude reads and follows. There is no pipeline configuration UI, no YAML, no environment to set up beyond a <code>.env</code> file with API keys.</p>
+
+<p>If you can write a standard operating procedure — a clear description of a repeating task, what it needs, what it produces, and what can go wrong — you can design a workflow like this. The skill is just the entry point. What&rsquo;s underneath it is a set of documented rules that Claude enforces.</p>
+
+<p>The engineering I did was writing those documents carefully. That&rsquo;s the work. Not the code.</p>
+
+<hr />
+
+<blockquote>
+<p>If you missed the intro post <a href="https://rupakganguly.com/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/">I Stopped Writing My Newsletter. An AI System Does It Now.</a>, that&rsquo;s the right place to start. It covers the full system at a high level and explains why I built it the way I did.</p>
+
+<p>Part 1 covers <a href="https://rupakganguly.com/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/">the directive and the 3-layer architecture</a>.</p>
+</blockquote>
+
+<p>In Part 3, I&rsquo;ll walk through the four specialist agents that actually do the work: what each one owns, what tools it has access to, what it&rsquo;s explicitly not allowed to do, and why the human review step sits in the middle of the pipeline rather than the end. The boundaries between agents are a design choice. Where those boundaries sit determines whether the system holds up at week 20 or quietly degrades by week 4.</p>
+
+<hr />
+
+<p><em>If you want to see the newsletter this system produces, subscribe at <a href="https://rupakganguly.substack.com">rupakganguly.substack.com</a>. If you&rsquo;re building something similar or have hit a wall trying, drop me a message. I&rsquo;d genuinely like to hear what broke.</em></p>
+  </div>
+  
+  <hr/>
+<h3 align="center">Monthly Newsletter</h3>
+<div>
+  <p><strong><i>If you like the content I share, you can sign up below for the <a href="https://rupakganguly.substack.com">free monthly newsletter</a>.</i></strong></p>
+</div>  
+<iframe src="https://rupakganguly.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">The Blueprint: Writing a Directive That Acts Like an Employee Manual</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/">The Blueprint: Writing a Directive That Acts Like an Employee Manual</a>
+      
+      <time class="pull-right hidden-tablet">Jul 29 &#39;26</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/">I Stopped Writing My Newsletter. An AI System Does It Now.</a>
+      
+      <time class="pull-right hidden-tablet">Jul 22 &#39;26</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/designing-backends-for-ai-agents-first-humans-second-the-architecture-nobody-taught-you/">Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You</a>
+      
+      <time class="pull-right hidden-tablet">May 21 &#39;26</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/agent.ai-mcp-server-integration-with-claude-desktop-a-step-by-step-tutorial/">Agent.ai MCP Server Integration with Claude Desktop: A Step-by-Step Tutorial</a>
+      
+      <time class="pull-right hidden-tablet">Mar 14 &#39;25</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/how-to-run-a-profitable-business-as-a-solo-founder-with-ai-as-your-cofounder/">How to Run a Profitable Business as a Solo Founder With AI as Your Co‑founder</a>
+      
+      <time class="pull-right hidden-tablet">Dec 24 &#39;25</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

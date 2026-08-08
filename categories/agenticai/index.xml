@@ -6,10 +6,27 @@
     <description>Recent content in Agenticai on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jul 2026 14:14:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 23:33:52 +0000</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/categories/agenticai/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>One Command to Run It All: How the `/ai-newsletter` Skill Works</title>
+      <link>https://rupakganguly.com/posts/one-command-to-run-it-all-how-the-ai-newsletter-skill-works/</link>
+      <pubDate>Wed, 05 Aug 2026 23:33:52 +0000</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/one-command-to-run-it-all-how-the-ai-newsletter-skill-works/</guid>
+      <description>&lt;p&gt;The directive tells the system what to do. But a directive sitting in a file doesn&amp;rsquo;t run anything. You need something that activates it. Something you can type once and walk away from.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s what a skill is.&lt;/p&gt;
+
+&lt;p&gt;In Claude Code, a skill is a Markdown file that lives in &lt;code&gt;.claude/skills/&lt;/code&gt;. It defines commands, routes work to agents, and holds the workflow logic. When you type &lt;code&gt;/ai-newsletter&lt;/code&gt;, Claude reads that file, figures out what you want, and starts making decisions. You don&amp;rsquo;t touch any code. You don&amp;rsquo;t configure any pipeline. You just type the command.&lt;/p&gt;
+
+&lt;p&gt;The difference between a prompt and a skill is the difference between a one-shot request and a repeatable, stateful workflow manager. A prompt is &amp;ldquo;write me a newsletter.&amp;rdquo; A skill is a system that knows where to look for existing work, what to do based on what it finds, and how to route the right task to the right agent depending on context.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>The Blueprint: Writing a Directive That Acts Like an Employee Manual</title>
