@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1400" height="560" fill="#f4f5f7" rx="16"/>
+
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#d1d5db"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="9" refX="9" refY="4" orient="auto">
+      <path d="M0,0.5 L0,7.5 L9,4 Z" fill="#7dd3fc"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+    <filter id="shadow-review" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#f59e0b30"/>
+    </filter>
+  </defs>
+
+  <!-- Dot grid -->
+  <rect width="1400" height="560" fill="url(#dots)" rx="16"/>
+
+  <!-- Title -->
+  <text x="700" y="44" text-anchor="middle" font-size="16" font-weight="800" fill="#4b5563" letter-spacing="4">THE AGENT PIPELINE</text>
+
+  <!--
+    LAYOUT CONSTANTS
+    Canvas: 1400px wide
+    5 cards: w=164, gap=52 → 5×164+4×52=1028; left=(1400-1028)/2=186
+    Card x:      186,  402,  618,  834, 1050
+    Card right:  350,  566,  782,  998, 1214
+    Card center: 268,  484,  700,  916, 1132
+    Regular cards: y=92, height=262, bottom=354
+    Human Review:  y=82, height=272, bottom=354
+    Badge: y=328, h=16, bottom=344
+    Sublabels: y=372 (28px below badge bottom)
+    Arrow mid-y = 92+126 = 218
+    Arrows (x1=right+10, x2=next_left-8):
+      1→2: x1=360, x2=394
+      2→3: x1=576, x2=610
+      3→4: x1=792, x2=826
+      4→5: x1=1008, x2=1042
+  -->
+
+  <!-- ══ AGENT 1: RESEARCHER ══ -->
+  <g filter="url(#shadow)">
+    <rect x="186" y="92" width="164" height="262" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="186" y="92" width="164" height="5" rx="5" fill="#059669"/>
+    <circle cx="268" cy="164" r="30" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+    <!-- Search icon: origin (257,153)=(268-11,164-11) -->
+    <g transform="translate(257,153)" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round">
+      <circle cx="8" cy="8" r="7"/>
+      <line x1="13.5" y1="13.5" x2="19" y2="19"/>
+    </g>
+    <text x="268" y="213" text-anchor="middle" font-size="11" font-weight="800" fill="#1f2937" letter-spacing="1">RESEARCHER</text>
+    <text x="268" y="231" text-anchor="middle" font-size="9.5" fill="#6b7280">WebSearch · WebFetch</text>
+    <text x="268" y="245" text-anchor="middle" font-size="9.5" fill="#6b7280">Read · Write</text>
+    <line x1="198" y1="254" x2="338" y2="254" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="268" y="269" text-anchor="middle" font-size="8.5" font-weight="700" fill="#059669">INPUT</text>
+    <text x="268" y="282" text-anchor="middle" font-size="8" fill="#6b7280">Previous newsletter</text>
+    <text x="268" y="294" text-anchor="middle" font-size="8" fill="#6b7280">Target Friday date</text>
+    <text x="268" y="309" text-anchor="middle" font-size="8.5" font-weight="700" fill="#059669">OUTPUT</text>
+    <text x="268" y="322" text-anchor="middle" font-size="8" fill="#6b7280">research-{date}.json</text>
+    <rect x="198" y="328" width="140" height="16" rx="8" fill="#ecfdf5"/>
+    <text x="268" y="340" text-anchor="middle" font-size="8.5" font-weight="600" fill="#059669" letter-spacing="0.5">20-25 ITEMS · 4 CATEGORIES</text>
+  </g>
+  <text x="268" y="372" text-anchor="middle" font-size="9" font-weight="600" fill="#059669" letter-spacing="1.5">.tmp/newsletter-research/</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="360" y1="218" x2="394" y2="218" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══ AGENT 2: WRITER ══ -->
+  <g filter="url(#shadow)">
+    <rect x="402" y="92" width="164" height="262" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="402" y="92" width="164" height="5" rx="5" fill="#059669"/>
+    <circle cx="484" cy="164" r="30" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+    <!-- Pen icon: origin (474.5,154.5)=(484-9.5,164-9.5) -->
+    <g transform="translate(474.5,154.5)" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12,0 L19,7 L7,19 L0,19 L0,12 Z"/>
+      <line x1="10" y1="2" x2="17" y2="9"/>
+    </g>
+    <text x="484" y="213" text-anchor="middle" font-size="11" font-weight="800" fill="#1f2937" letter-spacing="1">WRITER</text>
+    <text x="484" y="231" text-anchor="middle" font-size="9.5" fill="#6b7280">Read · Write</text>
+    <text x="484" y="245" text-anchor="middle" font-size="9.5" fill="#6b7280">WebFetch · WebSearch</text>
+    <line x1="414" y1="254" x2="554" y2="254" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="484" y="269" text-anchor="middle" font-size="8.5" font-weight="700" fill="#059669">INPUT</text>
+    <text x="484" y="282" text-anchor="middle" font-size="8" fill="#6b7280">research-{date}.json</text>
+    <text x="484" y="294" text-anchor="middle" font-size="8" fill="#6b7280">Substack + blog links</text>
+    <text x="484" y="309" text-anchor="middle" font-size="8.5" font-weight="700" fill="#059669">OUTPUT</text>
+    <text x="484" y="322" text-anchor="middle" font-size="8" fill="#6b7280">newsletter-content-{date}.md</text>
+    <rect x="414" y="328" width="140" height="16" rx="8" fill="#ecfdf5"/>
+    <text x="484" y="340" text-anchor="middle" font-size="8.5" font-weight="600" fill="#059669" letter-spacing="0.5">DRAFT WITH PLACEHOLDERS</text>
+  </g>
+  <text x="484" y="372" text-anchor="middle" font-size="9" font-weight="600" fill="#059669" letter-spacing="1.5">.tmp/newsletter-writer/</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="576" y1="218" x2="610" y2="218" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══ HUMAN REVIEW (elevated, amber) ══ -->
+  <g filter="url(#shadow-review)">
+    <rect x="618" y="82" width="164" height="272" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="618" y="82" width="164" height="5" rx="5" fill="#f59e0b"/>
+    <!-- YOU badge -->
+    <rect x="748" y="90" width="28" height="16" rx="8" fill="#f59e0b"/>
+    <text x="762" y="102" text-anchor="middle" font-size="8" font-weight="700" fill="#ffffff" letter-spacing="0.5">YOU</text>
+    <circle cx="700" cy="156" r="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <!-- Eye icon: origin (686,148)=(700-14,156-8) -->
+    <g transform="translate(686,148)" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round">
+      <path d="M0,8 C5,0 23,0 28,8 C23,16 5,16 0,8 Z"/>
+      <circle cx="14" cy="8" r="4" fill="#fef3c7" stroke="#f59e0b"/>
+    </g>
+    <text x="700" y="204" text-anchor="middle" font-size="11" font-weight="800" fill="#92400e" letter-spacing="1">HUMAN</text>
+    <text x="700" y="218" text-anchor="middle" font-size="11" font-weight="800" fill="#92400e" letter-spacing="1">REVIEW</text>
+    <line x1="630" y1="230" x2="770" y2="230" stroke="#fde68a" stroke-width="1"/>
+    <text x="700" y="245" text-anchor="middle" font-size="8.5" font-weight="700" fill="#78350f">Read the draft</text>
+    <text x="700" y="259" text-anchor="middle" font-size="8" fill="#78350f">[DO NOT PUBLISH] to cut</text>
+    <text x="700" y="272" text-anchor="middle" font-size="8" fill="#78350f">[NEW ITEM] to add</text>
+    <text x="700" y="289" text-anchor="middle" font-size="8.5" font-weight="700" fill="#78350f">~15 minutes</text>
+    <text x="700" y="302" text-anchor="middle" font-size="8" fill="#92400e">This is where the</text>
+    <text x="700" y="314" text-anchor="middle" font-size="8" fill="#92400e">newsletter becomes yours</text>
+    <rect x="630" y="328" width="140" height="16" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="700" y="340" text-anchor="middle" font-size="8.5" font-weight="700" fill="#d97706" letter-spacing="0.5">INTENTIONAL PAUSE</text>
+  </g>
+  <text x="700" y="372" text-anchor="middle" font-size="9" font-weight="600" fill="#d97706" letter-spacing="1.5">editorial control</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="792" y1="218" x2="826" y2="218" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══ AGENT 3: PUBLISHER ══ -->
+  <g filter="url(#shadow)">
+    <rect x="834" y="92" width="164" height="262" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="834" y="92" width="164" height="5" rx="5" fill="#0891b2"/>
+    <circle cx="916" cy="164" r="30" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+    <!-- Upload icon: origin (906,153)=(916-10,164-11) -->
+    <g transform="translate(906,153)" fill="none" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="10,14 10,1 4,7 10,1 16,7"/>
+      <line x1="0" y1="20" x2="20" y2="20"/>
+    </g>
+    <text x="916" y="213" text-anchor="middle" font-size="11" font-weight="800" fill="#1f2937" letter-spacing="1">PUBLISHER</text>
+    <text x="916" y="231" text-anchor="middle" font-size="9.5" fill="#6b7280">Read · Write · Bash</text>
+    <text x="916" y="245" text-anchor="middle" font-size="9.5" fill="#6b7280">(Notion + Substack APIs)</text>
+    <line x1="846" y1="254" x2="986" y2="254" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="916" y="269" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0891b2">INPUT</text>
+    <text x="916" y="282" text-anchor="middle" font-size="8" fill="#6b7280">Reviewed draft + markers</text>
+    <text x="916" y="294" text-anchor="middle" font-size="8" fill="#6b7280">Destinations: disk/notion</text>
+    <text x="916" y="309" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0891b2">OUTPUT</text>
+    <text x="916" y="322" text-anchor="middle" font-size="8" fill="#6b7280">newsletter-ai-news-{date}.md</text>
+    <rect x="846" y="328" width="140" height="16" rx="8" fill="#ecfeff"/>
+    <text x="916" y="340" text-anchor="middle" font-size="8.5" font-weight="600" fill="#0891b2" letter-spacing="0.5">DISK · NOTION · SUBSTACK</text>
+  </g>
+  <text x="916" y="372" text-anchor="middle" font-size="9" font-weight="600" fill="#0891b2" letter-spacing="1.5">.tmp/newsletter-publisher/</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="1008" y1="218" x2="1042" y2="218" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══ AGENT 4: HERO IMAGE ══ -->
+  <g filter="url(#shadow)">
+    <rect x="1050" y="92" width="164" height="262" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="1050" y="92" width="164" height="5" rx="5" fill="#db2777"/>
+    <circle cx="1132" cy="164" r="30" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
+    <!-- Landscape icon: origin (1120,154.5)=(1132-12,164-9.5) -->
+    <g transform="translate(1120,154.5)" fill="none" stroke="#db2777" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="0" width="24" height="19" rx="3"/>
+      <circle cx="6" cy="6" r="2.5"/>
+      <polyline points="0,14 7,9 13,13 18,9 24,14"/>
+    </g>
+    <text x="1132" y="213" text-anchor="middle" font-size="11" font-weight="800" fill="#1f2937" letter-spacing="1">HERO IMAGE</text>
+    <text x="1132" y="231" text-anchor="middle" font-size="9.5" fill="#6b7280">Read · Bash · Glob</text>
+    <text x="1132" y="245" text-anchor="middle" font-size="9.5" fill="#6b7280">Model: Haiku</text>
+    <line x1="1062" y1="254" x2="1202" y2="254" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="1132" y="269" text-anchor="middle" font-size="8.5" font-weight="700" fill="#db2777">INPUT</text>
+    <text x="1132" y="282" text-anchor="middle" font-size="8" fill="#6b7280">Processed newsletter</text>
+    <text x="1132" y="294" text-anchor="middle" font-size="8" fill="#6b7280">Filtered keywords</text>
+    <text x="1132" y="309" text-anchor="middle" font-size="8.5" font-weight="700" fill="#db2777">OUTPUT</text>
+    <text x="1132" y="322" text-anchor="middle" font-size="8" fill="#6b7280">latest-in_ai-news_hero.jpg</text>
+    <rect x="1062" y="328" width="140" height="16" rx="8" fill="#fdf2f8"/>
+    <text x="1132" y="340" text-anchor="middle" font-size="8.5" font-weight="600" fill="#db2777" letter-spacing="0.5">WEEK-BASED ROTATION</text>
+  </g>
+  <text x="1132" y="372" text-anchor="middle" font-size="9" font-weight="600" fill="#db2777" letter-spacing="1.5">.tmp/newsletter-hero-image/</text>
+
+  <!-- ─── FOOTER ─── -->
+  <path d="M0,472 L1400,472 L1400,544 Q1400,560 1384,560 L16,560 Q0,560 0,544 Z" fill="#e8eaf0"/>
+  <line x1="0" y1="472" x2="1400" y2="472" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <text x="700" y="508" text-anchor="middle" font-size="13" font-weight="700" fill="#374151" font-style="italic">
+    "Tight scope is the design. Errors in one stage should fail loudly, not silently contaminate the next."
+  </text>
+  <text x="700" y="542" text-anchor="middle" font-size="13" font-weight="700" fill="#9ca3af" letter-spacing="1">rupakganguly.com</text>
+
+</svg>

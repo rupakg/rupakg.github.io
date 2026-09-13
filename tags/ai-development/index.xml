@@ -6,10 +6,23 @@
     <description>Recent content in Ai Development on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Aug 2026 23:33:52 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 15:16:03 +0000</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/tags/ai-development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Meet the Team: Four AI Agents, One Pipeline</title>
+      <link>https://rupakganguly.com/posts/meet-the-team-four-ai-agents-one-pipeline/</link>
+      <pubDate>Wed, 09 Sep 2026 15:16:03 +0000</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/meet-the-team-four-ai-agents-one-pipeline/</guid>
+      <description>&lt;p&gt;The directive defines the rules. The skill activates the pipeline. But the actual work — scanning the web, writing the newsletter, publishing it, generating the cover image — gets done by four specialist agents. Each one has a single job, a specific set of tools, and explicit limits on what it&amp;rsquo;s not allowed to touch.&lt;/p&gt;
+
+&lt;p&gt;That last part is the design insight that took me the longest to internalize. Giving an agent broad capabilities feels like giving it more power. In practice, it&amp;rsquo;s the opposite. An agent that does everything also fails at everything, because errors in one stage contaminate every stage that follows. The specialist model forces you to think carefully about what each step in the pipeline actually needs. And when something breaks, you know exactly where.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>One Command to Run It All: How the `/ai-newsletter` Skill Works</title>

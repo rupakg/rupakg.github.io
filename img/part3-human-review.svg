@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1200" height="580" fill="#f4f5f7" rx="16"/>
+
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#d1d5db"/>
+    </pattern>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+    <filter id="shadow-review" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#f59e0b38"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="9" refX="9" refY="4" orient="auto">
+      <path d="M0,0.5 L0,7.5 L9,4 Z" fill="#7dd3fc"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="9" refX="9" refY="4" orient="auto">
+      <path d="M0,0.5 L0,7.5 L9,4 Z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="9" refX="9" refY="4" orient="auto">
+      <path d="M0,0.5 L0,7.5 L9,4 Z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="9" refX="9" refY="4" orient="auto">
+      <path d="M0,0.5 L0,7.5 L9,4 Z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <!-- Dot grid -->
+  <rect width="1200" height="540" fill="url(#dots)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="16" font-weight="800" fill="#4b5563" letter-spacing="4">THE HUMAN REVIEW STEP</text>
+
+  <!--
+    All cards shifted down 20px from original:
+    Left card:   x=132, y=92, w=280, h=330 → bottom=422
+    Center card: x=460, y=74, w=280, h=382 → bottom=456 (elevated)
+    Right card:  x=788, y=92, w=280, h=330 → bottom=422
+    Arrow left→center: y=257
+    Arrows center→right: y=300, 340, 380
+    Footer: y=456
+  -->
+
+  <!-- ══ LEFT: DRAFT FILE ══ -->
+  <g filter="url(#shadow)">
+    <rect x="132" y="92" width="280" height="330" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="132" y="92" width="280" height="5" rx="5" fill="#059669"/>
+    <!-- File tab label -->
+    <rect x="132" y="102" width="200" height="20" rx="0" fill="#ecfdf5"/>
+    <text x="144" y="116" font-size="9" font-weight="700" fill="#059669" letter-spacing="0.5">newsletter-content-{date}.md</text>
+    <text x="272" y="142" text-anchor="middle" font-size="11" font-weight="800" fill="#1f2937">DRAFT FILE</text>
+    <text x="272" y="158" text-anchor="middle" font-size="9.5" fill="#6b7280">Output from the writer agent.</text>
+    <text x="272" y="171" text-anchor="middle" font-size="9.5" fill="#6b7280">Ready for your review.</text>
+    <line x1="148" y1="182" x2="396" y2="182" stroke="#e5e7eb" stroke-width="1"/>
+
+    <!-- Contents list -->
+    <text x="152" y="202" font-size="9" font-weight="700" fill="#374151">CONTAINS:</text>
+    <text x="152" y="218" font-size="9" fill="#6b7280">4 news sections (20+ items)</text>
+    <text x="152" y="232" font-size="9" fill="#6b7280">News Date fields (review aid)</text>
+    <text x="152" y="246" font-size="9" fill="#6b7280">Intro: PLACEHOLDER</text>
+    <text x="152" y="260" font-size="9" fill="#6b7280">Takeaways: PLACEHOLDER</text>
+    <text x="152" y="274" font-size="9" fill="#6b7280">Related Articles (live links)</text>
+
+    <line x1="148" y1="286" x2="396" y2="286" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="152" y="304" font-size="9" font-weight="700" fill="#374151">MARKERS YOU CAN ADD:</text>
+
+    <!-- DO NOT PUBLISH marker -->
+    <rect x="148" y="312" width="248" height="28" rx="5" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+    <text x="158" y="330" font-size="8.5" font-weight="700" fill="#dc2626">[DO NOT PUBLISH]</text>
+    <text x="272" y="330" text-anchor="middle" font-size="8" fill="#dc2626"> before any headline</text>
+
+    <!-- NEW ITEM marker -->
+    <rect x="148" y="348" width="248" height="28" rx="5" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="158" y="366" font-size="8.5" font-weight="700" fill="#059669">[NEW ITEM]</text>
+    <text x="272" y="366" text-anchor="middle" font-size="8" fill="#059669"> + topic + Source: url</text>
+
+    <text x="152" y="402" font-size="8.5" fill="#9ca3af">Location: .tmp/newsletter-writer/</text>
+  </g>
+
+  <!-- Arrow left → center -->
+  <line x1="416" y1="257" x2="456" y2="257" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══ CENTER: HUMAN REVIEW (elevated, amber) ══ -->
+  <g filter="url(#shadow-review)">
+    <rect x="460" y="74" width="280" height="410" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="460" y="74" width="280" height="5" rx="5" fill="#f59e0b"/>
+    <!-- YOU badge -->
+    <rect x="700" y="82" width="36" height="18" rx="9" fill="#f59e0b"/>
+    <text x="718" y="95" text-anchor="middle" font-size="9" font-weight="700" fill="#ffffff" letter-spacing="0.5">YOU</text>
+    <circle cx="600" cy="144" r="32" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <!-- Eye icon: origin (586,136)=(600-14,144-8) -->
+    <g transform="translate(586,136)" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round">
+      <path d="M0,8 C5,0 23,0 28,8 C23,16 5,16 0,8 Z"/>
+      <circle cx="14" cy="8" r="4" fill="#fef3c7" stroke="#f59e0b"/>
+    </g>
+    <text x="600" y="194" text-anchor="middle" font-size="13" font-weight="800" fill="#92400e" letter-spacing="1">HUMAN REVIEW</text>
+    <text x="600" y="212" text-anchor="middle" font-size="10" fill="#78350f">Open the draft. Read it.</text>
+    <text x="600" y="227" text-anchor="middle" font-size="10" fill="#78350f">Decide what stays, what goes,</text>
+    <text x="600" y="242" text-anchor="middle" font-size="10" fill="#78350f">and what's missing.</text>
+    <line x1="476" y1="254" x2="724" y2="254" stroke="#fde68a" stroke-width="1.5"/>
+
+    <!-- Three actions -->
+    <text x="600" y="274" text-anchor="middle" font-size="10" font-weight="700" fill="#78350f">YOUR THREE MOVES:</text>
+
+    <!-- Action 1 -->
+    <rect x="476" y="284" width="248" height="32" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="600" y="298" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">CUT an item</text>
+    <text x="600" y="312" text-anchor="middle" font-size="8.5" fill="#7f1d1d">Add [DO NOT PUBLISH] before headline</text>
+
+    <!-- Action 2 -->
+    <rect x="476" y="324" width="248" height="32" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="600" y="338" text-anchor="middle" font-size="9" font-weight="700" fill="#059669">ADD an item</text>
+    <text x="600" y="352" text-anchor="middle" font-size="8.5" fill="#064e3b">Drop a [NEW ITEM] marker + source URL</text>
+
+    <!-- Action 3 -->
+    <rect x="476" y="364" width="248" height="32" rx="6" fill="#ecfeff" stroke="#a5f3fc" stroke-width="1.5"/>
+    <text x="600" y="378" text-anchor="middle" font-size="9" font-weight="700" fill="#0891b2">APPROVE as-is</text>
+    <text x="600" y="392" text-anchor="middle" font-size="8.5" fill="#0e7490">Confirm and run publish</text>
+
+    <line x1="476" y1="408" x2="724" y2="408" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="600" y="426" text-anchor="middle" font-size="9" font-weight="700" fill="#92400e">~15 MINUTES</text>
+    <text x="600" y="441" text-anchor="middle" font-size="8.5" fill="#78350f">The rest of the pipeline is scaffolding</text>
+    <text x="600" y="454" text-anchor="middle" font-size="8.5" fill="#78350f">around this moment.</text>
+  </g>
+
+  <!-- Arrows center → right (3 outcomes at different y) -->
+  <!-- CUT: left=center of red action box (y=284+16=300), right=center of red outcome card (y=160+36=196) -->
+  <line x1="744" y1="300" x2="784" y2="196" stroke="#ef4444" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-red)"/>
+  <!-- ADD: left=center of green action box (y=324+16=340), right=center of green outcome card (y=244+36=280) -->
+  <line x1="744" y1="340" x2="784" y2="280" stroke="#059669" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+  <!-- APPROVE: left=center of cyan action box (y=364+16=380), right=center of cyan outcome card (y=328+36=364) -->
+  <line x1="744" y1="380" x2="784" y2="364" stroke="#7dd3fc" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ══ RIGHT: OUTCOMES ══ -->
+  <g filter="url(#shadow)">
+    <rect x="788" y="92" width="280" height="330" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="788" y="92" width="280" height="5" rx="5" fill="#0891b2"/>
+    <text x="928" y="138" text-anchor="middle" font-size="11" font-weight="800" fill="#1f2937">WHAT HAPPENS NEXT</text>
+    <line x1="804" y1="148" x2="1052" y2="148" stroke="#e5e7eb" stroke-width="1"/>
+
+    <!-- Outcome 1: CUT -->
+    <rect x="804" y="160" width="248" height="72" rx="8" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="928" y="180" text-anchor="middle" font-size="9.5" font-weight="700" fill="#dc2626">ITEM REMOVED</text>
+    <text x="928" y="196" text-anchor="middle" font-size="8.5" fill="#7f1d1d">Publisher removes headline,</text>
+    <text x="928" y="210" text-anchor="middle" font-size="8.5" fill="#7f1d1d">summary, and all bullets entirely.</text>
+    <text x="928" y="224" text-anchor="middle" font-size="8" fill="#9ca3af">Keyword also removed from hero image.</text>
+
+    <!-- Outcome 2: ADD -->
+    <rect x="804" y="244" width="248" height="72" rx="8" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="928" y="264" text-anchor="middle" font-size="9.5" font-weight="700" fill="#059669">ITEM WRITTEN + INSERTED</text>
+    <text x="928" y="280" text-anchor="middle" font-size="8.5" fill="#064e3b">Writer fetches source URL, writes</text>
+    <text x="928" y="294" text-anchor="middle" font-size="8.5" fill="#064e3b">formatted item, replaces marker.</text>
+    <text x="928" y="308" text-anchor="middle" font-size="8" fill="#9ca3af">Same format as all other items.</text>
+
+    <!-- Outcome 3: APPROVE -->
+    <rect x="804" y="328" width="248" height="72" rx="8" fill="#ecfeff" stroke="#a5f3fc" stroke-width="1.5"/>
+    <text x="928" y="348" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0891b2">PUBLISHED AS REVIEWED</text>
+    <text x="928" y="364" text-anchor="middle" font-size="8.5" fill="#0e7490">Publisher generates Intro and</text>
+    <text x="928" y="378" text-anchor="middle" font-size="8.5" fill="#0e7490">Takeaways from final content.</text>
+    <text x="928" y="392" text-anchor="middle" font-size="8" fill="#9ca3af">Disk · Notion · Substack draft.</text>
+  </g>
+
+  <!-- ─── FOOTER ─── -->
+  <path d="M0,496 L1200,496 L1200,564 Q1200,580 1184,580 L16,580 Q0,580 0,564 Z" fill="#e8eaf0"/>
+  <line x1="0" y1="496" x2="1200" y2="496" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <text x="600" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#374151" font-style="italic">
+    "The review step isn't an interruption. It's the point where the document becomes mine."
+  </text>
+  <text x="600" y="564" text-anchor="middle" font-size="13" font-weight="700" fill="#9ca3af" letter-spacing="1">rupakganguly.com</text>
+
+</svg>
