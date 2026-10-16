@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    <meta name="description" content="Part 4 of the AI newsletter automation series: what the pipeline publishes, what broke along the way, and how to build your own AI agent workflow.">
+    
+        
+        <meta name="keywords" content="AI, ai-development, AgenticAI, AIWorkflow, Agents, Claude, ai-tools, agent-first">
+    
+    
+
+<title>What Gets Published What Broke and How to Build This for Your Own Workflow • Rupak Ganguly</title>
+
+    
+
+<link rel="author" href="https://rupakganguly.com/about/">
+
+<meta property="author" content="Rupak Ganguly">
+<meta property="article:author" content="Rupak Ganguly">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What Gets Published What Broke and How to Build This for Your Own Workflow"/>
+<meta name="twitter:description" content="Part 4 of the AI newsletter automation series: what the pipeline publishes, what broke along the way, and how to build your own AI agent workflow."/>
+
+<meta property="og:title" content="What Gets Published What Broke and How to Build This for Your Own Workflow" />
+<meta property="og:description" content="Part 4 of the AI newsletter automation series: what the pipeline publishes, what broke along the way, and how to build your own AI agent workflow." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rupakganguly.com/posts/what-gets-published-what-broke-and-how-to-build-this-for-your-own-workflow/" /><meta property="article:published_time" content="2026-10-14T14:02:40&#43;00:00"/>
+<meta property="article:modified_time" content="2026-10-14T14:02:40&#43;00:00"/>
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="t4B-VbWwIgx08UYUnRJPT-5OUp8bhO6ccpmBcco6olI" />    
+    
+
+    <script type='text/javascript' 
+    src='//platform-api.sharethis.com/js/sharethis.js#property=5b92d9d729b61c0011779d44&product=social-ab'
+    async='async'>
+</script>
+</head>
+
+
+    <body class="theme-base-0d ">
+        
+<div class="sidebar">
+  <div class="container ">
+    
+    <div class="sidebar-about">
+  <span class="site__title">
+    <a href="https://rupakganguly.com/">Rupak Ganguly</a>
+  </span>
+  
+  
+  
+  <div class="author-image">
+    <img src="https://rupakganguly.com//img/rg_mug_conf.png" alt="Rupak Ganguly" class="img--circle img--headshot element--center">
+  </div>
+  
+  <p class="site__description">
+     opinions, experiences &amp; writings... 
+  </p>
+</div>
+
+    
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Rupak Ganguly</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/glossary/">
+						<span>Glossaries</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/webinars/">
+						<span>Webinars</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/talks/">
+						<span>Talks</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/rupakg" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/rupakg" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/rupakg" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@rupakg" rel="me"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:biz@rupakganguly.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    <div>
+      
+      <p>
+  <iframe src="https://rupakganguly.substack.com/embed" width="100%" height="150" style="border:1px solid #6a9fb5; background:#6a9fb5;" frameborder="0" scrolling="no"></iframe>
+</p>
+    </div>
+    
+    <div class="copyright">
+  &copy; 2026 Rupak Ganguly.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+  <div>
+  </div>
+</div>
+
+        <base target="_blank">
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>What Gets Published What Broke and How to Build This for Your Own Workflow</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 14, 2026
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/ai">AI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/aiworkflow">AIWORKFLOW</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agenticai">AGENTICAI</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/agents">AGENTS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/ai">ai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-development">ai-development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agenticai">agenticai</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/aiworkflow">aiworkflow</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/agents">agents</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ai-tools">ai-tools</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 11 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>I want to be clear about something before we get into the wins.</p>
+
+<p>This system did not work the way I expected when I first built it. Several things broke in ways that were embarrassing and time-consuming to debug. At least one broke in production: meaning I published something that should have been caught. I&rsquo;m going to walk through all of it, because the honest account of what broke and how I fixed it is more useful than a polished tour of what works.</p>
+
+<p></p>
+
+<p>That&rsquo;s the actual lesson from six months of running this weekly: <strong>every failure became a permanent improvement</strong>. The system today is smarter than it was in February because each mistake turned into a directive update. If you&rsquo;re going to build something like this, you should know what you&rsquo;re walking into.</p>
+
+<p><img src="/img/series-hero-header-part4.svg" alt="How I Automated My AI Weekly Newsletter with an AI Agentic Workflow" /></p>
+
+<p><em>[Part 4 of the 5-part blog series]</em></p>
+
+<blockquote>
+<p>If you missed the intro post <a href="https://rupakganguly.com/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/">I Stopped Writing My Newsletter. An AI System Does It Now.</a>, that&rsquo;s the right place to start. It covers the full system at a high level and explains why I built it the way I did.</p>
+
+<p>Part 1 covers <a href="https://rupakganguly.com/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/">the directive and the 3-layer architecture</a>.</p>
+
+<p>Part 2 covers <a href="https://rupakganguly.com/posts/one-command-to-run-it-all-how-the-ai-newsletter-skill-works/">the skill and how one command drives everything</a>.</p>
+
+<p>Part 3 covers <a href="https://rupakganguly.com/posts/meet-the-team-four-ai-agents-one-pipeline/">the four specialist agents and the human review step</a>.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="what-the-system-actually-produces-each-week">What the System Actually Produces Each Week</h2>
+
+<p>Before the failures, here&rsquo;s what the pipeline generates on a good week, and why each output exists.</p>
+
+<p><img src="/img/part4-output-destinations.svg" alt="Output Destinations" /></p>
+
+<p><em>[What the System Actually Produces Each Week]</em></p>
+
+<h3 id="the-draft">The Draft</h3>
+
+<p>The draft lives in <code>.tmp/newsletter-writer/newsletter-content-{date}.md</code>. <strong>This is the file I read and edit</strong>. It contains everything the writer agent produced: all four sections, 20+ news items with their headlines and summaries, the full bullet detail, News Date fields for every item so I can verify recency, and placeholder comments where the Introduction and Key Takeaways will go. The <code>[NEW ITEM]</code> and <code>[DO NOT PUBLISH]</code> markers are visible and ready to edit.</p>
+
+<p>This file is deliberately messy. It&rsquo;s a working document, not a publishable one. The <code>**News Date: 2026-07-18**</code> fields that sit above every headline look cluttered, and they&rsquo;re supposed to. If I&rsquo;m reading the draft and a date is wrong or missing, I want to see it, not have it stripped before I can verify it.</p>
+
+<h3 id="the-processed-file">The Processed File</h3>
+
+<p>After I edit the draft and run the publisher, the processed file at <code>.tmp/newsletter-publisher/newsletter-content-processed-{date}.md</code> gets created. The markers are gone. The <code>[DO NOT PUBLISH]</code> items are removed entirely, not just hidden, but deleted from the document. The date fields are stripped. Sub-bullet indentation is normalized from 2 spaces to 4 (more on why that matters below). The Introduction and Key Takeaways are generated from whatever is in the final edited content at that point.</p>
+
+<p>This file is the source of truth for every downstream destination. If I publish to disk first and then decide to push to Notion two hours later, the publisher finds this processed file and uses it. The Notion page and the disk file are identical. There&rsquo;s no version drift.</p>
+
+<h3 id="the-final-outputs">The Final Outputs</h3>
+
+<ul>
+<li><strong>Disk:</strong> the output is stored at <code>output/ai-newsletter/newsletter-ai-news-{date}.md</code>, a clean Markdown file that I use as the canonical archive and as source for my website</li>
+<li><strong>Notion:</strong> A new page under the &ldquo;Latest in AI Newsletter&rdquo; parent which I use as the working draft for final formatting before publishing from the Substack dashboard</li>
+<li><strong>Substack:</strong> Always saved as a draft, never auto-published. I review it in the Substack editor, adjust the cover image, add tags, add buttons and publish manually. The &ldquo;publish&rdquo; step in the pipeline is intentionally incomplete</li>
+<li><strong>Hero image:</strong> It is generated at <code>.tmp/newsletter-hero-image/latest-in_ai-news_hero_{date}.jpg</code>, a composited cover image overlaid with the date, tag line and keywords over a rotating base photo</li>
+</ul>
+
+<hr />
+
+<h2 id="the-honest-failures">The Honest Failures</h2>
+
+<h3 id="failure-1-python-agent-boilerplate">Failure 1: Python Agent Boilerplate</h3>
+
+<p>The original version of this system had Python agents. Actual Python classes that wrapped the Claude API, managed prompts, and called tools. I was treating Claude like a service endpoint and writing glue code around it.</p>
+
+<p>The agents were 200–300 lines each. They needed to be installed, maintained, and tested. They had their own error handling. Every time the prompt logic needed to change, I was editing Python, not Markdown. It also necessitated using the Anthropic API and not use my paid Claude Pro subscription.</p>
+
+<p>Eventually, I also realized I was writing abstractions around a tool that already handles abstraction natively. Claude subagents, defined as Markdown files in <code>.claude/agents/</code>, eliminated every line of that boilerplate. The researcher, writer, publisher, and hero image agents are now four Markdown files totaling maybe 600 lines combined. No Python. No API calls to manage. No class hierarchies.</p>
+
+<p>The lesson wasn&rsquo;t &ldquo;Python is bad.&rdquo; The lesson was: <strong>if you&rsquo;re writing code to make an LLM do something, check whether the LLM can already do it directly.</strong></p>
+
+<h3 id="failure-2-notion-sub-bullet-indentation">Failure 2: Notion Sub-Bullet Indentation</h3>
+
+<p>The newsletter uses nested bullets: main items with 2-3 sub-bullets for context. For weeks, these looked right in the draft file but wrong in Notion and Substack. Sub-bullets were rendering at the same depth as top-level bullets. Everything was flat.</p>
+
+<p>At first, I was manually editing and fixing the indentations in Notion. Then I got tired and fixed the directive.</p>
+
+<p>The problem: the writer agent was using 2-space indentation for sub-bullets, which is correct Markdown in most contexts. Notion and Substack require 4-space indentation to recognize nesting. Two spaces looks correct in a Markdown preview and fails silently in production.</p>
+
+<p>Once I understood the issue, the fix took five minutes. I added a pre-publishing step to the publisher agent: convert all 2-space sub-bullet indentation to 4-space before writing any output. I updated the directive to document why the conversion exists.</p>
+
+<p>That bug never happened again. Not because I&rsquo;m more careful now, but because the system is incapable of producing the wrong indentation. That&rsquo;s the difference between remembering to fix something and making it impossible to break.</p>
+
+<h3 id="failure-3-duplicate-news-items-between-weeks">Failure 3: Duplicate News Items Between Weeks</h3>
+
+<p>Early on, the researcher agent had no memory of what it had published before. It was scoring articles by relevance and recency, and a well-written article about a major model release could stay highly relevant for two or three weeks after it first ran.</p>
+
+<p>I noticed it when a subscriber mentioned they&rsquo;d seen an article in the previous edition. I went back and checked. The researcher had surfaced the same article because it was still the top result for its category.</p>
+
+<p>The fix: the researcher&rsquo;s first action is now to read the most recent processed newsletter from <code>.tmp/newsletter-publisher/</code>. It extracts every headline that ran in the previous edition. Those headlines are excluded from the new research, even if they&rsquo;re the top result.</p>
+
+<p>This seems obvious in retrospect. It wasn&rsquo;t obvious at design time. It took a live failure to surface the gap.</p>
+
+<h3 id="failure-4-hero-image-keywords-for-removed-items">Failure 4: Hero Image Keywords for Removed Items</h3>
+
+<p>This one I noticed myself before a subscriber did, but only barely.</p>
+
+<p>The publisher generates hero image keywords from the newsletter&rsquo;s header. If an item has a keyword like &ldquo;GPT-5&rdquo; and I remove the item with <code>[DO NOT PUBLISH]</code>, the keyword still appears in the header, and therefore on the hero image. I&rsquo;d published a cover image that mentioned a topic that wasn&rsquo;t in the newsletter.</p>
+
+<p>The hero image agent now runs a keyword filter before compositing. It reads both the raw keyword list from the header and the final newsletter content. If a keyword doesn&rsquo;t appear in the content, it gets removed from the header before the image is generated. The cover image reflects what was actually published.</p>
+
+<h3 id="failure-5-introduction-and-key-takeaways-generated-too-early">Failure 5: Introduction and Key Takeaways Generated Too Early</h3>
+
+<p>The first version of the writer agent generated everything: research formatting, news items, and the Introduction and Key Takeaways in a single pass.</p>
+
+<p>The problem: I often edit the draft significantly after the writer finishes. I cut items. I add items. I restructure sections. When I&rsquo;d publish, the Introduction would describe a newsletter that no longer existed in quite the way it was written.</p>
+
+<p>The solution is the design you see in Part 3: the Introduction and Key Takeaways are placeholders in the writer&rsquo;s output (<code>&lt;!-- PLACEHOLDER: INTRODUCTION --&gt;</code>) and are generated by the publisher agent from the final, human-reviewed content. The publisher generates them last, after markers are processed and items are finalized.</p>
+
+<p>This means the Intro always matches the newsletter. It has to: it&rsquo;s generated from the newsletter that actually gets published.</p>
+
+<p><img src="/img/part4-time-comparison.svg" alt="Before and After Time Comparison" /></p>
+
+<p><em>[Before and After Time Comparison]</em></p>
+
+<hr />
+
+<h2 id="the-self-annealing-principle">The Self-Annealing Principle</h2>
+
+<p>Here&rsquo;s the pattern across every failure above:</p>
+
+<ol>
+<li>Something broke.</li>
+<li>I read the error and understood why.</li>
+<li>I fixed the agent or script.</li>
+<li>I updated the directive to document the new rule.</li>
+<li>The system became permanently incapable of making that mistake again.</li>
+</ol>
+
+<p>I call this <strong>self-annealing</strong>. <strong>Every break is a directive update</strong>. Every directive update closes a gap. The system gets stronger with each failure, not just with each success.</p>
+
+<p>The opposite of this is a system that requires you to remember to do things correctly. <strong>Human memory is unreliable. Directive-enforced behavior is not</strong>. When I add &ldquo;check the previous newsletter before researching&rdquo; to the directive, that rule runs every week without me thinking about it.</p>
+
+<p>This is also why I update the directive immediately when something breaks, not after I&rsquo;ve finished everything else, not in a cleanup pass at the end. The directive is the memory of the system. If I don&rsquo;t write it down, the system doesn&rsquo;t know.</p>
+
+<hr />
+
+<h2 id="this-isn-t-about-newsletters">This Isn&rsquo;t About Newsletters</h2>
+
+<p>The reason I&rsquo;ve spent four posts documenting this is not because newsletter automation is inherently interesting. It&rsquo;s because the pattern is reusable.</p>
+
+<p>The same three-layer architecture (directive, orchestration, execution) applies to any repeating workflow where a human needs to make judgment calls in the middle and the rest is mechanical overhead.</p>
+
+<p>Some places I&rsquo;d use it:</p>
+
+<ul>
+<li><strong>Weekly team briefing or executive summary:</strong> Researcher gathers signals from Slack, Linear, and GitHub. Writer formats them into a structured summary. You review and cut what&rsquo;s internal-only. Publisher sends to the distribution list.</li>
+<li><strong>Competitive intelligence report:</strong> Researcher monitors competitor announcements, pricing pages, and job postings. Writer produces a structured diff from last week&rsquo;s report. You decide what&rsquo;s worth flagging to the sales team.</li>
+<li><strong>Content calendar management:</strong> System drafts ideas from trending topics in your space. You approve, edit, or add items. Publisher formats them into a Notion database with status fields and scheduled dates.</li>
+<li><strong>Customer research digest:</strong> Researcher aggregates support tickets, NPS comments, and review sites. Writer surfaces patterns. You decide which ones become product priorities.</li>
+</ul>
+
+<p>The questions before you start are always the same:</p>
+
+<p><strong>1. What is the SOP?</strong> Write the directive before you build anything. If you can&rsquo;t describe the process clearly enough to hand it to a new employee, you don&rsquo;t understand it well enough to automate it. The directive is the forcing function that makes you articulate your own process.</p>
+
+<p><strong>2. Who are the specialists?</strong> Design agents with tight scope. One job each. Clear inputs and outputs. An agent that does everything also fails at everything, and the failures are hard to diagnose because the error surface is everywhere. When each agent has a single responsibility, failures are loud and localized.</p>
+
+<p><strong>3. Where does a human stay in the loop?</strong> This is the most important question and the one most automation frameworks skip. Design the review step deliberately. Decide exactly where in the pipeline a human sees the output, makes decisions, and confirms before execution continues. Automation without a human checkpoint isn&rsquo;t fully autonomous, it just fails silently.</p>
+
+<hr />
+
+<h2 id="ai-is-the-tool-you-re-the-editor">AI Is the Tool. You&rsquo;re the Editor.</h2>
+
+<p>Every week, I read the draft. I read every news item. I cut the ones that aren&rsquo;t worth my readers&rsquo; time. I add the ones the system missed. Sometimes the draft is excellent and I confirm it immediately. Sometimes I make ten edits. The system doesn&rsquo;t know which it is until I decide.</p>
+
+<p>The newsletter still sounds like me because I&rsquo;m still in it. The AI handles the mechanical overhead: the research, the formatting, the publishing logistics, the cover image, the social posts. I handle the editorial judgment that determines what goes out under my name.</p>
+
+<p>That&rsquo;s the right distribution of work. Not &ldquo;AI does everything&rdquo; and not &ldquo;AI is a fancy autocomplete.&rdquo; AI handles the parts that are repeatable and mechanical. You handle the parts that require judgment, taste, and accountability.</p>
+
+<p>If you&rsquo;re running any repeating workflow, weekly or otherwise, that feels like a second job, the question isn&rsquo;t whether AI can help. It&rsquo;s whether you&rsquo;ve designed the system clearly enough to hand it over. Write the directive first. You might be surprised how much clarity that alone creates.</p>
+
+<hr />
+
+<blockquote>
+<p>If you missed the intro post <a href="https://rupakganguly.com/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/">I Stopped Writing My Newsletter. An AI System Does It Now.</a>, that&rsquo;s the right place to start. It covers the full system at a high level and explains why I built it the way I did.</p>
+
+<p>Part 1 covers <a href="https://rupakganguly.com/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/">the directive and the 3-layer architecture</a>.</p>
+
+<p>Part 2 covers <a href="https://rupakganguly.com/posts/one-command-to-run-it-all-how-the-ai-newsletter-skill-works/">the skill and how one command drives everything</a>.</p>
+
+<p>Part 3 covers <a href="https://rupakganguly.com/posts/meet-the-team-four-ai-agents-one-pipeline/">the four specialist agents and the human review step</a>.</p>
+</blockquote>
+
+<p>This is the final part of the series. Hope you enjoyed the series.</p>
+
+<hr />
+
+<p><em>Subscribe to the newsletter this system produces at <a href="https://rupakganguly.substack.com">rupakganguly.substack.com</a>. If you&rsquo;re building something similar or have questions about the architecture, I read everything.</em></p>
+  </div>
+  
+  <hr/>
+<h3 align="center">Monthly Newsletter</h3>
+<div>
+  <p><strong><i>If you like the content I share, you can sign up below for the <a href="https://rupakganguly.substack.com">free monthly newsletter</a>.</i></strong></p>
+</div>  
+<iframe src="https://rupakganguly.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/meet-the-team-four-ai-agents-one-pipeline/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Meet the Team: Four AI Agents, One Pipeline</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/meet-the-team-four-ai-agents-one-pipeline/">Meet the Team: Four AI Agents, One Pipeline</a>
+      
+      <time class="pull-right hidden-tablet">Sep 09 &#39;26</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/one-command-to-run-it-all-how-the-ai-newsletter-skill-works/">One Command to Run It All: How the `/ai-newsletter` Skill Works</a>
+      
+      <time class="pull-right hidden-tablet">Aug 05 &#39;26</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/the-blueprint-writing-a-directive-that-acts-like-an-employee-manual/">The Blueprint: Writing a Directive That Acts Like an Employee Manual</a>
+      
+      <time class="pull-right hidden-tablet">Jul 29 &#39;26</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/i-stopped-writing-my-newsletter-an-ai-system-does-it-now/">I Stopped Writing My Newsletter. An AI System Does It Now.</a>
+      
+      <time class="pull-right hidden-tablet">Jul 22 &#39;26</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/designing-backends-for-ai-agents-first-humans-second-the-architecture-nobody-taught-you/">Designing Backends for AI Agents First Humans Second - The Architecture Nobody Taught You</a>
+      
+      <time class="pull-right hidden-tablet">May 21 &#39;26</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'rupakganguly';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JS2QC0T2RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JS2QC0T2RX');
+</script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

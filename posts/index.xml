@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Rupak Ganguly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Sep 2026 15:16:03 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 14:02:40 +0000</lastBuildDate>
     
 	<atom:link href="https://rupakganguly.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What Gets Published What Broke and How to Build This for Your Own Workflow</title>
+      <link>https://rupakganguly.com/posts/what-gets-published-what-broke-and-how-to-build-this-for-your-own-workflow/</link>
+      <pubDate>Wed, 14 Oct 2026 14:02:40 +0000</pubDate>
+      
+      <guid>https://rupakganguly.com/posts/what-gets-published-what-broke-and-how-to-build-this-for-your-own-workflow/</guid>
+      <description>&lt;p&gt;I want to be clear about something before we get into the wins.&lt;/p&gt;
+
+&lt;p&gt;This system did not work the way I expected when I first built it. Several things broke in ways that were embarrassing and time-consuming to debug. At least one broke in production: meaning I published something that should have been caught. I&amp;rsquo;m going to walk through all of it, because the honest account of what broke and how I fixed it is more useful than a polished tour of what works.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Meet the Team: Four AI Agents, One Pipeline</title>
